@@ -25,8 +25,8 @@ public class ServiceAsistGetFilter {
   @PersistenceContext
   private EntityManager entityManager;
 
-  @SuppressWarnings(value = "unchecked")
   /** method for filter. */
+  @SuppressWarnings(value = "unchecked")
   public ResponseEntity<List<DtoAsist>> filter(DtoAsistFilter dtoAsistFilter, int page, int size) {
 
     String query = SqlAsistFilterBuilderNative.build(dtoAsistFilter);
