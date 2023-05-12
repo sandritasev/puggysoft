@@ -132,10 +132,11 @@ INSERT INTO roles (name, created_by) VALUES ("TICKETS_ADMIN", "admin");
 INSERT INTO roles (name, created_by) VALUES ("SCHOOL_ADMIN", "admin");
 
 -- TENANTS
-INSERT INTO tenants (name, short_name, description, created_by) VALUES
-("EMPRESA 1", 'EMPRESA_1', 'EMPRESA 1 PARA PRUEBAS', 'SysAdmin'),
-("EMPRESA 2", 'EMPRESA_2', 'EMPRESA 2 PARA PRUEBAS', 'SysAdmin'),
-("EMPRESA 3", 'EMPRESA_3', 'EMPRESA 3 PARA PRUEBAS', 'SysAdmin');
+INSERT INTO tenants (name, short_name, status, description, created_by) VALUES
+("EMPRESA 1", 'EMPRESA_1', 'ACTIVE', 'EMPRESA 1 PARA PRUEBAS', 'SysAdmin'),
+("EMPRESA 2", 'EMPRESA_2', 'ACTIVE', 'EMPRESA 2 PARA PRUEBAS', 'SysAdmin'),
+("EMPRESA 3", 'EMPRESA_3', 'ACTIVE', 'EMPRESA 3 PARA PRUEBAS', 'SysAdmin'),
+("EMPRESA 4", 'EMPRESA_4', 'INACTIVE', 'EMPRESA 4 PARA PRUEBAS', 'SysAdmin');
 
 INSERT INTO users_roles (id_user, id_role, created_by, tenant) VALUES
 ((select id from users where username='SysAdmin'), (select id from roles where name='ADMIN'), "SysAdmin", "EMPRESA_1"),
