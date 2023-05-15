@@ -7,6 +7,8 @@
 3. Install java 1.8.0_201
 4. Install Mysql 5
 5. Install Docker 19.03.8 (Optional)
+6. Install MySQL Shell 8.0.33 ```https://dev.mysql.com/downloads/shell/```
+7. Install DBeaver Community. ```https://dbeaver.io/```
 
 ### Optional install mysql db in docker
 
@@ -45,6 +47,7 @@ password: secret123
 
 ### Deploy Docker
 0. Execute all queries from ```sql folder```.
+- Execute backend-001/sql/db-init-mysqlsh.bat if you have MySQL Shell installed.
 1. Execute: ```gradlew build```
 2. Configure: ```build/resources/main/application.properties```
 
