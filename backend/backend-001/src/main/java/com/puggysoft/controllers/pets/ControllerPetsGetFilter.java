@@ -17,7 +17,6 @@ public class ControllerPetsGetFilter {
 
   @Autowired
   private ServicePetsGetFilter servicePetsGetFilter;
-  // products/filter?page=${activePage - 1}&size=${pageSize}
 
   @PostMapping(path = "/api/v1/pets/filter")
   public ResponseEntity<List<DtoPets>> getPetsFilter(

@@ -17,7 +17,6 @@ public class ControllerPetsHistorialGetFilter {
 
   @Autowired
   private ServicePetsHistorialGetFilter servicePetsHistorialGetFilter;
-  // products/filter?page=${activePage - 1}&size=${pageSize}
 
   @PostMapping(path = "/api/v1/pets-historial/filter")
   public ResponseEntity<List<DtoPetsHistorial>> getPetsHistorialFilter(
