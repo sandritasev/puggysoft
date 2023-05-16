@@ -41,7 +41,7 @@ public class ServiceSaleGetFilter {
           + query + " LIMIT " + off + "," + size;
       // JQPL (createQuery) and Native (createNativeQuery)
       Query filterQuery = entityManager.createNativeQuery(fullQuery, EntitySale.class);
-      listEntities = (List<EntitySale>) filterQuery.getResultList();;
+      listEntities = (List<EntitySale>) filterQuery.getResultList();
     }
     List<DtoSale> listDtoSale = listEntities
         .stream()

@@ -1,5 +1,5 @@
 import enumFilterType from "../enumFilterType";
-import enumCompareOperators from "./../enumCompareOperators";
+import enumCompareOperators from "../enumCompareOperators";
 
 const getColumnsFilterModel = function (
   /* USERNAME */ criteriaUsername, criteriaOnChangeUsername, criteriaSetUsername, operatorUsername, operatorOnChangeUsername, operatorSetUsername,
@@ -54,48 +54,14 @@ const getColumnsFilterModel = function (
 
   const getFilterBody = () => {
     const filterBody = {
-      idCriteria: "",
-      idOperator: enumFilterType.NONE,
       usernameCriteria: criteriaUsername,
       usernameOperator: operatorUsername,
-      passwordCriteria: "",
-      passwordOperator: enumFilterType.NONE,
       dniCriteria: criteriaDni,
       dniOperator: operatorDni,
       nameCriteria: criteriaName,
       nameOperator: operatorName,
-      secondNameCriteria: "",
-      secondNameOperator: enumFilterType.NONE,
       lastNameCriteria: criteriaLastName,
-      lastNameOperator: operatorLastName,
-      secondLastNameCriteria: "",
-      secondLastNameOperator: enumFilterType.NONE,
-      birthDateCriteria: "",
-      birthDateOperator: enumFilterType.NONE,
-      ageCriteria: "",
-      ageOperator: enumFilterType.NONE,
-      sexCriteria: "",
-      sexOperator: enumFilterType.NONE,
-      occupationCriteria: "",
-      occupationOperator: enumFilterType.NONE,
-      telephoneCriteria: "",
-      telephoneOperator: enumFilterType.NONE,
-      addressCriteria: "",
-      addressOperator: enumFilterType.NONE,
-      emailCriteria: "",
-      emailOperator: enumFilterType.NONE,
-      activeCriteria: "",
-      activeOperator: enumFilterType.NONE,
-      emailVerifiedCriteria: "",
-      emailVerifiedOperator: enumFilterType.NONE,
-      createdByCriteria: "",
-      createdByOperator: enumFilterType.NONE,
-      updatedByCriteria: "",
-      updatedByOperator: enumFilterType.NONE,
-      creationDateCriteria: "",
-      creationDateOperator: enumFilterType.NONE,
-      updateDateCriteria: "",
-      updateDateOperator: enumFilterType.NONE
+      lastNameOperator: operatorLastName
     };
     return filterBody;
   };

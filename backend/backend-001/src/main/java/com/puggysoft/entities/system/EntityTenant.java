@@ -22,6 +22,8 @@ public class EntityTenant extends EntitySuperClass {
   @Column(name = "short_name")
   private String shortName;
 
+  private String status;
+
   private String description;
 
   private String telephone;

@@ -22,6 +22,9 @@ public class DtoTenantFilter {
   // DESCRIPTION
   public String descriptionCriteria;
   public EnumCompareOperator descriptionOperator;
+  // STATUS
+  public String statusCriteria;
+  public EnumCompareOperator statusOperator;
   // TELEPHONE
   public String telephoneCriteria;
   public EnumCompareOperator telephoneOperator;

@@ -61,7 +61,7 @@ public class ServiceProductGetFilterBySaleId {
           + "WHERE sales.id = " + saleId + " AND " + query + " LIMIT " + off + "," + size;
       // JQPL (createQuery) and Native (createNativeQuery)
       Query filterQuery = entityManager.createNativeQuery(fullQuery, EntityProduct.class);
-      listEntities = (List<EntityProduct>) filterQuery.getResultList();;
+      listEntities = (List<EntityProduct>) filterQuery.getResultList();
     }
     List<DtoProduct> listDtoProduct = listEntities
         .stream()
