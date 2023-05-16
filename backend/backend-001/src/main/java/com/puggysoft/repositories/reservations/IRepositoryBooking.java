@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
 public interface IRepositoryBooking extends JpaRepository<EntityResBooking, Long> {
 
@@ -14,6 +13,6 @@ public interface IRepositoryBooking extends JpaRepository<EntityResBooking, Long
   Long findSize();
 
   @Query(value = "SELECT * FROM res_resource LIMIT ?1, ?2", nativeQuery = true)
-  List<EntityResBooking> findResResourcesByPagination(int off, int size);
+  List<EntityResBooking> findBookingByPagination(int off, int size);
 
 }

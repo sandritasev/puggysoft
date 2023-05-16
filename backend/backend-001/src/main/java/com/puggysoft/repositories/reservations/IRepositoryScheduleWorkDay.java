@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
 public interface IRepositoryScheduleWorkDay extends JpaRepository<EntityResScheduleWorkDay, Long> {
 
@@ -14,6 +13,6 @@ public interface IRepositoryScheduleWorkDay extends JpaRepository<EntityResSched
   Long findSize();
 
   @Query(value = "SELECT * FROM res_resource LIMIT ?1, ?2", nativeQuery = true)
-  List<EntityResScheduleWorkDay> findResResourcesByPagination(int off, int size);
+  List<EntityResScheduleWorkDay> findScheduleWorkDayByPagination(int off, int size);
 
 }

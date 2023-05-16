@@ -18,7 +18,6 @@ public class ControllerBillGetFilter {
   @Autowired
   private ServiceBillGetFilter serviceBillGetFilter;
 
-  // products/filter?page=${activePage - 1}&size=${pageSize}
   @PostMapping(path = "/api/v1/fac-bills/filter")
   public ResponseEntity<List<DtoBill>> getBillFilter(
       @RequestParam int page,

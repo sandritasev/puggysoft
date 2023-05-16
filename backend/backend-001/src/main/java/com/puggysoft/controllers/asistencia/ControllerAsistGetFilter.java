@@ -17,7 +17,6 @@ public class ControllerAsistGetFilter {
 
   @Autowired
   private ServiceAsistGetFilter serviceAsistGetFilter;
-  // products/filter?page=${activePage - 1}&size=${pageSize}
 
   @PostMapping(path = "/api/v1/asist-control/filter")
   public ResponseEntity<List<DtoAsist>> getAsistFilter(

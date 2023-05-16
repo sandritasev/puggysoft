@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
 public interface IRepositoryScheduleIntervalTime extends JpaRepository<EntityResScheduleIntervalTime, Long> {
 
@@ -14,6 +13,6 @@ public interface IRepositoryScheduleIntervalTime extends JpaRepository<EntityRes
   Long findSize();
 
   @Query(value = "SELECT * FROM res_resource LIMIT ?1, ?2", nativeQuery = true)
-  List<EntityResScheduleIntervalTime> findResResourcesByPagination(int off, int size);
+  List<EntityResScheduleIntervalTime> findScheduleIntervalTimeByPagination(int off, int size);
 
 }
