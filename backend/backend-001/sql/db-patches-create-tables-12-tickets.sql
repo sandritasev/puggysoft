@@ -7,6 +7,7 @@ CREATE TABLE tickets_eventos(
    image LONGBLOB,
    fecha_fin DATE,
    fecha_inicio DATE,
+   aux TEXT,
    tenant VARCHAR(30) NOT NULL,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
    update_date DATETIME ON UPDATE CURRENT_TIMESTAMP,
@@ -22,6 +23,7 @@ CREATE TABLE tickets(
    id BIGINT AUTO_INCREMENT,
    evento VARCHAR(30),
    uuid TEXT,
+   used BOOLEAN NOT NULL,
    cliente VARCHAR(30) NOT NULL,
    tenant VARCHAR(30) NOT NULL,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -31,7 +33,7 @@ CREATE TABLE tickets(
    FOREIGN KEY (created_by) REFERENCES users(username),
    FOREIGN KEY (updated_by) REFERENCES users(username),
    FOREIGN KEY (cliente) REFERENCES users(username),
-   FOREIGN KEY (evento) REFERENCES tenants(short_name),
+   FOREIGN KEY (evento) REFERENCES tickets_eventos(short_name),
    FOREIGN KEY (tenant) REFERENCES tenants(short_name),
    PRIMARY KEY (id)
 )AUTO_INCREMENT=1000;

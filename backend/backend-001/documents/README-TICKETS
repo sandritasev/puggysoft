@@ -1,0 +1,135 @@
+# java-spring-puggysoft
+
+## TICKETS
+
+## TICKETS-EVENTOS
+
+### POST CREATE
+
+```
+POST localhost:8080/api/v1/tickets-eventos
+{
+  "nombre": "CONCIERTOPANDA",
+  "shortName": "CPAN1",
+  "cantidadTickets": "2",
+  "image": "byte[]",
+  "fechaFin": "2009-07-09",
+  "fechaInicio": "2009-07-11",
+  "aux": "",
+  "tenant": "EMPRESA_1",
+  "createdBy": "SysTicketsAdmin",
+  "creationDate": "2023-05-18"
+}
+```
+
+### POST FILTER
+
+```
+POST localhost:8080/api/v1/tickets-eventos/filter?page=0&size=10
+POST localhost:8080/api/v1/tickets-eventos/filter/size/{pageSize}
+{
+  "nombreCriteria": "string",
+  "nombreOperator": "TEXT_CONTAINS",
+  "shortNameCriteria": "string",
+  "shortNameOperator": "TEXT_CONTAINS",
+  "cantidadTicketsCriteria": "string",
+  "cantidadTicketsOperator": "TEXT_CONTAINS",
+  "fechaFinCriteria": "string",
+  "fechaFinOperator": "TEXT_CONTAINS",
+  "fechaInicioCriteria": "string",
+  "fechaInicioOperator": "TEXT_CONTAINS",
+  "auxCriteria": "",
+  "auxOperator": "",
+  "tenantCriteria": "string",
+  "tenantOperator": "TEXT_CONTAINS",
+  "createdByCriteria": "string",
+  "createdByOperator": "TEXT_CONTAINS"
+}
+```
+
+### PUT
+
+```
+PUT localhost:8080/api/v1/tickets-eventos/{id}
+{
+  "nombre": "string",
+  "shortName": "string",
+  "cantidadTickets": "string",
+  "image": "byte[]",
+  "fechaFin": "string",
+  "fechaInicio": "string",
+  "aux": "string",
+  "tenant": "string"
+  "createdBy": "string",
+  "updatedBy": "string"
+}
+```
+
+### DELETE
+
+```
+localhost:8080/api/v1/tickets-eventos/{id}
+```
+
+## TICKETS
+
+### GET
+
+### POST CREATE
+
+```
+POST localhost:8080/api/v1/tickets
+{
+  "evento": "CPAN",
+  "uuid": "32896d30-f58f-11ed-b67e-0242ac120002",
+  "used": "false",
+  "cliente": "MARCELA_RUEDA",
+  "tenant": "EMPRESA_1",
+  "createdBy": "2023-03-11",
+  "updatedBy": "2023-05-18"
+}
+```
+
+### POST FILTER
+
+```
+POST localhost:8080/api/v1/tickets/filter?page=0&size=10
+POST localhost:8080/api/v1/tickets/filter/size/{pageSize}
+{
+  "eventoCriteria": "string",
+  "eventoOperator": "TEXT_CONTAINS",
+  "uuidCriteria": "string",
+  "uuidOperator": "TEXT_CONTAINS",
+  "usedCriteria": "string",
+  "usedOperator": "TEXT_CONTAINS",
+  "clienteCriteria": "string",
+  "clienteOperator": "TEXT_CONTAINS",
+  "tenantCriteria": "string",
+  "tenantOperator": "TEXT_CONTAINS",
+  "createdByCriteria": "string",
+  "createdByOperator": "TEXT_CONTAINS",
+  "updatedByCriteria": "string",
+  "updatedByOperator": "TEXT_CONTAINS"
+}
+```
+
+### PUT
+
+```
+PUT localhost:8080/api/v1/tickets/{id}
+{
+  "evento": "string",
+  "uuid": "string",
+  "used": "string",
+  "cliente": "string",
+  "tenant": "string",
+  "createdBy": "string",
+  "updatedBy": "string"
+}
+```
+
+### DELETE
+
+```
+localhost:8080/api/v1/tickets/{id}
+```
