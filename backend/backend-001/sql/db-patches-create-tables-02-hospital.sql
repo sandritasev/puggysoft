@@ -1,36 +1,46 @@
 -- ------ HOSPITAL SYSTEM TABLES -------
 -- Doctors
 CREATE TABLE hospital_doctors_details(
-   id_user BIGINT NOT NULL UNIQUE,
+   id BIGINT AUTO_INCREMENT,
+   username VARCHAR(30) NOT NULL UNIQUE,
    specialization VARCHAR(60) NOT NULL,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
    update_date DATETIME ON UPDATE CURRENT_TIMESTAMP,
    created_by VARCHAR(30),
    updated_by VARCHAR(30),
-   FOREIGN KEY (id_user) REFERENCES users(id),
+   FOREIGN KEY (username) REFERENCES users(username),
    FOREIGN KEY (created_by) REFERENCES users(username),
-   FOREIGN KEY (updated_by) REFERENCES users(username)
-);
+   FOREIGN KEY (updated_by) REFERENCES users(username),
+   PRIMARY KEY (id)
+)AUTO_INCREMENT=1000;
 
--- Patients:
+-- Patients
 CREATE TABLE hospital_patients_details(
-   id_user BIGINT NOT NULL UNIQUE,
+   id BIGINT AUTO_INCREMENT,
+   username VARCHAR(30) NOT NULL UNIQUE,
    sus_code VARCHAR(60) NOT NULL UNIQUE,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
    update_date DATETIME ON UPDATE CURRENT_TIMESTAMP,
    created_by VARCHAR(30),
    updated_by VARCHAR(30),
-   FOREIGN KEY (id_user) REFERENCES users(id),
+   FOREIGN KEY (username) REFERENCES users(username),
    FOREIGN KEY (created_by) REFERENCES users(username),
-   FOREIGN KEY (updated_by) REFERENCES users(username)
-);
+   FOREIGN KEY (updated_by) REFERENCES users(username),
+   PRIMARY KEY (id)
+)AUTO_INCREMENT=1000;
 
 -- Historial medico
-CREATE TABLE hospital_patients_history(
+CREATE TABLE hospital_patients_history_a(
    id BIGINT AUTO_INCREMENT,
+   presion_arterial TEXT,
+   frecuencia_cardiaca TEXT,
+   saturacion_oxigeno TEXT, 
+   altura TEXT,
+   weight TEXT,
+   temperatura TEXT,
+   antecedentes TEXT,
    diagnostico TEXT,
    tratamiento TEXT,
-   weight TEXT,
    patient_username VARCHAR(30) NOT NULL,
    tenant VARCHAR(30) NOT NULL,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
