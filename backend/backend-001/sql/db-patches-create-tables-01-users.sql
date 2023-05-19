@@ -47,6 +47,7 @@ CREATE TABLE tenants (
    id BIGINT AUTO_INCREMENT,
    name VARCHAR(64) NOT NULL UNIQUE,
    short_name VARCHAR(30) NOT NULL UNIQUE,
+   status ENUM('ACTIVE', 'INACTIVE') NOT NULL,
    description TEXT,
    telephone TEXT,
    address TEXT,

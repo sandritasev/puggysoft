@@ -63,6 +63,21 @@ function NavBar () {
   const navigateTenantsForm = () => {
     history.push(enumPaths.TENANTS_FORM);
   };
+  const navigateTenantTableSelection = () => {
+    history.push({
+      pathname: enumPaths.TENANTS_TABLE_FILTER_SELECTION,
+      state: { tableType: enumTableType.TABLE_SELECTION }
+    });
+  };
+  const navigateUserTableSelectionForTenants = () => {
+    history.push({
+      pathname: enumPaths.USERS_TABLE_FILTER_SELECTION,
+      state: {
+        afterSelectRoute: enumPaths.TENANTS_TABLE_FILTER_BY_USER,
+        tableTitle: i18n.userTable.title
+      }
+    });
+  };
 
   // ******* ******* ******* USERS SYSTEM ******* ******* *******
 
@@ -218,6 +233,9 @@ function NavBar () {
   const systemPropertiesTableLabel = (<><AiOutlineTable /> {i18n.navBar.systemPropertiesTable}</>);
   const tenantAdminLabel = (<><BsBuildingFillGear /> {i18n.navBar.tenantAdmin}</>);
   const tenantRegistrationLabel = (<><BsBuildingFillAdd /> {i18n.navBar.tenantRegistration}</>);
+  const tenantUserAdminLabel = (<><FaUsersCog /> {i18n.navBar.tenantUserAdmin}</>);
+  const tenantUserCrudByTenantLabel = (<><AiOutlineTable /> {i18n.navBar.tenantUserCrudByTenant}</>);
+  const tenantUserCrudByUserLabel = (<><AiOutlineTable /> {i18n.navBar.tenantUserCrudByUser}</>);
 
   // ******* ******* ******* USERS SYSTEM ******* ******* *******
   // USERS
@@ -411,6 +429,11 @@ function NavBar () {
           {userRoles.includes(enumRoles.ADMIN) &&
             <NavDropdown title={tenantAdminLabel}>
               <NavDropdown.Item onClick={navigateTenantsForm} >{tenantRegistrationLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {userRoles.includes(enumRoles.ADMIN) &&
+            <NavDropdown title={tenantUserAdminLabel}>
+              <NavDropdown.Item onClick={navigateTenantTableSelection}>{tenantUserCrudByTenantLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateUserTableSelectionForTenants}>{tenantUserCrudByUserLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.ADMIN_USERS) &&
             <NavDropdown title={userAdminLabel}>

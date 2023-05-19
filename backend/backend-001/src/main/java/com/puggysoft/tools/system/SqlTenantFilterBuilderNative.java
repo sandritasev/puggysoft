@@ -18,6 +18,7 @@ public final class SqlTenantFilterBuilderNative {
     query = query + SqlFilterBuilder.getFilterQuery("name", dtoTenantFilter.nameCriteria, dtoTenantFilter.nameOperator);
     query = query + SqlFilterBuilder.getFilterQuery("short_name ", dtoTenantFilter.shortNameCriteria, dtoTenantFilter.shortNameOperator);
     query = query + SqlFilterBuilder.getFilterQuery("description ", dtoTenantFilter.descriptionCriteria, dtoTenantFilter.descriptionOperator);
+    query = query + SqlFilterBuilder.getFilterQuery("status ", dtoTenantFilter.statusCriteria, dtoTenantFilter.statusOperator);
     query = query + SqlFilterBuilder.getFilterQuery("telephone", dtoTenantFilter.telephoneCriteria, dtoTenantFilter.telephoneOperator);
     query = query + SqlFilterBuilder.getFilterQuery("address", dtoTenantFilter.addressCriteria, dtoTenantFilter.addressOperator);
     query = query + SqlFilterBuilder.getFilterQuery("image ", dtoTenantFilter.imageCriteria, dtoTenantFilter.imageOperator);

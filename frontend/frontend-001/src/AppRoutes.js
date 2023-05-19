@@ -9,6 +9,7 @@ import DashboardPage from "./components-level-3/DashboardPage";
 import SystemPropertiesFormPage from "./components-level-3/system/SystemPropertiesFormPage";
 import SystemPropertiesTablePage from "./components-level-3/system/SystemPropertiesTablePage";
 import TenantFormPage from "./components-level-3/system/TenantFormPage";
+import TenantTableFilterByUserPage from "./components-level-3/system/TenantTableFilterByUserPage";
 import InProgressPage from "./components-level-3/system/InProgressPage";
 
 // Users System
@@ -16,6 +17,7 @@ import UsersFormPage from "./components-level-3/users/UserFormPage";
 import UserTableBasicPage from "./components-level-3/users/UserTableBasicPage";
 import UserTableFilterFullDataPage from "./components-level-3/users/UserTableFilterFullDataPage";
 import UserTableFilterByRolePage from "./components-level-3/users/UserTableFilterByRolePage";
+import UserTableFilterByTenantPage from "./components-level-3/users/UserTableFilterByTenantPage";
 import UserTableFilterSelectionToDetailsPage from "./components-level-3/users/UserTableFilterSelectionToDetailsPage";
 import UserTableFilterEditDeletePage from "./components-level-3/users/UserTableFilterEditDeletePage";
 import UserDetailsPage from "./components-level-3/users/UserDetailsPage";
@@ -82,6 +84,7 @@ import PatientUserTableToDetailsPage from "./components-level-3/hospital/Patient
 import ResourceFormPage from "./components-level-3/reservation/ResourceFormPage";
 import ScheduleFormPage from "./components-level-3/reservation/ScheduleFormPage";
 import IntervalTimeFormPage from "./components-level-3/reservation/IntervalTimeFormPage";
+import TenantTableFilterPage from "./components-level-3/system/TenantTableFilterPage";
 
 const AppRoutes = () => (
   <App>
@@ -92,11 +95,14 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.SYSTEM_PROPERTIES_FORM} component={SystemPropertiesFormPage} />
       <Route exact path={enumPaths.SYSTEM_PROPERTIES_TABLE} component={SystemPropertiesTablePage} />
       <Route exact path={enumPaths.TENANTS_FORM} component={TenantFormPage} />
+      <Route exact path={enumPaths.TENANTS_TABLE_FILTER_SELECTION} component={TenantTableFilterPage} />
+      <Route exact path={enumPaths.TENANTS_TABLE_FILTER_BY_USER} component={TenantTableFilterByUserPage} />
       {/** Users System */}
       <Route exact path={enumPaths.USERS_FORM} component={UsersFormPage} />
       <Route exact path={enumPaths.USERS_TABLE} component={UserTableBasicPage} />
       <Route exact path={enumPaths.USERS_TABLE_FILTER} component={UserTableFilterFullDataPage} />
       <Route exact path={enumPaths.USERS_TABLE_FILTER_BY_ROLE} component={UserTableFilterByRolePage} />
+      <Route exact path={enumPaths.USERS_TABLE_FILTER_BY_TENANT} component={UserTableFilterByTenantPage} />
       <Route exact path={enumPaths.USERS_TABLE_FILTER_SELECTION} component={UserTableFilterSelectionToDetailsPage} />
       <Route exact path={enumPaths.USERS_TABLE_FILTER_EDIT_DELETE} component={UserTableFilterEditDeletePage} />
       <Route exact path={enumPaths.USERS_DETAILS} component={UserDetailsPage} />

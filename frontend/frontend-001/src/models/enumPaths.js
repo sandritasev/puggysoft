@@ -4,12 +4,15 @@ const DASHBOARD = "/dashboard";
 const SYSTEM_PROPERTIES_TABLE = "/system-properties-table";
 const SYSTEM_PROPERTIES_FORM = "/system-properties-form";
 const TENANTS_FORM = "/tenants-form";
+const TENANTS_TABLE_FILTER_SELECTION = "/tenants-table-filter-selection";
+const TENANTS_TABLE_FILTER_BY_USER = "/tenants-table-filter-by-user";
 const IN_PROGRESS_PAGE = "/in-progress-page";
 // USERS SYSTEM
 const USERS_FORM = "/users-form";
 const USERS_TABLE = "/users-table";
 const USERS_TABLE_FILTER = "/users-table-filter";
 const USERS_TABLE_FILTER_BY_ROLE = "/users-table-filter-by-role";
+const USERS_TABLE_FILTER_BY_TENANT = "/users-table-filter-by-tenant";
 const USERS_TABLE_FILTER_SELECTION = "/users-table-filter-selection";
 const USERS_TABLE_FILTER_EDIT_DELETE = "/users-table-filter-edit-delete";
 const USERS_DETAILS = "/user-details";
@@ -92,12 +95,15 @@ const enumPaths = {
   SYSTEM_PROPERTIES_TABLE,
   SYSTEM_PROPERTIES_FORM,
   TENANTS_FORM,
+  TENANTS_TABLE_FILTER_SELECTION,
+  TENANTS_TABLE_FILTER_BY_USER,
   IN_PROGRESS_PAGE,
   // USERS SYSTEM
   USERS_FORM,
   USERS_TABLE,
   USERS_TABLE_FILTER,
   USERS_TABLE_FILTER_BY_ROLE,
+  USERS_TABLE_FILTER_BY_TENANT,
   USERS_TABLE_FILTER_SELECTION,
   USERS_TABLE_FILTER_EDIT_DELETE,
   USERS_DETAILS,

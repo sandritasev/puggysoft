@@ -19,7 +19,7 @@ mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_P
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-08-pets.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-09-contabilidad.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-10-asistencia.sql
-mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-11-planilla-sueldos
+mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-11-planilla-sueldos.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-12-tickets.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-13-escuela-notas.sql
 REM INSERT DATA.

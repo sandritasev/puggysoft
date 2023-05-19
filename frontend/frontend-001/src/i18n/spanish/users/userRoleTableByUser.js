@@ -1,6 +1,6 @@
 const userRoleTableByUser = {
   titleAddUsers: "Añadir roles al usuario:",
-  titleRemoveUsers: "Quitar roles al usuerio:",
+  titleRemoveUsers: "Quitar roles al usuario:",
   addButton: "Añadir",
   removeButton: "Quitar"
 };

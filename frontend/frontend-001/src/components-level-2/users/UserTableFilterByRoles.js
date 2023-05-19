@@ -4,9 +4,9 @@ import CommonTablePagination from "../../components-level-1/CommonTablePaginatio
 import CommonLoading from "../../components-level-1/CommonLoading";
 import { handleFilterRequest, handleAddRequest, handleDeleteRequest } from "../../actions/HandleManager";
 import i18n from "../../i18n/i18n";
-import arrayDataFields from "../../models/users/arrayUserDataFieldsByRole";
-import arrayColumns from "../../models/users/arrayUserColumnsByRole";
-import getColumnsFilterModel from "../../models/users/arrayUserColumnsFilterByRole";
+import arrayDataFields from "../../models/users/arrayUserDataFieldsReduce";
+import arrayColumns from "../../models/users/arrayUserColumnsReduce";
+import getColumnsFilterModel from "../../models/users/arrayUserColumnsFilterReduced";
 import useInput from "./../../hooks/useInput";
 import enumCompareOperators from "./../../models/enumCompareOperators";
 import fixArrayData from "../../tools/users/fixArrayData";
