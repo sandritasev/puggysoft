@@ -34,9 +34,6 @@ function SaleAddStepTwoProductSelection () {
   const tableTitleAddProductsToSale = i18n.saleProductTable.titleSelectionAddSaleForSeller;
   const tableTitleDeleteProductsFromSale = i18n.saleProductTable.titleSelectionDeleteSaleForSeller;
   const generalTitle = i18n.saleProductTable.titleForSeller;
-  const [totalToPay, setTotalToPay] = useState(0);
-  const [clientCash, setClientCash] = useState(0);
-  const [clientCashChange, setClientCashChange] = useState(0);
   const [arrayOfProductsFromSale, setArrayOfProductsFromSale] = useState([]);
   // Message states.
   const [isMessageVisible, setIsMessageVisible] = useState(false);
@@ -61,6 +58,10 @@ function SaleAddStepTwoProductSelection () {
   } else if (saleData && saleData.status && saleData.status === i18n.saleStatus.done) {
     saleData.status = enumSaleStatus.DONE;
   }
+
+  const [totalToPay, setTotalToPay] = useState(saleData?.totalPrice ? saleData.totalPrice : 0);
+  const [clientCash, setClientCash] = useState(saleData?.customerCash ? saleData.customerCash : 0);
+  const [clientCashChange, setClientCashChange] = useState(saleData?.customerCashChange ? saleData.customerCashChange : 0);
 
   const [isRequestInProgress, setIsRequestInProgress] = useState(false);
 
@@ -195,6 +196,9 @@ function SaleAddStepTwoProductSelection () {
     const message = i18n.saleProductTable.buttonSaveNoteQuestion;
     const newSaleData = { ...saleData };
     newSaleData.note = valueNote;
+    newSaleData.totalPrice = totalToPay;
+    newSaleData.customerCash = clientCash;
+    newSaleData.customerCashChange = clientCashChange;
     const username = window.sessionStorage.getItem("username");
     newSaleData.updatedBy = username;
     const result = window.confirm(message);

@@ -20,7 +20,7 @@ const saleProductTable = {
   buttonChangeSaleStatusQuestion: "Esta seguro que quiere cambiar el estado de la venta",
   buttonSaveNoteQuestion: "Esta seguro que quiere guardar nota/comentario",
   buttonGenerateBill: "Generar factura",
-  buttonSaveNote: "Guardar Nota/Comentario",
+  buttonSaveNote: "Guardar venta",
   noteBox: "Nota/Comentario",
   informationClient: "Este campo muestra el 'username', del cliente seleccionado.",
   informationSeller: "Este campo muestra el 'username', del vendedor actual.",
