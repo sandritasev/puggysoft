@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import PropTypes from "prop-types";
 
-import UserTableFilterGenericByRoleReduced from "./../generic/UserTableFilterGenericByRoleReduced";
+import UserTableFilterGenericByRoleAndTenantReduced from "./../generic/UserTableFilterGenericByRoleAndTenantReduced";
 import enumRoles from "./../../models/users/enumRoles";
 import enumSaleStatus from "./../../models/sales/enumSaleStatus";
 import { handleAddRequest, handleGetRequest } from "../../actions/HandleManager";
@@ -64,12 +64,12 @@ function SaleAddStepOneClientSelection ({
   }
 
   return (
-    <UserTableFilterGenericByRoleReduced
+    <UserTableFilterGenericByRoleAndTenantReduced
       roleName={roleName}
       tableTitle={tableTitle}
       tableArrayCustomRowButtons={tableArrayCustomRowButtons}
     >
-    </UserTableFilterGenericByRoleReduced>
+    </UserTableFilterGenericByRoleAndTenantReduced>
   );
 }
 

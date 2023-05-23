@@ -41,7 +41,6 @@ CREATE TABLE roles(
    PRIMARY KEY (id)
 )AUTO_INCREMENT=1000;
 
-
 -- tenant not being used yet
 CREATE TABLE tenants (
    id BIGINT AUTO_INCREMENT,
@@ -61,7 +60,6 @@ CREATE TABLE tenants (
    PRIMARY KEY (id)
 )AUTO_INCREMENT=1000;
 
-
 CREATE TABLE tenants_users (
    id BIGINT AUTO_INCREMENT,
    username VARCHAR(30) NOT NULL,
@@ -78,7 +76,6 @@ CREATE TABLE tenants_users (
    PRIMARY KEY (id)
 )AUTO_INCREMENT=1000;
 
-
 -- Relation users-roles
 CREATE TABLE users_roles(
    id BIGINT AUTO_INCREMENT,
@@ -94,7 +91,23 @@ CREATE TABLE users_roles(
    FOREIGN KEY (tenant) REFERENCES tenants(short_name),
    FOREIGN KEY (id_user) REFERENCES users(id),
    FOREIGN KEY (id_role) REFERENCES roles(id),
-   UNIQUE (id_user, id_role),
+   UNIQUE (id_user, id_role, tenant),
+   PRIMARY KEY (id)
+)AUTO_INCREMENT=1000;
+
+CREATE TABLE tenants_roles(
+   id BIGINT AUTO_INCREMENT,
+   role VARCHAR(30) NOT NULL,
+   tenant VARCHAR(30) NOT NULL,
+   created_by VARCHAR(30),
+   updated_by VARCHAR(30),
+   creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+   update_date DATETIME ON UPDATE CURRENT_TIMESTAMP,
+   FOREIGN KEY (created_by) REFERENCES users(username),
+   FOREIGN KEY (updated_by) REFERENCES users(username),
+   FOREIGN KEY (tenant) REFERENCES tenants(short_name),
+   FOREIGN KEY (role) REFERENCES roles(name),
+   UNIQUE (role, tenant),
    PRIMARY KEY (id)
 )AUTO_INCREMENT=1000;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import UserTableFilterGenericByRoleToDetails from "./../generic/UserTableFilterGenericByRoleToDetails";
+import UserTableFilterGenericByRoleAndTenantToDetails from "./../generic/UserTableFilterGenericByRoleAndTenantToDetails";
 import enumRoles from "./../../models/users/enumRoles";
 import i18n from "../../i18n/i18n";
 
@@ -8,11 +8,11 @@ function SellerUserTableSelectionToDetails () {
   const roleName = enumRoles.SALES_SELLER;
 
   return (
-    <UserTableFilterGenericByRoleToDetails
+    <UserTableFilterGenericByRoleAndTenantToDetails
       roleName={roleName}
       tableTitle={tableTitle}
     >
-    </UserTableFilterGenericByRoleToDetails>
+    </UserTableFilterGenericByRoleAndTenantToDetails>
   );
 }
 

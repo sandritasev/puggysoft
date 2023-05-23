@@ -20,7 +20,7 @@ public interface IRepositoryTenant extends JpaRepository<EntityTenant, Long> {
 
   @Query(value = "SELECT * FROM tenants "
       + "INNER JOIN tenants_users ON tenants_users.tenant=tenants.short_name "
-      + "WHERE tenants_users.username = ?1", nativeQuery = true)
+      + "WHERE tenants_users.username = ?1 AND tenants.status = 'ACTIVE'", nativeQuery = true)
   List<EntityTenant> getTenantsByUsername(String username);
 
   // GET ALL TENANTS THAT ARE PART OF A USER

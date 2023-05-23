@@ -47,12 +47,31 @@ public interface IRepositoryUser extends JpaRepository<EntityUser, Long> {
           + "WHERE users_roles.id_role = ?1 LIMIT ?2, ?3", nativeQuery = true)
   List<EntityUser> findUsersWithRolesPagination(Long idRol, int off, int size);
 
+  // GET ALL USERS THAT ARE PART OF A ROLE
+  @Query(value = "SELECT users.* "
+          + "FROM users "
+          + "INNER JOIN users_roles ON users_roles.id_user=users.id "
+          + "INNER JOIN tenants_users ON tenants_users.username=users.username "
+          + "WHERE users_roles.id_role = ?1 AND "
+          + "tenants_users.tenant = ?4 "
+          + "LIMIT ?2, ?3", nativeQuery = true)
+  List<EntityUser> findUsersWithRoleAndTenant(Long idRol, int off, int size, String tenant);
+
   // GET COUNT USERS THAT ARE PART OF A ROLE
   @Query(value = "SELECT COUNT(*) "
           + "FROM users "
           + "INNER JOIN users_roles ON users_roles.id_user=users.id  "
           + "WHERE users_roles.id_role = ?1", nativeQuery = true)
   Long findSizeWithRoles(Long idRol);
+
+  // GET COUNT USERS THAT ARE PART OF A ROLE AND TENANT
+  @Query(value = "SELECT COUNT(*) "
+          + "FROM users "
+          + "INNER JOIN users_roles ON users_roles.id_user=users.id "
+          + "INNER JOIN tenants_users ON tenants_users.username=users.username "
+          + "WHERE users_roles.id_role = ?1 AND "
+          + "tenants_users.tenant = ?2", nativeQuery = true)
+  Long findSizeWithRoleAndTenant(Long idRol, String tenant);
 
   // GET ALL USERS THAT ARE NOT PART OF A TENANT
   @Query(value = "SELECT users.* "
