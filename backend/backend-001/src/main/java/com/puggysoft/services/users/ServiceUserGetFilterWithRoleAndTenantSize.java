@@ -41,7 +41,7 @@ public class ServiceUserGetFilterWithRoleAndTenantSize {
           + "INNER JOIN users_roles ON users_roles.id_user=users.id "
           + "INNER JOIN tenants_users ON tenants_users.username=users.username "
           + "WHERE users_roles.id_role = " + idRol + " AND "
-          + "tenants_users.tenant = " + tenant + " AND "
+          + "tenants_users.tenant = " + "'" + tenant + "'" + " AND "
           + query;
       Query filterQuery = entityManager.createNativeQuery(fullQuery);
       totalRows = Long.valueOf(filterQuery.getSingleResult().toString());

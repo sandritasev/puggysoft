@@ -16,6 +16,7 @@ function UserFormGenericByRole (props) {
 
   function afterAddUser (userData) {
     handleAddUserRole(userData);
+    handleAddUserTenant(userData);
     handleAddDetails(userData);
   }
 
@@ -44,6 +45,18 @@ function UserFormGenericByRole (props) {
       tenant
     };
     handleAddRequest("users-roles", body, afterAddUserRole, false);
+  };
+
+  const handleAddUserTenant = function (userData) {
+    setIsUserRolesLoading(true);
+    const username = window.sessionStorage.getItem("username");
+    const tenant = window.sessionStorage.getItem("tenant");
+    const body = {
+      username: userData.username,
+      tenant,
+      createdBy: username
+    };
+    handleAddRequest("tenants-users", body, afterAddUserRole, false);
   };
 
   const afterAddUserRole = function (userRoleData) {
