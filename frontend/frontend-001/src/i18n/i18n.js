@@ -51,6 +51,8 @@ import scheduleForm from "./spanish/reservation/scheduleForm";
 import intervalTimeForm from "./spanish/reservation/intervalTimeForm";
 import resourceTable from "./spanish/reservation/resourceTable";
 import intervalTimeTable from "./spanish/reservation/intervalTimeTable";
+// Hospital System
+import alcaldiaRecursosMunicipalesForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesForm";
 
 const i18n = {
   // Common
@@ -105,7 +107,9 @@ const i18n = {
   scheduleForm,
   intervalTimeForm,
   resourceTable,
-  intervalTimeTable
+  intervalTimeTable,
+  // Alcaldia System
+  alcaldiaRecursosMunicipalesForm
 };
 
 export default i18n;
