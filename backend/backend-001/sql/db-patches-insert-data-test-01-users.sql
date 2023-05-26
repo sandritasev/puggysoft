@@ -137,8 +137,8 @@ INSERT INTO roles (name, created_by) VALUES ("SALARY_SHEET_ADMIN", "admin");
 INSERT INTO roles (name, created_by) VALUES ("TICKETS_ADMIN", "admin");
 INSERT INTO roles (name, created_by) VALUES ("SCHOOL_ADMIN", "admin");
 INSERT INTO roles (name, created_by) VALUES ("ADMIN_USERS_BY_TENANT", "admin");
-INSERT INTO roles (name, created_by) VALUES ("COBROS_TRAMITES_ENCARGADO", "admin");
-INSERT INTO roles (name, created_by) VALUES ("COBROS_TRAMITES_CAJERO", "admin");
+INSERT INTO roles (name, created_by) VALUES ("ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO", "admin");
+INSERT INTO roles (name, created_by) VALUES ("ALCALDIA_RECURSOS_MUNICIPALES_CAJERO", "admin");
 
 -- TENANTS
 INSERT INTO tenants (name, short_name, status, description, created_by) VALUES
@@ -171,8 +171,8 @@ INSERT INTO users_roles (id_user, id_role, created_by, tenant) VALUES
 ((select id from users where username='HospitalDoctor'), (select id from roles where name='HOSPITAL_DOCTOR'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='HospitalPatient'), (select id from roles where name='HOSPITAL_PATIENT'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='HospitalTicketsAdmin'), (select id from roles where name='HOSPITAL_TICKETS_ADMIN'), "SysAdmin", "EMPRESA_1"),
-((select id from users where username='RecursosMunicipalesEncargado'), (select id from roles where name='COBROS_TRAMITES_ENCARGADO'), "SysAdmin", "EMPRESA_1"),
-((select id from users where username='RecursosMunicipalesCajero'), (select id from roles where name='COBROS_TRAMITES_CAJERO'), "SysAdmin", "EMPRESA_1"),
+((select id from users where username='RecursosMunicipalesEncargado'), (select id from roles where name='ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO'), "SysAdmin", "EMPRESA_1"),
+((select id from users where username='RecursosMunicipalesCajero'), (select id from roles where name='ALCALDIA_RECURSOS_MUNICIPALES_CAJERO'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='SysEscuelaAdmin'), (select id from roles where name='SCHOOL_ADMIN'), "SysAdmin", "EMPRESA_1");
 
 INSERT INTO users_roles (id_user, id_role, created_by, tenant) VALUES
@@ -195,8 +195,8 @@ INSERT INTO users_roles (id_user, id_role, created_by, tenant) VALUES
 ((select id from users where username='HospitalDoctor'), (select id from roles where name='HOSPITAL_DOCTOR'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='HospitalPatient'), (select id from roles where name='HOSPITAL_PATIENT'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='HospitalTicketsAdmin'), (select id from roles where name='HOSPITAL_TICKETS_ADMIN'), "SysAdmin", "EMPRESA_2"),
-((select id from users where username='RecursosMunicipalesEncargado'), (select id from roles where name='COBROS_TRAMITES_ENCARGADO'), "SysAdmin", "EMPRESA_2"),
-((select id from users where username='RecursosMunicipalesCajero'), (select id from roles where name='COBROS_TRAMITES_CAJERO'), "SysAdmin", "EMPRESA_2"),
+((select id from users where username='RecursosMunicipalesEncargado'), (select id from roles where name='ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO'), "SysAdmin", "EMPRESA_2"),
+((select id from users where username='RecursosMunicipalesCajero'), (select id from roles where name='ALCALDIA_RECURSOS_MUNICIPALES_CAJERO'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='SysEscuelaAdmin'), (select id from roles where name='SCHOOL_ADMIN'), "SysAdmin", "EMPRESA_2");
 
 -- Insert data (User-Roles).
@@ -331,5 +331,5 @@ INSERT INTO tenants_roles (role, tenant, created_by) VALUES
 ('SALARY_SHEET_ADMIN', 'EMPRESA_1', "admin"),
 ('TICKETS_ADMIN', 'EMPRESA_1', "admin"),
 ('ADMIN_USERS_BY_TENANT', 'EMPRESA_1', "admin"),
-('COBROS_TRAMITES_ENCARGADO', 'EMPRESA_1', "admin"),
-('COBROS_TRAMITES_CAJERO', 'EMPRESA_1', "admin");
+('ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO', 'EMPRESA_1', "admin"),
+('ALCALDIA_RECURSOS_MUNICIPALES_CAJERO', 'EMPRESA_1', "admin");

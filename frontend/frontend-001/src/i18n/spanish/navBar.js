@@ -152,7 +152,21 @@ const navBar = {
   // Config
   configAdmin: "Config",
   configSystem: "Parametros del sistema",
-  configLogout: "Cerrar sesion"
+  configLogout: "Cerrar sesion",
+
+  // ******* ******* ALCALDIA SYSTEM ******* *******
+  // Recurso Municipal
+  recursoMunicipalAdmin: "Adm. Recursos Municipales",
+  recursoMunicipalForm: "Registrar Recurso",
+  recursoMunicipalTable: "Mostrar Recursos",
+  // Venta Recursos Municipales
+  recursoMunicipaVentalAdmin: "Adm. Caja Recursos Municipales",
+  recursoMunicipalVentaForm: "Registrar venta",
+  recursoMunicipalVentaTable: "Mostrar ventas",
+  // Reportes de ventas de Recursos Municipales
+  recursoMunicipalReporteAdmin: "Adm. Reportes",
+  recursoMunicipalReporte1: "Reportes por fecha",
+  recursoMunicipalReporte2: "Reportes por rango de fechas"
 };
 
 export default navBar;

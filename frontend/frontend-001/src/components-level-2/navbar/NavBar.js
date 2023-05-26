@@ -11,7 +11,8 @@ import {
   FaTicketAlt,
   FaUserInjured,
   FaUserMd,
-  FaUser
+  FaUser,
+  FaCashRegister
 } from "react-icons/fa";
 import {
   AiOutlineUserAdd,
@@ -412,6 +413,20 @@ function NavBar () {
   const resBookingsFormLabel = (<><GrAddCircle /> {i18n.navBar.resBookingsForm}</>);
   const resBookingsTableLabel = (<><AiOutlineTable /> {i18n.navBar.resBookingsTable}</>);
 
+  // ******* ******* ******* ALCALDIA SYSTEM ******* ******* *******
+  // RECURSO MUNICIPAL
+  const recursoMunicipalAdminLabel = (<><GiGoldBar /> {i18n.navBar.recursoMunicipalAdmin}</>);
+  const recursoMunicipaFormLabel = (<><GrAddCircle /> {i18n.navBar.recursoMunicipalForm}</>);
+  const recursoMunicipaTableLabel = (<><AiOutlineTable /> {i18n.navBar.recursoMunicipalTable}</>);
+  // VENTA RECURSOS MUNICIPALES
+  const recursoMunicipalVentaAdminLabel = (<><FaCashRegister /> {i18n.navBar.recursoMunicipaVentalAdmin}</>);
+  const recursoMunicipaVentaFormLabel = (<><GrAddCircle /> {i18n.navBar.recursoMunicipalVentaForm}</>);
+  const recursoMunicipaVentaTableLabel = (<><AiOutlineTable /> {i18n.navBar.recursoMunicipalVentaTable}</>);
+  // VENTA RECURSOS MUNICIPALES
+  const recursoMunicipalReporteAdminLabel = (<><BsFillBarChartFill /> {i18n.navBar.recursoMunicipalReporteAdmin}</>);
+  const recursoMunicipaReporteOneLabel = (<><FaChartLine /> {i18n.navBar.recursoMunicipalReporte1}</>);
+  const recursoMunicipaReporteTwoLabel = (<><FaChartLine /> {i18n.navBar.recursoMunicipalReporte2}</>);
+
   // ******* ******* ******* ALL SYSTEMS ******* ******* *******
   // CONFIG
   const configAdminLabel = (<><CgOptions /> {i18n.navBar.configAdmin}</>);
@@ -596,6 +611,25 @@ function NavBar () {
             <NavDropdown title={resBookingsAdminLabel}>
               <NavDropdown.Item onClick={navigateGeneric}>{resBookingsFormLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateGeneric}>{resBookingsTableLabel}</NavDropdown.Item>
+            </NavDropdown>}
+
+          {/* ******* ******* ******* ALCALDIA SYSTEM ******* ******* ********/}
+          {userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) &&
+            <NavDropdown title={recursoMunicipalAdminLabel}>
+              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaTableLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {(userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) ||
+            userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_CAJERO)
+          ) &&
+            <NavDropdown title={recursoMunicipalVentaAdminLabel}>
+              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaVentaFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaVentaTableLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) &&
+            <NavDropdown title={recursoMunicipalReporteAdminLabel}>
+              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaReporteOneLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaReporteTwoLabel}</NavDropdown.Item>
             </NavDropdown>}
         </Nav>
         {/* ******* ******* ******* ALL SYSTEM ******* ******* ********/}

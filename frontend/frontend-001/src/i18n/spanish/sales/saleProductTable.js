@@ -18,7 +18,7 @@ const saleProductTable = {
   buttonChangeSaleStateToolTip: "Estado actual",
   buttonChangeSaleStateToolTipNext: "Estado proximo",
   buttonChangeSaleStatusQuestion: "Esta seguro que quiere cambiar el estado de la venta",
-  buttonSaveNoteQuestion: "Esta seguro que quiere guardar nota/comentario",
+  buttonSaveNoteQuestion: "Esta seguro que quiere guardar la venta",
   buttonGenerateBill: "Generar factura",
   buttonSaveNote: "Guardar venta",
   noteBox: "Nota/Comentario",
