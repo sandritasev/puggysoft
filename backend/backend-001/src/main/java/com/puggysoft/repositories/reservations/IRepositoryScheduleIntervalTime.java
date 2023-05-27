@@ -9,10 +9,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IRepositoryScheduleIntervalTime extends JpaRepository<EntityResScheduleIntervalTime, Long> {
 
-  @Query(value = "SELECT COUNT(*) FROM res_resource;", nativeQuery = true)
+  @Query(value = "SELECT COUNT(*) FROM res_resources;", nativeQuery = true)
   Long findSize();
 
-  @Query(value = "SELECT * FROM res_resource LIMIT ?1, ?2", nativeQuery = true)
+  @Query(value = "SELECT * FROM res_resources LIMIT ?1, ?2", nativeQuery = true)
   List<EntityResScheduleIntervalTime> findScheduleIntervalTimeByPagination(int off, int size);
 
 }

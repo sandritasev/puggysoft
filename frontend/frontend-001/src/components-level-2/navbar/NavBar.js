@@ -226,6 +226,14 @@ function NavBar () {
     history.push(enumPaths.RESERVATION_INTERVAL_TIME_FORM);
   };
 
+  // ******* ******* ******* ALCALDIA SYSTEM ******* ******* *******
+  const navigateAlcaldiaRecursosMunicipalesForm = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_FORM);
+  };
+  const navigateAlcaldiaRecursosMunicipalesTable = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TABLE);
+  };
+
   const NavbarBackground = "dark"; // dark, light, primary
   const NavbarVariant = "dark puggysoft-navbar"; // dark, light
 
@@ -616,8 +624,8 @@ function NavBar () {
           {/* ******* ******* ******* ALCALDIA SYSTEM ******* ******* ********/}
           {userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) &&
             <NavDropdown title={recursoMunicipalAdminLabel}>
-              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaFormLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaTableLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesForm}>{recursoMunicipaFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesTable}>{recursoMunicipaTableLabel}</NavDropdown.Item>
             </NavDropdown>}
           {(userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) ||
             userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_CAJERO)

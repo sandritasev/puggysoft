@@ -86,6 +86,9 @@ import ScheduleFormPage from "./components-level-3/reservation/ScheduleFormPage"
 import IntervalTimeFormPage from "./components-level-3/reservation/IntervalTimeFormPage";
 import TenantTableFilterPage from "./components-level-3/system/TenantTableFilterPage";
 
+// Alcaldia System
+import AlcaldiaRecursosMunicipalesFormPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesFormPage";
+
 const AppRoutes = () => (
   <App>
     <Switch>
@@ -169,6 +172,8 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.RESERVATION_SCHEDULE_FORM} component={ScheduleFormPage } />
       <Route exact path={enumPaths.RESERVATION_INTERVAL_TIME_FORM} component={IntervalTimeFormPage } />
       <Route exact path={enumPaths.LOGIN} component={LoginPage} />
+      {/** Alcaldia System */}
+      <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_FORM} component={AlcaldiaRecursosMunicipalesFormPage} />
       <Route exact path="/" component={LoginPage} />
       <Route component={LoginPage} />
     </Switch>
