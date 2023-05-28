@@ -109,7 +109,6 @@ INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codig
 INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("13352", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='MARCELO_ESTRADA'), "0", "2", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-26");
 INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("15111", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='LUIS_VERA'), "25", "1", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-24");
 INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("15131", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='ROBERTO_BLADES'), "2", "3", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-25");
-INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("12110", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='PEDRO_MONTOYA'), "0", "3", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-26");
 INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("12210", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='ALFONSO_VILLAVICENCIO'), "0", "1", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-24");
 INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("12240", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='EDDY_RIVERO'), "15", "2", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-25");
 INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("12250", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='REYNALDO_SEGALES'), "0", "1", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-26");
@@ -139,7 +138,79 @@ INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codig
 INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("12250", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='ALEXANDER_CARVAJAL'), "0", "1", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-24");
 INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("12260", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='ALEJANDRO_ABONDANO'), "0", "2", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-25");
 INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("13340", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='ADRIANA_SANCHEZ'), "0", "3", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-26");
-INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("13351", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='ValentinaLaverde '), "0", "1", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-24");
-INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("13352", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='PabloSanchez'), "0", "2", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-25");
-INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("15111", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='DanielCruz'), "25", "1", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-26");
-INSERT INTO alcaldia_recursos_municipales_venta_detalle (recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date) VALUES ("15131", (select id from alcaldia_recursos_municipales_venta where cliente_nombre='MateoRodriguez'), "2", "3", "EMPRESA_1", "RecursosMunicipalesEncargado", "2023-05-24");
+
+
+DROP PROCEDURE IF EXISTS recursosMunicipalesAgregarVenta;
+DELIMITER $$
+CREATE PROCEDURE recursosMunicipalesAgregarVenta()
+  BEGIN
+    DECLARE totalRows INT DEFAULT 0;
+    DECLARE indexRecursosMunicipales INT DEFAULT 0;
+    SELECT COUNT(*) FROM alcaldia_recursos_municipales INTO totalRows;
+    SET indexRecursosMunicipales=0;
+    WHILE indexRecursosMunicipales < totalRows DO
+      INSERT INTO alcaldia_recursos_municipales_venta (cliente_nombre, cliente_ci_nit, direccion, nota, venta_status, venta_precio_total, cliente_dinero, cliente_cambio, tenant, created_by, creation_date)
+      VALUES (
+        "Cliente anonimo",
+        "78877554",
+        "Colcapirhua",
+        "",
+        "ACTIVO",
+        FLOOR(RAND()*1000+1),
+        FLOOR(RAND()*1000+1),
+        FLOOR(RAND()*100+1),
+        "EMPRESA_1",
+        "RecursosMunicipalesEncargado",
+        DATE_ADD('2023-05-25', INTERVAL indexRecursosMunicipales DAY));
+      SET indexRecursosMunicipales = indexRecursosMunicipales + 1;
+    END WHILE;
+END; $$
+DELIMITER ;
+CALL recursosMunicipalesAgregarVenta();
+DROP PROCEDURE recursosMunicipalesAgregarVenta;
+
+DROP PROCEDURE IF EXISTS recursosMunicipalesAgregarDetalleVenta;
+DELIMITER $$
+CREATE PROCEDURE recursosMunicipalesAgregarDetalleVenta()
+  BEGIN
+    DECLARE totalRowsRecursosMunicipales INT DEFAULT 0;
+    DECLARE totalRowsVentas INT DEFAULT 0;
+    DECLARE indexProductos INT DEFAULT 0;
+    DECLARE indexVentas INT DEFAULT 0;
+    SELECT COUNT(*) FROM alcaldia_recursos_municipales INTO totalRowsRecursosMunicipales;
+    SELECT COUNT(*) FROM alcaldia_recursos_municipales_venta INTO totalRowsVentas;
+    SET indexProductos=0;
+    WHILE indexProductos < totalRowsRecursosMunicipales DO
+      SET indexVentas=0;
+      WHILE indexVentas <  totalRowsVentas DO
+        INSERT INTO alcaldia_recursos_municipales_venta_detalle(recurso_municipal_codigo, id_venta, precio_unidad, cantidad, tenant, created_by, creation_date)
+        VALUES
+            ((SELECT codigo FROM alcaldia_recursos_municipales LIMIT indexProductos, 1),
+            (SELECT id FROM alcaldia_recursos_municipales_venta LIMIT indexVentas, 1),
+            FLOOR(RAND()*10+1), -- Random de 1 a 10 cantidad.
+            FLOOR(RAND()*100+1), -- Random de 1 a 100 precio unidad.
+            "EMPRESA_1",
+            "RecursosMunicipalesEncargado",
+            DATE_ADD('2023-05-25', INTERVAL indexVentas DAY)),
+            ((SELECT codigo FROM alcaldia_recursos_municipales LIMIT indexProductos, 1),
+            (SELECT id FROM alcaldia_recursos_municipales_venta LIMIT indexVentas, 1),
+            FLOOR(RAND()*10+1), -- Random de 1 a 10 cantidad.
+            FLOOR(RAND()*100+1), -- Random de 1 a 100 precio unidad.
+            "EMPRESA_1",
+            "RecursosMunicipalesEncargado",
+            DATE_ADD('2023-05-25', INTERVAL indexProductos DAY)),
+            ((SELECT codigo FROM alcaldia_recursos_municipales LIMIT indexProductos, 1),
+            (SELECT id FROM alcaldia_recursos_municipales_venta LIMIT indexVentas, 1),
+            FLOOR(RAND()*10+1), -- Random de 1 a 10 cantidad.
+            FLOOR(RAND()*100+1), -- Random de 1 a 100 precio unidad.
+            "EMPRESA_1",
+            "RecursosMunicipalesEncargado",
+            '2023-05-25');
+        SET indexVentas = indexVentas + 1;
+      END WHILE;
+      SET indexProductos = indexProductos + 1;
+    END WHILE;
+END; $$
+DELIMITER ;
+CALL recursosMunicipalesAgregarDetalleVenta();
+DROP PROCEDURE recursosMunicipalesAgregarDetalleVenta;

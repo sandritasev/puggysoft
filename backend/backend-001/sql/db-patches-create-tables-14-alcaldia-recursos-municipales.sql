@@ -38,10 +38,10 @@ CREATE TABLE alcaldia_recursos_municipales_venta(
 
 CREATE TABLE alcaldia_recursos_municipales_venta_detalle(
    id BIGINT AUTO_INCREMENT,
-   recurso_municipal_codigo VARCHAR(30) NOT NULL, 
-   id_venta BIGINT,   
+   recurso_municipal_codigo VARCHAR(30) NOT NULL,
+   id_venta BIGINT NOT NULL,
    precio_unidad FLOAT(11,2),
-   cantidad INT,
+   cantidad INT NOT NULL,
    tenant VARCHAR(30) NOT NULL,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
    update_date DATETIME ON UPDATE CURRENT_TIMESTAMP,
