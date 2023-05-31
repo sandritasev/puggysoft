@@ -64,6 +64,9 @@ function NavBar () {
   const navigateTenantsForm = () => {
     history.push(enumPaths.TENANTS_FORM);
   };
+  const navigateTenantsTableFilterEditDelete = () => {
+    history.push(enumPaths.TENANTS_TABLE_FILTER_EDIT_DELETE);
+  };
   const navigateTenantTableSelection = () => {
     history.push({
       pathname: enumPaths.TENANTS_TABLE_FILTER_SELECTION,
@@ -242,6 +245,7 @@ function NavBar () {
   const systemPropertiesTableLabel = (<><AiOutlineTable /> {i18n.navBar.systemPropertiesTable}</>);
   const tenantAdminLabel = (<><BsBuildingFillGear /> {i18n.navBar.tenantAdmin}</>);
   const tenantRegistrationLabel = (<><BsBuildingFillAdd /> {i18n.navBar.tenantRegistration}</>);
+  const tenantShowTableFilterEditDeleteLabel = (<><AiOutlineTable /> {i18n.navBar.tenantShowTableFilterEditDelete}</>);
   const tenantUserAdminLabel = (<><FaUsersCog /> {i18n.navBar.tenantUserAdmin}</>);
   const tenantUserCrudByTenantLabel = (<><AiOutlineTable /> {i18n.navBar.tenantUserCrudByTenant}</>);
   const tenantUserCrudByUserLabel = (<><AiOutlineTable /> {i18n.navBar.tenantUserCrudByUser}</>);
@@ -452,6 +456,7 @@ function NavBar () {
           {userRoles.includes(enumRoles.ADMIN) &&
             <NavDropdown title={tenantAdminLabel}>
               <NavDropdown.Item onClick={navigateTenantsForm} >{tenantRegistrationLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateTenantsTableFilterEditDelete} >{tenantShowTableFilterEditDeleteLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.ADMIN) &&
             <NavDropdown title={tenantUserAdminLabel}>

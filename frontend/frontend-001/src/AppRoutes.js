@@ -84,6 +84,7 @@ import PatientUserTableToDetailsPage from "./components-level-3/hospital/Patient
 import ResourceFormPage from "./components-level-3/reservation/ResourceFormPage";
 import ScheduleFormPage from "./components-level-3/reservation/ScheduleFormPage";
 import IntervalTimeFormPage from "./components-level-3/reservation/IntervalTimeFormPage";
+import TenantTableFilterEditDeletePage from "./components-level-3/system/TenantTableFilterEditDeletePage";
 import TenantTableFilterPage from "./components-level-3/system/TenantTableFilterPage";
 
 // Alcaldia System
@@ -100,6 +101,7 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.TENANTS_FORM} component={TenantFormPage} />
       <Route exact path={enumPaths.TENANTS_TABLE_FILTER_SELECTION} component={TenantTableFilterPage} />
       <Route exact path={enumPaths.TENANTS_TABLE_FILTER_BY_USER} component={TenantTableFilterByUserPage} />
+      <Route exact path={enumPaths.TENANTS_TABLE_FILTER_EDIT_DELETE} component={TenantTableFilterEditDeletePage} />
       {/** Users System */}
       <Route exact path={enumPaths.USERS_FORM} component={UsersFormPage} />
       <Route exact path={enumPaths.USERS_TABLE} component={UserTableBasicPage} />
