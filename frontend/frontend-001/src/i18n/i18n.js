@@ -8,6 +8,7 @@ import commonReport from "./spanish/commonReport";
 import commonMonths from "./spanish/commonMonths";
 import systemPropertiesTable from "./spanish/system/systemPropertiesTable";
 import systemPropertiesForm from "./spanish/system/systemPropertiesForm";
+import tenantForm from "./spanish/system/tenantForm";
 import tenantTable from "./spanish/system/tenantTable";
 import tenantUserTableByTenant from "./spanish/system/tenantUserTableByTenant";
 import tenantUserTableByUser from "./spanish/system/tenantUserTableByUser";
@@ -65,6 +66,7 @@ const i18n = {
   commonMonths,
   systemPropertiesTable,
   systemPropertiesForm,
+  tenantForm,
   tenantTable,
   tenantUserTableByTenant,
   tenantUserTableByUser,

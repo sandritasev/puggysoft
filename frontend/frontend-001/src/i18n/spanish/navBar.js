@@ -4,6 +4,7 @@ const navBar = {
   systemPropertiesTable: "Mostrar Propiedades del Sistema",
   tenantAdmin: "Adm. Tenants",
   tenantRegistration: "Registrar Tenants",
+  tenantShowTableFilterEditDelete: "Mostrar Tenants (Tabla, Editar, Eliminar)",
   tenantUserAdmin: "Adm. Tenants - Usuarios",
   tenantUserCrudByTenant: "Adm. Tenants de usuario por Tenant",
   tenantUserCrudByUser: "Adm. Tenants de usuario por Usuario",

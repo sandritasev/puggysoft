@@ -5,6 +5,7 @@ const SYSTEM_PROPERTIES_TABLE = "/system-properties-table";
 const SYSTEM_PROPERTIES_FORM = "/system-properties-form";
 const TENANTS_FORM = "/tenants-form";
 const TENANTS_TABLE_FILTER_SELECTION = "/tenants-table-filter-selection";
+const TENANTS_TABLE_FILTER_EDIT_DELETE = "/tenants-table-filter-edit-delete";
 const TENANTS_TABLE_FILTER_BY_USER = "/tenants-table-filter-by-user";
 const IN_PROGRESS_PAGE = "/in-progress-page";
 // USERS SYSTEM
@@ -100,6 +101,7 @@ const enumPaths = {
   SYSTEM_PROPERTIES_FORM,
   TENANTS_FORM,
   TENANTS_TABLE_FILTER_SELECTION,
+  TENANTS_TABLE_FILTER_EDIT_DELETE,
   TENANTS_TABLE_FILTER_BY_USER,
   IN_PROGRESS_PAGE,
   // USERS SYSTEM

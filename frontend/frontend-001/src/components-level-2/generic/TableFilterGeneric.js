@@ -57,7 +57,7 @@ function TablePaginationFilterGeneric (props) {
   }
 
   return (
-    <div className='puggysoft-center-reduced-table'>
+    <div>
       <CommonTablePagination
         tableTitle={tableTitle}
         tableSubTitle={tableSubTitle}

@@ -1,0 +1,20 @@
+/* Only applies for resolutions greater than 1600px */
+@media (min-width:800px) {
+  .puggysoft-tenant-form {
+    margin: auto;
+    max-width: 650px;
+    padding-top: 1rem;
+  }
+
+}
+
+.puggysoft-tenant-form .card .card-body form div .alert{
+  padding: 0px;
+  margin-top: 1px;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.tenant-image {
+  width: 25%;
+}

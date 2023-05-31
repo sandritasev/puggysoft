@@ -1,7 +1,7 @@
 const tenantStatusText = {
   all: "TODOS",
-  active: "ACTIVE",
-  inactive: "INACTIVE"
+  active: "ACTIVO",
+  inactive: "INACTIVO"
 };
 
 export default tenantStatusText;

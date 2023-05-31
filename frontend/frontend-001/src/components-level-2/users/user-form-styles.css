@@ -1,8 +1,9 @@
 /* Only applies for resolutions greater than 1600px */
-@media (min-width:1600px) {
+@media (min-width:800px) {
   .puggysoft-user-form {
     margin: auto;
     width: 40%;
+    min-width: 920px;
     padding-top: 1rem;
   }
 
