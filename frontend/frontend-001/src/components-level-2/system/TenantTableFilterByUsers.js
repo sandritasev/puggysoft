@@ -5,7 +5,6 @@ import { handleFilterRequest, handleAddRequest, handleDeleteRequest } from "../.
 import TenantTableSuperReducedGeneric from "./TenantTableSuperReducedGeneric";
 import i18n from "../../i18n/i18n";
 import CommonLoading from "../../components-level-1/CommonLoading";
-// import CommonMessage from "./../../components-level-1/CommonMessage";
 import arrayColumns from "../../models/system/arrayTenantColumnsReduce";
 
 import "./../css/all-two-divs-side-by-side.css";
@@ -22,8 +21,6 @@ function TenantTableFilterByUsers () {
   const userSelected = routerProps.data;
   const tableTitleAddUsersToTenant = `${i18n.tenantUserTableByUser.titleAddUsers} ${userSelected.username}`;
   const tableTitleDeleteUsersFromTenant = `${i18n.tenantUserTableByUser.titleRemoveUsers} ${userSelected.username}`;
-  // Message states.
-
   const [isRequestInProgress, setIsRequestInProgress] = useState(false);
 
   // functions to add users to a tenant.
@@ -33,9 +30,6 @@ function TenantTableFilterByUsers () {
   function handleGetSizeTenantsWithUser (filterBody, setTotalPages) {
     handleFilterRequest(`tenants/filter/with-users/size?&pageSize=${pageSize}&username=${userSelected.username}`, filterBody, setTotalPages);
   }
-
-  /* - dataElement.onChange
-  - dataElement.value */
 
   // functions to delete users from a tenant.
   function handleGetDataTenantsWithOutUser (activePage, filterBody, updateArrayData) {

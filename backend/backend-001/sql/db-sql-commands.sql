@@ -195,28 +195,43 @@ WHERE DATE(sales_products.creation_date) = '2021-01-01'
 
 -- ******* ALCALDIA REPORTES *******
 -- INGRESOS TOTALES POR DIA. (GRAN TOTAL)
-SELECT SUM(precio_unidad * cantidad)  FROM alcaldia_recursos_municipales_venta_detalle
+SELECT SUM(alcaldia_recursos_municipales_venta_detalle.precio_unidad * alcaldia_recursos_municipales_venta_detalle.cantidad)  FROM alcaldia_recursos_municipales_venta_detalle
 INNER JOIN alcaldia_recursos_municipales_venta ON alcaldia_recursos_municipales_venta.id=alcaldia_recursos_municipales_venta_detalle.id_venta
-WHERE YEAR(alcaldia_recursos_municipales_venta_detalle.creation_date) = 2023
-AND MONTH(alcaldia_recursos_municipales_venta_detalle.creation_date) = 05
-AND DAY(alcaldia_recursos_municipales_venta_detalle.creation_date) = 25;
+AND alcaldia_recursos_municipales_venta.venta_status = 'ACTIVO'
+WHERE alcaldia_recursos_municipales_venta_detalle.tenant = 'EMPRESA_1'
+AND DATE(alcaldia_recursos_municipales_venta_detalle.creation_date) = '2023-05-25'
 
 -- INGRESOS TOTALES POR DIA POR PRODUCTO.
-SELECT SUM(precio_unidad * cantidad)  FROM alcaldia_recursos_municipales_venta_detalle
+SELECT SUM(alcaldia_recursos_municipales_venta_detalle.precio_unidad * alcaldia_recursos_municipales_venta_detalle.cantidad)  FROM alcaldia_recursos_municipales_venta_detalle
 INNER JOIN alcaldia_recursos_municipales_venta ON alcaldia_recursos_municipales_venta.id=alcaldia_recursos_municipales_venta_detalle.id_venta
 WHERE alcaldia_recursos_municipales_venta_detalle.recurso_municipal_codigo = '15110'
-AND YEAR(alcaldia_recursos_municipales_venta_detalle.creation_date) = 2023
-AND MONTH(alcaldia_recursos_municipales_venta_detalle.creation_date) = 05
-AND DAY(alcaldia_recursos_municipales_venta_detalle.creation_date) = 25;
+AND alcaldia_recursos_municipales_venta.venta_status = 'ACTIVO'
+AND alcaldia_recursos_municipales_venta_detalle.tenant = 'EMPRESA_1'
+AND DATE(alcaldia_recursos_municipales_venta_detalle.creation_date) = '2023-05-25'
 
 -- INGRESOS TOTALES POR DIA MOSTRANDO NUMERO DE VENTA Y EL INGRESO DE ESA VENTA.
 SELECT
-alcaldia_recursos_municipales_venta.id as numero_de_venta,
-SUM(precio_unidad * cantidad) as ingreso_de_venta
+alcaldia_recursos_municipales_venta.id as numero_venta,
+SUM(alcaldia_recursos_municipales_venta_detalle.precio_unidad * alcaldia_recursos_municipales_venta_detalle.cantidad) as ingreso_venta
 FROM alcaldia_recursos_municipales_venta_detalle
 INNER JOIN alcaldia_recursos_municipales_venta ON alcaldia_recursos_municipales_venta.id=alcaldia_recursos_municipales_venta_detalle.id_venta
 WHERE alcaldia_recursos_municipales_venta_detalle.recurso_municipal_codigo = '13330'
+AND alcaldia_recursos_municipales_venta.venta_status = 'ACTIVO'
+AND alcaldia_recursos_municipales_venta_detalle.tenant = 'EMPRESA_1'
 AND YEAR(alcaldia_recursos_municipales_venta_detalle.creation_date) = 2023
 AND MONTH(alcaldia_recursos_municipales_venta_detalle.creation_date) = 05
 AND DAY(alcaldia_recursos_municipales_venta_detalle.creation_date) = 25
+GROUP BY alcaldia_recursos_municipales_venta.id;
+
+
+-- INGRESOS TOTALES POR DIA MOSTRANDO NUMERO DE VENTA Y EL INGRESO DE ESA VENTA.
+SELECT
+alcaldia_recursos_municipales_venta.id as numero_venta,
+SUM(alcaldia_recursos_municipales_venta_detalle.precio_unidad * alcaldia_recursos_municipales_venta_detalle.cantidad) as ingreso_venta
+FROM alcaldia_recursos_municipales_venta_detalle
+INNER JOIN alcaldia_recursos_municipales_venta ON alcaldia_recursos_municipales_venta.id=alcaldia_recursos_municipales_venta_detalle.id_venta
+WHERE alcaldia_recursos_municipales_venta_detalle.recurso_municipal_codigo = '13330'
+AND alcaldia_recursos_municipales_venta.venta_status = 'ACTIVO'
+AND alcaldia_recursos_municipales_venta_detalle.tenant = 'EMPRESA_1'
+AND DATE(alcaldia_recursos_municipales_venta_detalle.creation_date) = '2023-05-25'
 GROUP BY alcaldia_recursos_municipales_venta.id;
