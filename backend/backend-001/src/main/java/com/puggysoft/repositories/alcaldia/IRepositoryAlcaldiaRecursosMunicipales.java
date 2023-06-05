@@ -15,4 +15,27 @@ public interface IRepositoryAlcaldiaRecursosMunicipales extends JpaRepository<En
   @Query(value = "SELECT * FROM alcaldia_recursos_municipales LIMIT ?1, ?2", nativeQuery = true)
   List<EntityAlcaldiaRecursosMunicipales> findAlcaldiaRecursosMunicipalesByPagination(int off, int size);
 
+  @Query(value = "SELECT "
+      + "alcaldia_recursos_municipales_venta_detalle.id, "
+      + "alcaldia_recursos_municipales.codigo, "
+      + "alcaldia_recursos_municipales_venta_detalle.cantidad, "
+      + "alcaldia_recursos_municipales.name, "
+      + "alcaldia_recursos_municipales.precio, "
+      + "alcaldia_recursos_municipales_venta_detalle.tenant, "
+      + "alcaldia_recursos_municipales_venta_detalle.created_by, "
+      + "alcaldia_recursos_municipales_venta_detalle.creation_date, "
+      + "alcaldia_recursos_municipales_venta_detalle.updated_by, "
+      + "alcaldia_recursos_municipales_venta_detalle.update_date "
+      + "FROM alcaldia_recursos_municipales "
+      + "INNER JOIN alcaldia_recursos_municipales_venta_detalle ON alcaldia_recursos_municipales.codigo=alcaldia_recursos_municipales_venta_detalle.recurso_municipal_codigo "
+      + "INNER JOIN alcaldia_recursos_municipales_venta ON alcaldia_recursos_municipales_venta.id=alcaldia_recursos_municipales_venta_detalle.id_venta "
+      + "WHERE alcaldia_recursos_municipales_venta.id = ?3 LIMIT ?1, ?2", nativeQuery = true)
+  List<EntityAlcaldiaRecursosMunicipales> findAlcaldiaRecursosMunicipalesBelongToventasByPagination(int off, int size,
+      Long ventasId);
+
+  @Query(value = "SELECT COUNT(*) FROM alcaldia_recursos_municipales "
+      + "INNER JOIN alcaldia_recursos_municipales_venta_detalle ON alcaldia_recursos_municipales.codigo=alcaldia_recursos_municipales_venta_detalle.recurso_municipal_codigo "
+      + "INNER JOIN alcaldia_recursos_municipales_venta ON alcaldia_recursos_municipales_venta.id=alcaldia_recursos_municipales_venta_detalle.id_venta "
+      + "WHERE alcaldia_recursos_municipales_venta.id = ?1", nativeQuery = true)
+  Long findSizeAlcaldiaRecursosMunicipalesBelongToventas(Long ventasId);
 }

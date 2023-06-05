@@ -14,7 +14,7 @@ public class ControllerAlcaldiaRecursosMunicipalesVentaGetById {
   @Autowired
   private ServiceAlcaldiaRecursosMunicipalesVentaGetById serviceAlcaldiaRecursosMunicipalesVentaGetById;
 
-  @GetMapping(path = "/api/v1/alcaldia-recursos-municipales-venta/{id}")
+  @GetMapping(path = "/api/v1/alcaldia-recursos-municipales-ventas/{id}")
   public ResponseEntity<DtoAlcaldiaRecursosMunicipalesVenta> getById(@PathVariable Long id) {
     return serviceAlcaldiaRecursosMunicipalesVentaGetById.getById(id);
   }

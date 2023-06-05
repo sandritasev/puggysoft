@@ -9,7 +9,6 @@ const classNameFormTextNew = {
 
 const handleValidation = (data, setClassNameFormText) => {
   let isValid = true;
-  console.log(data);
   if (!(data.codigo.length >= 3 && data.codigo.length <= 30)) {
     isValid = false;
     classNameFormTextNew.codigo = classNameRed;

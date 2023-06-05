@@ -17,6 +17,8 @@ public class DtoAlcaldiaRecursosMunicipales extends DtoSuperClass {
   @Size(min = 3, max = 30)
   private String codigo;
   @NotNull
+  private String cantidad;
+  @NotNull
   private String name;
   @NotNull
   private String precio;
@@ -29,6 +31,7 @@ public class DtoAlcaldiaRecursosMunicipales extends DtoSuperClass {
     EntityAlcaldiaRecursosMunicipales entity = new EntityAlcaldiaRecursosMunicipales();
     entity.setId(id);
     entity.setCodigo(codigo);
+    entity.setCantidad(cantidad);
     entity.setName(name);
     entity.setPrecio(precio);
     entity.setTenant(tenant);
@@ -43,6 +46,7 @@ public class DtoAlcaldiaRecursosMunicipales extends DtoSuperClass {
     DtoAlcaldiaRecursosMunicipales dto = new DtoAlcaldiaRecursosMunicipales();
     dto.setId(entity.getId());
     dto.setCodigo(entity.getCodigo());
+    dto.setCantidad(entity.getCantidad());
     dto.setName(entity.getName());
     dto.setPrecio(entity.getPrecio());
     dto.setTenant(entity.getTenant());

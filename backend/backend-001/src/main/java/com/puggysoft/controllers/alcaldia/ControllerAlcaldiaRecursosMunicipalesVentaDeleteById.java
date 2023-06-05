@@ -13,7 +13,7 @@ public class ControllerAlcaldiaRecursosMunicipalesVentaDeleteById {
   @Autowired
   private ServiceAlcaldiaRecursosMunicipalesVentaDeleteById serviceAlcaldiaRecursosMunicipalesVentaDeleteById;
 
-  @DeleteMapping(path = "/api/v1/alcaldia-recursos-municipales-venta/{id}")
+  @DeleteMapping(path = "/api/v1/alcaldia-recursos-municipales-ventas/{id}")
   public ResponseEntity<String> deleteById(@PathVariable Long id) {
     return serviceAlcaldiaRecursosMunicipalesVentaDeleteById.deleteById(id);
   }

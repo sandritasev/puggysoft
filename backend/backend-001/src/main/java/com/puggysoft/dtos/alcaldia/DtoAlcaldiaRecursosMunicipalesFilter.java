@@ -16,6 +16,9 @@ public class DtoAlcaldiaRecursosMunicipalesFilter {
   // CODIGO
   public String codigoCriteria;
   public EnumCompareOperator codigoOperator;
+  // CANTIDAD
+  public String cantidadCriteria;
+  public EnumCompareOperator cantidadOperator;
   // NAME
   public String nameCriteria;
   public EnumCompareOperator nameOperator;
@@ -26,11 +29,11 @@ public class DtoAlcaldiaRecursosMunicipalesFilter {
   public String tenantCriteria;
   public EnumCompareOperator tenantOperator;
   // CREATED BY
-  @Size(max = 20)
+  @Size(max = 30)
   public String createdByCriteria;
   public EnumCompareOperator createdByOperator;
   // UPDATED BY
-  @Size(max = 20)
+  @Size(max = 30)
   public String updatedByCriteria;
   public EnumCompareOperator updatedByOperator;
   // CREATION DATE

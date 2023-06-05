@@ -52,8 +52,14 @@ import scheduleForm from "./spanish/reservation/scheduleForm";
 import intervalTimeForm from "./spanish/reservation/intervalTimeForm";
 import resourceTable from "./spanish/reservation/resourceTable";
 import intervalTimeTable from "./spanish/reservation/intervalTimeTable";
-// Hospital System
+// Alcaldia System
+import alcaldiaVentaStatusText from "./spanish/alcaldia/alcaldiaVentaStatusText";
 import alcaldiaRecursosMunicipalesForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesForm";
+import alcaldiaRecursosMunicipalesTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTable";
+import alcaldiaRecursosMunicipalesVentasForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesVentasForm";
+import alcaldiaRecursosMunicipalesVentasTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesVentasTable";
+import alcaldiaRecursosMunicipalesTableAdd from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTableAdd";
+import alcaldiaRecursosMunicipalesTableDelete from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTableDelete";
 
 const i18n = {
   // Common
@@ -111,7 +117,13 @@ const i18n = {
   resourceTable,
   intervalTimeTable,
   // Alcaldia System
-  alcaldiaRecursosMunicipalesForm
+  alcaldiaRecursosMunicipalesForm,
+  alcaldiaVentaStatusText,
+  alcaldiaRecursosMunicipalesTable,
+  alcaldiaRecursosMunicipalesTableAdd,
+  alcaldiaRecursosMunicipalesTableDelete,
+  alcaldiaRecursosMunicipalesVentasForm,
+  alcaldiaRecursosMunicipalesVentasTable
 };
 
 export default i18n;

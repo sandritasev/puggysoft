@@ -16,7 +16,7 @@ public class ControllerAlcaldiaRecursosMunicipalesVentaPut {
   @Autowired
   private ServiceAlcaldiaRecursosMunicipalesVentaEditById serviceAlcaldiaRecursosMunicipalesVentaEditById;
 
-  @PutMapping(path = "/api/v1/alcaldia-recursos-municipales-venta/{id}")
+  @PutMapping(path = "/api/v1/alcaldia-recursos-municipales-ventas/{id}")
   public ResponseEntity<String> put(@PathVariable Long id,
       @RequestBody @Valid DtoAlcaldiaRecursosMunicipalesVenta dtoAlcaldiaRecursosMunicipalesVenta) {
     return serviceAlcaldiaRecursosMunicipalesVentaEditById.editById(id, dtoAlcaldiaRecursosMunicipalesVenta);

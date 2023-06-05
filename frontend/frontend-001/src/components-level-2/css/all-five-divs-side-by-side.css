@@ -5,4 +5,8 @@
     float: left;
     margin-left: 1rem;
   }
+
+  .puggysoft-five-divs-side-by-side-child-container {
+    height: 9rem;
+  }
 }

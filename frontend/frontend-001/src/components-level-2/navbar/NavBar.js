@@ -236,6 +236,12 @@ function NavBar () {
   const navigateAlcaldiaRecursosMunicipalesTable = () => {
     history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TABLE);
   };
+  const navigateAlcaldiaRecursosMunicipalesVentasForm = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_FORM);
+  };
+  const navigateAlcaldiaRecursosMunicipalesVentasTable = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_TABLE);
+  };
 
   const NavbarBackground = "dark"; // dark, light, primary
   const NavbarVariant = "dark puggysoft-navbar"; // dark, light
@@ -636,8 +642,8 @@ function NavBar () {
             userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_CAJERO)
           ) &&
             <NavDropdown title={recursoMunicipalVentaAdminLabel}>
-              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaVentaFormLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaVentaTableLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesVentasForm}>{recursoMunicipaVentaFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesVentasTable}>{recursoMunicipaVentaTableLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) &&
             <NavDropdown title={recursoMunicipalReporteAdminLabel}>

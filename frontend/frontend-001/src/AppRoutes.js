@@ -89,6 +89,9 @@ import TenantTableFilterPage from "./components-level-3/system/TenantTableFilter
 
 // Alcaldia System
 import AlcaldiaRecursosMunicipalesFormPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesFormPage";
+import AlcaldiaRecursosMunicipalesTablePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesTablePage";
+import AlcaldiaRecursosMunicipalesVentasFormPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesVentasFormPage";
+import AlcaldiaRecursosMunicipalesVentasTablePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesVentasTablePage";
 
 const AppRoutes = () => (
   <App>
@@ -176,6 +179,9 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.LOGIN} component={LoginPage} />
       {/** Alcaldia System */}
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_FORM} component={AlcaldiaRecursosMunicipalesFormPage} />
+      <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TABLE} component={AlcaldiaRecursosMunicipalesTablePage} />
+      <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_FORM} component={AlcaldiaRecursosMunicipalesVentasFormPage} />
+      <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_TABLE} component={AlcaldiaRecursosMunicipalesVentasTablePage} />
       <Route exact path="/" component={LoginPage} />
       <Route component={LoginPage} />
     </Switch>
