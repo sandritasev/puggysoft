@@ -14,7 +14,7 @@ public class ControllerAlcaldiaRecursosMunicipalesVentaPost {
   @Autowired
   private ServiceAlcaldiaRecursosMunicipalesVentaCreate serviceAlcaldiaRecursosMunicipalesVentaCreate;
 
-  @PostMapping(path = "/api/v1/alcaldia-recursos-municipales-venta")
+  @PostMapping(path = "/api/v1/alcaldia-recursos-municipales-ventas")
   public ResponseEntity<String> post(
       @RequestBody @Valid DtoAlcaldiaRecursosMunicipalesVenta dtoAlcaldiaRecursosMunicipalesVenta) {
     return serviceAlcaldiaRecursosMunicipalesVentaCreate.create(dtoAlcaldiaRecursosMunicipalesVenta);

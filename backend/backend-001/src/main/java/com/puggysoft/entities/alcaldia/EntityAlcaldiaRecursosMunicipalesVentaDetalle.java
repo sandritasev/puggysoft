@@ -20,6 +20,8 @@ public class EntityAlcaldiaRecursosMunicipalesVentaDetalle extends EntitySuperCl
   private String idVenta;
   @Column(name = "precio_unidad")
   private String precioUnidad;
+  @Column(name = "cantidad")
+  private String cantidad;
   @Column(name = "tenant")
   private String tenant;
 

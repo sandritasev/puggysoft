@@ -16,7 +16,7 @@ public class ControllerAlcaldiaRecursosMunicipalesVentaGetFilterSize {
   @Autowired
   private ServiceAlcaldiaRecursosMunicipalesVentaGetFilterSize serviceAlcaldiaRecursosMunicipalesVentaGetFilterSize;
 
-  @PostMapping(path = "/api/v1/alcaldia-recursos-municipales-venta/filter/size/{pageSize}")
+  @PostMapping(path = "/api/v1/alcaldia-recursos-municipales-ventas/filter/size/{pageSize}")
   public ResponseEntity<Long> getSize(
       @RequestBody @Valid DtoAlcaldiaRecursosMunicipalesVentaFilter dtoAlcaldiaRecursosMunicipalesVentaFilter,
       @PathVariable Long pageSize) {

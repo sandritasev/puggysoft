@@ -19,6 +19,9 @@ public final class SqlAlcaldiaRecursosMunicipalesFilterBuilderNative {
     query = query + SqlFilterBuilder.getFilterQuery("alcaldia_recursos_municipales.codigo",
         dtoAlcaldiaRecursosMunicipalesFilter.codigoCriteria,
         dtoAlcaldiaRecursosMunicipalesFilter.codigoOperator);
+    query = query + SqlFilterBuilder.getFilterQuery("alcaldia_recursos_municipales.cantidad",
+        dtoAlcaldiaRecursosMunicipalesFilter.cantidadCriteria,
+        dtoAlcaldiaRecursosMunicipalesFilter.cantidadOperator);
     query = query + SqlFilterBuilder.getFilterQuery("alcaldia_recursos_municipales.name",
         dtoAlcaldiaRecursosMunicipalesFilter.nameCriteria,
         dtoAlcaldiaRecursosMunicipalesFilter.nameOperator);

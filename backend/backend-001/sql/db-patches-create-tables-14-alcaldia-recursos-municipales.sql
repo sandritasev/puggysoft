@@ -5,6 +5,7 @@ CREATE TABLE alcaldia_recursos_municipales(
    name VARCHAR(120) NOT NULL,
    precio FLOAT(11,2) NOT NULL,
    tenant VARCHAR(30) NOT NULL,
+   cantidad INT,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
    update_date DATETIME ON UPDATE CURRENT_TIMESTAMP,
    created_by VARCHAR(30),

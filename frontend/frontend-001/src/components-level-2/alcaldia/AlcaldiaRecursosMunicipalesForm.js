@@ -92,6 +92,7 @@ function AlcaldiaRecursosMunicipalesForm () {
     setIsEdit(undefined);
     const body = getBody();
     handleValidation(body, setClassNameFormText);
+    setIsRequestInProgress(false);
   };
 
   const handleAdd = (event) => {
