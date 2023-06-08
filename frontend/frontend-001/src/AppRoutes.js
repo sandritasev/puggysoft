@@ -11,6 +11,8 @@ import SystemPropertiesTablePage from "./components-level-3/system/SystemPropert
 import TenantFormPage from "./components-level-3/system/TenantFormPage";
 import TenantTableFilterByUserPage from "./components-level-3/system/TenantTableFilterByUserPage";
 import InProgressPage from "./components-level-3/system/InProgressPage";
+import TenantTableSelectForRolePage from "./components-level-3/system/TenantTableSelectForRolePage";
+import TenantTableFilterByRolePage from "./components-level-3/system/TenantTableFilterByRolePage";
 
 // Users System
 import UsersFormPage from "./components-level-3/users/UserFormPage";
@@ -24,6 +26,8 @@ import UserDetailsPage from "./components-level-3/users/UserDetailsPage";
 import RoleTablePage from "./components-level-3/users/RoleTablePage";
 import RoleTableFilterPage from "./components-level-3/users/RoleTableFilterPage";
 import RoleTablePageByUserPage from "./components-level-3/users/RoleTablePageByUserPage";
+import RoleTableSelectForTenantPage from "./components-level-3/users/RoleTableSelectForTenantPage";
+import RoleTableFilterByTenantPage from "./components-level-3/users/RoleTableFilterByTenantPage";
 // Sales System
 import ProductFormPage from "./components-level-3/sales/ProductFormPage";
 import ProductTableFilterEditDeletePage from "./components-level-3/sales/ProductTableFilterEditDeletePage";
@@ -103,6 +107,8 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.SYSTEM_PROPERTIES_TABLE} component={SystemPropertiesTablePage} />
       <Route exact path={enumPaths.TENANTS_FORM} component={TenantFormPage} />
       <Route exact path={enumPaths.TENANTS_TABLE_FILTER_SELECTION} component={TenantTableFilterPage} />
+      <Route exact path={enumPaths.TENANTS_TABLE_SELECTION_FOR_ROLE} component={TenantTableSelectForRolePage} />
+      <Route exact path={enumPaths.TENANTS_TABLE_FILTER_BY_ROLE} component={TenantTableFilterByRolePage} />
       <Route exact path={enumPaths.TENANTS_TABLE_FILTER_BY_USER} component={TenantTableFilterByUserPage} />
       <Route exact path={enumPaths.TENANTS_TABLE_FILTER_EDIT_DELETE} component={TenantTableFilterEditDeletePage} />
       {/** Users System */}
@@ -117,6 +123,8 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.ROLES_TABLE} component={RoleTablePage} />
       <Route exact path={enumPaths.ROLES_TABLE_FILTER} component={RoleTableFilterPage} />
       <Route exact path={enumPaths.ROLES_TABLE_FILTER_BY_USER} component={RoleTablePageByUserPage} />
+      <Route exact path={enumPaths.ROLES_TABLE_SELECTION_FOR_TENANTS} component={RoleTableSelectForTenantPage} />
+      <Route exact path={enumPaths.ROLES_TABLE_FILTER_BY_TENANT} component={RoleTableFilterByTenantPage} />
       <Route exact path={enumPaths.ROLES_TABLE_SELECTION} component={RoleTablePage} />
       {/** Sales System */}
       <Route exact path={enumPaths.SALES_PRODUCTS_FORM} component={ProductFormPage} />

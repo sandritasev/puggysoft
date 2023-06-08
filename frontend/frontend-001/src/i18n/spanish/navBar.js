@@ -6,8 +6,11 @@ const navBar = {
   tenantRegistration: "Registrar Tenants",
   tenantShowTableFilterEditDelete: "Mostrar Tenants (Tabla, Editar, Eliminar)",
   tenantUserAdmin: "Adm. Tenants - Usuarios",
+  tenantRoleAdmin: "Adm. Tenants - Roles",
   tenantUserCrudByTenant: "Adm. Tenants de usuario por Tenant",
   tenantUserCrudByUser: "Adm. Tenants de usuario por Usuario",
+  tenantRoleCrudByTenant: "Adm. Tenants de roles por Tenant",
+  tenantRoleCrudByRole: "Adm. Tenants de roles por Rol",
 
   // ******* ******* USERS SYSTEM ******* *******
   // Users

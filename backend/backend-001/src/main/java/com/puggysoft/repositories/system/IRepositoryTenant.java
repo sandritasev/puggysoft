@@ -28,7 +28,7 @@ public interface IRepositoryTenant extends JpaRepository<EntityTenant, Long> {
           + "FROM tenants "
           + "INNER JOIN tenants_users ON tenants_users.tenant=tenants.short_name  "
           + "WHERE tenants_users.username = :username LIMIT :off, :size", nativeQuery = true)
-  List<EntityTenant> findTenantsWithTenantsPagination(@Param("username") String username, @Param("off") int off, @Param("size") int size);
+  List<EntityTenant> findTenantsWithUsersPagination(@Param("username") String username, @Param("off") int off, @Param("size") int size);
 
   @Query(value = "SELECT COUNT(*) "
           + "FROM tenants "
@@ -54,5 +54,37 @@ public interface IRepositoryTenant extends JpaRepository<EntityTenant, Long> {
           + "FROM tenants_users "
           + "WHERE tenants_users.username = :username)", nativeQuery = true)
   Long findSizeWithoutUsers(@Param("username") String username);
+
+  // GET ALL TENANTS THAT ARE PART OF A ROLE
+  @Query(value = "SELECT tenants.* "
+          + "FROM tenants "
+          + "INNER JOIN tenants_roles ON tenants_roles.tenant=tenants.short_name  "
+          + "WHERE tenants_roles.role = :role LIMIT :off, :size", nativeQuery = true)
+  List<EntityTenant> findTenantsWithRolesPagination(@Param("role") String role, @Param("off") int off, @Param("size") int size);
+
+  @Query(value = "SELECT COUNT(*) "
+          + "FROM tenants "
+          + "INNER JOIN tenants_roles ON tenants_roles.tenant=tenants.short_name  "
+          + "WHERE tenants_roles.role = :role", nativeQuery = true)
+  Long findSizeWithRoles(@Param("role") String role);
+
+  // GET ALL TENANTS THAT ARE NOT PART OF A ROLE
+  @Query(value = "SELECT tenants.* "
+          + "FROM tenants "
+          + "WHERE tenants.short_name "
+          + "NOT IN ("
+          + "SELECT tenants_roles.tenant "
+          + "FROM tenants_roles "
+          + "WHERE tenants_roles.role = :role) LIMIT :off, :size", nativeQuery = true)
+  List<EntityTenant> findTenantsWithoutRolesPagination(@Param("role") String role, @Param("off") int off, @Param("size") int size);
+
+  @Query(value = "SELECT COUNT(*) "
+          + "FROM tenants "
+          + "WHERE tenants.short_name "
+          + "NOT IN ("
+          + "SELECT tenants_roles.tenant "
+          + "FROM tenants_roles "
+          + "WHERE tenants_roles.role = :role)", nativeQuery = true)
+  Long findSizeWithoutRoles(@Param("role") String role);
 
 }

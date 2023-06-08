@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 
 /** Services for filter tenants. */
 @Service
-public class ServiceTenantGetFilterWithUser {
+public class ServiceTenantGetFilterWithoutRole {
 
   @Autowired
   private IRepositoryTenant repositoryTenant;
@@ -27,21 +27,19 @@ public class ServiceTenantGetFilterWithUser {
   private EntityManager entityManager;
 
   /** method for filter tenants. */
-  public ResponseEntity<List<DtoTenant>> filter(DtoTenantFilter dtoTenantFilter, int page, int size, String username) {
+  public ResponseEntity<List<DtoTenant>> filter(DtoTenantFilter dtoTenantFilter, int page, int size, String role) {
 
     String query = SqlTenantFilterBuilderNative.build(dtoTenantFilter);
     int off = page * size;
     List<EntityTenant> listEntities;
     if (query.equals("")) {
-      listEntities = repositoryTenant.findTenantsWithUsersPagination(username, off, size);
+      listEntities = repositoryTenant.findTenantsWithoutRolesPagination(role, off, size);
     } else {
       // Delete last 'AND' key workd.
       query = query.substring(0, query.length() - 4);
-      String fullQuery = "SELECT tenants.* FROM tenants "
-          + "INNER JOIN tenants_users ON tenants_users.tenant=tenants.short_name "
-          + "WHERE tenants_users.username = '" + username + "' AND "
-          + query + " LIMIT " + off + "," + size;
-
+      String fullQuery = "SELECT tenants.* FROM tenants WHERE "
+          + "tenants.short_name NOT IN ( SELECT tenants_roles.tenant FROM tenants_roles WHERE tenants_roles.role = '"
+          + role + "') AND " + query + " LIMIT " + off + "," + size;
       // JQPL (createQuery) and Native (createNativeQuery)
       Query filterQuery = entityManager.createNativeQuery(fullQuery, EntityTenant.class);
       listEntities = (List<EntityTenant>) filterQuery.getResultList();

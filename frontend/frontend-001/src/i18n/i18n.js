@@ -11,6 +11,8 @@ import systemPropertiesForm from "./spanish/system/systemPropertiesForm";
 import tenantForm from "./spanish/system/tenantForm";
 import tenantTable from "./spanish/system/tenantTable";
 import tenantUserTableByTenant from "./spanish/system/tenantUserTableByTenant";
+import tenantRoleTableByTenant from "./spanish/system/tenantRoleTableByTenant";
+import tenantRoleTableByRole from "./spanish/system/tenantRoleTableByRole";
 import tenantUserTableByUser from "./spanish/system/tenantUserTableByUser";
 import tenantStatusText from "./spanish/system/TenantStatusText";
 import commonInProgress from "./spanish/commonInProgress";
@@ -75,6 +77,8 @@ const i18n = {
   tenantForm,
   tenantTable,
   tenantUserTableByTenant,
+  tenantRoleTableByTenant,
+  tenantRoleTableByRole,
   tenantUserTableByUser,
   tenantStatusText,
   commonInProgress,
