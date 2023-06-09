@@ -82,6 +82,16 @@ function NavBar () {
       }
     });
   };
+  const navigateTenantTableSelectionForRoles = () => {
+    history.push({
+      pathname: enumPaths.TENANTS_TABLE_SELECTION_FOR_ROLE
+    });
+  };
+  const navigateRoleTableSelectionForTenants = () => {
+    history.push({
+      pathname: enumPaths.ROLES_TABLE_SELECTION_FOR_TENANTS
+    });
+  };
 
   // ******* ******* ******* USERS SYSTEM ******* ******* *******
 
@@ -255,6 +265,9 @@ function NavBar () {
   const tenantUserAdminLabel = (<><FaUsersCog /> {i18n.navBar.tenantUserAdmin}</>);
   const tenantUserCrudByTenantLabel = (<><AiOutlineTable /> {i18n.navBar.tenantUserCrudByTenant}</>);
   const tenantUserCrudByUserLabel = (<><AiOutlineTable /> {i18n.navBar.tenantUserCrudByUser}</>);
+  const tenantRoleAdminLabel = (<><FaUsersCog /> {i18n.navBar.tenantRoleAdmin}</>);
+  const tenantRoleCrudByTenantLabel = (<><AiOutlineTable /> {i18n.navBar.tenantRoleCrudByTenant}</>);
+  const tenantRoleCrudByRoleLabel = (<><AiOutlineTable /> {i18n.navBar.tenantRoleCrudByRole}</>);
 
   // ******* ******* ******* USERS SYSTEM ******* ******* *******
   // USERS
@@ -468,6 +481,11 @@ function NavBar () {
             <NavDropdown title={tenantUserAdminLabel}>
               <NavDropdown.Item onClick={navigateTenantTableSelection}>{tenantUserCrudByTenantLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUserTableSelectionForTenants}>{tenantUserCrudByUserLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {userRoles.includes(enumRoles.ADMIN) &&
+            <NavDropdown title={tenantRoleAdminLabel}>
+              <NavDropdown.Item onClick={navigateTenantTableSelectionForRoles}>{tenantRoleCrudByTenantLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateRoleTableSelectionForTenants}>{tenantRoleCrudByRoleLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.ADMIN) &&
             <NavDropdown title={userAdminLabel}>
