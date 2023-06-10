@@ -5,6 +5,8 @@ const SYSTEM_PROPERTIES_TABLE = "/system-properties-table";
 const SYSTEM_PROPERTIES_FORM = "/system-properties-form";
 const TENANTS_FORM = "/tenants-form";
 const TENANTS_TABLE_FILTER_SELECTION = "/tenants-table-filter-selection";
+const TENANTS_TABLE_SELECTION_FOR_ROLE = "/tenants-table-selection-for-role";
+const TENANTS_TABLE_FILTER_BY_ROLE = "/tenants-table-filter-by-role";
 const TENANTS_TABLE_FILTER_EDIT_DELETE = "/tenants-table-filter-edit-delete";
 const TENANTS_TABLE_FILTER_BY_USER = "/tenants-table-filter-by-user";
 const IN_PROGRESS_PAGE = "/in-progress-page";
@@ -20,6 +22,8 @@ const USERS_DETAILS = "/user-details";
 const ROLES_TABLE = "/roles-table";
 const ROLES_TABLE_FILTER = "/roles-table-filter";
 const ROLES_TABLE_FILTER_BY_USER = "/roles-table-filter-by-user";
+const ROLES_TABLE_FILTER_BY_TENANT = "/roles-table-filter-by-tenant";
+const ROLES_TABLE_SELECTION_FOR_TENANTS = "/roles-table-selection-for-tenants";
 const ROLES_TABLE_SELECTION = "/roles-table-selection";
 // SALES SYSTEM
 const SALES_PRODUCTS_FORM = "/sales-products-form";
@@ -103,6 +107,8 @@ const enumPaths = {
   SYSTEM_PROPERTIES_FORM,
   TENANTS_FORM,
   TENANTS_TABLE_FILTER_SELECTION,
+  TENANTS_TABLE_SELECTION_FOR_ROLE,
+  TENANTS_TABLE_FILTER_BY_ROLE,
   TENANTS_TABLE_FILTER_EDIT_DELETE,
   TENANTS_TABLE_FILTER_BY_USER,
   IN_PROGRESS_PAGE,
@@ -118,6 +124,8 @@ const enumPaths = {
   ROLES_TABLE,
   ROLES_TABLE_FILTER,
   ROLES_TABLE_FILTER_BY_USER,
+  ROLES_TABLE_FILTER_BY_TENANT,
+  ROLES_TABLE_SELECTION_FOR_TENANTS,
   ROLES_TABLE_SELECTION,
   // SALES SYSTEM
   SALES_PRODUCTS_FORM,

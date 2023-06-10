@@ -74,4 +74,38 @@ public interface IRepositoryRole extends JpaRepository<EntityRole, Long> {
           + "WHERE users_roles.id_user = ?1)", nativeQuery = true)
   Long findSizeWithoutUsers(Long idUser);
 
+  // GET ALL ROLES THAT ARE NOT PART OF A TENANT
+  @Query(value = "SELECT roles.* "
+          + "FROM roles "
+          + "WHERE roles.name "
+          + "NOT IN ("
+          + "SELECT tenants_roles.role "
+          + "FROM tenants_roles "
+          + "WHERE tenants_roles.tenant = :tenant) LIMIT :off, :size", nativeQuery = true)
+  List<EntityRole> findRolesWithoutTenantsPagination(@Param("tenant") String tenant, @Param("off") int off, @Param("size") int size);
+
+  // GET COUNT ROLES THAT ARE NOT PART OF A TENANT
+  @Query(value = "SELECT COUNT(*) "
+          + "FROM roles "
+          + "WHERE roles.name "
+          + "NOT IN ("
+          + "SELECT tenants_roles.role "
+          + "FROM tenants_roles "
+          + "WHERE tenants_roles.tenant = ?1)", nativeQuery = true)
+  Long findSizeWithoutTenants(String tenant);
+
+  // GET ALL ROLES THAT ARE PART OF A TENANT
+  @Query(value = "SELECT roles.* "
+          + "FROM roles "
+          + "INNER JOIN tenants_roles ON tenants_roles.role=roles.name "
+          + "WHERE tenants_roles.tenant = :tenant LIMIT :off, :size", nativeQuery = true)
+  List<EntityRole> findRolesWithTenantsPagination(@Param("tenant") String tenant, @Param("off") int off, @Param("size") int size);
+
+  // GET COUNT ROLES THAT ARE PART OF A TENANT
+  @Query(value = "SELECT COUNT(*) "
+          + "FROM roles "
+          + "INNER JOIN tenants_roles ON tenants_roles.role=roles.name  "
+          + "WHERE tenants_roles.tenant = ?1", nativeQuery = true)
+  Long findSizeWithTenants(String tenant);
+
 }
