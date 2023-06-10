@@ -16,7 +16,6 @@ public class DtoAlcaldiaRecursosMunicipales extends DtoSuperClass {
   @NotNull
   @Size(min = 3, max = 30)
   private String codigo;
-  @NotNull
   private String cantidad;
   @NotNull
   private String name;

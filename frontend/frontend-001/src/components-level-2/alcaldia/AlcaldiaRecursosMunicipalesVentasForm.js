@@ -42,7 +42,7 @@ function AlcaldiaRecursosMunicipalesVentasForm () {
   const [messageText, setMessageText] = useState("");
   const [valueVentaPrecioTotal, setValueVentaPrecioTotal] = useState(0);
   const [valueClienteDinero, setValueClienteDinero] = useState("0");
-  const [valueClienteCambio, setValueClienteCambio] = useState("");
+  const [valueClienteCambio, setValueClienteCambio] = useState("0");
   const [controlarEdit, setControlarEdit] = useState(true);
 
   // Put default values:
