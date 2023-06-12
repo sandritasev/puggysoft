@@ -96,6 +96,7 @@ import AlcaldiaRecursosMunicipalesFormPage from "./components-level-3/alcaldia/A
 import AlcaldiaRecursosMunicipalesTablePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesTablePage";
 import AlcaldiaRecursosMunicipalesVentasFormPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesVentasFormPage";
 import AlcaldiaRecursosMunicipalesVentasTablePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesVentasTablePage";
+import AlcaldiaRecursosMunicipalesReporteDiarioPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesReporteDiarioPage";
 
 const AppRoutes = () => (
   <App>
@@ -190,6 +191,7 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TABLE} component={AlcaldiaRecursosMunicipalesTablePage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_FORM} component={AlcaldiaRecursosMunicipalesVentasFormPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_TABLE} component={AlcaldiaRecursosMunicipalesVentasTablePage} />
+      <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_DIARIO} component={AlcaldiaRecursosMunicipalesReporteDiarioPage} />
       <Route exact path="/" component={LoginPage} />
       <Route component={LoginPage} />
     </Switch>

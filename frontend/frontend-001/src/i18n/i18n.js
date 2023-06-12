@@ -57,6 +57,7 @@ import intervalTimeTable from "./spanish/reservation/intervalTimeTable";
 // Alcaldia System
 import alcaldiaVentaStatusText from "./spanish/alcaldia/alcaldiaVentaStatusText";
 import alcaldiaRecursosMunicipalesForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesForm";
+import alcaldiaRecursosMunicipalesReporteDiario from "./spanish/alcaldia/alcaldiaRecursosMunicipalesReporteDiario";
 import alcaldiaRecursosMunicipalesTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTable";
 import alcaldiaRecursosMunicipalesVentasForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesVentasForm";
 import alcaldiaRecursosMunicipalesVentasTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesVentasTable";
@@ -127,7 +128,8 @@ const i18n = {
   alcaldiaRecursosMunicipalesTableAdd,
   alcaldiaRecursosMunicipalesTableDelete,
   alcaldiaRecursosMunicipalesVentasForm,
-  alcaldiaRecursosMunicipalesVentasTable
+  alcaldiaRecursosMunicipalesVentasTable,
+  alcaldiaRecursosMunicipalesReporteDiario
 };
 
 export default i18n;
