@@ -252,7 +252,9 @@ function NavBar () {
   const navigateAlcaldiaRecursosMunicipalesVentasTable = () => {
     history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_TABLE);
   };
-
+  const navigateAlcaldiaRecursosMunicipalesReporteDiario = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_DIARIO);
+  };
   const NavbarBackground = "dark"; // dark, light, primary
   const NavbarVariant = "dark puggysoft-navbar"; // dark, light
 
@@ -456,7 +458,6 @@ function NavBar () {
   // VENTA RECURSOS MUNICIPALES
   const recursoMunicipalReporteAdminLabel = (<><BsFillBarChartFill /> {i18n.navBar.recursoMunicipalReporteAdmin}</>);
   const recursoMunicipaReporteOneLabel = (<><FaChartLine /> {i18n.navBar.recursoMunicipalReporte1}</>);
-  const recursoMunicipaReporteTwoLabel = (<><FaChartLine /> {i18n.navBar.recursoMunicipalReporte2}</>);
 
   // ******* ******* ******* ALL SYSTEMS ******* ******* *******
   // CONFIG
@@ -665,8 +666,7 @@ function NavBar () {
             </NavDropdown>}
           {userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) &&
             <NavDropdown title={recursoMunicipalReporteAdminLabel}>
-              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaReporteOneLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateGeneric}>{recursoMunicipaReporteTwoLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesReporteDiario}>{recursoMunicipaReporteOneLabel}</NavDropdown.Item>
             </NavDropdown>}
         </Nav>
         {/* ******* ******* ******* ALL SYSTEM ******* ******* ********/}
