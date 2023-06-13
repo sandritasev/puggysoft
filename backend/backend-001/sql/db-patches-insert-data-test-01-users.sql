@@ -113,6 +113,7 @@ INSERT INTO users (username, password, dni, name, second_name, last_name, second
 ("HospitalDoctor", "admin123", "1000021", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "HospitalDoctor@puggysoft.com", true, null, "SysAdmin",  true),
 ("HospitalPatient", "admin123", "1000022", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "HospitalPatient@puggysoft.com", true, null, "SysAdmin",  true),
 ("HospitalTicketsAdmin", "admin123", "1000023", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "HospitalTicketsAdm@puggysoft.com", true, null, "SysAdmin",  true),
+("SysUrbanismoAdmin", "admin123", "1000025", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysUrbanismoAdmin@puggysoft.com", true, null, "SysAdmin",  true),
 ("SysEscuelaAdmin", "admin123", "1000017", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysEscuelaAdmin@puggysoft.com", true, null, "SysAdmin",  true);
 
 -- Insert data (Roles).

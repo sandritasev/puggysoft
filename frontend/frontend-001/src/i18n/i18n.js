@@ -51,6 +51,7 @@ import patientTable from "./spanish/hospital/patientTable";
 import reservationCalendar from "./spanish/reservation/reservationCalendar";
 import resourceForm from "./spanish/reservation/resourceForm";
 import scheduleForm from "./spanish/reservation/scheduleForm";
+import scheduleTable from "./spanish/reservation/scheduleTable";
 import intervalTimeForm from "./spanish/reservation/intervalTimeForm";
 import resourceTable from "./spanish/reservation/resourceTable";
 import intervalTimeTable from "./spanish/reservation/intervalTimeTable";
@@ -118,6 +119,7 @@ const i18n = {
   reservationCalendar,
   resourceForm,
   scheduleForm,
+  scheduleTable,
   intervalTimeForm,
   resourceTable,
   intervalTimeTable,

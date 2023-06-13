@@ -37,7 +37,7 @@ function IntervalTimeGenericTable (props) {
   const { value: operatorCreatedDate, onChange: operatorOnChangeCreatedDate, setValue: operatorSetCreatedDate } = useInput(enumCompareOperators.DATE_EQUALS);
   const { value: operatorUpdatedDate, onChange: operatorOnChangeUpdatedDate, setValue: operatorSetUpdatedDate } = useInput(enumCompareOperators.DATE_EQUALS);
 
-  const { arrayColumnsFilter, clearFilters, getFilterBody, arrayColumns, arrayDataFields } = resourcesTableModels(
+  const { arrayColumnsFilter, clearFilters, getFilterBody, arrayColumnsLabels, arrayDataFields } = resourcesTableModels(
     columnsToShow,
     /* ID */ criteriaId, criteriaOnChangeId, criteriaSetId, operatorId, operatorOnChangeId, operatorSetId,
     /* NAME */ criteriaName, criteriaOnChangeName, criteriaSetName, operatorName, operatorOnChangeName, operatorSetName,
@@ -49,11 +49,9 @@ function IntervalTimeGenericTable (props) {
     /* UPDATED DATE */criteriaUpdatedDate, criteriaOnChangeUpdatedDate, criteriaSetUpdatedDate, operatorUpdatedDate, operatorOnChangeUpdatedDate, operatorSetUpdatedDate
   );
 
-  const fixArrayData = () => { };
-
   return (
     <TableFilterGeneric
-      arrayColumns={arrayColumns}
+      arrayColumns={arrayColumnsLabels}
       arrayDataFields={arrayDataFields}
       handleGetData={handleGetData}
       handleGetSize={handleGetSize}
@@ -64,7 +62,6 @@ function IntervalTimeGenericTable (props) {
       arrayColumnsFilter={arrayColumnsFilter}
       clearFilters={clearFilters}
       getFilterBody={getFilterBody}
-      fixArrayData={fixArrayData}
     >
     </TableFilterGeneric>
   );

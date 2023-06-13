@@ -1,8 +1,8 @@
 import enumCompareOperators from "./../enumCompareOperators";
 import enumTableColumnsToShow from "./../enumTableColumnsToShow";
-import arrayDataFields from "./resourceDataFields";
-import arrayColumnsLabels from "./resourcesColumnsLabels";
-import resourcesColumnsFilter from "./resourcesColumnsFilter";
+import arrayDataFields from "./intervalTimeDataFields";
+import arrayColumnsLabels from "./intervalTimeColumnsLabels";
+import columnsFilter from "./intervalTimeColumnsFilter";
 
 const intervalTimeTableModels = function (
   tableColumnsToShow,
@@ -15,7 +15,7 @@ const intervalTimeTableModels = function (
   /* CREATED DATE */criteriaCreatedDate, criteriaOnChangeCreatedDate, criteriaSetCreatedDate, operatorCreatedDate, operatorOnChangeCreatedDate, operatorSetCreatedDate,
   /* UPDATED DATE */criteriaUpdatedDate, criteriaOnChangeUpdatedDate, criteriaSetUpdatedDate, operatorUpdatedDate, operatorOnChangeUpdatedDate, operatorSetUpdatedDate
 ) {
-  const arrayColumnsFilter = resourcesColumnsFilter(
+  const arrayColumnsFilter = columnsFilter(
     /* ID */ criteriaId, criteriaOnChangeId, operatorId, operatorOnChangeId,
     /* NAME */ criteriaName, criteriaOnChangeName, operatorName, operatorOnChangeName,
     /* START TIME */criteriaStartTime, criteriaOnChangeStartTime, operatorStartTime, operatorOnChangeStartTime,

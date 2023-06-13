@@ -18,7 +18,7 @@ public class ControllerIntervalTimeGetFilter {
   @Autowired
   private ServiceIntervalTimeGetFilter serviceIntervalTimeGetFilter;
 
-  @PostMapping(path = "/api/v1/reservations-intervals-times/filter")
+  @PostMapping(path = "/api/v1/reservations-interval-times/filter")
   public ResponseEntity<List<DtoResIntervalTime>> getIntervalTimeFilter(
       @RequestParam int page,
       @RequestParam int size,

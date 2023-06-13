@@ -5,7 +5,7 @@ const arrayColumns = [
   i18n.intervalTimeTable.columnName,
   i18n.intervalTimeTable.columnStartTime,
   i18n.intervalTimeTable.columnEndTime,
-  i18n.resourceTable.columnCreatedBy,
+  i18n.commonTable.columnCreatedBy,
   i18n.commonTable.columnUpdatedBy,
   i18n.commonTable.columnCreationDate,
   i18n.commonTable.columnUpdateDate
