@@ -86,8 +86,11 @@ import PatientUserTableToDetailsPage from "./components-level-3/hospital/Patient
 
 // Reservation System
 import ResourceFormPage from "./components-level-3/reservation/ResourceFormPage";
+import ResourceTablePage from "./components-level-3/reservation/ResourceTablePage";
 import ScheduleFormPage from "./components-level-3/reservation/ScheduleFormPage";
+import IntervalTimeTablePage from "./components-level-3/reservation/IntervalTimeTablePage";
 import IntervalTimeFormPage from "./components-level-3/reservation/IntervalTimeFormPage";
+import ScheduleTablePage from "./components-level-3/reservation/ScheduleTablePage";
 import TenantTableFilterEditDeletePage from "./components-level-3/system/TenantTableFilterEditDeletePage";
 import TenantTableFilterPage from "./components-level-3/system/TenantTableFilterPage";
 
@@ -183,8 +186,11 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.HOSPITAL_PATIENT_USER_TABLE_TO_DETAILS} component={PatientUserTableToDetailsPage} />
       {/** Reservation System */}
       <Route exact path={enumPaths.RESERVATION_RESOURCES_FORM} component={ResourceFormPage } />
+      <Route exact path={enumPaths.RESERVATION_RESOURCES_TABLE} component={ResourceTablePage} />
       <Route exact path={enumPaths.RESERVATION_SCHEDULE_FORM} component={ScheduleFormPage } />
+      <Route exact path={enumPaths.RESERVATION_SCHEDULE_TABLE} component={ScheduleTablePage} />
       <Route exact path={enumPaths.RESERVATION_INTERVAL_TIME_FORM} component={IntervalTimeFormPage } />
+      <Route exact path={enumPaths.RESERVATION_INTERVAL_TIME_TABLE} component={IntervalTimeTablePage} />
       <Route exact path={enumPaths.LOGIN} component={LoginPage} />
       {/** Alcaldia System */}
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_FORM} component={AlcaldiaRecursosMunicipalesFormPage} />

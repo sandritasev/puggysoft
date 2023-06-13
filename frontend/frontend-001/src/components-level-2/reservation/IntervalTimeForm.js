@@ -43,10 +43,12 @@ function IntervalTimeForm (props) {
 
   const getBody = useCallback(function () {
     const username = window.sessionStorage.getItem("username");
+    const tenant = window.sessionStorage.getItem("tenant");
     const body = {
       name: valueName,
       startTime: valueStartTime,
       endTime: valueEndTime,
+      tenant,
       createdBy: username,
       updatedBy: username
     };
@@ -57,6 +59,7 @@ function IntervalTimeForm (props) {
     handleReset();
     const body = getBody();
     handleValidation(body, setClassNameFormText);
+    setIsRequestInProgress(false);
   };
 
   const handleAfterEdit = function () {
@@ -64,6 +67,7 @@ function IntervalTimeForm (props) {
     setIsEdit(undefined);
     const body = getBody();
     handleValidation(body, setClassNameFormText);
+    setIsRequestInProgress(false);
   };
 
   const handleAdd = (event) => {

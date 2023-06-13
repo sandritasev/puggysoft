@@ -1,8 +1,6 @@
 const arrayDataFields = [
   "id",
   "name",
-  "startTime",
-  "endTime",
   "createdBy",
   "updatedBy",
   "creationDate",

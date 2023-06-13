@@ -13,6 +13,7 @@ const arrayDataFields = [
     tdWidth: "10%",
     defaultImageUrl: imageUrl
   },
+  "id",
   "name",
   "priceInterval",
   "description",

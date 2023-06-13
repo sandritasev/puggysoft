@@ -16,7 +16,7 @@ public class ControllerScheduleGetFilterSize {
   @Autowired
   private ServiceScheduleGetFilterSize serviceScheduleGetFilterSize;
 
-  @PostMapping(path = "/api/v1/reservations-schedules/filter/size/{pageSize}")
+  @PostMapping(path = "/api/v1/reservations-schedule/filter/size/{pageSize}")
   public ResponseEntity<Long> getSize(@RequestBody @Valid DtoResScheduleFilter dtoResScheduleFilter,
       @PathVariable Long pageSize) {
     return serviceScheduleGetFilterSize.getSize(dtoResScheduleFilter, pageSize);

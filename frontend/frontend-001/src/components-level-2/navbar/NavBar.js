@@ -232,11 +232,20 @@ function NavBar () {
   const navigateResourcesForm = () => {
     history.push(enumPaths.RESERVATION_RESOURCES_FORM);
   };
+  const navigateResourcesTable = () => {
+    history.push(enumPaths.RESERVATION_RESOURCES_TABLE);
+  };
   const navigateScheduleForm = () => {
     history.push(enumPaths.RESERVATION_SCHEDULE_FORM);
   };
+  const navigateScheduleTable = () => {
+    history.push(enumPaths.RESERVATION_SCHEDULE_TABLE);
+  };
   const navigateIntervalTimeForm = () => {
     history.push(enumPaths.RESERVATION_INTERVAL_TIME_FORM);
+  };
+  const navigateIntervalTimeTable = () => {
+    history.push(enumPaths.RESERVATION_INTERVAL_TIME_TABLE);
   };
 
   // ******* ******* ******* ALCALDIA SYSTEM ******* ******* *******
@@ -631,19 +640,19 @@ function NavBar () {
           {userRoles.includes(enumRoles.RESERVATION_ADMIN) &&
             <NavDropdown title={resourcesAdminLabel}>
               <NavDropdown.Item onClick={navigateResourcesForm}>{resResourceFormLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateGeneric}>{resResourceTableLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateResourcesTable}>{resResourceTableLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateGeneric}>{resResourceScheduleByResocurceLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.RESERVATION_ADMIN) &&
             <NavDropdown title={resScheduleAdminLabel}>
               <NavDropdown.Item onClick={navigateScheduleForm}>{resScheduleFormLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateGeneric}>{resScheduleTableLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateScheduleTable}>{resScheduleTableLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateGeneric}>{resResourceScheduleByScheduleLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.RESERVATION_ADMIN) &&
             <NavDropdown title={resIntervalTimeAdminLabel}>
               <NavDropdown.Item onClick={navigateIntervalTimeForm}>{resIntervalTimeFormLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateGeneric}>{resIntervalTimeTableLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateIntervalTimeTable}>{resIntervalTimeTableLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.RESERVATION_ADMIN) &&
             <NavDropdown title={resBookingsAdminLabel}>

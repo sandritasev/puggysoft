@@ -16,7 +16,7 @@ public class ControllerIntervalTimeGetFilterSize {
   @Autowired
   private ServiceIntervalTimeGetFilterSize serviceIntervalTimeGetFilterSize;
 
-  @PostMapping(path = "/api/v1/reservations-interval-time/filter/size/{pageSize}")
+  @PostMapping(path = "/api/v1/reservations-interval-times/filter/size/{pageSize}")
   public ResponseEntity<Long> getSize(@RequestBody @Valid DtoResIntervalTimeFilter dtoResIntervalTimeFilter,
       @PathVariable Long pageSize) {
     return serviceIntervalTimeGetFilterSize.getSize(dtoResIntervalTimeFilter,

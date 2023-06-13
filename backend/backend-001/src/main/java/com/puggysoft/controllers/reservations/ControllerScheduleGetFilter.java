@@ -18,7 +18,7 @@ public class ControllerScheduleGetFilter {
   @Autowired
   private ServiceScheduleGetFilter serviceScheduleGetFilter;
 
-  @PostMapping(path = "/api/v1/reservations-schedules/filter")
+  @PostMapping(path = "/api/v1/reservations-schedule/filter")
   public ResponseEntity<List<DtoResSchedule>> getScheduleFilter(
       @RequestParam int page,
       @RequestParam int size,

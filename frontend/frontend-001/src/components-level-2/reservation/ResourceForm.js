@@ -70,11 +70,13 @@ function ScheduleForm (props) {
 
   const getBody = useCallback(function () {
     const username = window.sessionStorage.getItem("username");
+    const tenant = window.sessionStorage.getItem("tenant");
     const body = {
       name: valueName,
       priceInterval: valuePriceInterval,
       description: valueDescription,
       aux: valueAux,
+      tenant,
       createdBy: username,
       updatedBy: username
     };
@@ -101,6 +103,7 @@ function ScheduleForm (props) {
     setIsEdit(undefined);
     const body = getBody();
     handleValidation(body, setClassNameFormText);
+    setIsRequestInProgress(false);
   };
 
   const handleAdd = (event) => {
