@@ -55,7 +55,7 @@ function TenantGenericEditDelete () {
       handleGetData={handleGetData}
       handleGetSize={handleGetSize}
       tableArrayCustomRowButtons={tableArrayCustomRowButtons}
-      columnsToShow={enumTableColumnsToShow.MEDIUM}
+      columnsToShow={enumTableColumnsToShow.FULL}
     >
     </TenantGenericTable>
   );

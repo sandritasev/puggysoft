@@ -1,5 +1,6 @@
 import enumSex from "./../../models/users/enumSex";
 import i18n from "../../i18n/i18n";
+import caculateAge from "../../tools/caculateAge";
 
 function fixArrayData (arrayData) {
   return arrayData.map((rowObject) => {
@@ -15,6 +16,7 @@ function fixArrayData (arrayData) {
     rowObject.emailVerified = emailVerified
       ? i18n.userEmailVerified.verified
       : i18n.userEmailVerified.noVerified;
+    rowObject.age = caculateAge.getAge(rowObject.birthDate);
     return rowObject;
   });
 }

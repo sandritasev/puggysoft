@@ -46,7 +46,7 @@ function TenantTableSelectForRole () {
       handleGetData={handleGetData}
       handleGetSize={handleGetSize}
       tableArrayCustomRowButtons={tableArrayCustomRowButtons}
-      columnsToShow={enumTableColumnsToShow.FULL}
+      columnsToShow={enumTableColumnsToShow.MEDIUM}
     >
     </TenantGenericTable>
   );
