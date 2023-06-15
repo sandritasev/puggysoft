@@ -2,7 +2,7 @@
 
 CREATE TABLE alc_urb_tramite(
    id BIGINT AUTO_INCREMENT,
-   nombre VARCHAR(60) NOT NULL UNIQUE,
+   nombre VARCHAR(256) NOT NULL UNIQUE,
    nombre_corto VARCHAR(30) NOT NULL UNIQUE,
    tenant VARCHAR(30) NOT NULL,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -17,7 +17,7 @@ CREATE TABLE alc_urb_tramite(
 
 CREATE TABLE alc_urb_requisitos(
    id BIGINT AUTO_INCREMENT,
-   nombre VARCHAR(60) NOT NULL UNIQUE,
+   nombre VARCHAR(256) NOT NULL UNIQUE,
    nombre_corto VARCHAR(30) NOT NULL UNIQUE,
    tenant VARCHAR(30) NOT NULL,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -50,7 +50,7 @@ CREATE TABLE alc_urb_tramite_requisitos(
 
 CREATE TABLE alc_urb_estados(
    id BIGINT AUTO_INCREMENT,
-   nombre VARCHAR(60) NOT NULL UNIQUE,
+   nombre VARCHAR(256) NOT NULL UNIQUE,
    nombre_corto VARCHAR(30) NOT NULL UNIQUE,
    tenant VARCHAR(30) NOT NULL,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,

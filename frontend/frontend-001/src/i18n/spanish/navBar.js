@@ -170,7 +170,10 @@ const navBar = {
   // Reportes de ventas de Recursos Municipales
   recursoMunicipalReporteAdmin: "Adm. Reportes",
   recursoMunicipalReporte1: "Reportes por fecha",
-  recursoMunicipalReporte2: "Reportes por rango de fechas"
+  recursoMunicipalReporte2: "Reportes por rango de fechas",
+  // Recurso Municipal
+  urbanismoTramiteAdmin: "Adm. Tramite",
+  urbanismoTramiteForm: "Registrar Tramite"
 };
 
 export default navBar;

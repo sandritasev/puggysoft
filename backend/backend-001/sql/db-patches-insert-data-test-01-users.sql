@@ -107,13 +107,15 @@ INSERT INTO users (username, password, dni, name, second_name, last_name, second
 ("SysControlAsistenciaAdmin", "admin123", "1000014", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysControlAsistenciaAdmin@puggysoft.com", true, null, "SysAdmin",  true),
 ("SysPlanillaSueldosAdmin", "admin123", "1000015", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysPlanillaSueldosAdmin@puggysoft.com", true, null, "SysAdmin",  true),
 ("SysTicketsAdmin", "admin123", "1000016", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysTicketsAdmin@puggysoft.com", true, null, "SysAdmin",  true),
+("RecursosMunicipalesAdmin", "admin123", "1000026", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "RecursosMunicipalesAdmin@puggysoft.com", true, null, "SysAdmin",  true),
 ("RecursosMunicipalesEncargado", "admin123", "1000018", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "RecursosMunicipalesEncargado@puggysoft.com", true, null, "SysAdmin",  true),
 ("RecursosMunicipalesCajero", "admin123", "1000019", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "RecursosMunicipalesCajero@puggysoft.com", true, null, "SysAdmin",  true),
 ("HospitalAdmin", "admin123", "1000020", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "HospitalAdmin@puggysoft.com", true, null, "SysAdmin",  true),
 ("HospitalDoctor", "admin123", "1000021", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "HospitalDoctor@puggysoft.com", true, null, "SysAdmin",  true),
 ("HospitalPatient", "admin123", "1000022", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "HospitalPatient@puggysoft.com", true, null, "SysAdmin",  true),
 ("HospitalTicketsAdmin", "admin123", "1000023", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "HospitalTicketsAdm@puggysoft.com", true, null, "SysAdmin",  true),
-("SysUrbanismoAdmin", "admin123", "1000025", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysUrbanismoAdmin@puggysoft.com", true, null, "SysAdmin",  true),
+("SysUrbanismoAdmin", "admin123", "1000027", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysUrbanismoAdmin@puggysoft.com", true, null, "SysAdmin",  true),
+("SysUrbanismoEncargado", "admin123", "1000028", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysUrbanismoEncargado@puggysoft.com", true, null, "SysAdmin",  true),
 ("SysEscuelaAdmin", "admin123", "1000017", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysEscuelaAdmin@puggysoft.com", true, null, "SysAdmin",  true);
 
 -- Insert data (Roles).
@@ -140,6 +142,7 @@ INSERT INTO roles (name, created_by) VALUES ("SCHOOL_ADMIN", "admin");
 INSERT INTO roles (name, created_by) VALUES ("ADMIN_USERS_BY_TENANT", "admin");
 INSERT INTO roles (name, created_by) VALUES ("ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO", "admin");
 INSERT INTO roles (name, created_by) VALUES ("ALCALDIA_RECURSOS_MUNICIPALES_CAJERO", "admin");
+INSERT INTO roles (name, created_by) VALUES ("URBANISMO_ENCARGADO", "admin");
 
 -- TENANTS
 INSERT INTO tenants (name, short_name, status, description, created_by) VALUES
@@ -172,8 +175,11 @@ INSERT INTO users_roles (id_user, id_role, created_by, tenant) VALUES
 ((select id from users where username='HospitalDoctor'), (select id from roles where name='HOSPITAL_DOCTOR'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='HospitalPatient'), (select id from roles where name='HOSPITAL_PATIENT'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='HospitalTicketsAdmin'), (select id from roles where name='HOSPITAL_TICKETS_ADMIN'), "SysAdmin", "EMPRESA_1"),
+((select id from users where username='RecursosMunicipalesAdmin'), (select id from roles where name='ADMIN_USERS'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='RecursosMunicipalesEncargado'), (select id from roles where name='ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='RecursosMunicipalesCajero'), (select id from roles where name='ALCALDIA_RECURSOS_MUNICIPALES_CAJERO'), "SysAdmin", "EMPRESA_1"),
+((select id from users where username='SysUrbanismoAdmin'), (select id from roles where name='ADMIN_USERS'), "SysAdmin", "EMPRESA_1"),
+((select id from users where username='SysUrbanismoEncargado'), (select id from roles where name='URBANISMO_ENCARGADO'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='SysEscuelaAdmin'), (select id from roles where name='SCHOOL_ADMIN'), "SysAdmin", "EMPRESA_1");
 
 INSERT INTO users_roles (id_user, id_role, created_by, tenant) VALUES
@@ -196,8 +202,11 @@ INSERT INTO users_roles (id_user, id_role, created_by, tenant) VALUES
 ((select id from users where username='HospitalDoctor'), (select id from roles where name='HOSPITAL_DOCTOR'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='HospitalPatient'), (select id from roles where name='HOSPITAL_PATIENT'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='HospitalTicketsAdmin'), (select id from roles where name='HOSPITAL_TICKETS_ADMIN'), "SysAdmin", "EMPRESA_2"),
+((select id from users where username='RecursosMunicipalesAdmin'), (select id from roles where name='ADMIN_USERS'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='RecursosMunicipalesEncargado'), (select id from roles where name='ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='RecursosMunicipalesCajero'), (select id from roles where name='ALCALDIA_RECURSOS_MUNICIPALES_CAJERO'), "SysAdmin", "EMPRESA_2"),
+((select id from users where username='SysUrbanismoAdmin'), (select id from roles where name='ADMIN_USERS'), "SysAdmin", "EMPRESA_2"),
+((select id from users where username='SysUrbanismoEncargado'), (select id from roles where name='URBANISMO_ENCARGADO'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='SysEscuelaAdmin'), (select id from roles where name='SCHOOL_ADMIN'), "SysAdmin", "EMPRESA_2");
 
 -- Insert data (User-Roles).
@@ -299,6 +308,11 @@ INSERT INTO tenants_users (username, tenant, created_by) VALUES
 ('SysControlAsistenciaAdmin', 'EMPRESA_2', 'SysAdmin'),
 ('SysPlanillaSueldosAdmin', 'EMPRESA_2', 'SysAdmin'),
 ('SysTicketsAdmin', 'EMPRESA_2', 'SysAdmin'),
+('RecursosMunicipalesAdmin', 'EMPRESA_2', 'SysAdmin'),
+('RecursosMunicipalesEncargado', 'EMPRESA_2', 'SysAdmin'),
+('RecursosMunicipalesCajero', 'EMPRESA_2', 'SysAdmin'),
+('SysUrbanismoAdmin', 'EMPRESA_2', 'SysAdmin'),
+('SysUrbanismoEncargado', 'EMPRESA_2', 'SysAdmin'),
 ('SysEscuelaAdmin', 'EMPRESA_2', 'SysAdmin');
 
 

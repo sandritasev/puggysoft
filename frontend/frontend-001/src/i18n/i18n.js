@@ -64,6 +64,7 @@ import alcaldiaRecursosMunicipalesVentasForm from "./spanish/alcaldia/alcaldiaRe
 import alcaldiaRecursosMunicipalesVentasTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesVentasTable";
 import alcaldiaRecursosMunicipalesTableAdd from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTableAdd";
 import alcaldiaRecursosMunicipalesTableDelete from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTableDelete";
+import urbanismoTramiteForm from "./spanish/alcaldia/urbanismoTramiteForm";
 
 const i18n = {
   // Common
@@ -131,7 +132,8 @@ const i18n = {
   alcaldiaRecursosMunicipalesTableDelete,
   alcaldiaRecursosMunicipalesVentasForm,
   alcaldiaRecursosMunicipalesVentasTable,
-  alcaldiaRecursosMunicipalesReporteDiario
+  alcaldiaRecursosMunicipalesReporteDiario,
+  urbanismoTramiteForm
 };
 
 export default i18n;
