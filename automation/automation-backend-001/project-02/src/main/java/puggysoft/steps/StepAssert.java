@@ -4,7 +4,6 @@ import cucumber.api.java.en.Then;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import puggysoft.responses.ResponseManager;
-import puggysoft.storage.VariableInterpreter;
 
 /** Class containing Verification Steps.*/
 public class StepAssert {

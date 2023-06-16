@@ -2,7 +2,7 @@ import enumTenantFields from "./enumTenantFields";
 import enumTableFieldType from "../enumTableFieldType";
 import appUrlConfig from "../../tools/appUrlConfig";
 
-const fileName = "user-default.jpg";
+const fileName = "tenant-default.jpg";
 const imageUrl = `${appUrlConfig.URL}/${fileName}`;
 
 const arrayDataFields = [

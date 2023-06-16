@@ -9,7 +9,9 @@ const arrayDataFields = [
   {
     value: enumUserFields.IMAGE,
     type: enumTableFieldType.IMAGE,
-    defaultImageUrl: imageUrl
+    defaultImageUrl: imageUrl,
+    imageMaxWidth: "75%",
+    tdWidth: "50%"
   },
   enumUserFields.ID,
   enumUserFields.USERNAME,

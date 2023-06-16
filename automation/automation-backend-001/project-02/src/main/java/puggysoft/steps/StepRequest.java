@@ -1,6 +1,5 @@
 package puggysoft.steps;
 
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import io.restassured.response.Response;
 import java.util.HashMap;

@@ -50,7 +50,7 @@ const alcaldiaRecursosMunicipalesTableModels = function (
     setOperatorsDefaultValues();
   };
 
-  const isMedium = tableColumnsToShow === enumTableColumnsToShow.MENDIUM;
+  const isMedium = tableColumnsToShow === enumTableColumnsToShow.MEDIUM;
   const isMinimum = tableColumnsToShow === enumTableColumnsToShow.MINIMUM;
 
   if (isMedium) {

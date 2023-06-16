@@ -1,10 +1,10 @@
 const FULL = "FULL";
-const MENDIUM = "MEDIUM";
+const MEDIUM = "MEDIUM";
 const MINIMUM = "MINIMUM";
 
 const enumTableColumnsToShow = {
   FULL,
-  MENDIUM,
+  MEDIUM,
   MINIMUM
 };
 

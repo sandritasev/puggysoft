@@ -1,10 +1,11 @@
 import React, { useHistory } from "react-router";
-import UserTableFilterGeneric from "./../users/UserTableFilterGeneric";
+import UserGenericTable from "./generic/UserGenericTable";
 import { handleFilterRequest, handleDeleteRequest } from "../../actions/HandleManager";
 import enumPaths from "./../../models/enumPaths";
+import enumTableColumnsToShow from "../../models/enumTableColumnsToShow";
 import i18n from "../../i18n/i18n";
 
-function UserTableFilterEditDelete () {
+function UserTableFilterEditDeleteOnlyTenant () {
   const pageSize = 10;
   const numberPagesToShow = 10;
   const tableTitle = i18n.userTable.titleEditDelete;
@@ -47,15 +48,16 @@ function UserTableFilterEditDelete () {
   ];
 
   return (
-    <UserTableFilterGeneric
+    <UserGenericTable
       handleGetData={handleGetData}
       handleGetSize={handleGetSize}
       tableTitle={tableTitle}
       tableArrayCustomRowButtons={tableArrayCustomRowButtons}
       numberPagesToShow={numberPagesToShow}
+      columnsToShow={enumTableColumnsToShow.MEDIUM}
     >
-    </UserTableFilterGeneric>
+    </UserGenericTable>
   );
 }
 
-export default UserTableFilterEditDelete;
+export default UserTableFilterEditDeleteOnlyTenant;

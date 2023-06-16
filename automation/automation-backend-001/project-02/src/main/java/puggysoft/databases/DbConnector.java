@@ -2,7 +2,6 @@ package puggysoft.databases;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
 
 /** Class */
 public final class DbConnector {

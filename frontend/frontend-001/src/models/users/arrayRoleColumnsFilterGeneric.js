@@ -9,13 +9,6 @@ const getColumnsFilterModel = function (
   /* UPDATED DATE */criteriaUpdatedDate, criteriaOnChangeUpdatedDate, operatorUpdatedDate, operatorOnChangeUpdatedDate
 ) {
   const arrayColumnsFilter = [
-    // {
-    //   type: enumFilterType.TEXTBOX,
-    //   criteriaValue: criteriaId,
-    //   criteriaOnchange: criteriaOnChangeId,
-    //   operatorValue: operatorId,
-    //   operatorOnchange: operatorOnChangeId
-    // },
     {
       type: enumFilterType.NONE
     },

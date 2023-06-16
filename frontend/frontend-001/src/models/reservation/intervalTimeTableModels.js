@@ -48,7 +48,7 @@ const intervalTimeTableModels = function (
     setOperatorsDefaultValues();
   };
 
-  const isMedium = tableColumnsToShow === enumTableColumnsToShow.MENDIUM;
+  const isMedium = tableColumnsToShow === enumTableColumnsToShow.MEDIUM;
   const isMinimum = tableColumnsToShow === enumTableColumnsToShow.MINIMUM;
   if (isMedium || isMinimum) {
     arrayColumnsFilter.slice(0, arrayColumnsFilter.length - 4);

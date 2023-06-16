@@ -1,27 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router";
-import CommonTablePagination from "../../components-level-1/CommonTablePagination";
-import CommonLoading from "../../components-level-1/CommonLoading";
-import { handleFilterRequest, handleDeleteRequest } from "../../actions/HandleManager";
-import i18n from "../../i18n/i18n";
-import arrayDataFields from "../../models/users/arrayUserDataFields";
-import arrayColumns from "../../models/users/arrayUserColumns";
-import getColumnsFilterModel from "../../models/users/arrayUserColumnsFilter";
-import useInput from "./../../hooks/useInput";
-import enumCompareOperators from "./../../models/enumCompareOperators";
-import fixArrayData from "../../tools/users/fixArrayData";
-import enumPaths from "./../../models/enumPaths";
+import React from "react";
+import PropTypes from "prop-types";
+import TableFilterGeneric from "../../generic/TableFilterGeneric";
+import useInput from "./../../../hooks/useInput";
+import enumCompareOperators from "./../../../models/enumCompareOperators";
+import enumTableColumnsToShow from "../../../models/system/enumTableColumnsToShow";
+import getTableModels from "../../../models/users/usersTableModels";
+import fixArrayDataUsers from "../../../tools/users/fixArrayData";
 
-const pageSize = 10;
-const numberPagesToShow = 10;
-
-function UserTableFilter () {
-  const [arrayData, setArrayData] = useState(null);
-  const [totalPages, setTotalPages] = useState(null);
-  const [activePage, setActivePage] = useState(1);
-  const [initialPage, setInitialPage] = useState(1);
-  const history = useHistory();
-
+function UserGenericTable ({
+  numberPagesToShow,
+  tableTitle,
+  tableSubTitle,
+  handleGetData,
+  handleGetSize,
+  tableArrayCustomRowButtons,
+  columnsToShow
+}) {
   // CRITERIA OF SEARCH OR FILTER
   const { value: criteriaId, onChange: criteriaOnChangeId, setValue: criteriaSetId } = useInput("");
   const { value: criteriaUsername, onChange: criteriaOnChangeUsername, setValue: criteriaSetUsername } = useInput("");
@@ -65,7 +59,8 @@ function UserTableFilter () {
   const { value: operatorCreatedDate, onChange: operatorOnChangeCreatedDate, setValue: operatorSetCreatedDate } = useInput(enumCompareOperators.DATE_EQUALS);
   const { value: operatorUpdatedDate, onChange: operatorOnChangeUpdatedDate, setValue: operatorSetUpdatedDate } = useInput(enumCompareOperators.DATE_EQUALS);
 
-  const { arrayColumnsFilter, clearFilters, getFilterBody } = getColumnsFilterModel(
+  const { arrayDataFields, arrayColumnsFilter, clearFilters, getFilterBody, arrayColumnsLabels } = getTableModels(
+    columnsToShow,
     /* ID */ criteriaId, criteriaOnChangeId, criteriaSetId, operatorId, operatorOnChangeId, operatorSetId,
     /* USERNAME */ criteriaUsername, criteriaOnChangeUsername, criteriaSetUsername, operatorUsername, operatorOnChangeUsername, operatorSetUsername,
     /* DNI */ criteriaDni, criteriaOnChangeDni, criteriaSetDni, operatorDni, operatorOnChangeDni, operatorSetDni,
@@ -88,69 +83,53 @@ function UserTableFilter () {
     /* UPDATED DATE */criteriaUpdatedDate, criteriaOnChangeUpdatedDate, criteriaSetUpdatedDate, operatorUpdatedDate, operatorOnChangeUpdatedDate, operatorSetUpdatedDate
   );
 
-  function updateArrayData (arrayData) {
-    const arrayFixed = fixArrayData(arrayData);
-    setArrayData(arrayFixed);
-  }
-
-  useEffect(() => {
-    const filterBody = getFilterBody();
-    handleFilterRequest(`users/filter?page=${activePage - 1}&size=${pageSize}`, filterBody, updateArrayData);
-  }, [activePage]);
-
-  useEffect(() => {
-    const filterBody = getFilterBody();
-    handleFilterRequest(`users/filter/size/${pageSize}`, filterBody, setTotalPages);
-  }, [activePage]);
-
-  const handleFilter = () => {
-    const filterBody = getFilterBody();
-    setActivePage(1);
-    setArrayData(null);
-    setTotalPages(null);
-    handleFilterRequest(`users/filter?page=${activePage - 1}&size=${pageSize}`, filterBody, updateArrayData);
-    handleFilterRequest(`users/filter/size/${pageSize}`, filterBody, setTotalPages);
-  };
-
-  function handleEdit (data) {
-    history.push({
-      pathname: enumPaths.USERS_FORM,
-      state: {
-        data,
-        edit: true
-      }
-    });
-  }
-
-  function handleDelete (data) {
-    handleDeleteRequest(`users/${data.id}`, undefined, undefined, undefined, true);
-  }
-
-  if (arrayData == null || totalPages == null) {
-    return <CommonLoading></CommonLoading>;
+  function fixArrayData (arrayData) {
+    const arrayFixed = fixArrayDataUsers(arrayData);
+    return arrayFixed;
   }
 
   return (
-    <CommonTablePagination
-      tableTitle={i18n.userTable.title}
-      tableArrayData={arrayData}
-      tableArrayDataFields={arrayDataFields}
-      tableArrayColumns={arrayColumns}
-      tableHandleEdit={handleEdit}
-      tableHandleDelete={handleDelete}
-      paginationTotalPages={totalPages}
-      paginationNumberPagesToShow={numberPagesToShow}
-      paginationInitialPage={initialPage}
-      paginationActivePage={activePage}
-      paginationSetArrayData={setArrayData}
-      paginationSetTotalPages={setTotalPages}
-      paginationSetActivePage={setActivePage}
-      paginationSetInitialPage={setInitialPage}
-      filterArrayColumns={arrayColumnsFilter}
-      filterClear={clearFilters}
-      filterHandler={handleFilter}
-    ></CommonTablePagination>
+    <TableFilterGeneric
+      arrayColumns={arrayColumnsLabels}
+      arrayDataFields={arrayDataFields}
+      handleGetData={handleGetData}
+      handleGetSize={handleGetSize}
+      tableTitle={tableTitle}
+      tableSubTitle={tableSubTitle}
+      tableArrayCustomRowButtons={tableArrayCustomRowButtons}
+      numberPagesToShow={numberPagesToShow}
+      arrayColumnsFilter={arrayColumnsFilter}
+      clearFilters={clearFilters}
+      getFilterBody={getFilterBody}
+      fixArrayData={fixArrayData}
+    ></TableFilterGeneric>
   );
 }
 
-export default UserTableFilter;
+export default UserGenericTable;
+
+UserGenericTable.propTypes = {
+  numberPagesToShow: PropTypes.number,
+  tableTitle: PropTypes.string,
+  tableSubTitle: PropTypes.string,
+  handleGetData: PropTypes.func,
+  handleGetSize: PropTypes.func,
+  tableArrayCustomRowButtons: PropTypes.array,
+  columnsToShow: PropTypes.oneOf([
+    enumTableColumnsToShow.FULL,
+    enumTableColumnsToShow.MEDIUM,
+    enumTableColumnsToShow.MINIMUM
+  ]),
+  fixArrayData: PropTypes.func
+};
+
+UserGenericTable.defaultProps = {
+  numberPagesToShow: 0,
+  tableTitle: "",
+  tableSubTitle: undefined,
+  handleGetData: () => { },
+  handleGetSize: () => { },
+  tableArrayCustomRowButtons: [],
+  columnsToShow: enumTableColumnsToShow.FULL,
+  fixArrayData: () => { }
+};
