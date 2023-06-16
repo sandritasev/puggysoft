@@ -104,6 +104,11 @@ const ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_FORM = "/alcaldia-recursos-municipale
 const ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_TABLE = "/alcaldia-recursos-municipales--ventas-table";
 const ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_DIARIO = "/alcaldia-recursos-municipales-reporte-diario";
 const URBANISMO_TRAMITE_FORM = "/urbanismo-tramite-form";
+const URBANISMO_TRAMITE_TABLE = "/urbanismo-tramite-table";
+const URBANISMO_REQUISITOS_FORM = "/urbanismo-requisitos-form";
+const URBANISMO_REQUISITOS_TABLE = "/urbanismo-requisitos-table";
+const URBANISMO_ESTADOS_FORM = "/urbanismo-estados-form";
+const URBANISMO_ESTADOS_TABLE = "/urbanismo-estados-table";
 
 const enumPaths = {
   DASHBOARD,
@@ -206,7 +211,12 @@ const enumPaths = {
   ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_TABLE,
   ALCALDIA_RECURSOS_MUNICIPALES_TABLE,
   ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_DIARIO,
-  URBANISMO_TRAMITE_FORM
+  URBANISMO_TRAMITE_FORM,
+  URBANISMO_TRAMITE_TABLE,
+  URBANISMO_REQUISITOS_FORM,
+  URBANISMO_REQUISITOS_TABLE,
+  URBANISMO_ESTADOS_FORM,
+  URBANISMO_ESTADOS_TABLE
 };
 
 export default enumPaths;

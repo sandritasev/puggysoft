@@ -4,9 +4,9 @@ import TableFilterGeneric from "../../generic/TableFilterGeneric";
 import useInput from "../../../hooks/useInput";
 import enumCompareOperators from "../../../models/enumCompareOperators";
 import enumTableColumnsToShow from "../../../models/enumTableColumnsToShow";
-import urbanismoTramiteTableModels from "../../../models/alcaldia/urbanismoTramiteTableModels";
+import urbanismoEstadosTableModels from "../../../models/alcaldia/urbanismoEstadosTableModels";
 
-function UrbanismoTramiteGenericTable (props) {
+function UrbanismoEstadosGenericTable (props) {
   const {
     numberPagesToShow,
     tableTitle,
@@ -36,7 +36,7 @@ function UrbanismoTramiteGenericTable (props) {
   const { value: operatorCreatedDate, onChange: operatorOnChangeCreatedDate, setValue: operatorSetCreatedDate } = useInput(enumCompareOperators.DATE_EQUALS);
   const { value: operatorUpdatedDate, onChange: operatorOnChangeUpdatedDate, setValue: operatorSetUpdatedDate } = useInput(enumCompareOperators.DATE_EQUALS);
 
-  const { arrayColumnsFilter, clearFilters, getFilterBody, arrayColumnsLabels, arrayDataFields } = urbanismoTramiteTableModels(
+  const { arrayColumnsFilter, clearFilters, getFilterBody, arrayColumnsLabels, arrayDataFields } = urbanismoEstadosTableModels(
     columnsToShow,
     /* ID */ criteriaId, criteriaOnChangeId, criteriaSetId, operatorId, operatorOnChangeId, operatorSetId,
     /* NOMBRE */ criteriaNombre, criteriaOnChangeNombre, criteriaSetNombre, operatorNombre, operatorOnChangeNombre, operatorSetNombre,
@@ -66,9 +66,9 @@ function UrbanismoTramiteGenericTable (props) {
   );
 }
 
-export default UrbanismoTramiteGenericTable;
+export default UrbanismoEstadosGenericTable;
 
-UrbanismoTramiteGenericTable.propTypes = {
+UrbanismoEstadosGenericTable.propTypes = {
   numberPagesToShow: PropTypes.number,
   tableTitle: PropTypes.string,
   tableSubTitle: PropTypes.string,
@@ -83,7 +83,7 @@ UrbanismoTramiteGenericTable.propTypes = {
   fixArrayData: PropTypes.func
 };
 
-UrbanismoTramiteGenericTable.defaultProps = {
+UrbanismoEstadosGenericTable.defaultProps = {
   numberPagesToShow: 0,
   tableTitle: "",
   tableSubTitle: undefined,

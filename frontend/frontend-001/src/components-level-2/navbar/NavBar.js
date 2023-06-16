@@ -33,6 +33,8 @@ import {
   BsCartCheckFill,
   BsFillBagCheckFill,
   BsFillBarChartFill,
+  BsClipboardCheckFill,
+  BsUiChecksGrid,
   BsCashCoin,
   BsCoin,
   BsBuildingLock
@@ -276,6 +278,21 @@ function NavBar () {
   const navigateUrbanismoTramiteForm = () => {
     history.push(enumPaths.URBANISMO_TRAMITE_FORM);
   };
+  const navigateUrbanismoTramiteTable = () => {
+    history.push(enumPaths.URBANISMO_TRAMITE_TABLE);
+  };
+  const navigateUrbanismoRequisitosForm = () => {
+    history.push(enumPaths.URBANISMO_REQUISITOS_FORM);
+  };
+  const navigateUrbanismoRequisitosTable = () => {
+    history.push(enumPaths.URBANISMO_REQUISITOS_TABLE);
+  };
+  const navigateUrbanismoEstadosForm = () => {
+    history.push(enumPaths.URBANISMO_ESTADOS_FORM);
+  };
+  const navigateUrbanismoEstadosTable = () => {
+    history.push(enumPaths.URBANISMO_ESTADOS_TABLE);
+  };
   const NavbarBackground = "dark"; // dark, light, primary
   const NavbarVariant = "dark puggysoft-navbar"; // dark, light
 
@@ -482,7 +499,15 @@ function NavBar () {
   // URBANISMO TRAMITE
   const urbanismoTramiteAdminLabel = (<><IoNewspaperSharp /> {i18n.navBar.urbanismoTramiteAdmin}</>);
   const urbanismoTramiteFormLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoTramiteForm}</>);
-  // const urbanismoTramiteTableLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoTramiteTable}</>);
+  const urbanismoTramiteTableLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoTramiteTable}</>);
+  // URBANISMO REQUISITOS
+  const urbanismoRequisitosAdminLabel = (<><BsClipboardCheckFill /> {i18n.navBar.urbanismoRequisitosAdmin}</>);
+  const urbanismoRequisitosFormLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoRequisitosForm}</>);
+  const urbanismoRequisitosTableLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoRequisitosTable}</>);
+  // URBANISMO ESTADOS
+  const urbanismoEstadosAdminLabel = (<><BsUiChecksGrid /> {i18n.navBar.urbanismoEstadosAdmin}</>);
+  const urbanismoEstadosFormLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoEstadosForm}</>);
+  const urbanismoEstadosTableLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoEstadosTable}</>);
 
   // ******* ******* ******* ALL SYSTEMS ******* ******* *******
   // CONFIG
@@ -696,6 +721,17 @@ function NavBar () {
           {userRoles.includes(enumRoles.URBANISMO_ENCARGADO) &&
             <NavDropdown title={urbanismoTramiteAdminLabel}>
               <NavDropdown.Item onClick={navigateUrbanismoTramiteForm}>{urbanismoTramiteFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateUrbanismoTramiteTable}>{urbanismoTramiteTableLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {userRoles.includes(enumRoles.URBANISMO_ENCARGADO) &&
+            <NavDropdown title={urbanismoRequisitosAdminLabel}>
+              <NavDropdown.Item onClick={navigateUrbanismoRequisitosForm}>{urbanismoRequisitosFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateUrbanismoRequisitosTable}>{urbanismoRequisitosTableLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {userRoles.includes(enumRoles.URBANISMO_ENCARGADO) &&
+            <NavDropdown title={urbanismoEstadosAdminLabel}>
+              <NavDropdown.Item onClick={navigateUrbanismoEstadosForm}>{urbanismoEstadosFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateUrbanismoEstadosTable}>{urbanismoEstadosTableLabel}</NavDropdown.Item>
             </NavDropdown>}
         </Nav>
         {/* ******* ******* ******* ALL SYSTEM ******* ******* ********/}

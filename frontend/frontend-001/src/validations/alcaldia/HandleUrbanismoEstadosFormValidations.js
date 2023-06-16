@@ -14,8 +14,9 @@ const handleValidation = (data, setClassNameFormText) => {
   } else {
     classNameFormTextNew.nombre = "";
   }
-  if (!(data.nombreCorto.length >= 3 && data.nombreCorto.length <= 30) ||
-  data.nombreCorto.includes(" ")
+  if (
+    !(data.nombreCorto.length >= 3 && data.nombreCorto.length <= 30) ||
+    data.nombreCorto.includes(" ")
   ) {
     isValid = false;
     classNameFormTextNew.nombreCorto = classNameRed;
