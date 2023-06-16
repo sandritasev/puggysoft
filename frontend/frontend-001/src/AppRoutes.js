@@ -16,8 +16,8 @@ import TenantTableFilterByRolePage from "./components-level-3/system/TenantTable
 
 // Users System
 import UsersFormPage from "./components-level-3/users/UserFormPage";
-import UserTableBasicPage from "./components-level-3/users/UserTableBasicPage";
-import UserTableFilterFullDataPage from "./components-level-3/users/UserTableFilterFullDataPage";
+import DeprecateUserTableBasicPage from "./components-level-3/users/DeprecateUserTableBasicPage";
+import DeprecateUserTableFilterFullDataPage from "./components-level-3/users/DeprecateUserTableFilterFullDataPage";
 import UserTableFilterByRolePage from "./components-level-3/users/UserTableFilterByRolePage";
 import UserTableFilterByTenantPage from "./components-level-3/users/UserTableFilterByTenantPage";
 import UserTableFilterSelectionToDetailsPage from "./components-level-3/users/UserTableFilterSelectionToDetailsPage";
@@ -28,6 +28,9 @@ import RoleTableFilterPage from "./components-level-3/users/RoleTableFilterPage"
 import RoleTablePageByUserPage from "./components-level-3/users/RoleTablePageByUserPage";
 import RoleTableSelectForTenantPage from "./components-level-3/users/RoleTableSelectForTenantPage";
 import RoleTableFilterByTenantPage from "./components-level-3/users/RoleTableFilterByTenantPage";
+import UserTableFilterEditDeleteOnlyTenantPage from "./components-level-3/users/UserTableFilterEditDeleteOnlyTenantPage";
+import UserTableFilterToDetailsOnlyTenantPage from "./components-level-3/users/UserTableFilterToDetailsOnlyTenantPage";
+
 // Sales System
 import ProductFormPage from "./components-level-3/sales/ProductFormPage";
 import ProductTableFilterEditDeletePage from "./components-level-3/sales/ProductTableFilterEditDeletePage";
@@ -118,8 +121,8 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.TENANTS_TABLE_FILTER_EDIT_DELETE} component={TenantTableFilterEditDeletePage} />
       {/** Users System */}
       <Route exact path={enumPaths.USERS_FORM} component={UsersFormPage} />
-      <Route exact path={enumPaths.USERS_TABLE} component={UserTableBasicPage} />
-      <Route exact path={enumPaths.USERS_TABLE_FILTER} component={UserTableFilterFullDataPage} />
+      <Route exact path={enumPaths.USERS_TABLE} component={DeprecateUserTableBasicPage} />
+      <Route exact path={enumPaths.USERS_TABLE_FILTER} component={DeprecateUserTableFilterFullDataPage} />
       <Route exact path={enumPaths.USERS_TABLE_FILTER_BY_ROLE} component={UserTableFilterByRolePage} />
       <Route exact path={enumPaths.USERS_TABLE_FILTER_BY_TENANT} component={UserTableFilterByTenantPage} />
       <Route exact path={enumPaths.USERS_TABLE_FILTER_SELECTION} component={UserTableFilterSelectionToDetailsPage} />
@@ -131,6 +134,8 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.ROLES_TABLE_SELECTION_FOR_TENANTS} component={RoleTableSelectForTenantPage} />
       <Route exact path={enumPaths.ROLES_TABLE_FILTER_BY_TENANT} component={RoleTableFilterByTenantPage} />
       <Route exact path={enumPaths.ROLES_TABLE_SELECTION} component={RoleTablePage} />
+      <Route exact path={enumPaths.USERS_TABLE_FILTER_ONY_TENANT_EDIT_DELETE} component={UserTableFilterEditDeleteOnlyTenantPage} />
+      <Route exact path={enumPaths.USERS_TABLE_FILTER_ONY_TENANT_DETAILS} component={UserTableFilterToDetailsOnlyTenantPage} />
       {/** Sales System */}
       <Route exact path={enumPaths.SALES_PRODUCTS_FORM} component={ProductFormPage} />
       <Route exact path={enumPaths.SALES_PRODUCTS_TABLE_FILTER} component={ProductTableFilterEditDeletePage} />
@@ -186,11 +191,11 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.HOSPITAL_PATIENT_USER_FORM} component={PatientUserFormPage} />
       <Route exact path={enumPaths.HOSPITAL_PATIENT_USER_TABLE_TO_DETAILS} component={PatientUserTableToDetailsPage} />
       {/** Reservation System */}
-      <Route exact path={enumPaths.RESERVATION_RESOURCES_FORM} component={ResourceFormPage } />
+      <Route exact path={enumPaths.RESERVATION_RESOURCES_FORM} component={ResourceFormPage} />
       <Route exact path={enumPaths.RESERVATION_RESOURCES_TABLE} component={ResourceTablePage} />
-      <Route exact path={enumPaths.RESERVATION_SCHEDULE_FORM} component={ScheduleFormPage } />
+      <Route exact path={enumPaths.RESERVATION_SCHEDULE_FORM} component={ScheduleFormPage} />
       <Route exact path={enumPaths.RESERVATION_SCHEDULE_TABLE} component={ScheduleTablePage} />
-      <Route exact path={enumPaths.RESERVATION_INTERVAL_TIME_FORM} component={IntervalTimeFormPage } />
+      <Route exact path={enumPaths.RESERVATION_INTERVAL_TIME_FORM} component={IntervalTimeFormPage} />
       <Route exact path={enumPaths.RESERVATION_INTERVAL_TIME_TABLE} component={IntervalTimeTablePage} />
       <Route exact path={enumPaths.LOGIN} component={LoginPage} />
       {/** Alcaldia System */}

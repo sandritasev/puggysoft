@@ -13,6 +13,7 @@ import enumInputType from "./../../models/enumInputType";
 import appUrlConfig from "./../../tools/appUrlConfig";
 import CommonLoading from "./../../components-level-1/CommonLoading";
 import CommonMessage from "./../../components-level-1/CommonMessage";
+import caculateAge from "./../../tools/caculateAge";
 
 import "./user-details.css";
 
@@ -43,7 +44,7 @@ function UserDetails (props) {
   const { value: valueLastName, onChange: onChangeLastName, setValue: setValueLastName } = useInput(userData.lastName);
   const { value: valueSecondLastName, onChange: onChangeSecondLastName, setValue: setValueSecondLastName } = useInput(userData.secondLastName);
   const { value: valueBirthDate, onChange: onChangeBirthDate, setValue: setValueBirthDate } = useInput(userData.birthDate);
-  const { value: valueAge, onChange: onChangeAge, setValue: setValueAge } = useInput(userData.age);
+  const { value: valueAge, onChange: onChangeAge, setValue: setValueAge } = useInput(caculateAge.getAge(userData.birthDate));
   const userSex = userData.sex === i18n.userSexText.male ? enumSex.MALE : enumSex.FEMALE;
   const { value: valueSex, onChange: onChangeSex, setValue: setValueSex } = useInput(userSex);
   const { value: valueOccupation, onChange: onChangeOccupation, setValue: setValueOccupation } = useInput(userData.occupation);
@@ -152,7 +153,7 @@ function UserDetails (props) {
     setValueLastName(newUserData.lastName);
     setValueSecondLastName(newUserData.secondLastName);
     setValueBirthDate(newUserData.birthDate);
-    setValueAge(newUserData.age);
+    setValueAge(caculateAge.getAge(newUserData.birthDate));
     setValueSex(newUserData.sex);
     setValueOccupation(newUserData.occupation);
     setValueTelephone(newUserData.telephone);
@@ -370,8 +371,8 @@ function UserDetails (props) {
               </div>
               <div className="puggysoft-textbox-item">
                 <CommonTextbox
+                  textboxReadOnly={true}
                   textboxLabel={i18n.userTable.columndAge}
-                  textboxReadOnly={false}
                   textboxType={enumInputType.NUMBER}
                   textboxOnSave={handleAdd}
                   textboxOnchange={onChangeAge}

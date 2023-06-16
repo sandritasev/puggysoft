@@ -6,13 +6,14 @@ import CommonLabel from "./../../components-level-1/CommonLabel";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import {
   FaUsers,
-  FaUsersCog,
   FaChartLine,
   FaTicketAlt,
   FaUserInjured,
   FaUserMd,
   FaUser,
-  FaCashRegister
+  FaCashRegister,
+  FaUserShield,
+  FaHouseUser
 } from "react-icons/fa";
 import {
   AiOutlineUserAdd,
@@ -33,7 +34,8 @@ import {
   BsFillBagCheckFill,
   BsFillBarChartFill,
   BsCashCoin,
-  BsCoin
+  BsCoin,
+  BsBuildingLock
 } from "react-icons/bs";
 import { RiLoginCircleLine, RiUser2Fill, RiShieldKeyholeFill } from "react-icons/ri";
 import { MdOutlineSettingsSuggest } from "react-icons/md";
@@ -138,6 +140,12 @@ function NavBar () {
         tableTitle: i18n.userTable.titleSelectionToDetails
       }
     });
+  };
+  const navigatUsersOnlyTenantTableEditDelete = () => {
+    history.push(enumPaths.USERS_TABLE_FILTER_ONY_TENANT_EDIT_DELETE);
+  };
+  const navigatUsersOnlyTenantTableDetails = () => {
+    history.push(enumPaths.USERS_TABLE_FILTER_ONY_TENANT_DETAILS);
   };
   // ******* ******* ******* SALES SYSTEM ******* ******* *******
   const navigateProductsForm = () => {
@@ -277,10 +285,10 @@ function NavBar () {
   const tenantAdminLabel = (<><BsBuildingFillGear /> {i18n.navBar.tenantAdmin}</>);
   const tenantRegistrationLabel = (<><BsBuildingFillAdd /> {i18n.navBar.tenantRegistration}</>);
   const tenantShowTableFilterEditDeleteLabel = (<><AiOutlineTable /> {i18n.navBar.tenantShowTableFilterEditDelete}</>);
-  const tenantUserAdminLabel = (<><FaUsersCog /> {i18n.navBar.tenantUserAdmin}</>);
+  const tenantUserAdminLabel = (<><FaHouseUser /> {i18n.navBar.tenantUserAdmin}</>);
   const tenantUserCrudByTenantLabel = (<><AiOutlineTable /> {i18n.navBar.tenantUserCrudByTenant}</>);
   const tenantUserCrudByUserLabel = (<><AiOutlineTable /> {i18n.navBar.tenantUserCrudByUser}</>);
-  const tenantRoleAdminLabel = (<><FaUsersCog /> {i18n.navBar.tenantRoleAdmin}</>);
+  const tenantRoleAdminLabel = (<><BsBuildingLock /> {i18n.navBar.tenantRoleAdmin}</>);
   const tenantRoleCrudByTenantLabel = (<><AiOutlineTable /> {i18n.navBar.tenantRoleCrudByTenant}</>);
   const tenantRoleCrudByRoleLabel = (<><AiOutlineTable /> {i18n.navBar.tenantRoleCrudByRole}</>);
 
@@ -301,7 +309,7 @@ function NavBar () {
   // const roleShowCardLabel = (<><AiOutlineIdcard /> {i18n.navBar.roleShowCard}</>)
 
   // ROLES - USER
-  const roleUserAdminLabel = (<><FaUsersCog /> {i18n.navBar.roleUserAdmin}</>);
+  const roleUserAdminLabel = (<><FaUserShield /> {i18n.navBar.roleUserAdmin}</>);
   const roleUserCrudByRoleLabel = (<><AiOutlineTable /> {i18n.navBar.roleUserCrudByRole}</>);
   const roleUserCrudByUserLabel = (<><AiOutlineTable /> {i18n.navBar.roleUserCrudByUser}</>);
 
@@ -525,8 +533,8 @@ function NavBar () {
           {userRoles.includes(enumRoles.ADMIN_USERS) &&
             <NavDropdown title={userAdminLabel}>
               <NavDropdown.Item onClick={navigateUsersForm} >{userRegistrationLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateUsersTableFilterEditDelete}>{userShowTableFilterEditDeleteLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateUserTableSelectionForDetails}>{userShowTableFilterDetailsLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigatUsersOnlyTenantTableEditDelete}>{userShowTableFilterEditDeleteLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigatUsersOnlyTenantTableDetails}>{userShowTableFilterDetailsLabel}</NavDropdown.Item>
               {/* <NavDropdown.Item onClick={navigateUsersTable}>{userShowTableFullDataLabel}</NavDropdown.Item> */}
               {/* <NavDropdown.Item onClick={navigateGeneric}>{userShowCardLabel}</NavDropdown.Item> */}
             </NavDropdown>}

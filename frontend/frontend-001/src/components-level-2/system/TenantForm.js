@@ -42,7 +42,7 @@ function TenantForm () {
   const address = isEdit && isEdit.data.address !== null ? isEdit.data.address : "";
 
   // CONFIGURE IMAGE
-  const fileName = "user-default.jpg";
+  const fileName = "tenant-default.jpg";
   const imageUrlInit = `${appUrlConfig.PROTOCOL}//${appUrlConfig.HOSTNAME}:${appUrlConfig.PORT}/${fileName}`;
   let imageUrlInitAux = imageUrlInit;
   const tenantImage =

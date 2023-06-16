@@ -38,7 +38,6 @@ function UserForm (props) {
   const lastName = isEdit && isEdit.data.lastName !== null ? isEdit.data.lastName : "";
   const secondLastName = isEdit && isEdit.data.secondLastName !== null ? isEdit.data.secondLastName : "";
   const birthDate = isEdit && isEdit.data.birthDate !== null ? isEdit.data.birthDate : "";
-  const age = isEdit && isEdit.data.age !== null ? isEdit.data.age : "";
   let sex = enumSex.MALE;
   let status = true;
   let emailVerified = false;
@@ -85,7 +84,7 @@ function UserForm (props) {
   const { value: valueLastName, onChange: onChangeLastName, setValue: setLastName } = useInput(lastName);
   const { value: valueSecondLastName, onChange: onChangeSecondLastName, setValue: setSecondLastName } = useInput(secondLastName);
   const { value: valueBirthDate, onChange: onChangeBirthDate, setValue: setBirthDate } = useInput(birthDate);
-  const { value: valueAge, onChange: onChangeAge, setValue: setAge } = useInput(age);
+  const { value: valueAge, setValue: setAge } = useInput(1);
   const { value: valueSex, onChange: onChangeSex, setValue: setSex } = useInput(sex);
   const { value: valueOccupation, onChange: onChangeOccupation, setValue: setOccupation } = useInput(occupation);
   const { value: valueTelephone, onChange: onChangeTelephone, setValue: setTelephone } = useInput(telephone);
@@ -105,7 +104,7 @@ function UserForm (props) {
     setLastName("");
     setSecondLastName("");
     setBirthDate("");
-    setAge("");
+    setAge(1);
     setSex(enumSex.MALE);
     setOccupation("");
     setTelephone("");
@@ -347,17 +346,6 @@ function UserForm (props) {
                 placeholder={i18n.userForm.fieldBirthDate} /></div>
               <Form.Text muted className={classNameFormText.birthDate}>
                 {i18n.userForm.formTextBirthDate}
-              </Form.Text>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="age">
-              <div className={classNameItemLabel}><Form.Label>{i18n.userForm.fieldAge}</Form.Label></div>
-              <div className={classNameItemInput}><Form.Control
-                onChange={onChangeAge}
-                value={valueAge}
-                type="number"
-                placeholder={i18n.userForm.fieldAge} /></div>
-              <Form.Text muted className={classNameFormText.age}>
-                {i18n.userForm.formTextAge}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3 puggysoft-form-item-input-select" controlId="sex">

@@ -1,12 +1,12 @@
 import React from "react";
 import { useHistory } from "react-router";
 import i18n from "../../i18n/i18n";
-import enumPaths from "./../../models/enumPaths";
+import enumPaths from "../../models/enumPaths";
 import { handleFilterRequest } from "../../actions/HandleManager";
 import TenantGenericTable from "./generic/TenantGenericTable";
-import enumTableColumnsToShow from "./../../models/system/enumTableColumnsToShow";
+import enumTableColumnsToShow from "../../models/system/enumTableColumnsToShow";
 
-function TenantGenericEditDelete () {
+function TenantTableSelectForRole () {
   const tableTitle = i18n.tenantTable.title;
   const pageSize = 10;
   const numberPagesToShow = 10;
@@ -22,9 +22,8 @@ function TenantGenericEditDelete () {
   }
 
   function handleSelection (tenantData) {
-    const afterSelectRoute = enumPaths.USERS_TABLE_FILTER_BY_TENANT;
     history.push({
-      pathname: afterSelectRoute,
+      pathname: enumPaths.ROLES_TABLE_SELECTION,
       state: {
         data: tenantData
       }
@@ -52,4 +51,4 @@ function TenantGenericEditDelete () {
   );
 }
 
-export default TenantGenericEditDelete;
+export default TenantTableSelectForRole;

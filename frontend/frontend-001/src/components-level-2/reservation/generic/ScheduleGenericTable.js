@@ -72,7 +72,7 @@ ScheduleGenericTable.propTypes = {
   tableArrayCustomRowButtons: PropTypes.array,
   columnsToShow: PropTypes.oneOf([
     enumTableColumnsToShow.FULL,
-    enumTableColumnsToShow.MENDIUM,
+    enumTableColumnsToShow.MEDIUM,
     enumTableColumnsToShow.MINIMUM
   ])
 };
