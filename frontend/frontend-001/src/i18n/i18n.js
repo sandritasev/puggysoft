@@ -64,6 +64,12 @@ import alcaldiaRecursosMunicipalesVentasForm from "./spanish/alcaldia/alcaldiaRe
 import alcaldiaRecursosMunicipalesVentasTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesVentasTable";
 import alcaldiaRecursosMunicipalesTableAdd from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTableAdd";
 import alcaldiaRecursosMunicipalesTableDelete from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTableDelete";
+import urbanismoTramiteForm from "./spanish/alcaldia/urbanismoTramiteForm";
+import urbanismoTramiteTable from "./spanish/alcaldia/urbanismoTramiteTable";
+import urbanismoRequisitosForm from "./spanish/alcaldia/urbanismoRequisitosForm";
+import urbanismoRequisitosTable from "./spanish/alcaldia/urbanismoRequisitosTable";
+import urbanismoEstadosForm from "./spanish/alcaldia/urbanismoEstadosForm";
+import urbanismoEstadosTable from "./spanish/alcaldia/urbanismoEstadosTable";
 
 const i18n = {
   // Common
@@ -131,7 +137,13 @@ const i18n = {
   alcaldiaRecursosMunicipalesTableDelete,
   alcaldiaRecursosMunicipalesVentasForm,
   alcaldiaRecursosMunicipalesVentasTable,
-  alcaldiaRecursosMunicipalesReporteDiario
+  alcaldiaRecursosMunicipalesReporteDiario,
+  urbanismoTramiteForm,
+  urbanismoTramiteTable,
+  urbanismoRequisitosForm,
+  urbanismoRequisitosTable,
+  urbanismoEstadosForm,
+  urbanismoEstadosTable
 };
 
 export default i18n;

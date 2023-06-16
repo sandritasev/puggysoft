@@ -170,7 +170,19 @@ const navBar = {
   // Reportes de ventas de Recursos Municipales
   recursoMunicipalReporteAdmin: "Adm. Reportes",
   recursoMunicipalReporte1: "Reportes por fecha",
-  recursoMunicipalReporte2: "Reportes por rango de fechas"
+  recursoMunicipalReporte2: "Reportes por rango de fechas",
+  // Urbanismo Tramite
+  urbanismoTramiteAdmin: "Adm. Tramite",
+  urbanismoTramiteForm: "Registrar Tramite",
+  urbanismoTramiteTable: "Mostrar Tramite",
+  // Urbanismo Requisitos
+  urbanismoRequisitosAdmin: "Adm. Requisitos",
+  urbanismoRequisitosForm: "Registrar Requisitos",
+  urbanismoRequisitosTable: "Mostrar Requisitos",
+  // Urbanismo Estados
+  urbanismoEstadosAdmin: "Adm. Estados",
+  urbanismoEstadosForm: "Registrar Estados",
+  urbanismoEstadosTable: "Mostrar Estados"
 };
 
 export default navBar;
