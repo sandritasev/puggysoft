@@ -18,11 +18,14 @@ public class DtoRole extends DtoSuperClass {
   @Size(min = 3, max = 60)
   private String name;
 
+  private String aux;
+
   /** convert from dto to entity. */
   public EntityRole dtoToEntity() {
     EntityRole entity = new EntityRole();
     entity.setId(id);
     entity.setName(name);
+    entity.setAux(aux);
     entity.setCreatedBy(createdBy);
     entity.setUpdatedBy(updatedBy);
     return entity;
@@ -33,6 +36,7 @@ public class DtoRole extends DtoSuperClass {
     DtoRole dto = new DtoRole();
     dto.setId(entity.getId());
     dto.setName(entity.getName());
+    dto.setAux(entity.getAux());
     dto.setCreatedBy(entity.getCreatedBy());
     dto.setUpdatedBy(entity.getUpdatedBy());
     dto.setCreationDate(entity.getCreationDate());

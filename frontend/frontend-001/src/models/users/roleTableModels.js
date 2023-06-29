@@ -13,9 +13,9 @@ const resourcesTableModels = function (
   /* CREATED DATE */criteriaCreatedDate, criteriaOnChangeCreatedDate, criteriaSetCreatedDate, operatorCreatedDate, operatorOnChangeCreatedDate, operatorSetCreatedDate,
   /* UPDATED DATE */criteriaUpdatedDate, criteriaOnChangeUpdatedDate, criteriaSetUpdatedDate, operatorUpdatedDate, operatorOnChangeUpdatedDate, operatorSetUpdatedDate
 ) {
-  const arrayDataFields = [...arrayDataFieldsImport];
-  const arrayColumnsLabels = [...arrayColumnsLabelsImport];
-  const arrayColumnsFilter = arrayRoleColumnsFilter(
+  let arrayDataFields = [...arrayDataFieldsImport];
+  let arrayColumnsLabels = [...arrayColumnsLabelsImport];
+  let arrayColumnsFilter = arrayRoleColumnsFilter(
     /* ID */ criteriaId, criteriaOnChangeId, operatorId, operatorOnChangeId,
     /* NAME */ criteriaName, criteriaOnChangeName, operatorName, operatorOnChangeName,
     /* CREATED BY */criteriaCreatedBy, criteriaOnChangeCreatedBy, operatorCreatedBy, operatorOnChangeCreatedBy,
@@ -46,13 +46,17 @@ const resourcesTableModels = function (
   const isMedium = tableColumnsToShow === enumTableColumnsToShow.MEDIUM;
   const isMinimum = tableColumnsToShow === enumTableColumnsToShow.MINIMUM;
   if (isMedium) {
-    arrayColumnsFilter.splice(arrayColumnsFilter.length - 4, 4);
-    arrayColumnsLabels.splice(arrayColumnsLabels.length - 4, 4);
-    arrayDataFields.splice(arrayDataFields.length - 4, 4);
+    arrayColumnsFilter.splice(3);
+    arrayColumnsLabels.splice(3);
+    arrayDataFields.splice(3);
   } else if (isMinimum) {
-    arrayColumnsFilter.splice(arrayColumnsFilter.length - 5, 5);
-    arrayColumnsLabels.splice(arrayColumnsLabels.length - 5, 5);
-    arrayDataFields.splice(arrayDataFields.length - 5, 5);
+    arrayColumnsFilter.splice(2);
+    arrayColumnsLabels.splice(2);
+    arrayDataFields.splice(2);
+  } else {
+    arrayColumnsFilter = arrayColumnsFilter.filter((element, index) => index !== 2);
+    arrayColumnsLabels = arrayColumnsLabels.filter((element, index) => index !== 2);
+    arrayDataFields = arrayDataFields.filter((element, index) => index !== 2);
   }
 
   const getFilterBody = () => {

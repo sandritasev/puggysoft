@@ -9,6 +9,7 @@ import getColumnsFilterModel from "../../models/users/arrayUserColumnsFilterRedu
 import enumCompareOperators from "../../models/enumCompareOperators";
 import useInput from "../../hooks/useInput";
 
+/** @deprecated */
 function UserTableSuperReducedGeneric (props) {
   const {
     numberPagesToShow,

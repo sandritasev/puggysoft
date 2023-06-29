@@ -68,7 +68,7 @@ const handleValidation = (data, setClassNameFormText) => {
     classNameFormTextNew.birthDate = classNameRed;
   } else {
     classNameFormTextNew.birthDate = "";
-  } if (data.age === "" || data.age === 0 || data.age < 0) {
+  } if (data.age === "" || data.age < 0) {
     isValid = false;
     classNameFormTextNew.age = classNameRed;
   } else {

@@ -15,4 +15,6 @@ public class EntityRole extends EntitySuperClass {
 
   private String name;
 
+  private String aux;
+
 }

@@ -12,6 +12,7 @@ const TENANTS_TABLE_FILTER_BY_USER = "/tenants-table-filter-by-user";
 const IN_PROGRESS_PAGE = "/in-progress-page";
 // USERS SYSTEM
 const USERS_FORM = "/users-form";
+const USERS_FORM_TENANT = "/users-form-tenant";
 const USERS_TABLE = "/users-table";
 const USERS_TABLE_FILTER = "/users-table-filter";
 const USERS_TABLE_FILTER_BY_ROLE = "/users-table-filter-by-role";
@@ -27,6 +28,28 @@ const ROLES_TABLE_SELECTION_FOR_TENANTS = "/roles-table-selection-for-tenants";
 const ROLES_TABLE_SELECTION = "/roles-table-selection";
 const USERS_TABLE_FILTER_ONY_TENANT_EDIT_DELETE = "/users-table-filter-only-tenant-edit-delete";
 const USERS_TABLE_FILTER_ONY_TENANT_DETAILS = "/users-table-filter-only-tenant-details";
+const USERS_ROLES_STEP_ONE = "/users-roles-step-one";
+const USERS_ROLES_STEP_TWO = "/users-roles-step-two";
+const ROLES_USERS_STEP_ONE = "/roles-users-step-one";
+const ROLES_USERS_STEP_TWO = "/roles-users-step-two";
+const TENANTS_USERS_ROLES_STEP_ONE = "/tenants-users-roles-step-one";
+const TENANTS_USERS_ROLES_STEP_TWO = "/tenants-users-roles-step-two";
+const TENANTS_USERS_ROLES_STEP_THREE = "/tenants-users-roles-step-three";
+const TENANTS_ROLES_USERS_STEP_ONE = "/tenants-roles-users-step-one";
+const TENANTS_ROLES_USERS_STEP_TWO = "/tenants-roles-users-step-two";
+const TENANTS_ROLES_USERS_THREE = "/tenants-roles-users-step-three";
+const USERS_TENANTS_ROLES_STEP_ONE = "/users-tenants-roles-step-one";
+const USERS_TENANTS_ROLES_STEP_TWO = "/users-tenants-roles-step-two";
+const USERS_TENANTS_ROLES_THREE = "/users-tenants-roles-step-three";
+const USERS_ROLES_TENANTS_STEP_ONE = "/users-roles-tenants-step-one";
+const USERS_ROLES_TENANTS_STEP_TWO = "/users-roles-tenants-step-two";
+const USERS_ROLES_TENANTS_THREE = "/users-roles-tenants-step-three";
+const ROLES_TENANTS_USERS_STEP_ONE = "/roles-tenants-users-step-one";
+const ROLES_TENANTS_USERS_STEP_TWO = "/roles-tenants-users-step-two";
+const ROLES_TENANTS_USERS_STEP_THREE = "/roles-tenants-users-step-three";
+const ROLES_USERS_TENANTS_STEP_ONE = "/roles-users-tenants-step-one";
+const ROLES_USERS_TENANTS_STEP_TWO = "/roles-users-tenants-step-two";
+const ROLES_USERS_TENANTS_STEP_THREE = "/roles-users-tenants-step-three";
 
 // SALES SYSTEM
 const SALES_PRODUCTS_FORM = "/sales-products-form";
@@ -126,6 +149,7 @@ const enumPaths = {
   IN_PROGRESS_PAGE,
   // USERS SYSTEM
   USERS_FORM,
+  USERS_FORM_TENANT,
   USERS_TABLE,
   USERS_TABLE_FILTER,
   USERS_TABLE_FILTER_BY_ROLE,
@@ -141,6 +165,28 @@ const enumPaths = {
   ROLES_TABLE_SELECTION,
   USERS_TABLE_FILTER_ONY_TENANT_EDIT_DELETE,
   USERS_TABLE_FILTER_ONY_TENANT_DETAILS,
+  USERS_ROLES_STEP_ONE,
+  USERS_ROLES_STEP_TWO,
+  ROLES_USERS_STEP_ONE,
+  ROLES_USERS_STEP_TWO,
+  TENANTS_USERS_ROLES_STEP_ONE,
+  TENANTS_USERS_ROLES_STEP_TWO,
+  TENANTS_USERS_ROLES_STEP_THREE,
+  TENANTS_ROLES_USERS_STEP_ONE,
+  TENANTS_ROLES_USERS_STEP_TWO,
+  TENANTS_ROLES_USERS_THREE,
+  USERS_TENANTS_ROLES_STEP_ONE,
+  USERS_TENANTS_ROLES_STEP_TWO,
+  USERS_TENANTS_ROLES_THREE,
+  USERS_ROLES_TENANTS_STEP_ONE,
+  USERS_ROLES_TENANTS_STEP_TWO,
+  USERS_ROLES_TENANTS_THREE,
+  ROLES_TENANTS_USERS_STEP_ONE,
+  ROLES_TENANTS_USERS_STEP_TWO,
+  ROLES_TENANTS_USERS_STEP_THREE,
+  ROLES_USERS_TENANTS_STEP_ONE,
+  ROLES_USERS_TENANTS_STEP_TWO,
+  ROLES_USERS_TENANTS_STEP_THREE,
   // SALES SYSTEM
   SALES_PRODUCTS_FORM,
   SALES_PRODUCTS_TABLE_FILTER,

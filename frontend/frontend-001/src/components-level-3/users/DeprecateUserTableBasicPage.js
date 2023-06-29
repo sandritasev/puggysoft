@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./../../components-level-2/navbar/NavBar";
 import DeprecateUserTableBasic from "./../../components-level-2/users/DeprecateUserTableBasic";
-// @Deprecate
+/** @deprecated */
 function UserTableBasicPage () {
   return (
     <div className="users-table-page">

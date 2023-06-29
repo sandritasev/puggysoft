@@ -108,4 +108,49 @@ public interface IRepositoryRole extends JpaRepository<EntityRole, Long> {
           + "WHERE tenants_roles.tenant = ?1", nativeQuery = true)
   Long findSizeWithTenants(String tenant);
 
+  // GET ALL ROLES THAT ARE PART OF A USER AND TENANT
+  @Query(value = "SELECT users_roles.id, users_roles.tenant as aux, roles.* "
+          + "FROM roles "
+          + "INNER JOIN users_roles ON users_roles.id_role=roles.id "
+          + "WHERE users_roles.id_user = ?1 AND "
+          + "users_roles.tenant = ?4 "
+          + "LIMIT ?2, ?3", nativeQuery = true)
+  List<EntityRole> findRolesWithUserAndTenant(Long idUser, int off, int size, String tenant);
+
+  // GET COUNT ROLES THAT ARE PART OF A USER AND TENANT
+  @Query(value = "SELECT COUNT(*) "
+          + "FROM roles "
+          + "INNER JOIN users_roles ON users_roles.id_role=roles.id "
+          + "WHERE users_roles.id_user = ?1 AND "
+          + "users_roles.tenant = ?2", nativeQuery = true)
+  Long findSizeWithUserAndTenant(Long idUser, String tenant);
+
+  // GET ALL ROLES THAT ARE NOT PART OF A USER AND TENANT
+  @Query(value = "SELECT roles.* "
+          + "FROM roles "
+          + "INNER JOIN tenants_roles ON tenants_roles.role=roles.name "
+          + "WHERE tenants_roles.tenant = ?4 "
+          + "AND roles.id "
+          + "NOT IN ("
+          + "SELECT users_roles.id_role "
+          + "FROM users_roles "
+          + "WHERE users_roles.id_user = ?1 AND "
+          + "users_roles.tenant = ?4 "
+          + ") "
+          + "LIMIT ?2, ?3", nativeQuery = true)
+  List<EntityRole> findRolesWithUserAndTenantNegative(Long idUser, int off, int size, String tenant);
+
+  // GET COUNT ROLES THAT ARE NOT PART OF A USER AND TENANT
+  @Query(value = "SELECT COUNT(*) "
+          + "FROM roles "
+          + "INNER JOIN tenants_roles ON tenants_roles.role=roles.name "
+          + "WHERE tenants_roles.tenant = ?2 "
+          + "AND roles.id "
+          + "NOT IN ("
+          + "SELECT users_roles.id_role "
+          + "FROM users_roles "
+          + "WHERE users_roles.id_user = ?1 AND "
+          + "users_roles.tenant = ?2 )" , nativeQuery = true)
+  Long findSizeWithUserAndTenantNegative(Long idUser, String tenant);
+
 }

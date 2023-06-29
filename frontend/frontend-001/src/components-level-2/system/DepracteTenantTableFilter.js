@@ -9,7 +9,7 @@ import arrayColumns from "../../models/system/arrayTenantColumns";
 import enumCompareOperators from "./../../models/enumCompareOperators";
 import useInput from "./../../hooks/useInput";
 import getColumnsFilterModel from "../../models/system/arrayTenantColumnsFilterSelection";
-// @Deprecate
+/** @deprecated */
 function TenantTableFilterEditDelete () {
   const pageSize = 10;
   const numberPagesToShow = 10;

@@ -68,13 +68,15 @@ const usersTableModels = function (
     arrayColumnsLabels = arrayColumnsLabels.slice(0, arrayColumnsLabels.length - 6);
     arrayDataFields = arrayDataFields.slice(0, arrayDataFields.length - 6);
   } else if (isMinimum) {
-    // Delete password.
-    arrayColumnsFilter = arrayColumnsFilter.filter((element, index) => index !== 3);
-    arrayColumnsLabels = arrayColumnsLabels.filter((element, index) => index !== 3);
-    arrayDataFields = arrayDataFields.filter((element, index) => index !== 3);
-    arrayColumnsFilter = arrayColumnsFilter.slice(1, arrayColumnsFilter.length - 16);
-    arrayColumnsLabels = arrayColumnsLabels.slice(1, arrayColumnsLabels.length - 16);
-    arrayDataFields = arrayDataFields.slice(1, arrayDataFields.length - 16);
+    // Delete password. index 3
+    // Delete Secondname. index 6
+    // Delete Secondlastname index 8
+    arrayColumnsFilter = arrayColumnsFilter.filter((element, index) => index !== 3 && index !== 6 && index !== 8);
+    arrayColumnsLabels = arrayColumnsLabels.filter((element, index) => index !== 3 && index !== 6 && index !== 8);
+    arrayDataFields = arrayDataFields.filter((element, index) => index !== 3 && index !== 6 && index !== 8);
+    arrayColumnsFilter = arrayColumnsFilter.slice(2, arrayColumnsFilter.length - 13);
+    arrayColumnsLabels = arrayColumnsLabels.slice(2, arrayColumnsLabels.length - 13);
+    arrayDataFields = arrayDataFields.slice(2, arrayDataFields.length - 13);
   }
 
   return {

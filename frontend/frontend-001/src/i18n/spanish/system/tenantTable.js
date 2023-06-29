@@ -1,5 +1,7 @@
 const tenantTable = {
   title: "Tabla Tenants",
+  subTitleSelect: "Seleccione un tenant",
+  subTitleSelected: "Tenant Seleccionado",
   titleSelectionToDetails: "Tabla Tenants (Seleccione para ver detalle)",
   columnId: "Id",
   columnName: "Nombre",

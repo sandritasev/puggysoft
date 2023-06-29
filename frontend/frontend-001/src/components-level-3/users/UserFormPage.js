@@ -4,7 +4,7 @@ import UserForm from "./../../components-level-2/users/UserForm";
 
 function UserFormPage () {
   return (
-    <div className="product-form-page">
+    <div className="user-form-page">
       <NavBar></NavBar>
       <UserForm></UserForm>
     </div>

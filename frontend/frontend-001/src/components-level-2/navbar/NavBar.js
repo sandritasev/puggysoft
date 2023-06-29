@@ -106,6 +106,9 @@ function NavBar () {
   const navigateUsersForm = () => {
     history.push(enumPaths.USERS_FORM);
   };
+  const navigateUsersForTenant = () => {
+    history.push(enumPaths.USERS_FORM_TENANT);
+  };
   // const navigateUsersTable = () => { history.push(enumPaths.USERS_TABLE); }
   const navigateUsersTableFilter = () => {
     history.push(enumPaths.USERS_TABLE_FILTER);
@@ -148,6 +151,15 @@ function NavBar () {
   };
   const navigatUsersOnlyTenantTableDetails = () => {
     history.push(enumPaths.USERS_TABLE_FILTER_ONY_TENANT_DETAILS);
+  };
+  const navigateToUsersRolesStepOne = () => {
+    history.push(enumPaths.USERS_ROLES_STEP_ONE);
+  };
+  const navigateToRolesUsersStepOne = () => {
+    history.push(enumPaths.ROLES_USERS_STEP_ONE);
+  };
+  const navigateToTenantUserRoleStepOne = () => {
+    history.push(enumPaths.TENANTS_USERS_ROLES_STEP_ONE);
   };
   // ******* ******* ******* SALES SYSTEM ******* ******* *******
   const navigateProductsForm = () => {
@@ -328,10 +340,16 @@ function NavBar () {
   const roleShowTableFilterLabel = (<><AiOutlineTable /> {i18n.navBar.roleShowTableFilter}</>);
   // const roleShowCardLabel = (<><AiOutlineIdcard /> {i18n.navBar.roleShowCard}</>)
 
+  // TENANTS - USERS - ROLES
+  const tenantsUsersRolesAdminLabel = (<><FaUserShield /> {i18n.navBar.tenantsUsersRoles}</>);
+  const tenantsUsersRolesByTenantAndUser = (<><GrAddCircle /> {i18n.navBar.tenantsUsersRolesByTenantAndUser}</>);
+
   // ROLES - USER
   const roleUserAdminLabel = (<><FaUserShield /> {i18n.navBar.roleUserAdmin}</>);
   const roleUserCrudByRoleLabel = (<><AiOutlineTable /> {i18n.navBar.roleUserCrudByRole}</>);
   const roleUserCrudByUserLabel = (<><AiOutlineTable /> {i18n.navBar.roleUserCrudByUser}</>);
+  const userRoleByUserLabel = (<><GrAddCircle /> {i18n.navBar.userRoleByUser}</>);
+  const userRoleByRolLabel = (<><GrAddCircle /> {i18n.navBar.userRoleByRol}</>);
 
   // ******* ******* ******* SALES SYSTEM ******* ******* *******
   // SELLER
@@ -534,16 +552,6 @@ function NavBar () {
               <NavDropdown.Item onClick={navigateTenantsTableFilterEditDelete} >{tenantShowTableFilterEditDeleteLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.ADMIN) &&
-            <NavDropdown title={tenantUserAdminLabel}>
-              <NavDropdown.Item onClick={navigateTenantTableSelection}>{tenantUserCrudByTenantLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateUserTableSelectionForTenants}>{tenantUserCrudByUserLabel}</NavDropdown.Item>
-            </NavDropdown>}
-          {userRoles.includes(enumRoles.ADMIN) &&
-            <NavDropdown title={tenantRoleAdminLabel}>
-              <NavDropdown.Item onClick={navigateTenantTableSelectionForRoles}>{tenantRoleCrudByTenantLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateRoleTableSelectionForTenants}>{tenantRoleCrudByRoleLabel}</NavDropdown.Item>
-            </NavDropdown>}
-          {userRoles.includes(enumRoles.ADMIN) &&
             <NavDropdown title={userAdminLabel}>
               <NavDropdown.Item onClick={navigateUsersForm} >{userRegistrationLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUsersTableFilterEditDelete}>{userShowTableFilterEditDeleteLabel}</NavDropdown.Item>
@@ -556,29 +564,33 @@ function NavBar () {
               <NavDropdown.Item onClick={navigateRolesTableFilter}>{roleShowTableFilterLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.ADMIN) &&
-            <NavDropdown title={roleUserAdminLabel}>
+            <NavDropdown title={tenantUserAdminLabel}>
+              <NavDropdown.Item onClick={navigateTenantTableSelection}>{tenantUserCrudByTenantLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateUserTableSelectionForTenants}>{tenantUserCrudByUserLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {userRoles.includes(enumRoles.ADMIN) &&
+            <NavDropdown title={tenantRoleAdminLabel}>
+              <NavDropdown.Item onClick={navigateTenantTableSelectionForRoles}>{tenantRoleCrudByTenantLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateRoleTableSelectionForTenants}>{tenantRoleCrudByRoleLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {userRoles.includes(enumRoles.ADMIN) &&
+            <NavDropdown title={tenantsUsersRolesAdminLabel}>
+              <NavDropdown.Item onClick={navigateToTenantUserRoleStepOne}>{tenantsUsersRolesByTenantAndUser}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateRolesTableSelection}>{roleUserCrudByRoleLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUserTableSelectionForRoles}>{roleUserCrudByUserLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.ADMIN_USERS) &&
             <NavDropdown title={userAdminLabel}>
-              <NavDropdown.Item onClick={navigateUsersForm} >{userRegistrationLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateUsersForTenant} >{userRegistrationLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigatUsersOnlyTenantTableEditDelete}>{userShowTableFilterEditDeleteLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigatUsersOnlyTenantTableDetails}>{userShowTableFilterDetailsLabel}</NavDropdown.Item>
               {/* <NavDropdown.Item onClick={navigateUsersTable}>{userShowTableFullDataLabel}</NavDropdown.Item> */}
               {/* <NavDropdown.Item onClick={navigateGeneric}>{userShowCardLabel}</NavDropdown.Item> */}
             </NavDropdown>}
           {userRoles.includes(enumRoles.ADMIN_USERS) &&
-            <NavDropdown title={rolesAdminLabel}>
-              {/* <NavDropdown.Item onClick={navigateGeneric}>{roleRegistrationLabel}</NavDropdown.Item> */}
-              <NavDropdown.Item onClick={navigateRolesTable}>{roleShowTableLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateRolesTableFilter}>{roleShowTableFilterLabel}</NavDropdown.Item>
-              {/* <NavDropdown.Item onClick={navigateGeneric}>{roleShowCardLabel}</NavDropdown.Item> */}
-            </NavDropdown>}
-          {userRoles.includes(enumRoles.ADMIN_USERS) &&
             <NavDropdown title={roleUserAdminLabel}>
-              <NavDropdown.Item onClick={navigateRolesTableSelection}>{roleUserCrudByRoleLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateUserTableSelectionForRoles}>{roleUserCrudByUserLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateToUsersRolesStepOne}>{userRoleByUserLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateToRolesUsersStepOne}>{userRoleByRolLabel}</NavDropdown.Item>
             </NavDropdown>}
 
           {/* ******* ******* ******* SYSTEM PROPERTIES ******* ******* ********/}

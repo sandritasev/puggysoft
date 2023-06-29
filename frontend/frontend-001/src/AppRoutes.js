@@ -16,6 +16,7 @@ import TenantTableFilterByRolePage from "./components-level-3/system/TenantTable
 
 // Users System
 import UsersFormPage from "./components-level-3/users/UserFormPage";
+import UserFormTenantPage from "./components-level-3/users/UserFormTenantPage";
 import DeprecateUserTableBasicPage from "./components-level-3/users/DeprecateUserTableBasicPage";
 import DeprecateUserTableFilterFullDataPage from "./components-level-3/users/DeprecateUserTableFilterFullDataPage";
 import UserTableFilterByRolePage from "./components-level-3/users/UserTableFilterByRolePage";
@@ -30,6 +31,13 @@ import RoleTableSelectForTenantPage from "./components-level-3/users/RoleTableSe
 import RoleTableFilterByTenantPage from "./components-level-3/users/RoleTableFilterByTenantPage";
 import UserTableFilterEditDeleteOnlyTenantPage from "./components-level-3/users/UserTableFilterEditDeleteOnlyTenantPage";
 import UserTableFilterToDetailsOnlyTenantPage from "./components-level-3/users/UserTableFilterToDetailsOnlyTenantPage";
+import RolesUsersStepOnePage from "./components-level-3/users/RolesUsersStepOnePage";
+import RolesUsersStepTwoPage from "./components-level-3/users/RolesUsersStepTwoPage";
+import UsersRolesStepOnePage from "./components-level-3/users/UsersRolesStepOnePage";
+import UsersRolesStepTwoPage from "./components-level-3/users/UsersRolesStepTwoPage";
+import TenantsUsersRolesStepAPage from "./components-level-3/users/TenantsUsersRolesStepAPage";
+import TenantsUsersRolesStepBPage from "./components-level-3/users/TenantsUsersRolesStepBPage";
+import TenantsUsersRolesStepCPage from "./components-level-3/users/TenantsUsersRolesStepCPage";
 
 // Sales System
 import ProductFormPage from "./components-level-3/sales/ProductFormPage";
@@ -128,6 +136,7 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.TENANTS_TABLE_FILTER_EDIT_DELETE} component={TenantTableFilterEditDeletePage} />
       {/** Users System */}
       <Route exact path={enumPaths.USERS_FORM} component={UsersFormPage} />
+      <Route exact path={enumPaths.USERS_FORM_TENANT} component={UserFormTenantPage} />
       <Route exact path={enumPaths.USERS_TABLE} component={DeprecateUserTableBasicPage} />
       <Route exact path={enumPaths.USERS_TABLE_FILTER} component={DeprecateUserTableFilterFullDataPage} />
       <Route exact path={enumPaths.USERS_TABLE_FILTER_BY_ROLE} component={UserTableFilterByRolePage} />
@@ -143,6 +152,13 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.ROLES_TABLE_SELECTION} component={RoleTablePage} />
       <Route exact path={enumPaths.USERS_TABLE_FILTER_ONY_TENANT_EDIT_DELETE} component={UserTableFilterEditDeleteOnlyTenantPage} />
       <Route exact path={enumPaths.USERS_TABLE_FILTER_ONY_TENANT_DETAILS} component={UserTableFilterToDetailsOnlyTenantPage} />
+      <Route exact path={enumPaths.USERS_ROLES_STEP_ONE} component={UsersRolesStepOnePage} />
+      <Route exact path={enumPaths.USERS_ROLES_STEP_TWO} component={UsersRolesStepTwoPage} />
+      <Route exact path={enumPaths.ROLES_USERS_STEP_ONE} component={RolesUsersStepOnePage} />
+      <Route exact path={enumPaths.ROLES_USERS_STEP_TWO} component={RolesUsersStepTwoPage} />
+      <Route exact path={enumPaths.TENANTS_USERS_ROLES_STEP_ONE} component={TenantsUsersRolesStepAPage} />
+      <Route exact path={enumPaths.TENANTS_USERS_ROLES_STEP_TWO} component={TenantsUsersRolesStepBPage} />
+      <Route exact path={enumPaths.TENANTS_USERS_ROLES_STEP_THREE} component={TenantsUsersRolesStepCPage} />
       {/** Sales System */}
       <Route exact path={enumPaths.SALES_PRODUCTS_FORM} component={ProductFormPage} />
       <Route exact path={enumPaths.SALES_PRODUCTS_TABLE_FILTER} component={ProductTableFilterEditDeletePage} />

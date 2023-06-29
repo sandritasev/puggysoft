@@ -20,6 +20,9 @@ const getColumnsFilterModel = function (
       operatorOnchange: operatorOnChangeName
     },
     {
+      type: enumFilterType.NONE
+    },
+    {
       type: enumFilterType.TEXTBOX,
       criteriaValue: criteriaCreatedBy,
       criteriaOnchange: criteriaOnChangeCreatedBy,

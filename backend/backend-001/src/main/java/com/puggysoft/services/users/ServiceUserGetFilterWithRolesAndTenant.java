@@ -44,9 +44,8 @@ public class ServiceUserGetFilterWithRolesAndTenant {
       query = query.substring(0, query.length() - 4);
       String fullQuery = "SELECT users.* FROM users "
           + "INNER JOIN users_roles ON users_roles.id_user=users.id "
-          + "INNER JOIN tenants_users ON tenants_users.username=users.username "
           + "WHERE users_roles.id_role = " + idRol + " AND "
-          + "tenants_users.tenant = " + "'" + tenant + "'" + " AND "
+          + "users_roles.tenant = " + "'" + tenant + "'" + " AND "
           + query + " LIMIT " + off + "," + size;
       // JQPL (createQuery) and Native (createNativeQuery)
       Query filterQuery = entityManager.createNativeQuery(fullQuery, EntityUser.class);

@@ -34,6 +34,7 @@ CREATE TABLE roles(
    name VARCHAR(60) NOT NULL UNIQUE,
    created_by VARCHAR(30),
    updated_by VARCHAR(30),
+   aux TEXT,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
    update_date DATETIME ON UPDATE CURRENT_TIMESTAMP,
    FOREIGN KEY (created_by) REFERENCES users(username),

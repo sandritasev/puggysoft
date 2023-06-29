@@ -94,7 +94,7 @@ function RoleTableFilterByTenant () {
           handleGetSize={handleGetSizeRolesWithOutTenant}
           tableArrayCustomRowButtons={tableArrayCustomRowButtonsAddToRole}
           numberPagesToShow={numberPagesToShow}
-          columnsToShow={enumTableColumnsToShow.MEDIUM}
+          columnsToShow={enumTableColumnsToShow.MINIMUM}
         >
         </RoleGenericTable>
       </div>
@@ -105,7 +105,7 @@ function RoleTableFilterByTenant () {
           handleGetSize={handleGetSizeRolesWithTenant}
           tableArrayCustomRowButtons={tableArrayCustomRowButtonsDeleteToRole}
           numberPagesToShow={numberPagesToShow}
-          columnsToShow={enumTableColumnsToShow.MEDIUM}
+          columnsToShow={enumTableColumnsToShow.MINIMUM}
         >
         </RoleGenericTable>
       </div>

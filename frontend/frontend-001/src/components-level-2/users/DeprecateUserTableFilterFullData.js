@@ -14,7 +14,7 @@ import enumPaths from "./../../models/enumPaths";
 
 const pageSize = 10;
 const numberPagesToShow = 10;
-// @Deprecate
+/** @deprecated */
 function UserTableFilter () {
   const [arrayData, setArrayData] = useState(null);
   const [totalPages, setTotalPages] = useState(null);

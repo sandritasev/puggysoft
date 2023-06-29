@@ -1,5 +1,9 @@
 const userTable = {
   title: "Tabla Usuarios",
+  subTitleSelect: "Seleccione un Usuario",
+  subTitleSelected: "Usuario Seleccionado",
+  subTitleAdd: "Agregar un Usuario",
+  subTitleDelete: "Elimina un Usuario",
   titleEditDelete: "Tabla Usuarios (Seleccione para Editar/Eliminar)",
   titleSelectionToDetails: "Tabla Usuarios (Seleccione para ver detalle)",
   columnId: "Id",

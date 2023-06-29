@@ -22,6 +22,10 @@ mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_P
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-11-planilla-sueldos.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-12-tickets.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-13-escuela-notas.sql
+mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-14-alcaldia-recursos-municipales.sql
+mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-15-alcaldia-urbanismo-tramite.sql
+mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-15-data-storage.sql
+
 REM INSERT DATA.
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-insert-data-test-01-users.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-insert-data-test-02-hospital.sql
@@ -36,3 +40,6 @@ mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_P
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-insert-data-test-11-planilla.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-insert-data-test-12-tickets.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-insert-data-test-13-escuela-notas.sql
+mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-insert-data-test-14-alcaldia-recursos-municipales.sql
+mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-insert-data-test-15-alcaldia-urbanismo-tramite.sql
+mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-insert-data-test-15-data-storage.sql

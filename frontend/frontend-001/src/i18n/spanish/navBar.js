@@ -33,6 +33,13 @@ const navBar = {
   roleUserAdmin: "Adm. Roles - Usuarios",
   roleUserCrudByRole: "Adm. Roles de usuario por Rol",
   roleUserCrudByUser: "Adm. Roles de usuario por Usuario",
+  userRoleByUser: "Asignar roles a usuario",
+  userRoleByRol: "Asignar usuarios a roles",
+
+  // Tenants Users Roles
+  tenantsUsersRoles: "Adm. Tenants - Usuarios - Roles",
+  tenantsUsersRolesByTenantAndUser: "Asignar Roles por tenant y usuario",
+  tenantsUsersRolesByUserAndTenant: "Asignar Roles por usuario y tenant",
 
   // ******* ******* SALES SYSTEM ******* *******
   // Seller
