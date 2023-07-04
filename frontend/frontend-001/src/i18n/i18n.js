@@ -59,11 +59,15 @@ import intervalTimeTable from "./spanish/reservation/intervalTimeTable";
 import alcaldiaVentaStatusText from "./spanish/alcaldia/alcaldiaVentaStatusText";
 import alcaldiaRecursosMunicipalesForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesForm";
 import alcaldiaRecursosMunicipalesReporteDiario from "./spanish/alcaldia/alcaldiaRecursosMunicipalesReporteDiario";
+import alcaldiaRecursosMunicipalesReporteMensual from "./spanish/alcaldia/alcaldiaRecursosMunicipalesReporteMensual";
+import alcaldiaRecursosMunicipalesReporteAnual from "./spanish/alcaldia/alcaldiaRecursosMunicipalesReporteAnual";
+import alcaldiaRecursosMunicipalesReportePdf from "./spanish/alcaldia/alcaldiaRecursosMunicipalesReportesPdf";
 import alcaldiaRecursosMunicipalesTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTable";
 import alcaldiaRecursosMunicipalesVentasForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesVentasForm";
 import alcaldiaRecursosMunicipalesVentasTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesVentasTable";
 import alcaldiaRecursosMunicipalesTableAdd from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTableAdd";
 import alcaldiaRecursosMunicipalesTableDelete from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTableDelete";
+import alcaldiaRecursosMunicipalesNumToText from "./spanish/alcaldia/alcaldiaRecursosMunicipalesNumToText";
 import urbanismoTramiteForm from "./spanish/alcaldia/urbanismoTramiteForm";
 import urbanismoTramiteTable from "./spanish/alcaldia/urbanismoTramiteTable";
 import urbanismoRequisitosForm from "./spanish/alcaldia/urbanismoRequisitosForm";
@@ -138,6 +142,10 @@ const i18n = {
   alcaldiaRecursosMunicipalesVentasForm,
   alcaldiaRecursosMunicipalesVentasTable,
   alcaldiaRecursosMunicipalesReporteDiario,
+  alcaldiaRecursosMunicipalesReporteMensual,
+  alcaldiaRecursosMunicipalesReporteAnual,
+  alcaldiaRecursosMunicipalesReportePdf,
+  alcaldiaRecursosMunicipalesNumToText,
   urbanismoTramiteForm,
   urbanismoTramiteTable,
   urbanismoRequisitosForm,
