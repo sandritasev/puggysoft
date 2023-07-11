@@ -24,7 +24,8 @@ import {
 } from "react-icons/ai";
 import {
   GrAddCircle,
-  GrProductHunt
+  GrProductHunt,
+  GrStackOverflow
 } from "react-icons/gr";
 import { CgOptions } from "react-icons/cg";
 import {
@@ -314,6 +315,15 @@ function NavBar () {
   const navigateUrbanismoTramiteRequisitosStepOne = () => {
     history.push(enumPaths.URBANISMO_TRAMITE_REQUISITOS_STEP_ONE);
   };
+  const navigateUrbanismoTramiteEstadosStepOne = () => {
+    history.push(enumPaths.URBANISMO_TRAMITE_ESTADOS_STEP_ONE);
+  };
+  const navigateUrbanismoTramiteEstadosTable = () => {
+    history.push(enumPaths.URBANISMO_TRAMITE_ESTADOS_TABLE);
+  };
+  const navigateUrbanismoFlujoRequisitosStepOne = () => {
+    history.push(enumPaths.URBANISMO_FLUJO_REQUISITOS_STEP_ONE);
+  };
   const NavbarBackground = "dark"; // dark, light, primary
   const NavbarVariant = "dark puggysoft-navbar"; // dark, light
 
@@ -537,8 +547,13 @@ function NavBar () {
   const urbanismoEstadosAdminLabel = (<><BsUiChecksGrid /> {i18n.navBar.urbanismoEstadosAdmin}</>);
   const urbanismoEstadosFormLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoEstadosForm}</>);
   const urbanismoEstadosTableLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoEstadosTable}</>);
-  // URBANISMO ESTADOS
+  // URBANISMO TRAMITE REQUISITOS
   const urbanismoTramiteRequisitosStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoTramiteRequisitosStepOne}</>);
+  // URBANISMO TRAMITE FLUJO
+  const urbanismoTramiteEstadosAdminLabel = (<><GrStackOverflow /> {i18n.navBar.urbanismoTramiteEstadosAdmin}</>);
+  const urbanismoTramiteEstadosStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoTramiteEstadosStepOne}</>);
+  const urbanismoTramiteEstadosTableLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoTramiteEstadosTable}</>);
+  const urbanismoFlujoRequisitosStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoFlujoRequisitosStepOne}</>);
 
   // ******* ******* ******* ALL SYSTEMS ******* ******* *******
   // CONFIG
@@ -760,6 +775,12 @@ function NavBar () {
             <NavDropdown title={urbanismoEstadosAdminLabel}>
               <NavDropdown.Item onClick={navigateUrbanismoEstadosForm}>{urbanismoEstadosFormLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUrbanismoEstadosTable}>{urbanismoEstadosTableLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {userRoles.includes(enumRoles.URBANISMO_ENCARGADO) &&
+            <NavDropdown title={urbanismoTramiteEstadosAdminLabel}>
+              <NavDropdown.Item onClick={navigateUrbanismoTramiteEstadosStepOne}>{urbanismoTramiteEstadosStepOneLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateUrbanismoTramiteEstadosTable}>{urbanismoTramiteEstadosTableLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateUrbanismoFlujoRequisitosStepOne}>{urbanismoFlujoRequisitosStepOneLabel}</NavDropdown.Item>
             </NavDropdown>}
         </Nav>
         {/* ******* ******* ******* ALL SYSTEM ******* ******* ********/}
