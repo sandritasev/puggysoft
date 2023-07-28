@@ -23,7 +23,7 @@ public class EntityRegulaLotes extends EntitySuperClass {
   private String codigoCatastral;
   @Lob
   @Column(name = "boleta_pago")
-  private byte[] boletaPago;  
+  private byte[] boletaPago;
   @Column(name = "tenant")
   private String tenant;
 

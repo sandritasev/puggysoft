@@ -29,7 +29,7 @@ public class ServiceUrbanismoFlujoRequisitosGetFilter {
   @SuppressWarnings(value = "unchecked")
 
   public ResponseEntity<List<DtoUrbanismoFlujoRequisitos>> filter(
-    DtoUrbanismoFlujoRequisitosFilter dtoUrbanismoFlujoRequisitosFilter, int page, int size) {
+      DtoUrbanismoFlujoRequisitosFilter dtoUrbanismoFlujoRequisitosFilter, int page, int size) {
 
     String query = SqlUrbanismoFlujoRequisitosFilterBuilderNative.build(dtoUrbanismoFlujoRequisitosFilter);
     int off = page * size;

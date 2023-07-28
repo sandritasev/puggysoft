@@ -1,6 +1,5 @@
 package com.puggysoft.services.alcaldia;
 
-import com.puggysoft.dtos.alcaldia.DtoUrbanismoFlujoRequisitos;
 import com.puggysoft.dtos.alcaldia.DtoUrbanismoTramiteFlujo;
 import com.puggysoft.dtos.alcaldia.DtoUrbanismoTramiteRequisitos;
 import com.puggysoft.entities.alcaldia.EntityUrbanismoFlujoRequisitos;
@@ -40,11 +39,11 @@ public class ServiceUrbanismoTramiteFlujoCreate {
 
       List<DtoUrbanismoTramiteRequisitos> listEntitiesTramiteRequisitos;
       listEntitiesTramiteRequisitos = repositoryUrbanismoTramiteRequisitos
-        .findUrbanismoTramiteRequisitosByTramite(dto.getTramiteNombreCorto())
-        .stream()
-        .map(DtoUrbanismoTramiteRequisitos::entityToDto)
-        .collect(Collectors.toList());
-      
+          .findUrbanismoTramiteRequisitosByTramite(dto.getTramiteNombreCorto())
+          .stream()
+          .map(DtoUrbanismoTramiteRequisitos::entityToDto)
+          .collect(Collectors.toList());
+
       for (DtoUrbanismoTramiteRequisitos tramite : listEntitiesTramiteRequisitos) {
         EntityUrbanismoFlujoRequisitos entityUrbanismoFlujoRequisitos = new EntityUrbanismoFlujoRequisitos();
         entityUrbanismoFlujoRequisitos.setIdTramiteFlujo(String.valueOf(dto.getId()));
@@ -53,7 +52,7 @@ public class ServiceUrbanismoTramiteFlujoCreate {
         entityUrbanismoFlujoRequisitos.setCreatedBy(dto.getCreatedBy());
         entityUrbanismoFlujoRequisitos.setTenant(dto.getTenant());
         repositoryUrbanismoFlujoRequisitos
-          .save(entityUrbanismoFlujoRequisitos);
+            .save(entityUrbanismoFlujoRequisitos);
       }
 
       String idString = String.valueOf(dto.getId());

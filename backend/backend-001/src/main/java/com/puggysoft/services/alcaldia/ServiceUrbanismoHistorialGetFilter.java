@@ -29,7 +29,7 @@ public class ServiceUrbanismoHistorialGetFilter {
   @SuppressWarnings(value = "unchecked")
 
   public ResponseEntity<List<DtoUrbanismoHistorial>> filter(
-    DtoUrbanismoHistorialFilter dtoUrbanismoHistorialFilter, int page, int size) {
+      DtoUrbanismoHistorialFilter dtoUrbanismoHistorialFilter, int page, int size) {
 
     String query = SqlUrbanismoHistorialFilterBuilderNative.build(dtoUrbanismoHistorialFilter);
     int off = page * size;

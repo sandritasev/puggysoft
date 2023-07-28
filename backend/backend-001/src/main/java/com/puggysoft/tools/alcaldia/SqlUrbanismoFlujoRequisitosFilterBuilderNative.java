@@ -27,7 +27,7 @@ public final class SqlUrbanismoFlujoRequisitosFilterBuilderNative {
         dtoUrbanismoFlujoRequisitosFilter.estadoOperator);
     query = query + SqlFilterBuilder.getFilterQuery("alc_urb_tramite_flujo_requisitos.archivo_requisito",
         dtoUrbanismoFlujoRequisitosFilter.archivoRequisitoCriteria,
-        dtoUrbanismoFlujoRequisitosFilter.archivoRequisitoOperator);    
+        dtoUrbanismoFlujoRequisitosFilter.archivoRequisitoOperator);
     query = query + SqlFilterBuilder.getFilterQuery("alc_urb_tramite_flujo_requisitos.tenant ",
         dtoUrbanismoFlujoRequisitosFilter.tenantCriteria,
         dtoUrbanismoFlujoRequisitosFilter.tenantOperator);

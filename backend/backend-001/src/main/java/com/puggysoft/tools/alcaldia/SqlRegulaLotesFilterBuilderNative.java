@@ -24,7 +24,7 @@ public final class SqlRegulaLotesFilterBuilderNative {
         dtoRegulaLotesFilter.ciClienteOperator);
     query = query + SqlFilterBuilder.getFilterQuery("alc_reg_lotes.codigo_catastral",
         dtoRegulaLotesFilter.codigoCatastralCriteria,
-        dtoRegulaLotesFilter.codigoCatastralOperator);    
+        dtoRegulaLotesFilter.codigoCatastralOperator);
     query = query + SqlFilterBuilder.getFilterQuery("alc_reg_lotes.tenant ",
         dtoRegulaLotesFilter.tenantCriteria,
         dtoRegulaLotesFilter.tenantOperator);

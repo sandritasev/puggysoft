@@ -15,7 +15,7 @@ public interface IRepositoryUrbanismoEstados extends JpaRepository<EntityUrbanis
   @Query(value = "SELECT * FROM alc_urb_estados LIMIT ?1, ?2", nativeQuery = true)
   List<EntityUrbanismoEstados> findUrbanismoEstadosByPagination(int off, int size);
 
-// GET ALL estados THAT ARE NOT PART OF A TRAMITE
+  // GET ALL estados THAT ARE NOT PART OF A TRAMITE
   @Query(value = "SELECT alc_urb_estados.* "
           + "FROM alc_urb_estados "
           + "WHERE alc_urb_estados.nombre_corto "

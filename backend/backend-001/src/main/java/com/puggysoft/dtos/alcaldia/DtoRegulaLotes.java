@@ -29,7 +29,7 @@ public class DtoRegulaLotes extends DtoSuperClass {
     entity.setId(id);
     entity.setNombreCliente(nombreCliente);
     entity.setCiCliente(ciCliente);
-    entity.setCodigoCatastral(codigoCatastral);  
+    entity.setCodigoCatastral(codigoCatastral);
     entity.setBoletaPago(boletaPago);
     entity.setTenant(tenant);
     entity.setCreatedBy(createdBy);
