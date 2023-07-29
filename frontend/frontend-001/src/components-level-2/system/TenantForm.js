@@ -12,7 +12,6 @@ import { handleValidation, classNameFormTextNew } from "../../validations/system
 import appUrlConfig from "../../tools/appUrlConfig";
 import CommonLoading from "../../components-level-1/CommonLoading";
 import CommonMessage from "../../components-level-1/CommonMessage";
-import enumPaths from "./../../models/enumPaths";
 import enumStatus from "../../models/system/enumStatus";
 
 import "./../css/all-forms.css";
@@ -101,7 +100,6 @@ function TenantForm () {
     handleAddImage(id);
     handleReset();
     setIsEdit(undefined);
-    history.push(enumPaths.TENANTS_TABLE_FILTER_EDIT_DELETE);
   };
 
   const getBody = function () {
