@@ -56,6 +56,8 @@ import "./styles.css";
 function NavBar () {
   const history = useHistory();
   const userRolesString = window.sessionStorage.getItem("role");
+  const currentTenant = window.sessionStorage.getItem("tenant");
+  const tenantImage = window.sessionStorage.getItem("tenantImage");
   // const userRolesObjects = JSON.parse(userRolesString);
   const userRoles = [];
 
@@ -102,7 +104,7 @@ function NavBar () {
   // ******* ******* ******* USERS SYSTEM ******* ******* *******
 
   const navigateToLogout = () => {
-    history.push({ pathname: enumPaths.LOGIN, state: { logout: "" } });
+    history.push({ pathname: `${enumPaths.LOGIN}/${currentTenant}`, state: { logout: "" } });
   };
   const navigateUsersForm = () => {
     history.push(enumPaths.USERS_FORM);
@@ -578,10 +580,15 @@ function NavBar () {
   const configAdminLabel = (<><CgOptions /> {i18n.navBar.configAdmin}</>);
   const configLogout = (<><RiLoginCircleLine /> {i18n.navBar.configLogout}</>);
 
+  let logoPath = "/logo192.png";
+  if (tenantImage !== "null") {
+    logoPath = `data:image/jpeg;base64, ${tenantImage}`;
+  }
+
   return (
     <Navbar collapseOnSelect expand="xl" bg={NavbarBackground} variant={NavbarVariant}>
       <Navbar.Brand>
-        <img src="/logo192.png" className="app-logo" alt="logo" />
+        <img src={logoPath} className="app-logo" alt="logo" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">

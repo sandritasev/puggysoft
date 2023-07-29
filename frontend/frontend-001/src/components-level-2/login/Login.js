@@ -22,6 +22,7 @@ function Login () {
   const tenantParam = params.tenant ? params.tenant : null;
 
   const [tenantSelected, setTenantSelected] = useState(null);
+  const [tenantImage, setTenantImage] = useState(null);
   const [roleSelected, setRoleSelected] = useState(null);
 
   const [isModalTenantAndRoleVisible, setIsModalTenantAndRoleVisible] = useState(false);
@@ -37,17 +38,22 @@ function Login () {
 
   const [loading, setLoading] = useState(false);
 
-  if (routerProps && routerProps.logout) {
-    window.sessionStorage.removeItem("token");
-    window.sessionStorage.removeItem("username");
-    window.sessionStorage.removeItem("roles");
-    window.sessionStorage.clear();
-  }
+  useEffect(() => {
+    if (routerProps) {
+      window.sessionStorage.removeItem("token");
+      window.sessionStorage.removeItem("username");
+      window.sessionStorage.removeItem("tenant");
+      window.sessionStorage.removeItem("role");
+      window.sessionStorage.removeItem("tenantImage");
+      window.sessionStorage.clear();
+    }
+  }, []);
 
   const handleLogin = (event) => {
     event.preventDefault();
     setLoading(true);
     setTenantSelected(null);
+    setTenantImage(null);
     setRoleSelected(null);
     const body = {
       username: valueUsername,
@@ -62,7 +68,10 @@ function Login () {
         handleGetRequest(`tenants-by-user?username=${valueUsername}`, (tenants) => {
           if (tenants.length > 0) {
             tenants.forEach(function (tenant) {
-              if (tenant.shortName === tenantParam) setTenantSelected(tenantParam);
+              if (tenant.shortName === tenantParam) {
+                setTenantSelected(tenantParam);
+                setTenantImage(tenant.image);
+              }
             });
             setListOfTenants(tenants);
           } else {
@@ -95,11 +104,12 @@ function Login () {
         }
       });
     }
-  }, [tenantSelected, valueUsername]);
+  }, [tenantSelected]);
 
   const handleContinueLogin = () => {
     if (tenantSelected) {
       window.sessionStorage.setItem("tenant", tenantSelected);
+      window.sessionStorage.setItem("tenantImage", tenantImage);
       window.sessionStorage.setItem("role", roleSelected);
       history.push(enumPaths.DASHBOARD);
     }
@@ -112,23 +122,27 @@ function Login () {
   const bodyContent = <>
     <Form>
       {tenantParam === null &&
-      <Form.Group className="mb-3" controlId="select-tenant">
-        <Form.Label>{i18n.login.labelTenant}</Form.Label>
-        <Form.Select
-          onChange={(event) => {
-            event.preventDefault();
-            setTenantSelected(event.target.value);
-          }}
-          value={tenantSelected}
-        >
-          <option disabled={!!tenantSelected} value={null} key={"tenant" + -1}>{i18n.login.placeholderTenant}</option>
-          {
-            listOfTenants.map((tenantItem, index) => {
-              return <option key={"tenant" + index} value={tenantItem.shortName}>{tenantItem.name}</option>;
-            })
-          }
-        </Form.Select>
-      </Form.Group>
+        <Form.Group className="mb-3" controlId="select-tenant">
+          <Form.Label>{i18n.login.labelTenant}</Form.Label>
+          <Form.Select
+            onChange={(event) => {
+              event.preventDefault();
+              setTenantSelected(event.target.value);
+              const myTenantSelected = listOfTenants.find(tenant => tenant.shortName === event.target.value);
+              if (myTenantSelected) {
+                setTenantImage(myTenantSelected.image);
+              }
+            }}
+            value={tenantSelected}
+          >
+            <option disabled={!!tenantSelected} value={null} key={"tenant" + -1}>{i18n.login.placeholderTenant}</option>
+            {
+              listOfTenants.map((tenantItem, index) => {
+                return <option key={"tenant" + index} value={tenantItem.shortName}>{tenantItem.name}</option>;
+              })
+            }
+          </Form.Select>
+        </Form.Group>
       }
       <Form.Group className="mb-3" controlId="select-role">
         <Form.Label>{i18n.login.labelRol}</Form.Label>

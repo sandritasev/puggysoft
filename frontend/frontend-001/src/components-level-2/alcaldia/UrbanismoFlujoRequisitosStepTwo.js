@@ -36,8 +36,6 @@ function UrbanismoFlujoRequisitosStepTwo () {
     const textboxElement = document.getElementById(textboxId);
     const file = textboxElement.files[0];
     URL.createObjectURL(file);
-    // console.log(textboxElement);
-    // console.log(productData);
   }
 
   function handleCambiarEstado (data, textboxId) {
@@ -56,11 +54,6 @@ function UrbanismoFlujoRequisitosStepTwo () {
   }
 
   const tableArrayCustomRowButtons = [
-    // {
-    //   type: enumWebElements.TEXTBOX,
-    //   placeholder: "",
-    //   formType: "file"
-    // },
     {
       variant: "warning",
       handleCustom: handleCambiarEstado,

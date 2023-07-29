@@ -235,6 +235,7 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.RESERVATION_SCHEDULE_TABLE} component={ScheduleTablePage} />
       <Route exact path={enumPaths.RESERVATION_INTERVAL_TIME_FORM} component={IntervalTimeFormPage} />
       <Route exact path={enumPaths.RESERVATION_INTERVAL_TIME_TABLE} component={IntervalTimeTablePage} />
+      <Route exact path={enumPaths.LOGIN_TENANT} component={LoginPage} />
       <Route exact path={enumPaths.LOGIN} component={LoginPage} />
       {/** Alcaldia System */}
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_FORM} component={AlcaldiaRecursosMunicipalesFormPage} />
