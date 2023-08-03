@@ -1,19 +1,22 @@
 import requestManager from "./../api/RequestManager";
 import messageManager from "./HandleErrorMessages";
 
-const handleAddRequest = (endpoint, body, callbakOnSuccess, showMessageOnSuccess = true, callbackOnFail) => {
+const handleAddRequest = (endpoint, body, callbakOnSuccess, showAlert = true, callbackOnFail) => {
   requestManager.post(endpoint, body, (response) => {
     if (response && response.status === 201) {
       if (callbakOnSuccess && typeof callbakOnSuccess === "function") {
         callbakOnSuccess(response.data);
       }
-      if (showMessageOnSuccess) {
+      if (showAlert) {
         messageManager.addMessages(response);
       }
     } else {
-      messageManager.addMessages(response);
+      if (showAlert) {
+        messageManager.commonMessages(response);
+      }
       if (callbackOnFail) {
-        callbackOnFail(response);
+        const errorMessage = messageManager.getErrorMessage(response);
+        callbackOnFail(response, errorMessage);
       }
     }
   });

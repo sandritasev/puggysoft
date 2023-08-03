@@ -1,7 +1,4 @@
 const errorMessages = {
-  successfullyCreated: "Registrado exitosamente",
-  successfullyEdited: "Editado exitosamente",
-  successfullyDeleted: "Eliminado exitosamente",
   errorStaus400: "Error 400: Solicitud mala",
   errorStaus403: "Error 403: No tiene permiso",
   errorStaus409: "Error 409: Conflictos",
@@ -13,8 +10,7 @@ const errorMessages = {
   userNoTenants: "El usuario no tiene inquilinos asignados",
   validationErrorTitle: "Error de validacion",
   errorTitle: "Error",
-  validationError: "Error de validacion, porfavor llene corretamente el formulario",
-  okButton: "Aceptar"
+  validationError: "Error de validacion, porfavor llene corretamente el formulario"
 };
 
 export default errorMessages;

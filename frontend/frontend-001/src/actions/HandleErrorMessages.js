@@ -1,16 +1,16 @@
 import i18n from "./../i18n/i18n";
 
-const unknownError = () => {
-  alert(i18n.errorMessages.unknownError);
-};
 const successfullyCreated = () => {
-  alert(i18n.errorMessages.successfullyCreated);
+  alert(i18n.successMessages.successfullyCreated);
 };
 const successfullyEdited = () => {
-  alert(i18n.errorMessages.successfullyEdited);
+  alert(i18n.successMessages.successfullyEdited);
 };
 const successfullyDeleted = () => {
-  alert(i18n.errorMessages.successfullyDeleted);
+  alert(i18n.successMessages.successfullyDeleted);
+};
+const unknownError = () => {
+  alert(i18n.errorMessages.unknownError);
 };
 const errorStaus400 = () => {
   alert(i18n.errorMessages.errorStaus400);

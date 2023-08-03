@@ -8,7 +8,7 @@ import enumTableColumnsToShow from "../../models/enumTableColumnsToShow";
 
 function UrbanismoTramiteEstadosStepTwo () {
   const tableTitle = i18n.urbanismoEstadosTable.title;
-  const tableSubTitle = i18n.urbanismoEstadosTable.subTitleSelection;
+  const tableSubTitle = i18n.urbanismoEstadosTable.titleToSelect;
   const pageSize = 10;
   const numberPagesToShow = 10;
 

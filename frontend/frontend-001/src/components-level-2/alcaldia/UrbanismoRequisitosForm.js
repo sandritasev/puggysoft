@@ -28,6 +28,7 @@ function UrbanismoRequisitosForm () {
     useState(classNameFormTextNew);
   const [isRequestInProgress, setIsRequestInProgress] = useState(false);
   // Message states
+  const [messageVariant, setMessageVariant] = useState("danger");
   const [isMessageVisible, setIsMessageVisible] = useState(false);
   const [messageTitle, setMessageTitle] = useState("");
   const [messageText, setMessageText] = useState("");
@@ -76,6 +77,10 @@ function UrbanismoRequisitosForm () {
     const body = getBody();
     handleValidation(body, setClassNameFormText);
     setIsRequestInProgress(false);
+    setMessageVariant("success");
+    setMessageTitle(i18n.successMessages.successTitle);
+    setMessageText(i18n.successMessages.successfullyCreated);
+    setIsMessageVisible(true);
   };
 
   const handleAfterEdit = function () {
@@ -84,6 +89,18 @@ function UrbanismoRequisitosForm () {
     const body = getBody();
     handleValidation(body, setClassNameFormText);
     setIsRequestInProgress(false);
+    setMessageVariant("warning");
+    setMessageTitle(i18n.successMessages.successTitle);
+    setMessageText(i18n.successMessages.successfullyEdited);
+    setIsMessageVisible(true);
+  };
+
+  const handleRequestFailed = function (response, errorMessage) {
+    setIsRequestInProgress(false);
+    setMessageVariant("danger");
+    setMessageTitle(i18n.errorMessages.errorTitle);
+    setMessageText(errorMessage);
+    setIsMessageVisible(true);
   };
 
   const handleAdd = (event) => {
@@ -97,16 +114,21 @@ function UrbanismoRequisitosForm () {
           "urbanismo-requisitos/",
           body,
           id,
-          handleAfterEdit
+          handleAfterEdit,
+          handleRequestFailed,
+          false
         );
       } else {
         handleAddRequest(
           "urbanismo-requisitos/",
           body,
-          handleAfterAdd
+          handleAfterAdd,
+          false,
+          handleRequestFailed
         );
       }
     } else {
+      setMessageVariant("danger");
       setMessageTitle(i18n.errorMessages.validationErrorTitle);
       setMessageText(i18n.errorMessages.validationError);
       setIsMessageVisible(true);
@@ -129,7 +151,7 @@ function UrbanismoRequisitosForm () {
         setIsVisible={setIsMessageVisible}
         titleText={messageTitle}
         bodyText={messageText}
-        variant="danger"
+        variant={messageVariant}
       />
       <Card>
         <Card.Header as="h3">
@@ -160,6 +182,7 @@ function UrbanismoRequisitosForm () {
                 value={valueNombreCorto}
                 type="text"
                 placeholder={i18n.urbanismoRequisitosForm.fieldNombreCorto}
+                disabled={!!isEdit}
               />
               <Form.Text muted className={classNameFormText.nombreCorto}>
                 {i18n.urbanismoRequisitosForm.fieldNombreCortoText}

@@ -24,7 +24,7 @@ function CommonMessage ({
       <Modal.Body>{bodyText}</Modal.Body>
       <Modal.Footer>
         <Button variant={variant} onClick={handleClose}>
-          {i18n.errorMessages.okButton}
+          {i18n.commonForm.okButton}
         </Button>
       </Modal.Footer>
     </Modal>

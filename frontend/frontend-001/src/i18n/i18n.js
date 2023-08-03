@@ -40,6 +40,7 @@ import saleStatus from "./spanish/sales/saleStatus";
 import saleTable from "./spanish/sales/saleTable";
 import saleProductTable from "./spanish/sales/saleProductTable";
 import saleErrorMessages from "./spanish/sales/saleErrorMessages";
+import successMessages from "./spanish/successMessages";
 import saleReport from "./spanish/sales/saleReport";
 import saleTicket from "./spanish/sales/saleTicket";
 // Hospital System
@@ -89,6 +90,7 @@ const i18n = {
   navBar,
   commonTable,
   errorMessages,
+  successMessages,
   trueFalse,
   commonReport,
   commonMonths,
