@@ -1,16 +1,19 @@
 import requestManager from "./../api/RequestManager";
 import messageManager from "./HandleErrorMessages";
 
-const handleGetRequest = (endpoint, callbakOnSuccess, callbackOnFail) => {
+const handleGetRequest = (endpoint, callbakOnSuccess, callbackOnFail, showAlertOnError = true) => {
   requestManager.get(endpoint, (response) => {
     if (response && response.status === 200) {
       if (callbakOnSuccess && typeof callbakOnSuccess === "function") {
         callbakOnSuccess(response.data);
       }
     } else {
-      messageManager.commonMessages(response);
+      const errorMessage = messageManager.getErrorMessage();
+      if (showAlertOnError) {
+        messageManager.commonMessages(response);
+      }
       if (callbackOnFail && typeof callbackOnFail === "function") {
-        callbackOnFail(response);
+        callbackOnFail(response, errorMessage);
       }
     }
   });

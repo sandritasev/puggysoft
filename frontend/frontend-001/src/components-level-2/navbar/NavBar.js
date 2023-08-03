@@ -588,7 +588,11 @@ function NavBar () {
   return (
     <Navbar collapseOnSelect expand="xl" bg={NavbarBackground} variant={NavbarVariant}>
       <Navbar.Brand>
-        <img src={logoPath} className="app-logo" alt="logo" />
+        <img
+          src={logoPath}
+          className={tenantImage !== "null" ? "app-logo-tenant" : "app-logo"}
+          alt="logo"
+        />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">

@@ -20,7 +20,6 @@ import "./../css/all-forms.css";
 
 function UrbanismoTramiteForm () {
   const history = useHistory();
-  const [isEdit, setIsEdit] = useState(false);
   const [classNameFormText, setClassNameFormText] =
     useState(classNameFormTextNew);
   const [isRequestInProgress, setIsRequestInProgress] = useState(false);
@@ -30,9 +29,9 @@ function UrbanismoTramiteForm () {
   const [messageText, setMessageText] = useState("");
 
   // Variables
-  const { selectedEstado, selectedTramite, selectedFlujo } =
+  const { edit, selectedEstado, selectedTramite, selectedFlujo } =
     history && history.location && history.location.state.data;
-
+  const [isEdit, setIsEdit] = useState(edit || false);
   const id = selectedFlujo ? selectedFlujo.id : "";
   const nombreCliente = selectedFlujo ? selectedFlujo.nombreCliente : "";
   const ciCliente = selectedFlujo ? selectedFlujo.ciCliente : "";
@@ -89,6 +88,9 @@ function UrbanismoTramiteForm () {
     const body = getBody();
     handleValidation(body, setClassNameFormText);
     setIsRequestInProgress(false);
+    history.push({
+      pathname: enumPaths.URBANISMO_TRAMITE_ESTADOS_TABLE
+    });
   };
 
   const handleAdd = (event) => {
@@ -144,7 +146,7 @@ function UrbanismoTramiteForm () {
               <Form.Label>{i18n.urbanismoTramiteEstadosForm.fieldTramite}</Form.Label>
               <Form.Control
                 disabled
-                onChange={() => {}}
+                onChange={() => { }}
                 value={selectedTramite.nombre}
                 type="text"
                 placeholder={i18n.urbanismoTramiteEstadosForm.fieldTramite}
@@ -154,7 +156,7 @@ function UrbanismoTramiteForm () {
               <Form.Label>{i18n.urbanismoTramiteEstadosForm.fieldEstado}</Form.Label>
               <Form.Control
                 disabled
-                onChange={() => {}}
+                onChange={() => { }}
                 value={selectedEstado.nombre}
                 type="text"
                 placeholder={i18n.urbanismoTramiteEstadosForm.fieldEstado}

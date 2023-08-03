@@ -2,3 +2,9 @@
   animation: App-logo-spin infinite 20s linear;
   height: 3rem;
 }
+
+.app-logo-tenant {
+  margin-left: 1rem;
+  height: 3rem;
+  width: 3rem;
+}

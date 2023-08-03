@@ -2,6 +2,8 @@ package com.puggysoft.repositories.alcaldia;
 
 import com.puggysoft.entities.alcaldia.EntityUrbanismoTramite;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -14,5 +16,8 @@ public interface IRepositoryUrbanismoTramite extends JpaRepository<EntityUrbanis
 
   @Query(value = "SELECT * FROM alc_urb_tramite LIMIT ?1, ?2", nativeQuery = true)
   List<EntityUrbanismoTramite> findUrbanismoTramiteByPagination(int off, int size);
+
+  @Query(value = "SELECT * FROM alc_urb_tramite WHERE alc_urb_tramite.nombre_corto = ?1", nativeQuery = true)
+  Optional<EntityUrbanismoTramite> findByShortName(String findByShortName);
 
 }

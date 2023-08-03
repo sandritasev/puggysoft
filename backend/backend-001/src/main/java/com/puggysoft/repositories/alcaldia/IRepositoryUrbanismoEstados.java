@@ -2,6 +2,7 @@ package com.puggysoft.repositories.alcaldia;
 
 import com.puggysoft.entities.alcaldia.EntityUrbanismoEstados;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -52,5 +53,7 @@ public interface IRepositoryUrbanismoEstados extends JpaRepository<EntityUrbanis
           + "WHERE alc_urb_tramite_flujo.tramite_nombre_corto = ?1 ", nativeQuery = true)
   Long findSizeWithTramites(String tramite);
 
+  @Query(value = "SELECT * FROM alc_urb_estados WHERE alc_urb_estados.nombre_corto = ?1", nativeQuery = true)
+  Optional<EntityUrbanismoEstados> findByShortName(String findByShortName);
 
 }
