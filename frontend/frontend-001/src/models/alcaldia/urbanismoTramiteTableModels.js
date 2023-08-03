@@ -60,6 +60,7 @@ const urbanismoTramiteTableModels = function (
   }
 
   const getFilterBody = () => {
+    const tenant = window.sessionStorage.getItem("tenant");
     const filterBody = {
       idCriteria: criteriaId,
       idOperator: operatorId,
@@ -74,7 +75,9 @@ const urbanismoTramiteTableModels = function (
       creationDateCriteria: criteriaCreatedDate,
       creationDateOperator: operatorCreatedDate,
       updateDateCriteria: criteriaUpdatedDate,
-      updateDateOperator: operatorUpdatedDate
+      updateDateOperator: operatorUpdatedDate,
+      tenantCriteria: tenant,
+      tenantOperator: enumCompareOperators.TEXT_EQUALS
     };
     return filterBody;
   };

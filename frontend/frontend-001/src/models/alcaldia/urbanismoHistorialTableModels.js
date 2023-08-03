@@ -149,6 +149,7 @@ const urbanismoHistorialTableModels = function (
   }
 
   const getFilterBody = () => {
+    const tenant = window.sessionStorage.getItem("tenant");
     const filterBody = {
       idCriteria: criteriaId,
       idOperator: operatorId,
@@ -167,7 +168,9 @@ const urbanismoHistorialTableModels = function (
       creationDateCriteria: criteriaCreatedDate,
       creationDateOperator: operatorCreatedDate,
       updateDateCriteria: criteriaUpdatedDate,
-      updateDateOperator: operatorUpdatedDate
+      updateDateOperator: operatorUpdatedDate,
+      tenantCriteria: tenant,
+      tenantOperator: enumCompareOperators.TEXT_EQUALS
     };
     return filterBody;
   };
