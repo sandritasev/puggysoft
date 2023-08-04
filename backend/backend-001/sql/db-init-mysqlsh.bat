@@ -26,7 +26,7 @@ mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_P
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-15-alcaldia-urbanismo-tramite.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-16-alcaldia-regularizacion-lotes.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-tables-17-data-storage.sql
-
+mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-create-triggers-and-store-procedures.sql
 REM INSERT DATA.
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-insert-data-test-01-users.sql
 mysqlsh --sql --host=%DB_HOST% -port:%DB_PORT% --user=%DB_USER% --password=%DB_PASSWORD% --database=%DB_NAME% < db-patches-insert-data-test-02-hospital.sql
