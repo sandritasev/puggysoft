@@ -2,12 +2,11 @@ const arrayDataFields = [
   "id",
   "nombreCliente",
   "ciCliente",
-  "codigoCatastral",
+  "numeroInmueble",
   "createdBy",
   "updatedBy",
   "creationDate",
-  "updateDate",
-  "boletaPago"
+  "updateDate"
 ];
 
 export default arrayDataFields;

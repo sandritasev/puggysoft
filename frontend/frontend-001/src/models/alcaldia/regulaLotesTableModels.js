@@ -9,7 +9,7 @@ const regulaLotesTableModels = function (
   /* ID */ criteriaId, criteriaOnChangeId, criteriaSetId, operatorId, operatorOnChangeId, operatorSetId,
   /* NOMBRE CLIENTE */ criteriaNombreCliente, criteriaOnChangeNombreCliente, criteriaSetNombreCliente, operatorNombreCliente, operatorOnChangeNombreCliente, operatorSetNombreCliente,
   /* CI CLIENTE */criteriaCiCliente, criteriaOnChangeCiCliente, criteriaSetCiCliente, operatorCiCliente, operatorOnChangeCiCliente, operatorSetCiCliente,
-  /* CODIGO CATASTRAL */ criteriaCodigoCatastral, criteriaOnChangeCodigoCatastral, criteriaSetCodigoCatastral, operatorCodigoCatastral, operatorOnChangeCodigoCatastral, operatorSetCodigoCatastral,
+  /* NUMERO INMUEBLE */ criteriaNumeroInmueble, criteriaOnChangeNumeroInmueble, criteriaSetNumeroInmueble, operatorNumeroInmueble, operatorOnChangeNumeroInmueble, operatorSetNumeroInmueble,
   /* CREATED BY */criteriaCreatedBy, criteriaOnChangeCreatedBy, criteriaSetCreatedBy, operatorCreatedBy, operatorOnChangeCreatedBy, operatorSetCreatedBy,
   /* UPDATED BY */criteriaUpdatedBy, criteriaOnChangeUpdatedBy, criteriaSetUpdatedBy, operatorUpdatedBy, operatorOnChangeUpdatedBy, operatorSetUpdatedBy,
   /* CREATED DATE */criteriaCreatedDate, criteriaOnChangeCreatedDate, criteriaSetCreatedDate, operatorCreatedDate, operatorOnChangeCreatedDate, operatorSetCreatedDate,
@@ -21,7 +21,7 @@ const regulaLotesTableModels = function (
     /* ID */ criteriaId, criteriaOnChangeId, operatorId, operatorOnChangeId,
     /* NOMBRE CLIENTE */ criteriaNombreCliente, criteriaOnChangeNombreCliente, operatorNombreCliente, operatorOnChangeNombreCliente,
     /* CI CLIENTE */criteriaCiCliente, criteriaOnChangeCiCliente, operatorCiCliente, operatorOnChangeCiCliente,
-    /* CODIGO CATASTRAL */ criteriaCodigoCatastral, criteriaOnChangeCodigoCatastral, operatorCodigoCatastral, operatorOnChangeCodigoCatastral,
+    /* NUMERO INMUEBLE */ criteriaNumeroInmueble, criteriaOnChangeNumeroInmueble, operatorNumeroInmueble, operatorOnChangeNumeroInmueble,
     /* CREATED BY */criteriaCreatedBy, criteriaOnChangeCreatedBy, operatorCreatedBy, operatorOnChangeCreatedBy,
     /* UPDATED BY */criteriaUpdatedBy, criteriaOnChangeUpdatedBy, operatorUpdatedBy, operatorOnChangeUpdatedBy,
     /* CREATED DATE */criteriaCreatedDate, criteriaOnChangeCreatedDate, operatorCreatedDate, operatorOnChangeCreatedDate,
@@ -30,7 +30,7 @@ const regulaLotesTableModels = function (
     operatorSetId(enumCompareOperators.NUMBER_EQUALS);
     operatorSetNombreCliente(enumCompareOperators.TEXT_CONTAINS);
     operatorSetCiCliente(enumCompareOperators.TEXT_CONTAINS);
-    operatorSetCodigoCatastral(enumCompareOperators.TEXT_CONTAINS);
+    operatorSetNumeroInmueble(enumCompareOperators.TEXT_CONTAINS);
     operatorSetCreatedBy(enumCompareOperators.TEXT_CONTAINS);
     operatorSetUpdatedBy(enumCompareOperators.TEXT_CONTAINS);
     operatorSetCreatedDate(enumCompareOperators.DATE_EQUALS);
@@ -41,7 +41,7 @@ const regulaLotesTableModels = function (
     criteriaSetId("");
     criteriaSetNombreCliente("");
     criteriaSetCiCliente("");
-    criteriaSetCodigoCatastral("");
+    criteriaSetNumeroInmueble("");
     criteriaSetCreatedBy("");
     criteriaSetUpdatedBy("");
     criteriaSetCreatedDate("");
@@ -69,10 +69,10 @@ const regulaLotesTableModels = function (
       idOperator: operatorId,
       nombreClienteCriteria: criteriaNombreCliente,
       nombreClienteOperator: operatorNombreCliente,
-      CiClienteCriteria: criteriaCiCliente,
-      CiClienteOperator: operatorCiCliente,
-      codigoCatastralCriteria: criteriaCodigoCatastral,
-      codigoCatastralOperator: operatorCodigoCatastral,
+      ciClienteCriteria: criteriaCiCliente,
+      ciClienteOperator: operatorCiCliente,
+      numeroInmuebleCriteria: criteriaNumeroInmueble,
+      numeroInmuebleOperator: operatorNumeroInmueble,
       createdByCriteria: criteriaCreatedBy,
       createdByOperator: operatorCreatedBy,
       updatedByCriteria: criteriaUpdatedBy,

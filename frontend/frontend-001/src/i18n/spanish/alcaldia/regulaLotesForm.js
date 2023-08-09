@@ -4,10 +4,10 @@ const regulaLotesForm = {
   fieldNombreClienteText: "Minimo 3, maximo 256 caracteres",
   fieldCiCliente: "Ci Cliente",
   fieldCiClienteText: "Minimo 3, maximo 30 caracteres. (Sin espacios)",
-  fieldCodigoCatastral: "Codigo Catastral",
-  fieldCodigoCatastralText: "Minimo 3, maximo 120 caracteres. (Sin espacios)",
-  fieldImage: "Boleta de pago",
-  formTextImage: "Seleccione el archivo de boleta de pago"
+  fieldNumeroInmueble: "Numero de inmueble",
+  fieldNumeroInmuebleText: "Minimo 3, maximo 120 caracteres. (Sin espacios)",
+  fieldMonto: "Monto",
+  fieldMontoText: "Minimo 1, maximo 30. (Sin espacios)"
 };
 
 export default regulaLotesForm;

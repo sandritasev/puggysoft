@@ -3,7 +3,7 @@ const classNameRed = "puggysoft-red-text";
 const classNameFormTextNew = {
   nombreCliente: classNameRed,
   ciCliente: classNameRed,
-  codigoCatastral: classNameRed,
+  monto: classNameRed,
   tenant: classNameRed
 };
 
@@ -16,20 +16,22 @@ const handleValidation = (data, setClassNameFormText) => {
     classNameFormTextNew.nombreCliente = "";
   }
   if (!(data.ciCliente.length >= 3 && data.ciCliente.length <= 30) ||
-  data.ciCliente.includes(" ")
+    data.ciCliente.includes(" ") ||
+    !/^\d*$/.test(data.ciCliente)
   ) {
     isValid = false;
     classNameFormTextNew.ciCliente = classNameRed;
   } else {
     classNameFormTextNew.ciCliente = "";
   }
-  if (!(data.codigoCatastral.length >= 3 && data.codigoCatastral.length <= 30) ||
-  data.codigoCatastral.includes(" ")
+  if (!(data.monto.length >= 1 && data.monto.length <= 30) ||
+    data.monto.includes(" ") ||
+    !/^\d*$/.test(data.monto)
   ) {
     isValid = false;
-    classNameFormTextNew.codigoCatastral = classNameRed;
+    classNameFormTextNew.monto = classNameRed;
   } else {
-    classNameFormTextNew.codigoCatastral = "";
+    classNameFormTextNew.monto = "";
   }
   setClassNameFormText({ ...classNameFormTextNew });
   return isValid;

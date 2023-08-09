@@ -4,7 +4,7 @@ const regulaLotesColumnsFilter = function (
   /* ID */ criteriaId, criteriaOnChangeId, operatorId, operatorOnChangeId,
   /* NOMBRE CLIENTE */ criteriaNombreCliente, criteriaOnChangeNombreCliente, operatorNombreCliente, operatorOnChangeNombreCliente,
   /* CI CLIENTE */criteriaCiCliente, criteriaOnChangeCiCliente, operatorCiCliente, operatorOnChangeCiCliente,
-  /* CODIGO CATASTRAL */ criteriaCodigoCatastral, criteriaOnChangeCodigoCatastral, operatorCodigoCatastral, operatorOnChangeCodigoCatastral,
+  /* NUMERO INMUEBLE */ criteriaNumeroInmueble, criteriaOnChangeNumeroInmueble, operatorNumeroInmueble, operatorOnChangeNumeroInmueble,
   /* CREATED BY */criteriaCreatedBy, criteriaOnChangeCreatedBy, operatorCreatedBy, operatorOnChangeCreatedBy,
   /* UPDATED BY */criteriaUpdatedBy, criteriaOnChangeUpdatedBy, operatorUpdatedBy, operatorOnChangeUpdatedBy,
   /* CREATED DATE */criteriaCreatedDate, criteriaOnChangeCreatedDate, operatorCreatedDate, operatorOnChangeCreatedDate,
@@ -34,10 +34,10 @@ const regulaLotesColumnsFilter = function (
     },
     {
       type: enumFilterType.TEXTBOX,
-      criteriaValue: criteriaCodigoCatastral,
-      criteriaOnchange: criteriaOnChangeCodigoCatastral,
-      operatorValue: operatorCodigoCatastral,
-      operatorOnchange: operatorOnChangeCodigoCatastral
+      criteriaValue: criteriaNumeroInmueble,
+      criteriaOnchange: criteriaOnChangeNumeroInmueble,
+      operatorValue: operatorNumeroInmueble,
+      operatorOnchange: operatorOnChangeNumeroInmueble
     },
     {
       type: enumFilterType.TEXTBOX,
@@ -66,9 +66,6 @@ const regulaLotesColumnsFilter = function (
       criteriaOnchange: criteriaOnChangeUpdatedDate,
       operatorValue: operatorUpdatedDate,
       operatorOnchange: operatorOnChangeUpdatedDate
-    },
-    {
-      type: enumFilterType.NONE
     }
   ];
 
