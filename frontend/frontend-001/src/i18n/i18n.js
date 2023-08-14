@@ -59,6 +59,10 @@ import intervalTimeTable from "./spanish/reservation/intervalTimeTable";
 // Alcaldia System
 import alcaldiaVentaStatusText from "./spanish/alcaldia/alcaldiaVentaStatusText";
 import alcaldiaRecursosMunicipalesForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesForm";
+import recursoMunicipalTipo from "./spanish/alcaldia/recursoMunicipalTipo";
+import alcaldiaRecursosMunicipalesTimbresForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTimbresForm";
+import alcaldiaRecursosMunicipalesTimbresTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTimbresTable";
+import alcaldiaRecursosMunicipalesTimbresVentasForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTimbresVentasForm";
 import alcaldiaRecursosMunicipalesReporteDiario from "./spanish/alcaldia/alcaldiaRecursosMunicipalesReporteDiario";
 import alcaldiaRecursosMunicipalesReporteMensual from "./spanish/alcaldia/alcaldiaRecursosMunicipalesReporteMensual";
 import alcaldiaRecursosMunicipalesReporteAnual from "./spanish/alcaldia/alcaldiaRecursosMunicipalesReporteAnual";
@@ -74,6 +78,7 @@ import urbanismoTramiteTable from "./spanish/alcaldia/urbanismoTramiteTable";
 import regulaLotesForm from "./spanish/alcaldia/regulaLotesForm";
 import regulaLotesFormCliente from "./spanish/alcaldia/regulaLotesFormCliente";
 import regulaLotesFormClienteStepTwo from "./spanish/alcaldia/regulaLotesFormClienteStepTwo";
+import regulaLotesPdf from "./spanish/alcaldia/regulaLotesPdf";
 import regulaLotesTable from "./spanish/alcaldia/regulaLotesTable";
 import urbanismoRequisitosForm from "./spanish/alcaldia/urbanismoRequisitosForm";
 import urbanismoRequisitosTable from "./spanish/alcaldia/urbanismoRequisitosTable";
@@ -149,6 +154,10 @@ const i18n = {
   alcaldiaRecursosMunicipalesForm,
   alcaldiaVentaStatusText,
   alcaldiaRecursosMunicipalesTable,
+  recursoMunicipalTipo,
+  alcaldiaRecursosMunicipalesTimbresForm,
+  alcaldiaRecursosMunicipalesTimbresTable,
+  alcaldiaRecursosMunicipalesTimbresVentasForm,
   alcaldiaRecursosMunicipalesTableAdd,
   alcaldiaRecursosMunicipalesTableDelete,
   alcaldiaRecursosMunicipalesVentasForm,
@@ -164,6 +173,7 @@ const i18n = {
   regulaLotesFormCliente,
   regulaLotesFormClienteStepTwo,
   regulaLotesTable,
+  regulaLotesPdf,
   urbanismoRequisitosForm,
   urbanismoRequisitosTable,
   urbanismoEstadosForm,

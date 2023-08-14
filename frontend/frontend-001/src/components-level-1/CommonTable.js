@@ -221,10 +221,14 @@ function CommonTable (props) {
           </td>;
         } else {
           return <td key={"custom-button" + rowIndex + elementIndex}><Button
-            variant={dataElement.variant}
+            variant={typeof dataElement.variantFunction === "function"
+              ? dataElement.variantFunction(data)
+              : dataElement.variant}
             onClick={() => dataElement.handleCustom(data, textboxId)}
           >
-            {dataElement.text}
+            {typeof dataElement.textFunction === "function"
+              ? dataElement.textFunction(data)
+              : dataElement.text}
           </Button></td>;
         }
       });

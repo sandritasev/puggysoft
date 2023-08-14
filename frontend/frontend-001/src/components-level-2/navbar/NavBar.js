@@ -40,11 +40,12 @@ import {
   BsCoin,
   BsBuildingLock
 } from "react-icons/bs";
+import { TbHierarchy3 } from "react-icons/tb";
 import { RiLoginCircleLine, RiUser2Fill, RiShieldKeyholeFill } from "react-icons/ri";
 import { MdOutlineSettingsSuggest } from "react-icons/md";
 import { GoCalendar } from "react-icons/go";
 import { GiGoldBar } from "react-icons/gi";
-import { IoMdTimer } from "react-icons/io";
+import { IoMdTimer, IoIosNotifications } from "react-icons/io";
 import { IoNewspaperSharp } from "react-icons/io5";
 import enumRoles from "./../../models/users/enumRoles";
 import enumTableType from "./../../models/enumTableType";
@@ -281,6 +282,21 @@ function NavBar () {
   const navigateAlcaldiaRecursosMunicipalesTable = () => {
     history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TABLE);
   };
+  const navigateAlcaldiaRecursosMunicipalesGrupoStepOne = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_GRUPO_STEP_ONE);
+  };
+  const navigateAlcaldiaRecursosMunicipalesTimbresForm = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_FORM);
+  };
+  const navigateAlcaldiaRecursosMunicipalesTimbresTable = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_TABLE);
+  };
+  const navigateAlcaldiaRecursosMunicipaleTimbressVentasForm = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_VENTAS_FORM);
+  };
+  const navigateAlcaldiaRecursosMunicipalesTimbresVentasTable = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_VENTAS_TABLE);
+  };
   const navigateAlcaldiaRecursosMunicipalesVentasForm = () => {
     history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_FORM);
   };
@@ -335,9 +351,11 @@ function NavBar () {
   const navigateUrbanismoFlujoRequisitosStepOne = () => {
     history.push(enumPaths.URBANISMO_FLUJO_REQUISITOS_STEP_ONE);
   };
+  // eslint-disable-next-line no-unused-vars
   const navigateUrbanismoFlujoHistorialStepOne = () => {
     history.push(enumPaths.URBANISMO_FLUJO_HISTORIAL_STEP_ONE);
   };
+  // eslint-disable-next-line no-unused-vars
   const navigateUrbanismoHistorialEstadoStepOne = () => {
     history.push(enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_ONE);
   };
@@ -543,11 +561,20 @@ function NavBar () {
   const recursoMunicipalAdminLabel = (<><GiGoldBar /> {i18n.navBar.recursoMunicipalAdmin}</>);
   const recursoMunicipaFormLabel = (<><GrAddCircle /> {i18n.navBar.recursoMunicipalForm}</>);
   const recursoMunicipaTableLabel = (<><AiOutlineTable /> {i18n.navBar.recursoMunicipalTable}</>);
+  const recursoMunicipalGrupoStepOneLabel = (<><TbHierarchy3 /> {i18n.navBar.recursoMunicipalGrupoStepOne}</>);
   // VENTA RECURSOS MUNICIPALES
   const recursoMunicipalVentaAdminLabel = (<><FaCashRegister /> {i18n.navBar.recursoMunicipaVentalAdmin}</>);
   const recursoMunicipaVentaFormLabel = (<><GrAddCircle /> {i18n.navBar.recursoMunicipalVentaForm}</>);
   const recursoMunicipaVentaTableLabel = (<><AiOutlineTable /> {i18n.navBar.recursoMunicipalVentaTable}</>);
-  // VENTA RECURSOS MUNICIPALES
+  // RECURSO MUNICIPAL TIMBRES
+  const recursoMunicipalTimbresAdminLabel = (<><IoIosNotifications /> {i18n.navBar.recursoMunicipalTimbresAdmin}</>);
+  const recursoMunicipalTimbresFormLabel = (<><GrAddCircle /> {i18n.navBar.recursoMunicipalTimbresForm}</>);
+  const recursoMunicipalTimbresTableLabel = (<><AiOutlineTable /> {i18n.navBar.recursoMunicipalTimbresTable}</>);
+  // VENTA RECURSOS MUNICIPALES TIMBRES
+  const recursoMunicipalTimbresVentaAdminLabel = (<><FaCashRegister /> {i18n.navBar.recursoMunicipalTimbresVentalAdmin}</>);
+  const recursoMunicipalTimbresVentaFormLabel = (<><GrAddCircle /> {i18n.navBar.recursoMunicipalTimbresVentaForm}</>);
+  const recursoMunicipalTimbresVentaTableLabel = (<><AiOutlineTable /> {i18n.navBar.recursoMunicipalTimbresVentaTable}</>);
+  // REPORTES RECURSOS MUNICIPALES
   const recursoMunicipalReporteAdminLabel = (<><BsFillBarChartFill /> {i18n.navBar.recursoMunicipalReporteAdmin}</>);
   const recursoMunicipalReporteDiarioLabel = (<><FaChartLine /> {i18n.navBar.recursoMunicipalReporteDiario}</>);
   const recursoMunicipalReporteMensualLabel = (<><FaChartLine /> {i18n.navBar.recursoMunicipalReporteMensual}</>);
@@ -576,8 +603,10 @@ function NavBar () {
   const urbanismoTramiteEstadosAdminLabel = (<><GrStackOverflow /> {i18n.navBar.urbanismoTramiteEstadosAdmin}</>);
   const urbanismoTramiteEstadosStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoTramiteEstadosStepOne}</>);
   const urbanismoTramiteEstadosTableLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoTramiteEstadosTable}</>);
-  const urbanismoFlujoRequisitosStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoFlujoRequisitosStepOne}</>);
+  const urbanismoFlujoRequisitosStepOneLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoFlujoRequisitosStepOne}</>);
+  // eslint-disable-next-line no-unused-vars
   const urbanismoFlujoHistorialStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoFlujoHistorialStepOne}</>);
+  // eslint-disable-next-line no-unused-vars
   const urbanismoHistorialEstadoStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoHistorialEstadoStepOne}</>);
 
   // ******* ******* ******* ALL SYSTEMS ******* ******* *******
@@ -780,6 +809,7 @@ function NavBar () {
             <NavDropdown title={recursoMunicipalAdminLabel}>
               <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesForm}>{recursoMunicipaFormLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesTable}>{recursoMunicipaTableLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesGrupoStepOne}>{recursoMunicipalGrupoStepOneLabel}</NavDropdown.Item>
             </NavDropdown>}
           {(userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) ||
             userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_CAJERO)
@@ -787,6 +817,18 @@ function NavBar () {
             <NavDropdown title={recursoMunicipalVentaAdminLabel}>
               <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesVentasForm}>{recursoMunicipaVentaFormLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesVentasTable}>{recursoMunicipaVentaTableLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {(userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO)) &&
+            <NavDropdown title={recursoMunicipalTimbresAdminLabel}>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesTimbresForm}>{recursoMunicipalTimbresFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesTimbresTable}>{recursoMunicipalTimbresTableLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {(userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) ||
+            userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_CAJERO)
+          ) &&
+            <NavDropdown title={recursoMunicipalTimbresVentaAdminLabel}>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipaleTimbressVentasForm}>{recursoMunicipalTimbresVentaFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesTimbresVentasTable}>{recursoMunicipalTimbresVentaTableLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) &&
             <NavDropdown title={recursoMunicipalReporteAdminLabel}>
@@ -815,8 +857,8 @@ function NavBar () {
               <NavDropdown.Item onClick={navigateUrbanismoTramiteEstadosStepOne}>{urbanismoTramiteEstadosStepOneLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUrbanismoTramiteEstadosTable}>{urbanismoTramiteEstadosTableLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUrbanismoFlujoRequisitosStepOne}>{urbanismoFlujoRequisitosStepOneLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateUrbanismoHistorialEstadoStepOne}>{urbanismoHistorialEstadoStepOneLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateUrbanismoFlujoHistorialStepOne}>{urbanismoFlujoHistorialStepOneLabel}</NavDropdown.Item>
+              {/* @deprecate <NavDropdown.Item onClick={navigateUrbanismoHistorialEstadoStepOne}>{urbanismoHistorialEstadoStepOneLabel}</NavDropdown.Item> */}
+              {/* @deprecate <NavDropdown.Item onClick={navigateUrbanismoFlujoHistorialStepOne}>{urbanismoFlujoHistorialStepOneLabel}</NavDropdown.Item> */}
             </NavDropdown>}
           {userRoles.includes(enumRoles.REGULARIZACION_LOTES_ENCARGADO) &&
             <NavDropdown title={regulaLotesAdminLabel}>

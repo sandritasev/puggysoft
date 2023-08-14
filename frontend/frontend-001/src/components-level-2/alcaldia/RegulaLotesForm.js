@@ -16,6 +16,7 @@ import {
   classNameFormTextNew
 } from "../../validations/alcaldia/HandleRegulaLotesFormValidations";
 import CommonMessage from "../../components-level-1/CommonMessage";
+import pdfBuilderComprobantePagoLotes from "./../../tools/alcaldia/pdfBuilderComprobantePagoLotes";
 
 import "./../css/all-forms.css";
 
@@ -34,12 +35,12 @@ function RegulaLotesForm () {
 
   // CONFIGURE IMAGE
   const archivo =
-  isEdit &&
-  isEdit.data &&
-  isEdit.data.boletaPago &&
-  isEdit.data.boletaPago !== null
-    ? isEdit.data.boletaPago
-    : null;
+    isEdit &&
+      isEdit.data &&
+      isEdit.data.boletaPago &&
+      isEdit.data.boletaPago !== null
+      ? isEdit.data.boletaPago
+      : null;
 
   // Put default values:
   const id = isEdit && isEdit.data.id !== null ? isEdit.data.id : "";
@@ -93,6 +94,12 @@ function RegulaLotesForm () {
   );
 
   const handleAfterAdd = function (newRegulaLotesId) {
+    const createdBy = window.sessionStorage.getItem("username");
+    pdfBuilderComprobantePagoLotes({
+      id: newRegulaLotesId,
+      client: valueCiCliente,
+      createdBy
+    }, valueMonto);
     handleReset();
     const body = getBody();
     handleValidation(body, setClassNameFormText);
@@ -124,7 +131,8 @@ function RegulaLotesForm () {
         handleAddRequest(
           "regula-lotes/",
           body,
-          handleAfterAdd
+          handleAfterAdd,
+          false
         );
       }
     } else {

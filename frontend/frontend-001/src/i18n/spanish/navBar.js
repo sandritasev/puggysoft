@@ -170,10 +170,19 @@ const navBar = {
   recursoMunicipalAdmin: "Adm. Recursos Municipales",
   recursoMunicipalForm: "Registrar Recurso",
   recursoMunicipalTable: "Mostrar Recursos",
+  recursoMunicipalGrupoStepOne: "Gestionar gerarquia",
   // Venta Recursos Municipales
   recursoMunicipaVentalAdmin: "Adm. Caja Recursos Municipales",
   recursoMunicipalVentaForm: "Registrar venta",
   recursoMunicipalVentaTable: "Mostrar ventas",
+  // Recurso Municipal Timbres
+  recursoMunicipalTimbresAdmin: "Adm. Timbres",
+  recursoMunicipalTimbresForm: "Registrar Lote de Timbres",
+  recursoMunicipalTimbresTable: "Mostrar Timbres",
+  // Venta Recursos Municipales Timbres
+  recursoMunicipalTimbresVentalAdmin: "Adm. Caja Timbres",
+  recursoMunicipalTimbresVentaForm: "Registrar venta",
+  recursoMunicipalTimbresVentaTable: "Mostrar ventas",
   // Reportes de ventas de Recursos Municipales
   recursoMunicipalReporteAdmin: "Adm. Reportes",
   recursoMunicipalReporte1: "Reportes por fecha",
@@ -201,10 +210,10 @@ const navBar = {
   // Urbanismo Tramite Requisitos
   urbanismoTramiteRequisitosStepOne: "Asignar Requisitos",
   // Urbanismo Tramite Flujo
-  urbanismoTramiteEstadosAdmin: "Adm. Flujo",
-  urbanismoTramiteEstadosStepOne: "Crear Flujo",
-  urbanismoTramiteEstadosTable: "Mostrar Flujo",
-  urbanismoFlujoRequisitosStepOne: "Flujo Requisitos",
+  urbanismoTramiteEstadosAdmin: "Adm. Tramites en curso",
+  urbanismoTramiteEstadosStepOne: "Iniciar un tramite",
+  urbanismoTramiteEstadosTable: "Mostrar tramites en curso (Editar / Eliminar)",
+  urbanismoFlujoRequisitosStepOne: "Mostrar tramites en curso (Adm. Requisitos)",
   urbanismoHistorialEstadoStepOne: "Crear Historial",
   urbanismoFlujoHistorialStepOne: "Flujo Historial"
 };

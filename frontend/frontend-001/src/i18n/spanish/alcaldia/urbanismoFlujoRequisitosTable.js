@@ -1,12 +1,11 @@
 const urbanismoFlujoRequisitosTable = {
   title: "Tabla de Requisitos",
-  subTitleOne: "Requisitos disponibles",
-  subTitleTwo: "Requisitos agregados",
-  titleToSelect: "Seleccione un Requisito",
-  columnIdFlujo: "IdFlujo",
+  subTitleSelectedTramite: "Tramite seleccionado",
+  columnIdFlujo: "Id tramite en curso",
   columnRequisito: "Requisito",
   columnEstado: "Estado",
-  columnArchivo: "Archivo"
+  cumplido: "Cumplido",
+  incumplido: "Pendiente"
 };
 
 export default urbanismoFlujoRequisitosTable;

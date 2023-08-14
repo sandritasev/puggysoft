@@ -14,6 +14,7 @@ import CommonMessage from "../../components-level-1/CommonMessage";
 
 function UrbanismoTramiteTableEstadosEditDelete () {
   const tableTitle = i18n.urbanismoTramiteEstadosTable.title;
+  const tableSubTitle = i18n.urbanismoTramiteEstadosTable.titleToSelect;
   const pageSize = 10;
   const numberPagesToShow = 10;
   const history = useHistory();
@@ -108,6 +109,7 @@ function UrbanismoTramiteTableEstadosEditDelete () {
       />
       <UrbanismoTramiteEstadosGenericTable
         tableTitle={tableTitle}
+        tableSubTitle={tableSubTitle}
         numberPagesToShow={numberPagesToShow}
         handleGetData={handleGetData}
         handleGetSize={handleGetSize}
