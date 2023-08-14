@@ -8,6 +8,7 @@ import {
 } from "../../actions/HandleManager";
 import RegulaLotesGenericTable from "./generic/RegulaLotesGenericTable";
 import enumTableColumnsToShow from "../../models/enumTableColumnsToShow";
+import pdfBuilderComprobantePagoLotes from "./../../tools/alcaldia/pdfBuilderComprobantePagoLotes";
 
 function RegulaLotesTableEditDelete () {
   const tableTitle = i18n.regulaLotesTable.title;
@@ -52,7 +53,20 @@ function RegulaLotesTableEditDelete () {
     });
   }
 
+  function handlePdfGenerator (item) {
+    pdfBuilderComprobantePagoLotes({
+      id: item.id,
+      client: item.ciCliente,
+      createdBy: item.createdBy
+    }, item.monto);
+  }
+
   const tableArrayCustomRowButtons = [
+    {
+      variant: "primary",
+      handleCustom: handlePdfGenerator,
+      text: i18n.regulaLotesTable.comprobanteButton
+    },
     {
       variant: "warning",
       handleCustom: handleEdit,

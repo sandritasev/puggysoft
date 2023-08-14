@@ -1,8 +1,6 @@
 const urbanismoTramiteEstadosTable = {
-  title: "Crear flujo",
-  subTitleOne: "Estados disponibles",
-  subTitleTwo: "Estado asignado",
-  titleToSelect: "Seleccione un estado",
+  title: "Tramites en curso",
+  titleToSelect: "Seleccione un tramite en curso",
   columnNombre: "Nombre Cliente",
   columnCi: "CI Cliente",
   columnTramite: "Tramite",

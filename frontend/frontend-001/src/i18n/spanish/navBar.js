@@ -201,10 +201,10 @@ const navBar = {
   // Urbanismo Tramite Requisitos
   urbanismoTramiteRequisitosStepOne: "Asignar Requisitos",
   // Urbanismo Tramite Flujo
-  urbanismoTramiteEstadosAdmin: "Adm. Flujo",
-  urbanismoTramiteEstadosStepOne: "Crear Flujo",
-  urbanismoTramiteEstadosTable: "Mostrar Flujo",
-  urbanismoFlujoRequisitosStepOne: "Flujo Requisitos",
+  urbanismoTramiteEstadosAdmin: "Adm. Tramites en curso",
+  urbanismoTramiteEstadosStepOne: "Iniciar un tramite",
+  urbanismoTramiteEstadosTable: "Mostrar tramites en curso (Editar / Eliminar)",
+  urbanismoFlujoRequisitosStepOne: "Mostrar tramites en curso (Adm. Requisitos)",
   urbanismoHistorialEstadoStepOne: "Crear Historial",
   urbanismoFlujoHistorialStepOne: "Flujo Historial"
 };

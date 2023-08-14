@@ -8,7 +8,7 @@ import enumTableColumnsToShow from "../../models/enumTableColumnsToShow";
 
 function UrbanismoFlujoRequisitosStepOne () {
   const tableTitle = i18n.urbanismoTramiteEstadosForm.title;
-  const tableSubTitle = i18n.urbanismoTramiteEstadosForm.subTitleSelection;
+  const tableSubTitle = i18n.urbanismoTramiteEstadosForm.titleToSelect;
   const pageSize = 10;
   const numberPagesToShow = 10;
 

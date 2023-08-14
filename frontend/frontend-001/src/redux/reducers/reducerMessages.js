@@ -2,7 +2,7 @@ const initialState = () => ({
   isMessageModalVisible: false,
   messageModalTitle: "",
   messageModalBody: "",
-  messageModalVariant: "danger"
+  messageModalVariant: "success"
 });
 
 const reducer = (state = initialState(), action) => {

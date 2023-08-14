@@ -1,5 +1,6 @@
 const urbanismoTramiteForm = {
-  title: "Flujo de tramite",
+  title: "Tramites en curso",
+  titleToSelect: "Seleccione un tramite en curso",
   fieldNombre: "Nombre",
   fieldTramite: "Tramite",
   fieldEstado: "Estado",
