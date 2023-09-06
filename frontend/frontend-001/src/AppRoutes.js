@@ -107,6 +107,7 @@ import TenantTableFilterEditDeletePage from "./components-level-3/system/TenantT
 import TenantTableFilterPage from "./components-level-3/system/TenantTableFilterPage";
 
 // Alcaldia System
+import LoginAlcaldiaColcapirhuaPage from "./components-level-3/alcaldia/LoginAlcaldiaColcapirhuaPage";
 import AlcaldiaRecursosMunicipalesFormPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesFormPage";
 import AlcaldiaRecursosMunicipalesTablePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesTablePage";
 import AlcaldiaRecursosMunicipalesGrupoStepOnePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesGrupoStepOnePage";
@@ -254,6 +255,7 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.LOGIN_TENANT} component={LoginPage} />
       <Route exact path={enumPaths.LOGIN} component={LoginPage} />
       {/** Alcaldia System */}
+      <Route exact path={enumPaths.ALCALDIA_LOGIN_COLCAPIRHUA} component={LoginAlcaldiaColcapirhuaPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_FORM} component={AlcaldiaRecursosMunicipalesFormPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TABLE} component={AlcaldiaRecursosMunicipalesTablePage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_GRUPO_STEP_ONE} component={AlcaldiaRecursosMunicipalesGrupoStepOnePage} />

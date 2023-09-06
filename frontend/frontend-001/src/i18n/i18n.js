@@ -57,6 +57,7 @@ import intervalTimeForm from "./spanish/reservation/intervalTimeForm";
 import resourceTable from "./spanish/reservation/resourceTable";
 import intervalTimeTable from "./spanish/reservation/intervalTimeTable";
 // Alcaldia System
+import alcaldiaLoginColcapirhua from "./spanish/alcaldia/alcaldiaLoginColcapirhua";
 import alcaldiaVentaStatusText from "./spanish/alcaldia/alcaldiaVentaStatusText";
 import alcaldiaRecursosMunicipalesForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesForm";
 import recursoMunicipalTipo from "./spanish/alcaldia/recursoMunicipalTipo";
@@ -153,6 +154,7 @@ const i18n = {
   resourceTable,
   intervalTimeTable,
   // Alcaldia System
+  alcaldiaLoginColcapirhua,
   alcaldiaRecursosMunicipalesForm,
   alcaldiaVentaStatusText,
   alcaldiaRecursosMunicipalesTable,
