@@ -2,6 +2,7 @@
 const LOGIN = "/login";
 const LOGIN_TENANT = "/login/:tenant";
 const DASHBOARD = "/dashboard";
+const THEME_FORM = "/theme-form";
 const SYSTEM_PROPERTIES_TABLE = "/system-properties-table";
 const SYSTEM_PROPERTIES_FORM = "/system-properties-form";
 const TENANTS_FORM = "/tenants-form";
@@ -167,6 +168,7 @@ const URBANISMO_HISTORIAL_ESTADO_STEP_THREE = "/urbanismo-historial-estado-step-
 
 const enumPaths = {
   DASHBOARD,
+  THEME_FORM,
   LOGIN,
   LOGIN_TENANT,
   SYSTEM_PROPERTIES_TABLE,

@@ -164,6 +164,7 @@ const navBar = {
   configAdmin: "Config",
   configSystem: "Parametros del sistema",
   configLogout: "Cerrar sesion",
+  configTheme: "Adm. Apariencia",
 
   // ******* ******* ALCALDIA SYSTEM ******* *******
   // Recurso Municipal

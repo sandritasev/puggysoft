@@ -14,6 +14,7 @@ import InProgressPage from "./components-level-3/system/InProgressPage";
 import TenantTableSelectForRolePage from "./components-level-3/system/TenantTableSelectForRolePage";
 import TenantTableFilterByRolePage from "./components-level-3/system/TenantTableFilterByRolePage";
 import CommonMessageReduxPage from "./components-level-3/system/CommonMessageReduxPage";
+import ThemeFormPage from "./components-level-3/system/ThemeFormPage";
 
 // Users System
 import UsersFormPage from "./components-level-3/users/UserFormPage";
@@ -157,6 +158,7 @@ const AppRoutes = () => (
     <Switch>
       <Route exact path={enumPaths.DASHBOARD} component={DashboardPage} />
       <Route exact path={enumPaths.IN_PROGRESS_PAGE} component={InProgressPage} />
+      <Route exact path={enumPaths.THEME_FORM} component={ThemeFormPage} />
       {/** System Properties */}
       <Route exact path={enumPaths.SYSTEM_PROPERTIES_FORM} component={SystemPropertiesFormPage} />
       <Route exact path={enumPaths.SYSTEM_PROPERTIES_TABLE} component={SystemPropertiesTablePage} />

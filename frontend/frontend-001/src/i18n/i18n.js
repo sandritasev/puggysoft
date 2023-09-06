@@ -1,6 +1,7 @@
 // Common
 import login from "./spanish/login";
 import navBar from "./spanish/navBar";
+import themeForm from "./spanish/system/themeForm";
 import commonTable from "./spanish/commonTable";
 import errorMessages from "./spanish/errorMessages";
 import trueFalse from "./spanish/trueFalse";
@@ -98,6 +99,7 @@ const i18n = {
   // Common
   login,
   navBar,
+  themeForm,
   commonTable,
   errorMessages,
   successMessages,

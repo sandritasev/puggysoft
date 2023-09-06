@@ -27,6 +27,9 @@ import {
   GrProductHunt,
   GrStackOverflow
 } from "react-icons/gr";
+import {
+  SiStylelint
+} from "react-icons/si";
 import { CgOptions } from "react-icons/cg";
 import {
   BsBuildingFillGear,
@@ -59,6 +62,7 @@ function NavBar () {
   const userRolesString = window.sessionStorage.getItem("role");
   const currentTenant = window.sessionStorage.getItem("tenant");
   const tenantImage = window.sessionStorage.getItem("tenantImage");
+  const theme = window.localStorage.getItem("theme");
   // const userRolesObjects = JSON.parse(userRolesString);
   const userRoles = [];
 
@@ -106,6 +110,9 @@ function NavBar () {
 
   const navigateToLogout = () => {
     history.push({ pathname: `${enumPaths.LOGIN}/${currentTenant}`, state: { logout: "" } });
+  };
+  const navigateThemeForm = () => {
+    history.push(enumPaths.THEME_FORM);
   };
   const navigateUsersForm = () => {
     history.push(enumPaths.USERS_FORM);
@@ -371,8 +378,10 @@ function NavBar () {
   const navigateUrbanismoHistorialEstadoStepOne = () => {
     history.push(enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_ONE);
   };
-  const NavbarBackground = "dark"; // dark, light, primary
-  const NavbarVariant = "dark puggysoft-navbar"; // dark, light
+  // dark, light, primary(dark) secondary(dark)
+  const NavbarBackground = theme || "dark";
+  const themeNavBarLetters = theme && theme !== "primary" && theme !== "secondary" ? theme : "dark";
+  const NavbarVariant = themeNavBarLetters + " puggysoft-navbar";
 
   // ******* ******* ******* SYSTEM PROPERTIES ******* ******* *******
   const systemPropertiesAdminLabel = (<><MdOutlineSettingsSuggest /> {i18n.navBar.systemPropertiesAdmin}</>);
@@ -628,6 +637,7 @@ function NavBar () {
   // CONFIG
   const configAdminLabel = (<><CgOptions /> {i18n.navBar.configAdmin}</>);
   const configLogout = (<><RiLoginCircleLine /> {i18n.navBar.configLogout}</>);
+  const configTheme = (<><SiStylelint /> {i18n.navBar.configTheme}</>);
 
   let logoPath = "/logo192.png";
   if (tenantImage !== "null") {
@@ -893,6 +903,7 @@ function NavBar () {
         <Nav variant={"puggysoft-nav-config"}>
           <NavDropdown align="end" title={configAdminLabel}>
             <NavDropdown.Item onClick={navigateToLogout}>{configLogout}</NavDropdown.Item>
+            <NavDropdown.Item onClick={navigateThemeForm}>{configTheme}</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
