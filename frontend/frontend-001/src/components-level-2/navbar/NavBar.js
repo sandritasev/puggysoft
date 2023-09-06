@@ -360,6 +360,9 @@ function NavBar () {
   const navigateUrbanismoFlujoRequisitosStepOne = () => {
     history.push(enumPaths.URBANISMO_FLUJO_REQUISITOS_STEP_ONE);
   };
+  const navigateUrbanismoFlujoChangeStateStepOne = () => {
+    history.push(enumPaths.URBANISMO_FLUJO_CHANGE_STATE_STEP_ONE);
+  };
   // eslint-disable-next-line no-unused-vars
   const navigateUrbanismoFlujoHistorialStepOne = () => {
     history.push(enumPaths.URBANISMO_FLUJO_HISTORIAL_STEP_ONE);
@@ -616,8 +619,8 @@ function NavBar () {
   const urbanismoTramiteEstadosStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoTramiteEstadosStepOne}</>);
   const urbanismoTramiteEstadosTableLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoTramiteEstadosTable}</>);
   const urbanismoFlujoRequisitosStepOneLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoFlujoRequisitosStepOne}</>);
-  // eslint-disable-next-line no-unused-vars
-  const urbanismoFlujoHistorialStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoFlujoHistorialStepOne}</>);
+  const urbanismoFlujoChangeStateLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoFlujoChangeStateStepOne}</>);
+  const urbanismoFlujoHistorialStepOneLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoFlujoHistorialStepOne}</>);
   // eslint-disable-next-line no-unused-vars
   const urbanismoHistorialEstadoStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoHistorialEstadoStepOne}</>);
 
@@ -871,8 +874,9 @@ function NavBar () {
               <NavDropdown.Item onClick={navigateUrbanismoTramiteEstadosStepOne}>{urbanismoTramiteEstadosStepOneLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUrbanismoTramiteEstadosTable}>{urbanismoTramiteEstadosTableLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUrbanismoFlujoRequisitosStepOne}>{urbanismoFlujoRequisitosStepOneLabel}</NavDropdown.Item>
-              {/* @deprecate <NavDropdown.Item onClick={navigateUrbanismoHistorialEstadoStepOne}>{urbanismoHistorialEstadoStepOneLabel}</NavDropdown.Item> */}
-              {/* @deprecate <NavDropdown.Item onClick={navigateUrbanismoFlujoHistorialStepOne}>{urbanismoFlujoHistorialStepOneLabel}</NavDropdown.Item> */}
+              <NavDropdown.Item onClick={navigateUrbanismoFlujoChangeStateStepOne}>{urbanismoFlujoChangeStateLabel}</NavDropdown.Item>
+              {/* <NavDropdown.Item onClick={navigateUrbanismoHistorialEstadoStepOne}>{urbanismoHistorialEstadoStepOneLabel}</NavDropdown.Item>} */}
+              <NavDropdown.Item onClick={navigateUrbanismoFlujoHistorialStepOne}>{urbanismoFlujoHistorialStepOneLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.REGULARIZACION_LOTES_ENCARGADO) &&
             <NavDropdown title={regulaLotesAdminLabel}>

@@ -6,7 +6,7 @@ import enumCompareOperators from "../../../models/enumCompareOperators";
 import enumTableColumnsToShow from "../../../models/enumTableColumnsToShow";
 import urbanismoTramiteEstadosTableModels from "../../../models/alcaldia/urbanismoTramiteEstadosTableModels";
 
-function UrbanismoTramiteEstadosGenericTable (props) {
+function UrbanismoTramiteEnFlujo (props) {
   const {
     numberPagesToShow,
     tableTitle,
@@ -70,9 +70,9 @@ function UrbanismoTramiteEstadosGenericTable (props) {
   );
 }
 
-export default UrbanismoTramiteEstadosGenericTable;
+export default UrbanismoTramiteEnFlujo;
 
-UrbanismoTramiteEstadosGenericTable.propTypes = {
+UrbanismoTramiteEnFlujo.propTypes = {
   numberPagesToShow: PropTypes.number,
   tableTitle: PropTypes.string,
   tableSubTitle: PropTypes.string,
@@ -86,7 +86,7 @@ UrbanismoTramiteEstadosGenericTable.propTypes = {
   ])
 };
 
-UrbanismoTramiteEstadosGenericTable.defaultProps = {
+UrbanismoTramiteEnFlujo.defaultProps = {
   numberPagesToShow: 0,
   tableTitle: "",
   tableSubTitle: undefined,

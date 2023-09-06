@@ -1,8 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
-import Button from "react-bootstrap/Button";
 import i18n from "../../i18n/i18n";
-import enumPaths from "../../models/enumPaths";
 import { handleFilterRequest } from "../../actions/HandleManager";
 import enumCompareOperators from "../../models/enumCompareOperators";
 import UrbanismoHistorialGenericTable from "./generic/UrbanismoHistorialGenericTable";
@@ -29,34 +27,16 @@ function UrbanismoFlujoHistorialStepTwo () {
     handleFilterRequest(`urbanismo-historial/filter/size/${pageSize}`, filterBody, setTotalPages);
   }
 
-  function handlehistorial () {
-    history.push({
-      pathname: enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_TWO,
-      state: {
-        data: selectedFlujo
-      }
-    });
-  }
-
   return (
-    <div>
-      <Button
-        style={{ margin: "10px" }}
-        variant="primary"
-        onClick={handlehistorial}
-      >
-        Agregar movimiento al historial
-      </Button>
-      <UrbanismoHistorialGenericTable
-        tableTitle={tableTitle}
-        tableSubTitle={tableSubTitle}
-        numberPagesToShow={numberPagesToShow}
-        handleGetData={handleGetData}
-        handleGetSize={handleGetSize}
-        columnsToShow={enumTableColumnsToShow.MEDIUM}
-      >
-      </UrbanismoHistorialGenericTable>
-    </div>
+    <UrbanismoHistorialGenericTable
+      tableTitle={tableTitle}
+      tableSubTitle={tableSubTitle}
+      numberPagesToShow={numberPagesToShow}
+      handleGetData={handleGetData}
+      handleGetSize={handleGetSize}
+      columnsToShow={enumTableColumnsToShow.FULL}
+    >
+    </UrbanismoHistorialGenericTable>
   );
 }
 

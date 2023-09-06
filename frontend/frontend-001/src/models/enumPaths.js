@@ -156,6 +156,8 @@ const URBANISMO_TRAMITE_ESTADOS_STEP_THREE = "/urbanismo-tramites-flujo-step-thr
 const URBANISMO_TRAMITE_ESTADOS_TABLE = "/urbanismo-tramite-estados-table";
 const URBANISMO_FLUJO_REQUISITOS_STEP_ONE = "/urbanismo-flujo-requisitos-step-one";
 const URBANISMO_FLUJO_REQUISITOS_STEP_TWO = "/urbanismo-flujo-requisitos-step-two";
+const URBANISMO_FLUJO_CHANGE_STATE_STEP_ONE = "/urbanismo-flujo-change-state-step-one";
+const URBANISMO_FLUJO_CHANGE_STATE_STEP_TWO = "/urbanismo-flujo-change-state-step-two";
 const URBANISMO_FLUJO_HISTORIAL_STEP_ONE = "/urbanismo-flujo-historial-step-one";
 const URBANISMO_FLUJO_HISTORIAL_STEP_TWO = "/urbanismo-flujo-historial-step-two";
 const URBANISMO_HISTORIAL_ESTADO_STEP_ONE = "/urbanismo-historial-estado-step-one";
@@ -316,6 +318,8 @@ const enumPaths = {
   URBANISMO_TRAMITE_ESTADOS_TABLE,
   URBANISMO_FLUJO_REQUISITOS_STEP_ONE,
   URBANISMO_FLUJO_REQUISITOS_STEP_TWO,
+  URBANISMO_FLUJO_CHANGE_STATE_STEP_ONE,
+  URBANISMO_FLUJO_CHANGE_STATE_STEP_TWO,
   URBANISMO_FLUJO_HISTORIAL_STEP_ONE,
   URBANISMO_FLUJO_HISTORIAL_STEP_TWO,
   URBANISMO_HISTORIAL_ESTADO_STEP_ONE,

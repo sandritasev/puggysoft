@@ -3,12 +3,12 @@ import { useHistory } from "react-router";
 import i18n from "../../i18n/i18n";
 import enumPaths from "../../models/enumPaths";
 import { handleFilterRequest } from "../../actions/HandleManager";
-import UrbanismoTramiteEnFlujoTable from "./generic/UrbanismoTramiteEnFlujoGenericTable";
+import UrbanismoTramiteEstadosGenericTable from "./generic/UrbanismoTramiteEnFlujoGenericTable";
 import enumTableColumnsToShow from "../../models/enumTableColumnsToShow";
 
-function UrbanismoHistorialEstadoStepOne () {
+function UrbanismoFlujoChangeStateStepOne () {
   const tableTitle = i18n.urbanismoTramiteEstadosForm.title;
-  const tableSubTitle = i18n.urbanismoTramiteEstadosForm.subTitleSelection;
+  const tableSubTitle = i18n.urbanismoTramiteEstadosForm.titleToSelect;
   const pageSize = 10;
   const numberPagesToShow = 10;
 
@@ -24,7 +24,7 @@ function UrbanismoHistorialEstadoStepOne () {
 
   function handleSelection (selectedTramite) {
     history.push({
-      pathname: enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_TWO,
+      pathname: enumPaths.URBANISMO_FLUJO_CHANGE_STATE_STEP_TWO,
       state: {
         data: selectedTramite
       }
@@ -40,7 +40,7 @@ function UrbanismoHistorialEstadoStepOne () {
   ];
 
   return (
-    <UrbanismoTramiteEnFlujoTable
+    <UrbanismoTramiteEstadosGenericTable
       tableTitle={tableTitle}
       tableSubTitle={tableSubTitle}
       numberPagesToShow={numberPagesToShow}
@@ -49,8 +49,8 @@ function UrbanismoHistorialEstadoStepOne () {
       tableArrayCustomRowButtons={tableArrayCustomRowButtons}
       columnsToShow={enumTableColumnsToShow.MEDIUM}
     >
-    </UrbanismoTramiteEnFlujoTable>
+    </UrbanismoTramiteEstadosGenericTable>
   );
 }
 
-export default UrbanismoHistorialEstadoStepOne;
+export default UrbanismoFlujoChangeStateStepOne;

@@ -141,6 +141,8 @@ import UrbanismoFlujoRequisitosStepTwoPage from "./components-level-3/alcaldia/U
 import UrbanismoTramiteEstadosStepOnePage from "./components-level-3/alcaldia/UrbanismoTramiteEstadosStepOnePage";
 import UrbanismoTramiteEstadosStepTwoPage from "./components-level-3/alcaldia/UrbanismoTramiteEstadosStepTwoPage";
 import UrbanismoTramiteEstadosStepThreePage from "./components-level-3/alcaldia/UrbanismoTramiteEstadosStepThreePage";
+import UrbanismoTramiteFlujoChangeStateStepOnePage from "./components-level-3/alcaldia/UrbanismoTramiteFlujoChangeStateStepOnePage";
+import UrbanismoTramiteFlujoChangeStateStepTwoPage from "./components-level-3/alcaldia/UrbanismoTramiteFlujoChangeStateStepTwoPage";
 import UrbanismoFlujoHistorialStepOnePage from "./components-level-3/alcaldia/UrbanismoFlujoHistorialStepOnePage";
 import UrbanismoFlujoHistorialStepTwoPage from "./components-level-3/alcaldia/UrbanismoFlujoHistorialStepTwoPage";
 import UrbanismoHistorialEstadoStepOnePage from "./components-level-3/alcaldia/UrbanismoHistorialEstadoStepOnePage";
@@ -286,6 +288,8 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.URBANISMO_TRAMITE_ESTADOS_STEP_ONE} component={UrbanismoTramiteEstadosStepOnePage} />
       <Route exact path={enumPaths.URBANISMO_TRAMITE_ESTADOS_STEP_TWO} component={UrbanismoTramiteEstadosStepTwoPage} />
       <Route exact path={enumPaths.URBANISMO_TRAMITE_ESTADOS_STEP_THREE} component={UrbanismoTramiteEstadosStepThreePage} />
+      <Route exact path={enumPaths.URBANISMO_FLUJO_CHANGE_STATE_STEP_ONE} component={UrbanismoTramiteFlujoChangeStateStepOnePage} />
+      <Route exact path={enumPaths.URBANISMO_FLUJO_CHANGE_STATE_STEP_TWO} component={UrbanismoTramiteFlujoChangeStateStepTwoPage} />
       <Route exact path={enumPaths.URBANISMO_FLUJO_HISTORIAL_STEP_ONE} component={UrbanismoFlujoHistorialStepOnePage} />
       <Route exact path={enumPaths.URBANISMO_FLUJO_HISTORIAL_STEP_TWO} component={UrbanismoFlujoHistorialStepTwoPage} />
       <Route exact path={enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_ONE} component={UrbanismoHistorialEstadoStepOnePage} />
