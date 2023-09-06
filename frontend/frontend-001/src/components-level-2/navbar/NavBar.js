@@ -327,6 +327,9 @@ function NavBar () {
   const navigateRegulaLotesForm = () => {
     history.push(enumPaths.REGULA_LOTES_FORM);
   };
+  const navigateRegulaLotesExtractoBancarioForm = () => {
+    history.push(enumPaths.REGULA_LOTES_EXTRACTO_BANCARIO_FORM);
+  };
   const navigateRegulaLotesFormCliente = () => {
     history.push(enumPaths.REGULA_LOTES_FORM_CLIENTE);
   };
@@ -594,6 +597,7 @@ function NavBar () {
   // REGULARIZACION LOTES
   const regulaLotesAdminLabel = (<><IoNewspaperSharp /> {i18n.navBar.regulaLotesAdmin}</>);
   const regulaLotesFormLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesForm}</>);
+  const regulaLotesExtractoBancarioFormLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesExtractoBancarioForm}</>);
   const regulaLotesFormClienteLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesFormCliente}</>);
   const regulaLotesClienteAdminLabel = (<><FaCashRegister /> {i18n.navBar.regulaLotesAdmin}</>);
   const regulaLotesTableLabel = (<><AiOutlineTable /> {i18n.navBar.regulaLotesTable}</>);
@@ -873,6 +877,7 @@ function NavBar () {
           {userRoles.includes(enumRoles.REGULARIZACION_LOTES_ENCARGADO) &&
             <NavDropdown title={regulaLotesAdminLabel}>
               <NavDropdown.Item onClick={navigateRegulaLotesForm}>{regulaLotesFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateRegulaLotesExtractoBancarioForm}>{regulaLotesExtractoBancarioFormLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateRegulaLotesTable}>{regulaLotesTableLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.REGULARIZACION_LOTES_ENCARGADO) &&

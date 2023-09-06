@@ -13,6 +13,7 @@ import TenantTableFilterByUserPage from "./components-level-3/system/TenantTable
 import InProgressPage from "./components-level-3/system/InProgressPage";
 import TenantTableSelectForRolePage from "./components-level-3/system/TenantTableSelectForRolePage";
 import TenantTableFilterByRolePage from "./components-level-3/system/TenantTableFilterByRolePage";
+import CommonMessageReduxPage from "./components-level-3/system/CommonMessageReduxPage";
 
 // Users System
 import UsersFormPage from "./components-level-3/users/UserFormPage";
@@ -124,6 +125,7 @@ import AlcaldiaRecursosMunicipalesReporteAnualPage from "./components-level-3/al
 import UrbanismoTramiteFormPage from "./components-level-3/alcaldia/UrbanismoTramiteFormPage";
 import UrbanismoTramiteTablePage from "./components-level-3/alcaldia/UrbanismoTramiteTablePage";
 import RegulaLotesFormPage from "./components-level-3/alcaldia/RegulaLotesFormPage";
+import RegulaLotesExtractoBancarioFormPage from "./components-level-3/alcaldia/RegulaLotesExtractoBancarioFormPage";
 import RegulaLotesFormClientePage from "./components-level-3/alcaldia/RegulaLotesFormClientePage";
 import RegulaLotesFormClienteStepTwoPage from "./components-level-3/alcaldia/RegulaLotesFormClienteStepTwoPage";
 import RegulaLotesTablePage from "./components-level-3/alcaldia/RegulaLotesTablePage";
@@ -147,6 +149,8 @@ import UrbanismoHistorialEstadoStepThreePage from "./components-level-3/alcaldia
 
 const AppRoutes = () => (
   <App>
+    {/** Here common components */}
+    <CommonMessageReduxPage/>
     <Switch>
       <Route exact path={enumPaths.DASHBOARD} component={DashboardPage} />
       <Route exact path={enumPaths.IN_PROGRESS_PAGE} component={InProgressPage} />
@@ -266,6 +270,7 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.URBANISMO_TRAMITE_FORM} component={UrbanismoTramiteFormPage} />
       <Route exact path={enumPaths.URBANISMO_TRAMITE_TABLE} component={UrbanismoTramiteTablePage} />
       <Route exact path={enumPaths.REGULA_LOTES_FORM} component={RegulaLotesFormPage} />
+      <Route exact path={enumPaths.REGULA_LOTES_EXTRACTO_BANCARIO_FORM} component={RegulaLotesExtractoBancarioFormPage} />
       <Route exact path={enumPaths.REGULA_LOTES_FORM_CLIENTE} component={RegulaLotesFormClientePage} />
       <Route exact path={enumPaths.REGULA_LOTES_FORM_CLIENTE_STEP_TWO} component={RegulaLotesFormClienteStepTwoPage} />
       <Route exact path={enumPaths.REGULA_LOTES_TABLE} component={RegulaLotesTablePage} />

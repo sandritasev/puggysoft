@@ -199,6 +199,7 @@ const navBar = {
   // Regula Lotes
   regulaLotesAdmin: "Adm. Regulacion de lotes",
   regulaLotesForm: "Registrar reg. lotes",
+  regulaLotesExtractoBancarioForm: "Registrar extracto bancario",
   regulaLotesFormCliente: "Ingreso cliente",
   regulaLotesTable: "Mostrar reg. lotes",
   // Urbanismo Requisitos

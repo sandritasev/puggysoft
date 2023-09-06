@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router";
 
@@ -13,11 +14,13 @@ import { handleValidation, classNameFormTextNew } from "./../../validations/user
 import appUrlConfig from "./../../tools/appUrlConfig";
 import CommonLoading from "./../../components-level-1/CommonLoading";
 import CommonMessage from "./../../components-level-1/CommonMessage";
+import { openCommonMessage } from "./../../redux/reducers/reducerCommonMessage";
 
 import "./../css/all-forms.css";
 import "./user-form-styles.css";
 
 function UserForm (props) {
+  const dispatch = useDispatch();
   const history = useHistory();
   const isEditDefaultValue = history && history.location && history.location.state;
   const [isEdit, setIsEdit] = useState(isEditDefaultValue);
@@ -126,6 +129,7 @@ function UserForm (props) {
       newUser.id = newUserId;
       afterAdd(newUser);
     }
+    messageAfterSuccess();
   };
 
   const handleAddImage = (userId) => {
@@ -140,6 +144,7 @@ function UserForm (props) {
   const handleAfterEdit = function () {
     handleAddImage(id);
     handleReset();
+    messageAfterSuccess(isEdit);
     setIsEdit(undefined);
   };
 
@@ -177,6 +182,30 @@ function UserForm (props) {
     return valuePassword === valuePasswordRepeat;
   };
 
+  const handleAfterFail = function (response, errorMessage) {
+    dispatch(openCommonMessage(
+      {
+        isMessageModalVisible: true,
+        messageModalTitle: i18n.errorMessages.errorTitle,
+        messageModalBody: errorMessage,
+        messageModalVariant: "danger"
+      }
+    ));
+  };
+
+  const messageAfterSuccess = function (isEditAction) {
+    dispatch(openCommonMessage(
+      {
+        isMessageModalVisible: true,
+        messageModalTitle: i18n.successMessages.successTitle,
+        messageModalBody: isEditAction
+          ? i18n.successMessages.successfullyEdited
+          : i18n.successMessages.successfullyCreated,
+        messageModalVariant: isEditAction ? "warning" : "success"
+      }
+    ));
+  };
+
   const handleAdd = (event) => {
     event.preventDefault();
     const body = getBody();
@@ -196,15 +225,21 @@ function UserForm (props) {
       delete body.passwordRepead;
       setIsRequestInProgress(true);
       if (isEdit) {
-        handleEditRequest("users/", body, id, handleAfterEdit);
+        handleEditRequest("users/", body, id, handleAfterEdit, handleAfterFail, false);
       } else {
         if (beforeAdd) {
           beforeAdd();
         }
         if (showMessageOnSuccess === undefined) { // true
-          handleAddRequest("users/", body, handleAfterAdd);
+          handleAddRequest("users/", body, handleAfterAdd, false, handleAfterFail);
         } else {
-          handleAddRequest("users/", body, handleAfterAdd, showMessageOnSuccess);
+          handleAddRequest(
+            "users/",
+            body,
+            handleAfterAdd,
+            showMessageOnSuccess,
+            handleAfterFail
+          );
         }
       }
     }

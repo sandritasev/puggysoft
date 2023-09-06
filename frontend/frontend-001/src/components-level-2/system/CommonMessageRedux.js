@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeCommonMessage } from "./../../redux/reducers/reducerCommonMessage";
 
 function CommonMessageRedux () {
-  const stateCommonMessage = useSelector(state => state);
+  const stateCommonMessage = useSelector(state => state.commonMessage);
   const dispatch = useDispatch();
   const handleClose = () => {
     dispatch(closeCommonMessage());
@@ -15,7 +15,7 @@ function CommonMessageRedux () {
       setIsVisible={handleClose}
       titleText={stateCommonMessage.messageModalTitle}
       bodyText={stateCommonMessage.messageModalBody}
-      varian={stateCommonMessage.messageModalVariant}
+      variant={stateCommonMessage.messageModalVariant}
     />
   );
 }
