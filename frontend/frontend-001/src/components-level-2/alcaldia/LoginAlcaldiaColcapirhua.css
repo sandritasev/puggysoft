@@ -1,0 +1,96 @@
+/*.puggysoft-login-alcaldia-colca-container{
+    background-image: url('./../../../public/alcaldia/colcaEscudo.jpg');
+    height: 60rem;
+}*/
+
+.puggysoft-login-alcaldia-colca-navbar {
+    margin-bottom: 3rem;
+}
+
+.puggysoft-alcaldia-colca-main-image {
+    width: 35rem;
+    height: 20rem;
+}
+
+.puggysoft-alcaldia-colca-navbar-logo {
+    width: 4rem;
+    height: 4rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.puggysoft-alcaldia-colca-text-container {
+    color: white;
+    margin: 0px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration: none
+}
+
+.image-fader img {
+    position: absolute;
+    top: 17%;
+    left: 5%;
+    animation-name: imagefade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+}
+
+.image-fader-two img {
+    top: 17%;
+    left: 65%;
+}
+
+@keyframes imagefade {
+    0% {
+        opacity: 1;
+    }
+
+    17% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    92% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.image-fader img:nth-of-type(1) {
+    animation-delay: 6s;
+}
+
+.image-fader img:nth-of-type(2) {
+    animation-delay: 4s;
+}
+
+.image-fader img:nth-of-type(3) {
+    animation-delay: 2s;
+}
+
+.image-fader img:nth-of-type(4) {
+    animation-delay: 0;
+}
+
+
+.puggysoft-alcaldia-colca-links-container {
+    margin-top: 5rem;
+}
+
+.puggysoft-alcaldia-colca-links-item{
+    margin-left: 1rem;
+}

@@ -1,6 +1,7 @@
 // Common
 import login from "./spanish/login";
 import navBar from "./spanish/navBar";
+import themeForm from "./spanish/system/themeForm";
 import commonTable from "./spanish/commonTable";
 import errorMessages from "./spanish/errorMessages";
 import trueFalse from "./spanish/trueFalse";
@@ -57,11 +58,14 @@ import intervalTimeForm from "./spanish/reservation/intervalTimeForm";
 import resourceTable from "./spanish/reservation/resourceTable";
 import intervalTimeTable from "./spanish/reservation/intervalTimeTable";
 // Alcaldia System
+import alcaldiaLoginColcapirhua from "./spanish/alcaldia/alcaldiaLoginColcapirhua";
 import alcaldiaVentaStatusText from "./spanish/alcaldia/alcaldiaVentaStatusText";
 import alcaldiaRecursosMunicipalesForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesForm";
 import recursoMunicipalTipo from "./spanish/alcaldia/recursoMunicipalTipo";
 import alcaldiaRecursosMunicipalesTimbresForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTimbresForm";
 import alcaldiaRecursosMunicipalesTimbresTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTimbresTable";
+import alcaldiaRecursosMunicipalesTimbresDescontinuadosForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTimbresDescontinuadosForm";
+import alcaldiaRecursosMunicipalesTimbresDescontinuadosTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTimbresDescontinuadosTable";
 import alcaldiaRecursosMunicipalesTimbresVentasForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTimbresVentasForm";
 import alcaldiaRecursosMunicipalesReporteDiario from "./spanish/alcaldia/alcaldiaRecursosMunicipalesReporteDiario";
 import alcaldiaRecursosMunicipalesReporteMensual from "./spanish/alcaldia/alcaldiaRecursosMunicipalesReporteMensual";
@@ -70,6 +74,8 @@ import alcaldiaRecursosMunicipalesReportePdf from "./spanish/alcaldia/alcaldiaRe
 import alcaldiaRecursosMunicipalesTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTable";
 import alcaldiaRecursosMunicipalesVentasForm from "./spanish/alcaldia/alcaldiaRecursosMunicipalesVentasForm";
 import alcaldiaRecursosMunicipalesVentasTable from "./spanish/alcaldia/alcaldiaRecursosMunicipalesVentasTable";
+import alcaldiaActividadesForm from "./spanish/alcaldia/alcaldiaActividadesForm";
+import alcaldiaActividadesTable from "./spanish/alcaldia/alcaldiaActividadesTable";
 import alcaldiaRecursosMunicipalesTableAdd from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTableAdd";
 import alcaldiaRecursosMunicipalesTableDelete from "./spanish/alcaldia/alcaldiaRecursosMunicipalesTableDelete";
 import alcaldiaRecursosMunicipalesNumToText from "./spanish/alcaldia/alcaldiaRecursosMunicipalesNumToText";
@@ -95,6 +101,7 @@ const i18n = {
   // Common
   login,
   navBar,
+  themeForm,
   commonTable,
   errorMessages,
   successMessages,
@@ -151,17 +158,22 @@ const i18n = {
   resourceTable,
   intervalTimeTable,
   // Alcaldia System
+  alcaldiaLoginColcapirhua,
   alcaldiaRecursosMunicipalesForm,
   alcaldiaVentaStatusText,
   alcaldiaRecursosMunicipalesTable,
   recursoMunicipalTipo,
   alcaldiaRecursosMunicipalesTimbresForm,
   alcaldiaRecursosMunicipalesTimbresTable,
+  alcaldiaRecursosMunicipalesTimbresDescontinuadosForm,
+  alcaldiaRecursosMunicipalesTimbresDescontinuadosTable,
   alcaldiaRecursosMunicipalesTimbresVentasForm,
   alcaldiaRecursosMunicipalesTableAdd,
   alcaldiaRecursosMunicipalesTableDelete,
   alcaldiaRecursosMunicipalesVentasForm,
   alcaldiaRecursosMunicipalesVentasTable,
+  alcaldiaActividadesForm,
+  alcaldiaActividadesTable,
   alcaldiaRecursosMunicipalesReporteDiario,
   alcaldiaRecursosMunicipalesReporteMensual,
   alcaldiaRecursosMunicipalesReporteAnual,

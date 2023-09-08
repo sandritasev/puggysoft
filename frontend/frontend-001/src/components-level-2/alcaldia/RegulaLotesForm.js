@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 
 import Form from "react-bootstrap/Form";
@@ -15,12 +16,13 @@ import {
   handleValidation,
   classNameFormTextNew
 } from "../../validations/alcaldia/HandleRegulaLotesFormValidations";
-import CommonMessage from "../../components-level-1/CommonMessage";
 import pdfBuilderComprobantePagoLotes from "./../../tools/alcaldia/pdfBuilderComprobantePagoLotes";
+import { openCommonMessage } from "./../../redux/reducers/reducerCommonMessage";
 
 import "./../css/all-forms.css";
 
 function RegulaLotesForm () {
+  const dispatch = useDispatch();
   const history = useHistory();
   const isEditDefaultValue =
     history && history.location && history.location.state;
@@ -28,10 +30,6 @@ function RegulaLotesForm () {
   const [classNameFormText, setClassNameFormText] =
     useState(classNameFormTextNew);
   const [isRequestInProgress, setIsRequestInProgress] = useState(false);
-  // Message states
-  const [isMessageVisible, setIsMessageVisible] = useState(false);
-  const [messageTitle, setMessageTitle] = useState("");
-  const [messageText, setMessageText] = useState("");
 
   // CONFIGURE IMAGE
   const archivo =
@@ -114,6 +112,17 @@ function RegulaLotesForm () {
     setIsRequestInProgress(false);
   };
 
+  const handleAfterFail = function (response, errorMessage) {
+    dispatch(openCommonMessage(
+      {
+        isMessageModalVisible: true,
+        messageModalTitle: i18n.errorMessages.errorTitle,
+        messageModalBody: errorMessage,
+        messageModalVariant: "danger"
+      }
+    ));
+  };
+
   const handleAdd = (event) => {
     event.preventDefault();
     const body = getBody();
@@ -125,20 +134,27 @@ function RegulaLotesForm () {
           "regula-lotes/",
           body,
           id,
-          handleAfterEdit
+          handleAfterEdit,
+          handleAfterFail
         );
       } else {
         handleAddRequest(
           "regula-lotes/",
           body,
           handleAfterAdd,
-          false
+          false,
+          handleAfterFail
         );
       }
     } else {
-      setMessageTitle(i18n.errorMessages.validationErrorTitle);
-      setMessageText(i18n.errorMessages.validationError);
-      setIsMessageVisible(true);
+      dispatch(openCommonMessage(
+        {
+          isMessageModalVisible: true,
+          messageModalTitle: i18n.errorMessages.validationErrorTitle,
+          messageModalBody: i18n.errorMessages.validationError,
+          messageModalVariant: "danger"
+        }
+      ));
     }
   };
 
@@ -153,13 +169,6 @@ function RegulaLotesForm () {
 
   return (
     <div className="puggysoft-form-thirty-with">
-      <CommonMessage
-        isVisible={isMessageVisible}
-        setIsVisible={setIsMessageVisible}
-        titleText={messageTitle}
-        bodyText={messageText}
-        variant="danger"
-      />
       <Card>
         <Card.Header as="h3">
           {i18n.regulaLotesForm.title}

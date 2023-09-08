@@ -7,7 +7,10 @@ const regulaLotesForm = {
   fieldNumeroInmueble: "Numero de inmueble",
   fieldNumeroInmuebleText: "Minimo 3, maximo 120 caracteres. (Sin espacios)",
   fieldMonto: "Monto",
-  fieldMontoText: "Minimo 1, maximo 30. (Sin espacios)"
+  fieldMontoText: "Minimo 1, maximo 30. (Sin espacios)",
+  extractoBancarioTitleForm: "Formulario registro extracto bancario",
+  extractoBancariofieldFileLabel: "Cargue el extracto bancario, en formato pdf",
+  extractoBancariofieldFileText: "El archivo debe ser en formato pdf"
 };
 
 export default regulaLotesForm;

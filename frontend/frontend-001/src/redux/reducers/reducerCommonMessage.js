@@ -12,14 +12,12 @@ const messageSlice = createSlice({
   initialState,
   reducers: {
     openCommonMessage: (state, action) => {
-      state.push(action.payload);
+      state = { ...state, ...action.payload };
+      return state;
     },
     closeCommonMessage: (state, action) => {
-      state.push(
-        {
-          ...state,
-          isMessageModalVisible: false
-        });
+      state = { ...state, isMessageModalVisible: false };
+      return state;
     }
   }
 });

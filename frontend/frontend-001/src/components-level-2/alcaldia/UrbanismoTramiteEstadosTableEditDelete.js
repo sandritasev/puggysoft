@@ -7,7 +7,7 @@ import {
   handleDeleteRequest,
   handleGetRequest
 } from "../../actions/HandleManager";
-import UrbanismoTramiteEstadosGenericTable from "./generic/UrbanismoTramiteEstadosGenericTable";
+import UrbanismoTramiteEnFlujoTable from "./generic/UrbanismoTramiteEnFlujoGenericTable";
 import enumTableColumnsToShow from "../../models/enumTableColumnsToShow";
 import CommonLoading from "../../components-level-1/CommonLoading";
 import CommonMessage from "../../components-level-1/CommonMessage";
@@ -107,7 +107,7 @@ function UrbanismoTramiteTableEstadosEditDelete () {
         bodyText={messageText}
         variant="danger"
       />
-      <UrbanismoTramiteEstadosGenericTable
+      <UrbanismoTramiteEnFlujoTable
         tableTitle={tableTitle}
         tableSubTitle={tableSubTitle}
         numberPagesToShow={numberPagesToShow}
@@ -116,7 +116,7 @@ function UrbanismoTramiteTableEstadosEditDelete () {
         tableArrayCustomRowButtons={tableArrayCustomRowButtons}
         columnsToShow={enumTableColumnsToShow.FULL}
       >
-      </UrbanismoTramiteEstadosGenericTable>
+      </UrbanismoTramiteEnFlujoTable>
     </>
   );
 }

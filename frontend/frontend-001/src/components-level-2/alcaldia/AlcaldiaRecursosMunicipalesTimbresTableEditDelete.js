@@ -27,7 +27,7 @@ function AlcaldiaRecursosMunicipalesTimbresTableEditDelete () {
 
   function handleEdit (data) {
     history.push({
-      pathname: enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_FORM,
+      pathname: enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_FORM,
       state: {
         data,
         edit: true

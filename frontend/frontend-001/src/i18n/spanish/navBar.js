@@ -164,13 +164,18 @@ const navBar = {
   configAdmin: "Config",
   configSystem: "Parametros del sistema",
   configLogout: "Cerrar sesion",
+  configTheme: "Adm. Apariencia",
 
   // ******* ******* ALCALDIA SYSTEM ******* *******
   // Recurso Municipal
   recursoMunicipalAdmin: "Adm. Recursos Municipales",
   recursoMunicipalForm: "Registrar Recurso",
   recursoMunicipalTable: "Mostrar Recursos",
-  recursoMunicipalGrupoStepOne: "Gestionar gerarquia",
+  recursoMunicipalGrupoStepOne: "Gestionar jerarquía",
+  // Actividades
+  recursoActividadesAdmin: "Adm. actividades",
+  recursoActividadesForm: "Registrar actividad",
+  recursoActividadesTable: "Mostrar actividades",
   // Venta Recursos Municipales
   recursoMunicipaVentalAdmin: "Adm. Caja Recursos Municipales",
   recursoMunicipalVentaForm: "Registrar venta",
@@ -179,6 +184,8 @@ const navBar = {
   recursoMunicipalTimbresAdmin: "Adm. Timbres",
   recursoMunicipalTimbresForm: "Registrar Lote de Timbres",
   recursoMunicipalTimbresTable: "Mostrar Timbres",
+  recursoMunicipalTimbresDescontinuadosForm: "Registrar Timbre Descontinuado",
+  recursoMunicipalTimbresDescontinuadosTable: "Mostrar Timbres Descontinuados",
   // Venta Recursos Municipales Timbres
   recursoMunicipalTimbresVentalAdmin: "Adm. Caja Timbres",
   recursoMunicipalTimbresVentaForm: "Registrar venta",
@@ -187,6 +194,7 @@ const navBar = {
   recursoMunicipalReporteAdmin: "Adm. Reportes",
   recursoMunicipalReporte1: "Reportes por fecha",
   recursoMunicipalReporte2: "Reportes por rango de fechas",
+  recursoMunicipalReporteCortoDiario: "Reporte corto diario",
   recursoMunicipalReporteDiario: "Reporte diario",
   recursoMunicipalReporteMensual: "Reporte mensual",
   recursoMunicipalReporteAnual: "Reporte anual",
@@ -197,6 +205,7 @@ const navBar = {
   // Regula Lotes
   regulaLotesAdmin: "Adm. Regulacion de lotes",
   regulaLotesForm: "Registrar reg. lotes",
+  regulaLotesExtractoBancarioForm: "Registrar extracto bancario",
   regulaLotesFormCliente: "Ingreso cliente",
   regulaLotesTable: "Mostrar reg. lotes",
   // Urbanismo Requisitos
@@ -214,8 +223,9 @@ const navBar = {
   urbanismoTramiteEstadosStepOne: "Iniciar un tramite",
   urbanismoTramiteEstadosTable: "Mostrar tramites en curso (Editar / Eliminar)",
   urbanismoFlujoRequisitosStepOne: "Mostrar tramites en curso (Adm. Requisitos)",
+  urbanismoFlujoChangeStateStepOne: "Mostrar tramites en curso (Cambiar Estado)",
   urbanismoHistorialEstadoStepOne: "Crear Historial",
-  urbanismoFlujoHistorialStepOne: "Flujo Historial"
+  urbanismoFlujoHistorialStepOne: "Mostrar tramites en curso (Flujo Historial)"
 };
 
 export default navBar;

@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import TableFilterGeneric from "../../generic/TableFilterGeneric";
 import useInput from "../../../hooks/useInput";
 import enumCompareOperators from "../../../models/enumCompareOperators";
-import enumTableColumnsToShow from "../../../models/enumTableColumnsToShow";
-import urbanismoTramiteEstadosTableModels from "../../../models/alcaldia/urbanismoTramiteEstadosTableModels";
+import enumTableColumnsToShow from "../../../models/alcaldia/enumTableColumnsToShow";
+import alcaldiaRecursosMunicipalesTableModels from "../../../models/alcaldia/alcaldiaActividadesTableModels";
 
-function UrbanismoTramiteEstadosGenericTable (props) {
+function AlcaldiaActividadesGenericTable (props) {
   const {
     numberPagesToShow,
     tableTitle,
@@ -14,38 +14,30 @@ function UrbanismoTramiteEstadosGenericTable (props) {
     handleGetData,
     handleGetSize,
     tableArrayCustomRowButtons,
-    columnsToShow
+    columnsToShow,
+    fixArrayData
   } = props;
 
   // CRITERIA OF SEARCH OR FILTER
   const { value: criteriaId, onChange: criteriaOnChangeId, setValue: criteriaSetId } = useInput("");
-  const { value: criteriaTramite, onChange: criteriaOnChangeTramite, setValue: criteriaSetTramite } = useInput("");
-  const { value: criteriaEstados, onChange: criteriaOnChangeEstados, setValue: criteriaSetEstados } = useInput("");
-  const { value: criteriaNombre, onChange: criteriaOnChangeNombre, setValue: criteriaSetNombre } = useInput("");
-  const { value: criteriaCi, onChange: criteriaOnChangeCi, setValue: criteriaSetCi } = useInput("");
+  const { value: criteriaName, onChange: criteriaOnChangeName, setValue: criteriaSetName } = useInput("");
   const { value: criteriaCreatedBy, onChange: criteriaOnChangeCreatedBy, setValue: criteriaSetCreatedBy } = useInput("");
   const { value: criteriaUpdatedBy, onChange: criteriaOnChangeUpdatedBy, setValue: criteriaSetUpdatedBy } = useInput("");
   const { value: criteriaCreatedDate, onChange: criteriaOnChangeCreatedDate, setValue: criteriaSetCreatedDate } = useInput("");
   const { value: criteriaUpdatedDate, onChange: criteriaOnChangeUpdatedDate, setValue: criteriaSetUpdatedDate } = useInput("");
 
   // FILTER OPERATORS
-  const { value: operatorId, onChange: operatorOnChangeId, setValue: operatorSetId } = useInput(enumCompareOperators.TEXT_CONTAINS);
-  const { value: operatorTramite, onChange: operatorOnChangeTramite, setValue: operatorSetTramite } = useInput(enumCompareOperators.TEXT_CONTAINS);
-  const { value: operatorEstados, onChange: operatorOnChangeEstados, setValue: operatorSetEstados } = useInput(enumCompareOperators.TEXT_CONTAINS);
-  const { value: operatorNombre, onChange: operatorOnChangeNombre, setValue: operatorSetNombre } = useInput(enumCompareOperators.TEXT_CONTAINS);
-  const { value: operatorCi, onChange: operatorOnChangeCi, setValue: operatorSetCi } = useInput(enumCompareOperators.NUMBER_EQUALS);
+  const { value: operatorId, onChange: operatorOnChangeId, setValue: operatorSetId } = useInput(enumCompareOperators.NUMBER_EQUALS);
+  const { value: operatorName, onChange: operatorOnChangeName, setValue: operatorSetName } = useInput(enumCompareOperators.TEXT_CONTAINS);
   const { value: operatorCreatedBy, onChange: operatorOnChangeCreatedBy, setValue: operatorSetCreatedBy } = useInput(enumCompareOperators.TEXT_CONTAINS);
   const { value: operatorUpdatedBy, onChange: operatorOnChangeUpdatedBy, setValue: operatorSetUpdatedBy } = useInput(enumCompareOperators.TEXT_CONTAINS);
   const { value: operatorCreatedDate, onChange: operatorOnChangeCreatedDate, setValue: operatorSetCreatedDate } = useInput(enumCompareOperators.DATE_EQUALS);
   const { value: operatorUpdatedDate, onChange: operatorOnChangeUpdatedDate, setValue: operatorSetUpdatedDate } = useInput(enumCompareOperators.DATE_EQUALS);
 
-  const { arrayColumnsFilter, clearFilters, getFilterBody, arrayColumnsLabels, arrayDataFields } = urbanismoTramiteEstadosTableModels(
+  const { arrayColumnsFilter, clearFilters, getFilterBody, arrayColumnsLabels, arrayDataFields } = alcaldiaRecursosMunicipalesTableModels(
     columnsToShow,
     /* ID */ criteriaId, criteriaOnChangeId, criteriaSetId, operatorId, operatorOnChangeId, operatorSetId,
-    /* TRAMITE */ criteriaTramite, criteriaOnChangeTramite, criteriaSetTramite, operatorTramite, operatorOnChangeTramite, operatorSetTramite,
-    /* ESTADOS */criteriaEstados, criteriaOnChangeEstados, criteriaSetEstados, operatorEstados, operatorOnChangeEstados, operatorSetEstados,
-    /* NOMBRE */criteriaNombre, criteriaOnChangeNombre, criteriaSetNombre, operatorNombre, operatorOnChangeNombre, operatorSetNombre,
-    /* CI */ criteriaCi, criteriaOnChangeCi, criteriaSetCi, operatorCi, operatorOnChangeCi, operatorSetCi,
+    /* NAME */criteriaName, criteriaOnChangeName, criteriaSetName, operatorName, operatorOnChangeName, operatorSetName,
     /* CREATED BY */criteriaCreatedBy, criteriaOnChangeCreatedBy, criteriaSetCreatedBy, operatorCreatedBy, operatorOnChangeCreatedBy, operatorSetCreatedBy,
     /* UPDATED BY */criteriaUpdatedBy, criteriaOnChangeUpdatedBy, criteriaSetUpdatedBy, operatorUpdatedBy, operatorOnChangeUpdatedBy, operatorSetUpdatedBy,
     /* CREATED DATE */criteriaCreatedDate, criteriaOnChangeCreatedDate, criteriaSetCreatedDate, operatorCreatedDate, operatorOnChangeCreatedDate, operatorSetCreatedDate,
@@ -65,14 +57,15 @@ function UrbanismoTramiteEstadosGenericTable (props) {
       arrayColumnsFilter={arrayColumnsFilter}
       clearFilters={clearFilters}
       getFilterBody={getFilterBody}
+      fixArrayData={fixArrayData}
     >
     </TableFilterGeneric>
   );
 }
 
-export default UrbanismoTramiteEstadosGenericTable;
+export default AlcaldiaActividadesGenericTable;
 
-UrbanismoTramiteEstadosGenericTable.propTypes = {
+AlcaldiaActividadesGenericTable.propTypes = {
   numberPagesToShow: PropTypes.number,
   tableTitle: PropTypes.string,
   tableSubTitle: PropTypes.string,
@@ -82,16 +75,20 @@ UrbanismoTramiteEstadosGenericTable.propTypes = {
   columnsToShow: PropTypes.oneOf([
     enumTableColumnsToShow.FULL,
     enumTableColumnsToShow.MEDIUM,
-    enumTableColumnsToShow.MINIMUM
-  ])
+    enumTableColumnsToShow.MINIMUM,
+    enumTableColumnsToShow.SALEADD,
+    enumTableColumnsToShow.SALEDELETE
+  ]),
+  fixArrayData: PropTypes.func
 };
 
-UrbanismoTramiteEstadosGenericTable.defaultProps = {
+AlcaldiaActividadesGenericTable.defaultProps = {
   numberPagesToShow: 0,
   tableTitle: "",
   tableSubTitle: undefined,
   handleGetData: () => { },
   handleGetSize: () => { },
   tableArrayCustomRowButtons: [],
-  columnsToShow: enumTableColumnsToShow.FULL
+  columnsToShow: enumTableColumnsToShow.FULL,
+  fixArrayData: undefined
 };

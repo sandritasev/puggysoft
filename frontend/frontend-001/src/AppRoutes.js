@@ -13,6 +13,8 @@ import TenantTableFilterByUserPage from "./components-level-3/system/TenantTable
 import InProgressPage from "./components-level-3/system/InProgressPage";
 import TenantTableSelectForRolePage from "./components-level-3/system/TenantTableSelectForRolePage";
 import TenantTableFilterByRolePage from "./components-level-3/system/TenantTableFilterByRolePage";
+import CommonMessageReduxPage from "./components-level-3/system/CommonMessageReduxPage";
+import ThemeFormPage from "./components-level-3/system/ThemeFormPage";
 
 // Users System
 import UsersFormPage from "./components-level-3/users/UserFormPage";
@@ -106,22 +108,30 @@ import TenantTableFilterEditDeletePage from "./components-level-3/system/TenantT
 import TenantTableFilterPage from "./components-level-3/system/TenantTableFilterPage";
 
 // Alcaldia System
+import LoginAlcaldiaColcapirhuaPage from "./components-level-3/alcaldia/LoginAlcaldiaColcapirhuaPage";
 import AlcaldiaRecursosMunicipalesFormPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesFormPage";
 import AlcaldiaRecursosMunicipalesTablePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesTablePage";
 import AlcaldiaRecursosMunicipalesGrupoStepOnePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesGrupoStepOnePage";
 import AlcaldiaRecursosMunicipalesGrupoStepTwoPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesGrupoStepTwoPage";
 import AlcaldiaRecursosMunicipalesVentasFormPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesVentasFormPage";
 import AlcaldiaRecursosMunicipalesVentasTablePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesVentasTablePage";
+import AlcaldiaActividadesFormPage from "./components-level-3/alcaldia/AlcaldiaActividadesFormPage";
+import AlcaldiaActividadesTablePage from "./components-level-3/alcaldia/AlcaldiaActividadesTablePage";
+import AlcaldiaActividadesGrupoPage from "./components-level-3/alcaldia/AlcaldiaActividadesGrupoPage";
 import AlcaldiaRecursosMunicipalesTimbresFormPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesTimbresFormPage";
 import AlcaldiaRecursosMunicipalesTimbresTablePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesTimbresTablePage";
+import AlcaldiaRecursosMunicipalesTimbresDescontinuadasFormPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesTimbresDescontinuadosFormPage";
+import AlcaldiaRecursosMunicipalesTimbresDescontinuadosTablePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesTimbresDescontinuadosTablePage";
 import AlcaldiaRecursosMunicipalesTimbresVentasFormPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesTimbresVentasFormPage";
 import AlcaldiaRecursosMunicipalesTimbresVentasTablePage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesTimbresVentasTablePage";
+import AlcaldiaRecursosMunicipalesReporteCortoDiarioPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesReporteCortoDiarioPage";
 import AlcaldiaRecursosMunicipalesReporteDiarioPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesReporteDiarioPage";
 import AlcaldiaRecursosMunicipalesReporteMensualPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesReporteMensualPage";
 import AlcaldiaRecursosMunicipalesReporteAnualPage from "./components-level-3/alcaldia/AlcaldiaRecursosMunicipalesReporteAnualPage";
 import UrbanismoTramiteFormPage from "./components-level-3/alcaldia/UrbanismoTramiteFormPage";
 import UrbanismoTramiteTablePage from "./components-level-3/alcaldia/UrbanismoTramiteTablePage";
 import RegulaLotesFormPage from "./components-level-3/alcaldia/RegulaLotesFormPage";
+import RegulaLotesExtractoBancarioFormPage from "./components-level-3/alcaldia/RegulaLotesExtractoBancarioFormPage";
 import RegulaLotesFormClientePage from "./components-level-3/alcaldia/RegulaLotesFormClientePage";
 import RegulaLotesFormClienteStepTwoPage from "./components-level-3/alcaldia/RegulaLotesFormClienteStepTwoPage";
 import RegulaLotesTablePage from "./components-level-3/alcaldia/RegulaLotesTablePage";
@@ -137,6 +147,8 @@ import UrbanismoFlujoRequisitosStepTwoPage from "./components-level-3/alcaldia/U
 import UrbanismoTramiteEstadosStepOnePage from "./components-level-3/alcaldia/UrbanismoTramiteEstadosStepOnePage";
 import UrbanismoTramiteEstadosStepTwoPage from "./components-level-3/alcaldia/UrbanismoTramiteEstadosStepTwoPage";
 import UrbanismoTramiteEstadosStepThreePage from "./components-level-3/alcaldia/UrbanismoTramiteEstadosStepThreePage";
+import UrbanismoTramiteFlujoChangeStateStepOnePage from "./components-level-3/alcaldia/UrbanismoTramiteFlujoChangeStateStepOnePage";
+import UrbanismoTramiteFlujoChangeStateStepTwoPage from "./components-level-3/alcaldia/UrbanismoTramiteFlujoChangeStateStepTwoPage";
 import UrbanismoFlujoHistorialStepOnePage from "./components-level-3/alcaldia/UrbanismoFlujoHistorialStepOnePage";
 import UrbanismoFlujoHistorialStepTwoPage from "./components-level-3/alcaldia/UrbanismoFlujoHistorialStepTwoPage";
 import UrbanismoHistorialEstadoStepOnePage from "./components-level-3/alcaldia/UrbanismoHistorialEstadoStepOnePage";
@@ -145,9 +157,12 @@ import UrbanismoHistorialEstadoStepThreePage from "./components-level-3/alcaldia
 
 const AppRoutes = () => (
   <App>
+    {/** Here common components */}
+    <CommonMessageReduxPage/>
     <Switch>
       <Route exact path={enumPaths.DASHBOARD} component={DashboardPage} />
       <Route exact path={enumPaths.IN_PROGRESS_PAGE} component={InProgressPage} />
+      <Route exact path={enumPaths.THEME_FORM} component={ThemeFormPage} />
       {/** System Properties */}
       <Route exact path={enumPaths.SYSTEM_PROPERTIES_FORM} component={SystemPropertiesFormPage} />
       <Route exact path={enumPaths.SYSTEM_PROPERTIES_TABLE} component={SystemPropertiesTablePage} />
@@ -246,22 +261,30 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.LOGIN_TENANT} component={LoginPage} />
       <Route exact path={enumPaths.LOGIN} component={LoginPage} />
       {/** Alcaldia System */}
+      <Route exact path={enumPaths.ALCALDIA_LOGIN_COLCAPIRHUA} component={LoginAlcaldiaColcapirhuaPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_FORM} component={AlcaldiaRecursosMunicipalesFormPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TABLE} component={AlcaldiaRecursosMunicipalesTablePage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_GRUPO_STEP_ONE} component={AlcaldiaRecursosMunicipalesGrupoStepOnePage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_GRUPO_STEP_TWO} component={AlcaldiaRecursosMunicipalesGrupoStepTwoPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_FORM} component={AlcaldiaRecursosMunicipalesVentasFormPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_TABLE} component={AlcaldiaRecursosMunicipalesVentasTablePage} />
+      <Route exact path={enumPaths.ALCALDIA_ACTIVIDADES_FORM} component={AlcaldiaActividadesFormPage} />
+      <Route exact path={enumPaths.ALCALDIA_ACTIVIDADES_TABLE} component={AlcaldiaActividadesTablePage} />
+      <Route exact path={enumPaths.ALCALDIA_ACTIVIDADES_JERARQUIA} component={AlcaldiaActividadesGrupoPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_FORM} component={AlcaldiaRecursosMunicipalesTimbresFormPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_TABLE} component={AlcaldiaRecursosMunicipalesTimbresTablePage} />
+      <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_DESCONTINUADOS_FORM} component={AlcaldiaRecursosMunicipalesTimbresDescontinuadasFormPage} />
+      <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_DESCONTINUADOS_TABLE} component={AlcaldiaRecursosMunicipalesTimbresDescontinuadosTablePage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_VENTAS_FORM} component={AlcaldiaRecursosMunicipalesTimbresVentasFormPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_VENTAS_TABLE} component={AlcaldiaRecursosMunicipalesTimbresVentasTablePage} />
+      <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_CORTO_DIARIO} component={AlcaldiaRecursosMunicipalesReporteCortoDiarioPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_DIARIO} component={AlcaldiaRecursosMunicipalesReporteDiarioPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_MENSUAL} component={AlcaldiaRecursosMunicipalesReporteMensualPage} />
       <Route exact path={enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_ANUAL} component={AlcaldiaRecursosMunicipalesReporteAnualPage} />
       <Route exact path={enumPaths.URBANISMO_TRAMITE_FORM} component={UrbanismoTramiteFormPage} />
       <Route exact path={enumPaths.URBANISMO_TRAMITE_TABLE} component={UrbanismoTramiteTablePage} />
       <Route exact path={enumPaths.REGULA_LOTES_FORM} component={RegulaLotesFormPage} />
+      <Route exact path={enumPaths.REGULA_LOTES_EXTRACTO_BANCARIO_FORM} component={RegulaLotesExtractoBancarioFormPage} />
       <Route exact path={enumPaths.REGULA_LOTES_FORM_CLIENTE} component={RegulaLotesFormClientePage} />
       <Route exact path={enumPaths.REGULA_LOTES_FORM_CLIENTE_STEP_TWO} component={RegulaLotesFormClienteStepTwoPage} />
       <Route exact path={enumPaths.REGULA_LOTES_TABLE} component={RegulaLotesTablePage} />
@@ -277,6 +300,8 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.URBANISMO_TRAMITE_ESTADOS_STEP_ONE} component={UrbanismoTramiteEstadosStepOnePage} />
       <Route exact path={enumPaths.URBANISMO_TRAMITE_ESTADOS_STEP_TWO} component={UrbanismoTramiteEstadosStepTwoPage} />
       <Route exact path={enumPaths.URBANISMO_TRAMITE_ESTADOS_STEP_THREE} component={UrbanismoTramiteEstadosStepThreePage} />
+      <Route exact path={enumPaths.URBANISMO_FLUJO_CHANGE_STATE_STEP_ONE} component={UrbanismoTramiteFlujoChangeStateStepOnePage} />
+      <Route exact path={enumPaths.URBANISMO_FLUJO_CHANGE_STATE_STEP_TWO} component={UrbanismoTramiteFlujoChangeStateStepTwoPage} />
       <Route exact path={enumPaths.URBANISMO_FLUJO_HISTORIAL_STEP_ONE} component={UrbanismoFlujoHistorialStepOnePage} />
       <Route exact path={enumPaths.URBANISMO_FLUJO_HISTORIAL_STEP_TWO} component={UrbanismoFlujoHistorialStepTwoPage} />
       <Route exact path={enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_ONE} component={UrbanismoHistorialEstadoStepOnePage} />

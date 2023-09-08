@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import i18n from "../../i18n/i18n";
 import enumPaths from "../../models/enumPaths";
 import { handleFilterRequest } from "../../actions/HandleManager";
-import UrbanismoTramiteEstadosGenericTable from "./generic/UrbanismoTramiteEstadosGenericTable";
+import UrbanismoTramiteEnFlujoTable from "./generic/UrbanismoTramiteEnFlujoGenericTable";
 import enumTableColumnsToShow from "../../models/enumTableColumnsToShow";
 
 function UrbanismoFlujoRequisitosStepOne () {
@@ -40,7 +40,7 @@ function UrbanismoFlujoRequisitosStepOne () {
   ];
 
   return (
-    <UrbanismoTramiteEstadosGenericTable
+    <UrbanismoTramiteEnFlujoTable
       tableTitle={tableTitle}
       tableSubTitle={tableSubTitle}
       numberPagesToShow={numberPagesToShow}
@@ -49,7 +49,7 @@ function UrbanismoFlujoRequisitosStepOne () {
       tableArrayCustomRowButtons={tableArrayCustomRowButtons}
       columnsToShow={enumTableColumnsToShow.MEDIUM}
     >
-    </UrbanismoTramiteEstadosGenericTable>
+    </UrbanismoTramiteEnFlujoTable>
   );
 }
 

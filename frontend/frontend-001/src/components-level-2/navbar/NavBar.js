@@ -27,6 +27,9 @@ import {
   GrProductHunt,
   GrStackOverflow
 } from "react-icons/gr";
+import {
+  SiStylelint
+} from "react-icons/si";
 import { CgOptions } from "react-icons/cg";
 import {
   BsBuildingFillGear,
@@ -38,7 +41,8 @@ import {
   BsUiChecksGrid,
   BsCashCoin,
   BsCoin,
-  BsBuildingLock
+  BsBuildingLock,
+  BsUiChecks
 } from "react-icons/bs";
 import { TbHierarchy3 } from "react-icons/tb";
 import { RiLoginCircleLine, RiUser2Fill, RiShieldKeyholeFill } from "react-icons/ri";
@@ -59,6 +63,7 @@ function NavBar () {
   const userRolesString = window.sessionStorage.getItem("role");
   const currentTenant = window.sessionStorage.getItem("tenant");
   const tenantImage = window.sessionStorage.getItem("tenantImage");
+  const theme = window.localStorage.getItem("theme");
   // const userRolesObjects = JSON.parse(userRolesString);
   const userRoles = [];
 
@@ -106,6 +111,9 @@ function NavBar () {
 
   const navigateToLogout = () => {
     history.push({ pathname: `${enumPaths.LOGIN}/${currentTenant}`, state: { logout: "" } });
+  };
+  const navigateThemeForm = () => {
+    history.push(enumPaths.THEME_FORM);
   };
   const navigateUsersForm = () => {
     history.push(enumPaths.USERS_FORM);
@@ -291,17 +299,32 @@ function NavBar () {
   const navigateAlcaldiaRecursosMunicipalesTimbresTable = () => {
     history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_TABLE);
   };
+  const navigateAlcaldiaRecursosMunicipalesTimbresDescontinuadosForm = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_DESCONTINUADOS_FORM);
+  };
+  const navigateAlcaldiaRecursosMunicipalesTimbresDescontinuadosTable = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_DESCONTINUADOS_TABLE);
+  };
   const navigateAlcaldiaRecursosMunicipaleTimbressVentasForm = () => {
     history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_VENTAS_FORM);
   };
   const navigateAlcaldiaRecursosMunicipalesTimbresVentasTable = () => {
     history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_VENTAS_TABLE);
   };
+  const navigateAlcaldiaActividadesForm = () => {
+    history.push(enumPaths.ALCALDIA_ACTIVIDADES_FORM);
+  };
+  const navigateAlcaldiaActividadesTable = () => {
+    history.push(enumPaths.ALCALDIA_ACTIVIDADES_TABLE);
+  };
   const navigateAlcaldiaRecursosMunicipalesVentasForm = () => {
     history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_FORM);
   };
   const navigateAlcaldiaRecursosMunicipalesVentasTable = () => {
     history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_TABLE);
+  };
+  const navigateAlcaldiaRecursosMunicipalesReporteCortoDiario = () => {
+    history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_CORTO_DIARIO);
   };
   const navigateAlcaldiaRecursosMunicipalesReporteDiario = () => {
     history.push(enumPaths.ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_DIARIO);
@@ -320,6 +343,9 @@ function NavBar () {
   };
   const navigateRegulaLotesForm = () => {
     history.push(enumPaths.REGULA_LOTES_FORM);
+  };
+  const navigateRegulaLotesExtractoBancarioForm = () => {
+    history.push(enumPaths.REGULA_LOTES_EXTRACTO_BANCARIO_FORM);
   };
   const navigateRegulaLotesFormCliente = () => {
     history.push(enumPaths.REGULA_LOTES_FORM_CLIENTE);
@@ -351,6 +377,9 @@ function NavBar () {
   const navigateUrbanismoFlujoRequisitosStepOne = () => {
     history.push(enumPaths.URBANISMO_FLUJO_REQUISITOS_STEP_ONE);
   };
+  const navigateUrbanismoFlujoChangeStateStepOne = () => {
+    history.push(enumPaths.URBANISMO_FLUJO_CHANGE_STATE_STEP_ONE);
+  };
   // eslint-disable-next-line no-unused-vars
   const navigateUrbanismoFlujoHistorialStepOne = () => {
     history.push(enumPaths.URBANISMO_FLUJO_HISTORIAL_STEP_ONE);
@@ -359,8 +388,10 @@ function NavBar () {
   const navigateUrbanismoHistorialEstadoStepOne = () => {
     history.push(enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_ONE);
   };
-  const NavbarBackground = "dark"; // dark, light, primary
-  const NavbarVariant = "dark puggysoft-navbar"; // dark, light
+  // dark, light, primary(dark) secondary(dark)
+  const NavbarBackground = theme || "dark";
+  const themeNavBarLetters = theme && theme !== "primary" && theme !== "secondary" ? theme : "dark";
+  const NavbarVariant = themeNavBarLetters + " puggysoft-navbar";
 
   // ******* ******* ******* SYSTEM PROPERTIES ******* ******* *******
   const systemPropertiesAdminLabel = (<><MdOutlineSettingsSuggest /> {i18n.navBar.systemPropertiesAdmin}</>);
@@ -559,6 +590,7 @@ function NavBar () {
   // ******* ******* ******* ALCALDIA SYSTEM ******* ******* *******
   // RECURSO MUNICIPAL
   const recursoMunicipalAdminLabel = (<><GiGoldBar /> {i18n.navBar.recursoMunicipalAdmin}</>);
+  const recursoactividadesAdminLabel = (<><BsUiChecks /> {i18n.navBar.recursoActividadesAdmin}</>);
   const recursoMunicipaFormLabel = (<><GrAddCircle /> {i18n.navBar.recursoMunicipalForm}</>);
   const recursoMunicipaTableLabel = (<><AiOutlineTable /> {i18n.navBar.recursoMunicipalTable}</>);
   const recursoMunicipalGrupoStepOneLabel = (<><TbHierarchy3 /> {i18n.navBar.recursoMunicipalGrupoStepOne}</>);
@@ -570,12 +602,17 @@ function NavBar () {
   const recursoMunicipalTimbresAdminLabel = (<><IoIosNotifications /> {i18n.navBar.recursoMunicipalTimbresAdmin}</>);
   const recursoMunicipalTimbresFormLabel = (<><GrAddCircle /> {i18n.navBar.recursoMunicipalTimbresForm}</>);
   const recursoMunicipalTimbresTableLabel = (<><AiOutlineTable /> {i18n.navBar.recursoMunicipalTimbresTable}</>);
+  const recursoMunicipalTimbresDescontinuadosFormLabel = (<><GrAddCircle /> {i18n.navBar.recursoMunicipalTimbresDescontinuadosForm}</>);
+  const recursoMunicipalTimbresDescontinuadosTableLabel = (<><AiOutlineTable /> {i18n.navBar.recursoMunicipalTimbresDescontinuadosTable}</>);
   // VENTA RECURSOS MUNICIPALES TIMBRES
   const recursoMunicipalTimbresVentaAdminLabel = (<><FaCashRegister /> {i18n.navBar.recursoMunicipalTimbresVentalAdmin}</>);
   const recursoMunicipalTimbresVentaFormLabel = (<><GrAddCircle /> {i18n.navBar.recursoMunicipalTimbresVentaForm}</>);
   const recursoMunicipalTimbresVentaTableLabel = (<><AiOutlineTable /> {i18n.navBar.recursoMunicipalTimbresVentaTable}</>);
+  const recursoActividadesFormLabel = (<><GrAddCircle /> {i18n.navBar.recursoActividadesForm}</>);
+  const recursoActividadesTableLabel = (<><AiOutlineTable /> {i18n.navBar.recursoActividadesTable}</>);
   // REPORTES RECURSOS MUNICIPALES
   const recursoMunicipalReporteAdminLabel = (<><BsFillBarChartFill /> {i18n.navBar.recursoMunicipalReporteAdmin}</>);
+  const recursoMunicipalReporteCortoDiarioLabel = (<><FaChartLine /> {i18n.navBar.recursoMunicipalReporteCortoDiario}</>);
   const recursoMunicipalReporteDiarioLabel = (<><FaChartLine /> {i18n.navBar.recursoMunicipalReporteDiario}</>);
   const recursoMunicipalReporteMensualLabel = (<><FaChartLine /> {i18n.navBar.recursoMunicipalReporteMensual}</>);
   const recursoMunicipalReporteAnualLabel = (<><FaChartLine /> {i18n.navBar.recursoMunicipalReporteAnual}</>);
@@ -586,6 +623,7 @@ function NavBar () {
   // REGULARIZACION LOTES
   const regulaLotesAdminLabel = (<><IoNewspaperSharp /> {i18n.navBar.regulaLotesAdmin}</>);
   const regulaLotesFormLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesForm}</>);
+  const regulaLotesExtractoBancarioFormLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesExtractoBancarioForm}</>);
   const regulaLotesFormClienteLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesFormCliente}</>);
   const regulaLotesClienteAdminLabel = (<><FaCashRegister /> {i18n.navBar.regulaLotesAdmin}</>);
   const regulaLotesTableLabel = (<><AiOutlineTable /> {i18n.navBar.regulaLotesTable}</>);
@@ -604,8 +642,8 @@ function NavBar () {
   const urbanismoTramiteEstadosStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoTramiteEstadosStepOne}</>);
   const urbanismoTramiteEstadosTableLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoTramiteEstadosTable}</>);
   const urbanismoFlujoRequisitosStepOneLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoFlujoRequisitosStepOne}</>);
-  // eslint-disable-next-line no-unused-vars
-  const urbanismoFlujoHistorialStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoFlujoHistorialStepOne}</>);
+  const urbanismoFlujoChangeStateLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoFlujoChangeStateStepOne}</>);
+  const urbanismoFlujoHistorialStepOneLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoFlujoHistorialStepOne}</>);
   // eslint-disable-next-line no-unused-vars
   const urbanismoHistorialEstadoStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoHistorialEstadoStepOne}</>);
 
@@ -613,6 +651,7 @@ function NavBar () {
   // CONFIG
   const configAdminLabel = (<><CgOptions /> {i18n.navBar.configAdmin}</>);
   const configLogout = (<><RiLoginCircleLine /> {i18n.navBar.configLogout}</>);
+  const configTheme = (<><SiStylelint /> {i18n.navBar.configTheme}</>);
 
   let logoPath = "/logo192.png";
   if (tenantImage !== "null") {
@@ -809,7 +848,11 @@ function NavBar () {
             <NavDropdown title={recursoMunicipalAdminLabel}>
               <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesForm}>{recursoMunicipaFormLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesTable}>{recursoMunicipaTableLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesGrupoStepOne}>{recursoMunicipalGrupoStepOneLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) &&
+            <NavDropdown title={recursoactividadesAdminLabel}>
+              <NavDropdown.Item onClick={navigateAlcaldiaActividadesForm}>{recursoActividadesFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaActividadesTable}>{recursoActividadesTableLabel}</NavDropdown.Item>
             </NavDropdown>}
           {(userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) ||
             userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_CAJERO)
@@ -822,6 +865,8 @@ function NavBar () {
             <NavDropdown title={recursoMunicipalTimbresAdminLabel}>
               <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesTimbresForm}>{recursoMunicipalTimbresFormLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesTimbresTable}>{recursoMunicipalTimbresTableLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesTimbresDescontinuadosForm}>{recursoMunicipalTimbresDescontinuadosFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesTimbresDescontinuadosTable}>{recursoMunicipalTimbresDescontinuadosTableLabel}</NavDropdown.Item>
             </NavDropdown>}
           {(userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) ||
             userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_CAJERO)
@@ -832,9 +877,11 @@ function NavBar () {
             </NavDropdown>}
           {userRoles.includes(enumRoles.ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO) &&
             <NavDropdown title={recursoMunicipalReporteAdminLabel}>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesReporteCortoDiario}>{recursoMunicipalReporteCortoDiarioLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesReporteDiario}>{recursoMunicipalReporteDiarioLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesReporteMensual}>{recursoMunicipalReporteMensualLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesReporteAnual}>{recursoMunicipalReporteAnualLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateAlcaldiaRecursosMunicipalesGrupoStepOne}>{recursoMunicipalGrupoStepOneLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.URBANISMO_ENCARGADO) &&
             <NavDropdown title={urbanismoTramiteAdminLabel}>
@@ -857,12 +904,14 @@ function NavBar () {
               <NavDropdown.Item onClick={navigateUrbanismoTramiteEstadosStepOne}>{urbanismoTramiteEstadosStepOneLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUrbanismoTramiteEstadosTable}>{urbanismoTramiteEstadosTableLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUrbanismoFlujoRequisitosStepOne}>{urbanismoFlujoRequisitosStepOneLabel}</NavDropdown.Item>
-              {/* @deprecate <NavDropdown.Item onClick={navigateUrbanismoHistorialEstadoStepOne}>{urbanismoHistorialEstadoStepOneLabel}</NavDropdown.Item> */}
-              {/* @deprecate <NavDropdown.Item onClick={navigateUrbanismoFlujoHistorialStepOne}>{urbanismoFlujoHistorialStepOneLabel}</NavDropdown.Item> */}
+              <NavDropdown.Item onClick={navigateUrbanismoFlujoChangeStateStepOne}>{urbanismoFlujoChangeStateLabel}</NavDropdown.Item>
+              {/* <NavDropdown.Item onClick={navigateUrbanismoHistorialEstadoStepOne}>{urbanismoHistorialEstadoStepOneLabel}</NavDropdown.Item>} */}
+              <NavDropdown.Item onClick={navigateUrbanismoFlujoHistorialStepOne}>{urbanismoFlujoHistorialStepOneLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.REGULARIZACION_LOTES_ENCARGADO) &&
             <NavDropdown title={regulaLotesAdminLabel}>
               <NavDropdown.Item onClick={navigateRegulaLotesForm}>{regulaLotesFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateRegulaLotesExtractoBancarioForm}>{regulaLotesExtractoBancarioFormLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateRegulaLotesTable}>{regulaLotesTableLabel}</NavDropdown.Item>
             </NavDropdown>}
           {userRoles.includes(enumRoles.REGULARIZACION_LOTES_ENCARGADO) &&
@@ -874,6 +923,7 @@ function NavBar () {
         <Nav variant={"puggysoft-nav-config"}>
           <NavDropdown align="end" title={configAdminLabel}>
             <NavDropdown.Item onClick={navigateToLogout}>{configLogout}</NavDropdown.Item>
+            <NavDropdown.Item onClick={navigateThemeForm}>{configTheme}</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

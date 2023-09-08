@@ -2,6 +2,7 @@
 const LOGIN = "/login";
 const LOGIN_TENANT = "/login/:tenant";
 const DASHBOARD = "/dashboard";
+const THEME_FORM = "/theme-form";
 const SYSTEM_PROPERTIES_TABLE = "/system-properties-table";
 const SYSTEM_PROPERTIES_FORM = "/system-properties-form";
 const TENANTS_FORM = "/tenants-form";
@@ -122,22 +123,30 @@ const RESERVATION_RESOURCES_SCHEDULES_BY_RESOURCE = "/reservation-resource-sched
 const RESERVATION_RESOURCES_SCHEDULES_BY_SCHEDULE = "/reservation-resource-schedules-table-by-schedule";
 
 // ALCALDIA SYSTEM
+const ALCALDIA_LOGIN_COLCAPIRHUA = "/alcaldia-login-colcapirhua";
 const ALCALDIA_RECURSOS_MUNICIPALES_FORM = "/alcaldia-recursos-municipales-form";
 const ALCALDIA_RECURSOS_MUNICIPALES_TABLE = "/alcaldia-recursos-municipales-table";
 const ALCALDIA_RECURSOS_MUNICIPALES_GRUPO_STEP_ONE = "/alcaldia-recursos-municipales-grupo-step-one";
 const ALCALDIA_RECURSOS_MUNICIPALES_GRUPO_STEP_TWO = "/alcaldia-recursos-municipales-grupo-step-two";
 const ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_FORM = "/alcaldia-recursos-municipales-ventas-form";
 const ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_TABLE = "/alcaldia-recursos-municipales--ventas-table";
+const ALCALDIA_ACTIVIDADES_FORM = "/alcaldia-actividades-form";
+const ALCALDIA_ACTIVIDADES_TABLE = "/alcaldia-actividades-table";
+const ALCALDIA_ACTIVIDADES_JERARQUIA = "/alcaldia-actividades-jerarquia";
 const ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_FORM = "/alcaldia-recursos-municipales-timbres-form";
 const ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_TABLE = "/alcaldia-recursos-municipales-timbres-table";
+const ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_DESCONTINUADOS_FORM = "/alcaldia-recursos-municipales-timbres-descontinuados-form";
+const ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_DESCONTINUADOS_TABLE = "/alcaldia-recursos-municipales-timbres-descontinuados-table";
 const ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_VENTAS_FORM = "/alcaldia-recursos-municipales-timbres-ventas-form";
 const ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_VENTAS_TABLE = "/alcaldia-recursos-municipales-timbres-ventas-table";
+const ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_CORTO_DIARIO = "/alcaldia-recursos-municipales-reporte-corto-diario";
 const ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_DIARIO = "/alcaldia-recursos-municipales-reporte-diario";
 const ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_ANUAL = "/alcaldia-recursos-municipales-reporte-anual";
 const ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_MENSUAL = "/alcaldia-recursos-municipales-reporte-mensual";
 const URBANISMO_TRAMITE_FORM = "/urbanismo-tramite-form";
 const URBANISMO_TRAMITE_TABLE = "/urbanismo-tramite-table";
 const REGULA_LOTES_FORM = "/regularizacion-lotes-form";
+const REGULA_LOTES_EXTRACTO_BANCARIO_FORM = "/regularizacion-lotes-extracto-bancario-form";
 const REGULA_LOTES_FORM_CLIENTE = "/regularizacion-lotes-form-cliente";
 const REGULA_LOTES_FORM_CLIENTE_STEP_TWO = "/regularizacion-lotes-form-cliente-step-two";
 const REGULA_LOTES_TABLE = "/regularizacion-lotes-table";
@@ -153,6 +162,8 @@ const URBANISMO_TRAMITE_ESTADOS_STEP_THREE = "/urbanismo-tramites-flujo-step-thr
 const URBANISMO_TRAMITE_ESTADOS_TABLE = "/urbanismo-tramite-estados-table";
 const URBANISMO_FLUJO_REQUISITOS_STEP_ONE = "/urbanismo-flujo-requisitos-step-one";
 const URBANISMO_FLUJO_REQUISITOS_STEP_TWO = "/urbanismo-flujo-requisitos-step-two";
+const URBANISMO_FLUJO_CHANGE_STATE_STEP_ONE = "/urbanismo-flujo-change-state-step-one";
+const URBANISMO_FLUJO_CHANGE_STATE_STEP_TWO = "/urbanismo-flujo-change-state-step-two";
 const URBANISMO_FLUJO_HISTORIAL_STEP_ONE = "/urbanismo-flujo-historial-step-one";
 const URBANISMO_FLUJO_HISTORIAL_STEP_TWO = "/urbanismo-flujo-historial-step-two";
 const URBANISMO_HISTORIAL_ESTADO_STEP_ONE = "/urbanismo-historial-estado-step-one";
@@ -161,6 +172,7 @@ const URBANISMO_HISTORIAL_ESTADO_STEP_THREE = "/urbanismo-historial-estado-step-
 
 const enumPaths = {
   DASHBOARD,
+  THEME_FORM,
   LOGIN,
   LOGIN_TENANT,
   SYSTEM_PROPERTIES_TABLE,
@@ -279,9 +291,13 @@ const enumPaths = {
   RESERVATION_RESOURCES_SCHEDULES_BY_RESOURCE,
   RESERVATION_RESOURCES_SCHEDULES_BY_SCHEDULE,
   // ALCALDIA SYSTEM
+  ALCALDIA_LOGIN_COLCAPIRHUA,
   ALCALDIA_RECURSOS_MUNICIPALES_FORM,
   ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_FORM,
   ALCALDIA_RECURSOS_MUNICIPALES_VENTAS_TABLE,
+  ALCALDIA_ACTIVIDADES_FORM,
+  ALCALDIA_ACTIVIDADES_TABLE,
+  ALCALDIA_ACTIVIDADES_JERARQUIA,
   ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_VENTAS_FORM,
   ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_VENTAS_TABLE,
   ALCALDIA_RECURSOS_MUNICIPALES_TABLE,
@@ -289,12 +305,16 @@ const enumPaths = {
   ALCALDIA_RECURSOS_MUNICIPALES_GRUPO_STEP_TWO,
   ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_FORM,
   ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_TABLE,
+  ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_DESCONTINUADOS_FORM,
+  ALCALDIA_RECURSOS_MUNICIPALES_TIMBRES_DESCONTINUADOS_TABLE,
+  ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_CORTO_DIARIO,
   ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_DIARIO,
   ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_ANUAL,
   ALCALDIA_RECURSOS_MUNICIPALES_REPORTE_MENSUAL,
   URBANISMO_TRAMITE_FORM,
   URBANISMO_TRAMITE_TABLE,
   REGULA_LOTES_FORM,
+  REGULA_LOTES_EXTRACTO_BANCARIO_FORM,
   REGULA_LOTES_FORM_CLIENTE,
   REGULA_LOTES_FORM_CLIENTE_STEP_TWO,
   REGULA_LOTES_TABLE,
@@ -310,6 +330,8 @@ const enumPaths = {
   URBANISMO_TRAMITE_ESTADOS_TABLE,
   URBANISMO_FLUJO_REQUISITOS_STEP_ONE,
   URBANISMO_FLUJO_REQUISITOS_STEP_TWO,
+  URBANISMO_FLUJO_CHANGE_STATE_STEP_ONE,
+  URBANISMO_FLUJO_CHANGE_STATE_STEP_TWO,
   URBANISMO_FLUJO_HISTORIAL_STEP_ONE,
   URBANISMO_FLUJO_HISTORIAL_STEP_TWO,
   URBANISMO_HISTORIAL_ESTADO_STEP_ONE,
