@@ -15,7 +15,7 @@ public class ControllerProjectsTasksPost {
   @Autowired
   private ServiceProjectsTasksCreate serviceProjectstasksCreate;
 
-  @PostMapping(path = "/api/v1/todo_tasks")
+  @PostMapping(path = "/api/v1/todo-tasks")
   public ResponseEntity<String> post(@RequestBody @Valid DtoProjectsTasks dtoProjectstasks) {
     return serviceProjectstasksCreate.create(dtoProjectstasks);
   }

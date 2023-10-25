@@ -150,6 +150,8 @@ import UrbanismoFlujoHistorialStepTwoPage from "./components-level-3/alcaldia/Ur
 import UrbanismoHistorialEstadoStepOnePage from "./components-level-3/alcaldia/UrbanismoHistorialEstadoStepOnePage";
 import UrbanismoHistorialEstadoStepTwoPage from "./components-level-3/alcaldia/UrbanismoHistorialEstadoStepTwoPage";
 import UrbanismoHistorialEstadoStepThreePage from "./components-level-3/alcaldia/UrbanismoHistorialEstadoStepThreePage";
+import UrbanismoFlujoBoardStepOnePage from "./components-level-3/alcaldia/UrbanismoFlujoBoardStepOnePage";
+import UrbanismoFlujoBoardStepTwoPage from "./components-level-3/alcaldia/UrbanismoFlujoBoardStepTwoPage";
 
 const AppRoutes = () => (
   <App>
@@ -299,6 +301,8 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_ONE} component={UrbanismoHistorialEstadoStepOnePage} />
       <Route exact path={enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_TWO} component={UrbanismoHistorialEstadoStepTwoPage} />
       <Route exact path={enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_THREE} component={UrbanismoHistorialEstadoStepThreePage} />
+      <Route exact path={enumPaths.URBANISMO_FLUJO_BOARD_A} component={UrbanismoFlujoBoardStepOnePage} />
+      <Route exact path={enumPaths.URBANISMO_FLUJO_BOARD_B} component={UrbanismoFlujoBoardStepTwoPage} />
       <Route exact path="/" component={LoginPage} />
       <Route component={LoginPage} />
     </Switch>

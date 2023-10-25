@@ -14,7 +14,7 @@ public class ControllerProjectsTasksGetById {
   @Autowired
   private ServiceProjectsTasksGetById serviceProjectstasksGetById;
 
-  @GetMapping(path = "/api/v1/todo_tasks/{id}")
+  @GetMapping(path = "/api/v1/todo-tasks/{id}")
   public ResponseEntity<DtoProjectsTasks> getById(@PathVariable Long id) {
     return serviceProjectstasksGetById.getById(id);
   }

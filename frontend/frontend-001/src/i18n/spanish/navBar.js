@@ -220,7 +220,8 @@ const navBar = {
   urbanismoFlujoRequisitosStepOne: "Mostrar tramites en curso (Adm. Requisitos)",
   urbanismoFlujoChangeStateStepOne: "Mostrar tramites en curso (Cambiar Estado)",
   urbanismoHistorialEstadoStepOne: "Crear Historial",
-  urbanismoFlujoHistorialStepOne: "Mostrar tramites en curso (Flujo Historial)"
+  urbanismoFlujoHistorialStepOne: "Mostrar tramites en curso (Flujo Historial)",
+  urbanismoFlujoBoard: "Mostrar tramites en curso Board"
 };
 
 export default navBar;

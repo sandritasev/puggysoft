@@ -19,6 +19,7 @@ import {
   AiOutlineUserAdd,
   AiOutlineTable,
   AiOutlineSchedule,
+  AiOutlineStar,
   AiOutlineCalendar
   /* AiOutlineIdcard */
 } from "react-icons/ai";
@@ -374,6 +375,9 @@ function NavBar () {
   const navigateUrbanismoFlujoHistorialStepOne = () => {
     history.push(enumPaths.URBANISMO_FLUJO_HISTORIAL_STEP_ONE);
   };
+  const navigateUrbanismoFlujoBoard = () => {
+    history.push(enumPaths.URBANISMO_FLUJO_BOARD_A);
+  };
   // eslint-disable-next-line no-unused-vars
   const navigateUrbanismoHistorialEstadoStepOne = () => {
     history.push(enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_ONE);
@@ -630,6 +634,7 @@ function NavBar () {
   const urbanismoFlujoRequisitosStepOneLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoFlujoRequisitosStepOne}</>);
   const urbanismoFlujoChangeStateLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoFlujoChangeStateStepOne}</>);
   const urbanismoFlujoHistorialStepOneLabel = (<><AiOutlineTable /> {i18n.navBar.urbanismoFlujoHistorialStepOne}</>);
+  const urbanismoFlujoBoardLabel = (<><AiOutlineStar /> {i18n.navBar.urbanismoFlujoBoard}</>);
   // eslint-disable-next-line no-unused-vars
   const urbanismoHistorialEstadoStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoHistorialEstadoStepOne}</>);
 
@@ -882,6 +887,7 @@ function NavBar () {
           {userRoles.includes(enumRoles.URBANISMO_ENCARGADO) &&
             <NavDropdown title={urbanismoTramiteEstadosAdminLabel}>
               <NavDropdown.Item onClick={navigateUrbanismoTramiteEstadosStepOne}>{urbanismoTramiteEstadosStepOneLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateUrbanismoFlujoBoard}>{urbanismoFlujoBoardLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUrbanismoTramiteEstadosTable}>{urbanismoTramiteEstadosTableLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUrbanismoFlujoRequisitosStepOne}>{urbanismoFlujoRequisitosStepOneLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateUrbanismoFlujoChangeStateStepOne}>{urbanismoFlujoChangeStateLabel}</NavDropdown.Item>

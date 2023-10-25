@@ -19,7 +19,7 @@ public class ControllerProjectsStatusGetFilter {
   private ServiceProjectsStatusGetFilter serviceProjectsstatusGetFilter;
 
   // products/filter?page=${activePage - 1}&size=${pageSize}
-  @PostMapping(path = "/api/v1/todo_status/filter")
+  @PostMapping(path = "/api/v1/todo-status/filter")
   public ResponseEntity<List<DtoProjectsStatus>> getProjectsstatusFilter(
       @RequestParam int page,
       @RequestParam int size,

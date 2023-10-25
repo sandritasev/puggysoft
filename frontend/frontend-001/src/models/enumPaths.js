@@ -165,6 +165,8 @@ const URBANISMO_FLUJO_HISTORIAL_STEP_TWO = "/urbanismo-flujo-historial-step-two"
 const URBANISMO_HISTORIAL_ESTADO_STEP_ONE = "/urbanismo-historial-estado-step-one";
 const URBANISMO_HISTORIAL_ESTADO_STEP_TWO = "/urbanismo-historial-estado-step-two";
 const URBANISMO_HISTORIAL_ESTADO_STEP_THREE = "/urbanismo-historial-estado-step-three";
+const URBANISMO_FLUJO_BOARD_A = "/urbanismo-flujo-board-a";
+const URBANISMO_FLUJO_BOARD_B = "/urbanismo-flujo-board-b";
 
 const enumPaths = {
   DASHBOARD,
@@ -328,7 +330,9 @@ const enumPaths = {
   URBANISMO_FLUJO_HISTORIAL_STEP_TWO,
   URBANISMO_HISTORIAL_ESTADO_STEP_ONE,
   URBANISMO_HISTORIAL_ESTADO_STEP_TWO,
-  URBANISMO_HISTORIAL_ESTADO_STEP_THREE
+  URBANISMO_HISTORIAL_ESTADO_STEP_THREE,
+  URBANISMO_FLUJO_BOARD_A,
+  URBANISMO_FLUJO_BOARD_B
 };
 
 export default enumPaths;

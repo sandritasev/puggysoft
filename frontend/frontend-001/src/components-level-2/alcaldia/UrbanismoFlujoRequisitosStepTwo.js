@@ -66,12 +66,12 @@ function UrbanismoFlujoRequisitosStepTwo () {
         }
         return "INCUMPLIDO";
       }
-    },
-    {
+    }
+    /* {
       variant: "info",
       handleCustom: handleAddFile,
       text: "Agregar documento"
-    }
+    } */
   ];
 
   if (isRequestInProgress) {

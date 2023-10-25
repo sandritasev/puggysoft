@@ -14,7 +14,7 @@ public class ControllerProjectsStatusGetById {
   @Autowired
   private ServiceProjectsStatusGetById serviceProjectsStatusGetById;
 
-  @GetMapping(path = "/api/v1/todo_status/{id}")
+  @GetMapping(path = "/api/v1/todo-status/{id}")
   public ResponseEntity<DtoProjectsStatus> getById(@PathVariable Long id) {
     return serviceProjectsStatusGetById.getById(id);
   }
