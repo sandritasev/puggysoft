@@ -917,7 +917,8 @@ function NavBar () {
           {userRoles.includes(enumRoles.REGULARIZACION_LOTES_ENCARGADO) &&
             <NavDropdown title={regulaLotesAdminLabel}>
               <NavDropdown.Item onClick={navigateRegulaLotesForm}>{regulaLotesFormLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateRegulaLotesExtractoBancarioForm}>{regulaLotesExtractoBancarioFormLabel}</NavDropdown.Item>
+              {/* Change of requirements */}
+              {/* <NavDropdown.Item onClick={navigateRegulaLotesExtractoBancarioForm}>{regulaLotesExtractoBancarioFormLabel}</NavDropdown.Item> */}
               <NavDropdown.Item onClick={navigateRegulaLotesTable}>{regulaLotesTableLabel}</NavDropdown.Item>
             </NavDropdown>}
           {(userRoles.includes(enumRoles.REGULARIZACION_LOTES_ENCARGADO) ||
