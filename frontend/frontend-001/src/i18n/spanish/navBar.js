@@ -204,6 +204,7 @@ const navBar = {
   urbanismoTramiteTable: "Mostrar Tramite",
   // Regula Lotes
   regulaLotesAdmin: "Adm. Regulacion de lotes",
+  regulaLotesAdminClient: "Adm. Regulacion de lotes (Cliente)",
   regulaLotesForm: "Registrar reg. lotes",
   regulaLotesExtractoBancarioForm: "Registrar extracto bancario",
   regulaLotesFormCliente: "Ingreso cliente",

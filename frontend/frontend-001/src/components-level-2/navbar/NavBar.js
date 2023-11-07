@@ -629,7 +629,7 @@ function NavBar () {
   const regulaLotesFormLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesForm}</>);
   const regulaLotesExtractoBancarioFormLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesExtractoBancarioForm}</>);
   const regulaLotesFormClienteLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesFormCliente}</>);
-  const regulaLotesClienteAdminLabel = (<><FaCashRegister /> {i18n.navBar.regulaLotesAdmin}</>);
+  const regulaLotesClienteAdminLabel = (<><FaCashRegister /> {i18n.navBar.regulaLotesAdminClient}</>);
   const regulaLotesTableLabel = (<><AiOutlineTable /> {i18n.navBar.regulaLotesTable}</>);
   // URBANISMO REQUISITOS
   const urbanismoRequisitosAdminLabel = (<><BsClipboardCheckFill /> {i18n.navBar.urbanismoRequisitosAdmin}</>);
@@ -920,7 +920,9 @@ function NavBar () {
               <NavDropdown.Item onClick={navigateRegulaLotesExtractoBancarioForm}>{regulaLotesExtractoBancarioFormLabel}</NavDropdown.Item>
               <NavDropdown.Item onClick={navigateRegulaLotesTable}>{regulaLotesTableLabel}</NavDropdown.Item>
             </NavDropdown>}
-          {userRoles.includes(enumRoles.REGULARIZACION_LOTES_ENCARGADO) &&
+          {(userRoles.includes(enumRoles.REGULARIZACION_LOTES_ENCARGADO) ||
+            userRoles.includes(enumRoles.REGULARIZACION_LOTES_CLIENTE)
+          ) &&
             <NavDropdown title={regulaLotesClienteAdminLabel}>
               <NavDropdown.Item onClick={navigateRegulaLotesFormCliente}>{regulaLotesFormClienteLabel}</NavDropdown.Item>
             </NavDropdown>}

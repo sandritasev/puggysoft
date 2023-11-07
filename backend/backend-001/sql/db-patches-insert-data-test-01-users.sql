@@ -118,6 +118,7 @@ INSERT INTO users (username, password, dni, name, second_name, last_name, second
 ("SysUrbanismoEncargado", "admin123", "1000028", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysUrbanismoEncargado@puggysoft.com", true, null, "SysAdmin",  true),
 ("SysRegularizaLotesAdmin", "admin123", "1000030", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysRegularizaLotesAdmin@puggysoft.com", true, null, "SysAdmin",  true),
 ("SysRegularizaLotesEncargado", "admin123", "1000031", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysRegularizaLotesEncargado@puggysoft.com", true, null, "SysAdmin",  true),
+("SysRegularizaLotesCliente", "admin123", "1000032", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysRegularizaLotesCliente@puggysoft.com", true, null, "SysAdmin",  true),
 ("SysStorageEncargado", "admin123", "1000029", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysStorageEncargado@puggysoft.com", true, null, "SysAdmin",  true),
 ("SysStorageAdmin", "admin123", "1000030", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysStorageAdmin@puggysoft.com", true, null, "SysAdmin",  true),
 ("SysEscuelaAdmin", "admin123", "1000017", "N/A", "N/A", "N/A", "N/A", "1990-01-01", 27, 'MALE', 'Ing. Sistemas', "60795090", "Av. Wiracocha", "SysEscuelaAdmin@puggysoft.com", true, null, "SysAdmin",  true);
@@ -148,6 +149,7 @@ INSERT INTO roles (name, created_by) VALUES ("ALCALDIA_RECURSOS_MUNICIPALES_ENCA
 INSERT INTO roles (name, created_by) VALUES ("ALCALDIA_RECURSOS_MUNICIPALES_CAJERO", "admin");
 INSERT INTO roles (name, created_by) VALUES ("URBANISMO_ENCARGADO", "admin");
 INSERT INTO roles (name, created_by) VALUES ("REGULARIZA_LOTES_ENCARGADO", "admin");
+INSERT INTO roles (name, created_by) VALUES ("REGULARIZA_LOTES_CLIENTE", "admin");
 INSERT INTO roles (name, created_by) VALUES ("STORAGE_ENCARGADO", "admin");
 
 -- TENANTS
@@ -188,6 +190,7 @@ INSERT INTO users_roles (id_user, id_role, created_by, tenant) VALUES
 ((select id from users where username='SysUrbanismoEncargado'), (select id from roles where name='URBANISMO_ENCARGADO'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='SysRegularizaLotesAdmin'), (select id from roles where name='ADMIN_USERS'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='SysRegularizaLotesEncargado'), (select id from roles where name='REGULARIZA_LOTES_ENCARGADO'), "SysAdmin", "EMPRESA_1"),
+((select id from users where username='SysRegularizaLotesCliente'), (select id from roles where name='REGULARIZA_LOTES_CLIENTE'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='SysStorageEncargado'), (select id from roles where name='STORAGE_ENCARGADO'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='SysStorageAdmin'), (select id from roles where name='ADMIN_USERS'), "SysAdmin", "EMPRESA_1"),
 ((select id from users where username='SysEscuelaAdmin'), (select id from roles where name='SCHOOL_ADMIN'), "SysAdmin", "EMPRESA_1");
@@ -219,6 +222,7 @@ INSERT INTO users_roles (id_user, id_role, created_by, tenant) VALUES
 ((select id from users where username='SysUrbanismoEncargado'), (select id from roles where name='URBANISMO_ENCARGADO'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='SysRegularizaLotesAdmin'), (select id from roles where name='ADMIN_USERS'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='SysRegularizaLotesEncargado'), (select id from roles where name='REGULARIZA_LOTES_ENCARGADO'), "SysAdmin", "EMPRESA_2"),
+((select id from users where username='SysRegularizaLotesCliente'), (select id from roles where name='REGULARIZA_LOTES_CLIENTE'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='SysStorageEncargado'), (select id from roles where name='STORAGE_ENCARGADO'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='SysStorageAdmin'), (select id from roles where name='ADMIN_USERS'), "SysAdmin", "EMPRESA_2"),
 ((select id from users where username='SysEscuelaAdmin'), (select id from roles where name='SCHOOL_ADMIN'), "SysAdmin", "EMPRESA_2");
@@ -329,6 +333,7 @@ INSERT INTO tenants_users (username, tenant, created_by) VALUES
 ('SysUrbanismoEncargado', 'EMPRESA_2', 'SysAdmin'),
 ('SysRegularizaLotesAdmin', 'EMPRESA_2', 'SysAdmin'),
 ('SysRegularizaLotesEncargado', 'EMPRESA_2', 'SysAdmin'),
+('SysRegularizaLotesCliente', 'EMPRESA_2', 'SysAdmin'),
 ('SysEscuelaAdmin', 'EMPRESA_2', 'SysAdmin');
 
 
@@ -363,4 +368,5 @@ INSERT INTO tenants_roles (role, tenant, created_by) VALUES
 ('TICKETS_ADMIN', 'EMPRESA_1', "admin"),
 ('ADMIN_USERS_BY_TENANT', 'EMPRESA_1', "admin"),
 ('ALCALDIA_RECURSOS_MUNICIPALES_ENCARGADO', 'EMPRESA_1', "admin"),
+('REGULARIZA_LOTES_CLIENTE', 'EMPRESA_1', "admin"),
 ('ALCALDIA_RECURSOS_MUNICIPALES_CAJERO', 'EMPRESA_1', "admin");
