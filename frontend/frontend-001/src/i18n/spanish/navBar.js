@@ -204,6 +204,7 @@ const navBar = {
   urbanismoTramiteTable: "Mostrar Tramite",
   // Regula Lotes
   regulaLotesAdmin: "Adm. Regulacion de lotes",
+  regulaLotesAdminClient: "Adm. Regulacion de lotes (Cliente)",
   regulaLotesForm: "Registrar reg. lotes",
   regulaLotesExtractoBancarioForm: "Registrar extracto bancario",
   regulaLotesFormCliente: "Ingreso cliente",
@@ -225,7 +226,8 @@ const navBar = {
   urbanismoFlujoRequisitosStepOne: "Mostrar tramites en curso (Adm. Requisitos)",
   urbanismoFlujoChangeStateStepOne: "Mostrar tramites en curso (Cambiar Estado)",
   urbanismoHistorialEstadoStepOne: "Crear Historial",
-  urbanismoFlujoHistorialStepOne: "Mostrar tramites en curso (Flujo Historial)"
+  urbanismoFlujoHistorialStepOne: "Mostrar tramites en curso (Flujo Historial)",
+  urbanismoFlujoBoard: "Mostrar tramites en curso Board"
 };
 
 export default navBar;

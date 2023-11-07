@@ -13,7 +13,7 @@ public class ControllerProjectsProDeleteById {
   @Autowired
   private ServiceProjectsProDeleteById serviceProjectsproDeleteById;
 
-  @DeleteMapping(path = "/api/v1/todo_projects/{id}")
+  @DeleteMapping(path = "/api/v1/todo-projects/{id}")
   public ResponseEntity<String> deleteById(@PathVariable Long id) {
     return serviceProjectsproDeleteById.deleteById(id);
   }

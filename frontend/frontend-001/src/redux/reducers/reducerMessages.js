@@ -1,3 +1,4 @@
+/** This reducer is not using redux or redux-toolkit */
 const initialState = () => ({
   isMessageModalVisible: false,
   messageModalTitle: "",

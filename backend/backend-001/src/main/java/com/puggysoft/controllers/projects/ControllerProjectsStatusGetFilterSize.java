@@ -16,7 +16,7 @@ public class ControllerProjectsStatusGetFilterSize {
   @Autowired
   private ServiceProjectsStatusGetFilterSize serviceProjectsStatusGetFilterSize;
 
-  @PostMapping(path = "/api/v1/todo_status/filter/size/{pageSize}")
+  @PostMapping(path = "/api/v1/todo-status/filter/size/{pageSize}")
   public ResponseEntity<Long> getSize(@RequestBody @Valid DtoProjectsStatusFilter dtoProjectsstatusFilter,
       @PathVariable Long pageSize) {
     return serviceProjectsStatusGetFilterSize.getSize(dtoProjectsstatusFilter, pageSize);

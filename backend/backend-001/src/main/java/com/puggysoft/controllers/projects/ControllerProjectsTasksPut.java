@@ -16,7 +16,7 @@ public class ControllerProjectsTasksPut {
   @Autowired
   private ServiceProjectsTasksEditById serviceProjectstasksEditById;
 
-  @PutMapping(path = "/api/v1/todo_tasks/{id}")
+  @PutMapping(path = "/api/v1/todo-tasks/{id}")
   public ResponseEntity<String> put(@PathVariable Long id,
       @RequestBody @Valid DtoProjectsTasks dtoProjectstasks) {
     return serviceProjectstasksEditById.editById(id, dtoProjectstasks);

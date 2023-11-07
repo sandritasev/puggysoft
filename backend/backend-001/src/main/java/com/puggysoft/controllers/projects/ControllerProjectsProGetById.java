@@ -14,7 +14,7 @@ public class ControllerProjectsProGetById {
   @Autowired
   private ServiceProjectsProGetById serviceProjectsproGetById;
 
-  @GetMapping(path = "/api/v1/todo_projects/{id}")
+  @GetMapping(path = "/api/v1/todo-projects/{id}")
   public ResponseEntity<DtoProjectsPro> getById(@PathVariable Long id) {
     return serviceProjectsproGetById.getById(id);
   }

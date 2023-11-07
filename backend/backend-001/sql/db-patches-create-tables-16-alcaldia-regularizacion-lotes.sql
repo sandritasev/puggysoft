@@ -26,7 +26,7 @@ CREATE TABLE alc_reg_lotes(
    ci_cliente VARCHAR(30) NOT NULL,
    numero_inmueble VARCHAR(120) UNIQUE,
    monto VARCHAR(120) NOT NULL,
-   numero_comprobante VARCHAR(256) NOT NULL UNIQUE,
+   numero_comprobante VARCHAR(256) UNIQUE,
    tenant VARCHAR(30) NOT NULL,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
    update_date DATETIME ON UPDATE CURRENT_TIMESTAMP,
@@ -35,6 +35,6 @@ CREATE TABLE alc_reg_lotes(
    FOREIGN KEY (created_by) REFERENCES users(username),
    FOREIGN KEY (updated_by) REFERENCES users(username),
    FOREIGN KEY (tenant) REFERENCES tenants(short_name),
-   FOREIGN KEY (numero_comprobante) REFERENCES alc_reg_lotes_extracto_bancario(numero_comprobante),
+   -- FOREIGN KEY (numero_comprobante) REFERENCES alc_reg_lotes_extracto_bancario(numero_comprobante),
    PRIMARY KEY (id)
 )AUTO_INCREMENT=1000;

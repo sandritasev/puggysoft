@@ -4,21 +4,35 @@ import PropTypes from "prop-types";
 function CommonDragDropWrapper ({
   type,
   children,
-  className
+  className,
+  id,
+  dragDropkey,
+  onDragStartAction,
+  onDragOverAction,
+  onDropAction
 }) {
   const onDrop = (event) => {
     event.preventDefault();
-    const data = event.dataTransfer.getData("text");
-    const source = document.getElementById(data);
-    event.target.appendChild(source);
+    // Final
+    const idItem = event.dataTransfer.getData("text");
+    onDropAction(idItem, id);
+    const source = document.getElementById(idItem);
+    if (!source.contains(event.target)) {
+      event.target.appendChild(source);
+    }
   };
 
   const onDragOver = (event) => {
     event.preventDefault();
+    onDragOverAction();
+    // Second
   };
 
   const onDragStart = (event) => {
-    event.dataTransfer.setData("text/plain", event.target.id);
+    // First
+    onDragStartAction();
+    const idItem = event.target.id;
+    event.dataTransfer.setData("text/plain", idItem);
   };
 
   const renderDragDrop = () => {
@@ -27,6 +41,8 @@ function CommonDragDropWrapper ({
         onDrop={onDrop}
         onDragOver={onDragOver}
         className={className}
+        id={"dropZone" - id}
+        key={dragDropkey}
       >
         {children}
       </div>;
@@ -35,6 +51,8 @@ function CommonDragDropWrapper ({
         onDragStart={onDragStart}
         draggable="true"
         className={className}
+        id={id}
+        key={dragDropkey}
       >
         {children}
       </div>;
@@ -51,11 +69,21 @@ export default CommonDragDropWrapper;
 CommonDragDropWrapper.propTypes = {
   type: PropTypes.oneOf(["dropZone", "dragDropItem"]),
   children: PropTypes.node,
-  className: PropTypes.string
+  className: PropTypes.string,
+  id: PropTypes.string,
+  dragDropkey: PropTypes.string,
+  onDragOverAction: PropTypes.func,
+  onDragStartAction: PropTypes.func,
+  onDropAction: PropTypes.func
 };
 
 CommonDragDropWrapper.defaultProps = {
   type: "dragDropItem",
   children: <></>,
-  className: ""
+  className: "",
+  id: "",
+  dragDropkey: "",
+  onDragOverAction: () => { },
+  onDragStartAction: () => { },
+  onDropAction: () => { }
 };

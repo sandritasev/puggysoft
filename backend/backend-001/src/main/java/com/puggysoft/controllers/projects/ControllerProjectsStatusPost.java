@@ -15,7 +15,7 @@ public class ControllerProjectsStatusPost {
   @Autowired
   private ServiceProjectsStatusCreate serviceProjectsstatusCreate;
 
-  @PostMapping(path = "/api/v1/todo_status")
+  @PostMapping(path = "/api/v1/todo-status")
   public ResponseEntity<String> post(@RequestBody @Valid DtoProjectsStatus dtoProjectsstatus) {
     return serviceProjectsstatusCreate.create(dtoProjectsstatus);
   }

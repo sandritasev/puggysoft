@@ -96,6 +96,7 @@ import urbanismoTramiteRequisitosTable from "./spanish/alcaldia/urbanismoTramite
 import urbanismoTramiteEstadosTable from "./spanish/alcaldia/urbanismoTramiteEstadosTable";
 import urbanismoHistorialTable from "./spanish/alcaldia/urbanismoHistorialTable";
 import urbanismoHistorialEstadoForm from "./spanish/alcaldia/urbanismoHistorialEstadoForm";
+import urbanismoFlujoBoard from "./spanish/alcaldia/urbanismoFlujoBoard";
 
 const i18n = {
   // Common
@@ -195,6 +196,7 @@ const i18n = {
   urbanismoTramiteEstadosTable,
   urbanismoEstadosTable,
   urbanismoHistorialEstadoForm,
+  urbanismoFlujoBoard,
   urbanismoHistorialTable
 };
 
