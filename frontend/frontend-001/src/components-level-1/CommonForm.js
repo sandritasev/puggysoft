@@ -28,7 +28,8 @@ function CommonForm ({
                   {(item.inputType === enumInputType.TEXT ||
                     item.inputType === enumInputType.NUMBER ||
                     item.inputType === enumInputType.PASSWORD ||
-                    item.inputType === enumInputType.DATE) &&
+                    item.inputType === enumInputType.DATE ||
+                    item.inputType === enumInputType.TEXT_AREA) &&
                     <Form.Group key={item.key} className="mb-3">
                       <Form.Label>
                         {item.label}
@@ -38,6 +39,9 @@ function CommonForm ({
                         onChange={item.onChange}
                         value={item.inputValue}
                         type={item.inputType}
+                        as={item.inputType === enumInputType.TEXT_AREA
+                          ? enumInputType.TEXT_AREA
+                          : undefined}
                       />
                       <Form.Text muted className={item.suggestionTextClassName}>
                         {item.suggestionText}
@@ -111,7 +115,6 @@ CommonForm.propTypes = {
     inputValue: PropTypes.string,
     suggestionText: PropTypes.string,
     suggestionTextClassName: PropTypes.oneOf("", "puggysoft-red-text"),
-    isValid: PropTypes.func,
     onChange: PropTypes.func,
     isDisabledEdit: PropTypes.bool,
     inputSelectOption: PropTypes.arrayOf({

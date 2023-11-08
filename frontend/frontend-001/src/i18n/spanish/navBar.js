@@ -227,7 +227,21 @@ const navBar = {
   urbanismoFlujoChangeStateStepOne: "Mostrar tramites en curso (Cambiar Estado)",
   urbanismoHistorialEstadoStepOne: "Crear Historial",
   urbanismoFlujoHistorialStepOne: "Mostrar tramites en curso (Flujo Historial)",
-  urbanismoFlujoBoard: "Mostrar tramites en curso Board"
+  urbanismoFlujoBoard: "Mostrar tramites en curso Board",
+  // ******* ******* DATA STORAGE SYSTEM ******* *******
+  // Schema
+  storageSchemaAdmin: "Adm. Esquemas",
+  storageSchemaForm: "Registrar Esquema",
+  storageSchemaTable: "Mostrar Esquemas",
+  storageSchemaField: "Asignar Campos a un Esquemas",
+  // Field
+  storageFieldAdmin: "Adm. Campos",
+  storageFieldForm: "Registrar Campo",
+  storageFieldTable: "Mostrar Campos",
+  // Record
+  storageRecordAdmin: "Adm. Records",
+  storageRecordForm: "Registrar Record",
+  storageRecordTable: "Mostrar Records"
 };
 
 export default navBar;

@@ -4,20 +4,20 @@ INSERT INTO storage_schema (name, short_name, created_by, tenant) VALUES ("Clien
 
 -- ******* FIELDS *******
 -- LAPTOP
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Marca", "MARCA", "TEXTBOX", null, "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Modelo", "MODELO", "TEXTBOX", null, "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Pulgadas", "PULGADAS", "NUMBER", null, "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Memoria ram", "RAM", "NUMBER", null, "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Fecha de compra", "FECHA_COMPRA", "DATE", null, "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Detalles", "DETALLES", "TEXTAREA", null, "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Procesador Version", "PRO_VERSION", "DROPDOWN", "[{ label: '64bits', value: '64bit'}, { label: '32bits', value: '32'}]", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Precio de compra", "PRECIO_COMPRA", "NUMBER", null, "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Precio de venta", "PRECIO_VENTA", "NUMBER", null, "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Stock", "STOCK", "NUMBER", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Marca", "MARCA", "text", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Modelo", "MODELO", "text", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Pulgadas", "PULGADAS", "number", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Memoria ram", "RAM", "number", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Fecha de compra", "FECHA_COMPRA", "date", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Detalles", "DETALLES", "textarea", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Procesador Version", "PRO_VERSION", "select", "[{\"key\": \"64bits\", \"label\": \"64bits\", \"value\": \"64\"}, {\"key\": \"64bits\", \"label\": \"32bits\", \"value\": \"32\"}]", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Precio de compra", "PRECIO_COMPRA", "number", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Precio de venta", "PRECIO_VENTA", "number", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Stock", "STOCK", "number", null, "SysStorageEncargado", "EMPRESA_1");
 -- CLIENTE
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Nombres", "NOMBRES", "TEXTBOX", null, "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Apellidos", "APELLIDOS", "TEXTBOX", null, "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("NIT/CI", "NIT_CI", "TEXTBOX", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Nombres", "NOMBRES", "text", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Apellidos", "APELLIDOS", "text", null, "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("NIT/CI", "NIT_CI", "text", null, "SysStorageEncargado", "EMPRESA_1");
 
 -- ******* ATTRIBUTES BELONG TO SCHEMA *******
 -- LAPTOP

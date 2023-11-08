@@ -25,7 +25,6 @@ commonForm1.args = {
       inputValue: "",
       suggestionText: "Ingrese su nombre de usuario",
       suggestionTextClassName: "puggysoft-red-text",
-      isValid: () => { },
       onChange: () => { },
       isDisabledEdit: false,
       inputSelectOption: undefined
@@ -37,7 +36,6 @@ commonForm1.args = {
       inputValue: "",
       suggestionText: "Ingrese su contrasena",
       suggestionTextClassName: "puggysoft-red-text",
-      isValid: () => { },
       onChange: () => { },
       isDisabledEdit: false,
       inputSelectOption: undefined
@@ -49,7 +47,6 @@ commonForm1.args = {
       inputValue: "",
       suggestionText: "Ingrese su email",
       suggestionTextClassName: "puggysoft-red-text",
-      isValid: () => { },
       onChange: () => { },
       isDisabledEdit: false,
       inputSelectOption: undefined
@@ -61,7 +58,6 @@ commonForm1.args = {
       inputValue: "",
       suggestionText: "Ingrese su edad",
       suggestionTextClassName: "puggysoft-red-text",
-      isValid: () => { },
       onChange: () => { },
       isDisabledEdit: false,
       inputSelectOption: undefined
@@ -73,7 +69,6 @@ commonForm1.args = {
       inputValue: "",
       suggestionText: "Ingrese su fecha de nacimiento",
       suggestionTextClassName: "puggysoft-red-text",
-      isValid: () => { },
       onChange: () => { },
       isDisabledEdit: false,
       inputSelectOption: undefined
@@ -85,7 +80,6 @@ commonForm1.args = {
       inputValue: "STUDENT",
       suggestionText: "Seleccione el tipo de usuario",
       suggestionTextClassName: "puggysoft-red-text",
-      isValid: () => { },
       onChange: () => { },
       isDisabledEdit: false,
       inputSelectOption: [

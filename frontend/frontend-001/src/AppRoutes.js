@@ -157,6 +157,12 @@ import UrbanismoHistorialEstadoStepThreePage from "./components-level-3/alcaldia
 import UrbanismoFlujoBoardStepOnePage from "./components-level-3/alcaldia/UrbanismoFlujoBoardStepOnePage";
 import UrbanismoFlujoBoardStepTwoPage from "./components-level-3/alcaldia/UrbanismoFlujoBoardStepTwoPage";
 
+// Data Storage System
+import StorageSchemaFormPage from "./components-level-3/datastorage/StorageSchemaFormPage";
+import StorageSchemaTablePage from "./components-level-3/datastorage/StorageSchemaTablePage";
+import StorageFieldFormPage from "./components-level-3/datastorage/StorageFieldFormPage";
+import StorageFieldTablePage from "./components-level-3/datastorage/StorageFieldTablePage";
+
 const AppRoutes = () => (
   <App>
     {/** Here common components */}
@@ -311,6 +317,11 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_THREE} component={UrbanismoHistorialEstadoStepThreePage} />
       <Route exact path={enumPaths.URBANISMO_FLUJO_BOARD_A} component={UrbanismoFlujoBoardStepOnePage} />
       <Route exact path={enumPaths.URBANISMO_FLUJO_BOARD_B} component={UrbanismoFlujoBoardStepTwoPage} />
+      {/** DATA STORAGE SYSTEM */}
+      <Route exact path={enumPaths.DATA_STORAGE_SCHEMA_FORM} component={StorageSchemaFormPage} />
+      <Route exact path={enumPaths.DATA_STORAGE_SCHEMA_TABLE} component={StorageSchemaTablePage} />
+      <Route exact path={enumPaths.DATA_STORAGE_FIELD_FORM} component={StorageFieldFormPage} />
+      <Route exact path={enumPaths.DATA_STORAGE_FIELD_TABLE} component={StorageFieldTablePage} />
       <Route exact path="/" component={LoginPage} />
       <Route component={LoginPage} />
     </Switch>

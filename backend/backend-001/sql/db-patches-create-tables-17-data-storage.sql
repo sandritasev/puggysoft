@@ -20,8 +20,8 @@ CREATE TABLE storage_field(
    id BIGINT AUTO_INCREMENT,
    name VARCHAR(60) NOT NULL UNIQUE,
    short_name VARCHAR(30) NOT NULL UNIQUE,
-   type ENUM('TEXTBOX', 'TEXTAREA','NUMBER', 'DATE', 'DROPDOWN') NOT NULL,
-   textbox_option TEXT, -- [{ label: 'Bolivia', value: 'BO'}, { label: 'Argentina', value: 'ARG'}]
+   type ENUM('text', 'textarea','number', 'email', 'password', 'date', 'select', 'file') NOT NULL,
+   textbox_option TEXT, -- [{ key: 'bo', label: 'Bolivia', value: 'BO'}, { key: 'arg', label: 'Argentina', value: 'ARG'}]
    tenant VARCHAR(30) NOT NULL,
    created_by VARCHAR(30),
    updated_by VARCHAR(30),
