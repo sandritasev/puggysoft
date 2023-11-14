@@ -11,6 +11,8 @@ import UrbanismoEstadosGenericTable from "./generic/UrbanismoEstadosGenericTable
 import enumTableColumnsToShow from "../../models/enumTableColumnsToShow";
 import CommonLoading from "../../components-level-1/CommonLoading";
 import { openCommonMessage } from "./../../redux/reducers/reducerCommonMessage";
+import Form from "react-bootstrap/Form";
+import useInput from "./../../hooks/useInput";
 
 function UrbanismoTramiteEstadosStepTwo () {
   const dispatch = useDispatch();
@@ -21,6 +23,10 @@ function UrbanismoTramiteEstadosStepTwo () {
   const numberPagesToShow = 10;
   const [isRequestInProgress, setIsRequestInProgress] = useState(false);
   const [selectedTramite, setSelectedTramite] = useState(selectedTramiteParam);
+  const { value: valueComments, onChange: onChangeComments, setValue: setComments } = useInput("");
+  const handleReset = function () {
+    setComments("");
+  };
 
   function handleGetData (activePage, filterBody, updateArrayData) {
     handleFilterRequest(`urbanismo-estados/filter?page=${activePage - 1}&size=${pageSize}`, filterBody, updateArrayData);
@@ -43,7 +49,20 @@ function UrbanismoTramiteEstadosStepTwo () {
   };
 
   function handleSelection (selectedEstado) {
-    console.log({ selectedTramite, selectedEstado });
+    if (selectedEstado.nombreCorto === selectedTramite.estadoNombreCorto) {
+      return;
+    }
+    if (valueComments === "" || valueComments.length < 3) {
+      dispatch(openCommonMessage(
+        {
+          isMessageModalVisible: true,
+          messageModalTitle: i18n.errorMessages.validationError,
+          messageModalBody: i18n.urbanismoFlujoBoard.commentsError,
+          messageModalVariant: "danger"
+        }
+      ));
+      return;
+    }
     const username = window.sessionStorage.getItem("username");
     const tenant = window.sessionStorage.getItem("tenant");
     const body = {
@@ -60,6 +79,7 @@ function UrbanismoTramiteEstadosStepTwo () {
       username,
       estadoAnterior: selectedTramite.estadoNombreCorto,
       estadoNuevo: selectedEstado.nombreCorto,
+      comments: valueComments,
       tenant,
       createdBy: username,
       updatedBy: username
@@ -68,7 +88,9 @@ function UrbanismoTramiteEstadosStepTwo () {
       handleAddRequest(
         "urbanismo-historial/",
         bodyHistorial,
-        () => { },
+        () => {
+          handleReset();
+        },
         false,
         handleAfterFail
       );
@@ -106,23 +128,47 @@ function UrbanismoTramiteEstadosStepTwo () {
     return <CommonLoading></CommonLoading>;
   }
 
+  function fixArrayData (arrayData) {
+    const newArrayData = arrayData.filter(
+      (itemState) => itemState.nombreCorto !== selectedTramite.estadoNombreCorto
+    );
+    return newArrayData;
+  }
+
   return (
-    <UrbanismoEstadosGenericTable
-      tableTitle={tableTitle}
-      tableSubTitle={i18n.urbanismoEstadosTable.infoTramiteEnCurso +
-        " : " + selectedTramite.tramiteNombreCorto + " , " +
-        i18n.urbanismoEstadosTable.infoTramiteCliente + " , " +
-        " : " + selectedTramite.nombreCliente + " , " +
-        i18n.urbanismoEstadosTable.infoEstadoActual + " , " +
-        " : " + selectedTramite.estadoNombreCorto
-      }
-      numberPagesToShow={numberPagesToShow}
-      handleGetData={handleGetData}
-      handleGetSize={handleGetSize}
-      tableArrayCustomRowButtons={tableArrayCustomRowButtons}
-      columnsToShow={enumTableColumnsToShow.MEDIUM}
-    >
-    </UrbanismoEstadosGenericTable>
+    <>
+      <div className="change-status-comments">
+        <Form>
+          <Form.Group
+            className="mb-3"
+          >
+            <Form.Label>{i18n.urbanismoFlujoBoard.comments}</Form.Label>
+            <Form.Control
+              as="textarea" rows={2}
+              value={valueComments}
+              onChange={onChangeComments}
+            />
+          </Form.Group>
+        </Form>
+      </div>
+      <UrbanismoEstadosGenericTable
+        tableTitle={tableTitle}
+        tableSubTitle={i18n.urbanismoEstadosTable.infoTramiteEnCurso +
+          " : " + selectedTramite.tramiteNombreCorto + " , " +
+          i18n.urbanismoEstadosTable.infoTramiteCliente + " , " +
+          " : " + selectedTramite.nombreCliente + " , " +
+          i18n.urbanismoEstadosTable.infoEstadoActual + " , " +
+          " : " + selectedTramite.estadoNombreCorto
+        }
+        numberPagesToShow={numberPagesToShow}
+        handleGetData={handleGetData}
+        handleGetSize={handleGetSize}
+        tableArrayCustomRowButtons={tableArrayCustomRowButtons}
+        columnsToShow={enumTableColumnsToShow.MEDIUM}
+        fixArrayData={fixArrayData}
+      >
+      </UrbanismoEstadosGenericTable>
+    </>
   );
 }
 

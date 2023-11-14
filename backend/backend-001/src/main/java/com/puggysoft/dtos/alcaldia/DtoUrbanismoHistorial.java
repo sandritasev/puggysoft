@@ -21,6 +21,8 @@ public class DtoUrbanismoHistorial extends DtoSuperClass {
   @NotNull
   private String estadoNuevo;
   @NotNull
+  private String comments;
+  @NotNull
   private String tenant;
 
   /** convert from dto to entity. */
@@ -32,6 +34,7 @@ public class DtoUrbanismoHistorial extends DtoSuperClass {
     entity.setUsername(username);
     entity.setEstadoAnterior(estadoAnterior);
     entity.setEstadoNuevo(estadoNuevo);
+    entity.setComments(comments);
     entity.setTenant(tenant);
     entity.setCreatedBy(createdBy);
     entity.setUpdatedBy(updatedBy);
@@ -47,6 +50,7 @@ public class DtoUrbanismoHistorial extends DtoSuperClass {
     dto.setUsername(entity.getUsername());
     dto.setEstadoAnterior(entity.getEstadoAnterior());
     dto.setEstadoNuevo(entity.getEstadoNuevo());
+    dto.setComments(entity.getComments());
     dto.setTenant(entity.getTenant());
     dto.setCreatedBy(entity.getCreatedBy());
     dto.setUpdatedBy(entity.getUpdatedBy());

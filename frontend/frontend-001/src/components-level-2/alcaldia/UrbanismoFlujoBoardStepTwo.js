@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import i18n from "../../i18n/i18n";
@@ -8,6 +8,7 @@ import CommonDragDropWrapper from "../../components-level-1/CommonDragDropWrappe
 import { handleGetRequest, handleAddRequest, handleEditRequest } from "../../actions/HandleManager";
 import { openCommonMessage } from "./../../redux/reducers/reducerCommonMessage";
 import CommonLoading from "../../components-level-1/CommonLoading";
+import useInput from "./../../hooks/useInput";
 
 import "./UrbanismoFlujoBoardStepTwo.css";
 
@@ -21,6 +22,12 @@ function UrbanismoFlujoBoard () {
   const [currentStateSelected, setCurrentStateSelected] = useState();
   const selectedFlujoParam = history && history.location && history.location.state.data;
   const [selectedFlujo, setSelectedFlujo] = useState(selectedFlujoParam);
+
+  const { value: valueComments, onChange: onChangeComments, setValue: setComments } = useInput("");
+
+  const handleReset = function () {
+    setComments("");
+  };
 
   useEffect(() => {
     setIsRequestInProgress(true);
@@ -116,6 +123,17 @@ function UrbanismoFlujoBoard () {
     if (newStateSelected === selectedFlujo.estadoNombreCorto) {
       return;
     }
+    if (valueComments === "" || valueComments.length < 3) {
+      dispatch(openCommonMessage(
+        {
+          isMessageModalVisible: true,
+          messageModalTitle: i18n.errorMessages.validationError,
+          messageModalBody: i18n.urbanismoFlujoBoard.commentsError,
+          messageModalVariant: "danger"
+        }
+      ));
+      return;
+    }
     const username = window.sessionStorage.getItem("username");
     const tenant = window.sessionStorage.getItem("tenant");
     const body = {
@@ -132,6 +150,7 @@ function UrbanismoFlujoBoard () {
       username,
       estadoAnterior: selectedFlujo.estadoNombreCorto,
       estadoNuevo: newStateSelected,
+      comments: valueComments,
       tenant,
       createdBy: username,
       updatedBy: username
@@ -140,7 +159,9 @@ function UrbanismoFlujoBoard () {
       handleAddRequest(
         "urbanismo-historial/",
         bodyHistorial,
-        () => { },
+        () => {
+          handleReset();
+        },
         false,
         handleRequestError
       );
@@ -186,6 +207,20 @@ function UrbanismoFlujoBoard () {
           >
             {i18n.urbanismoFlujoBoard.saveChanges}
           </button>
+          <div className="change-status-comments">
+            <Form>
+              <Form.Group
+                className="mb-3"
+              >
+                <Form.Label>{i18n.urbanismoFlujoBoard.comments}</Form.Label>
+                <Form.Control
+                  as="textarea" rows={3}
+                  value={valueComments}
+                  onChange={onChangeComments}
+                />
+              </Form.Group>
+            </Form>
+          </div>
         </div>
         <div className="flex">
           {arrayEstados.map(function (estado, index) {

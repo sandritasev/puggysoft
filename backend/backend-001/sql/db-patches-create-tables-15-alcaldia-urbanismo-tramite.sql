@@ -107,6 +107,7 @@ CREATE TABLE alc_urb_historial(
    username VARCHAR(60) NOT NULL,
    estado_anterior VARCHAR(30) NOT NULL,
    estado_nuevo VARCHAR(30) NOT NULL,
+   comments TEXT,
    tenant VARCHAR(30) NOT NULL,
    creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
    update_date DATETIME ON UPDATE CURRENT_TIMESTAMP,

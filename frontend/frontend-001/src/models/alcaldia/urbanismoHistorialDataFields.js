@@ -4,6 +4,7 @@ const arrayDataFields = [
   "username",
   "estadoAnterior",
   "estadoNuevo",
+  "comments",
   "createdBy",
   "updatedBy",
   "creationDate",
