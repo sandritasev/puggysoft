@@ -19,6 +19,8 @@ public class DtoStorageData extends DtoSuperClass {
   @NotNull
   private String fieldValue;
   @NotNull
+  private String schema;
+  @NotNull
   private String tenant;
 
   /** convert from dto to entity. */
@@ -29,6 +31,7 @@ public class DtoStorageData extends DtoSuperClass {
     entity.setRecord(record);
     entity.setField(field);
     entity.setFieldValue(fieldValue);
+    entity.setSchema(schema);
     entity.setTenant(tenant);
     entity.setCreatedBy(createdBy);
     entity.setUpdatedBy(updatedBy);
@@ -43,6 +46,7 @@ public class DtoStorageData extends DtoSuperClass {
     dto.setRecord(entity.getRecord());
     dto.setField(entity.getField());
     dto.setFieldValue(entity.getFieldValue());
+    dto.setSchema(entity.getSchema());
     dto.setTenant(entity.getTenant());
     dto.setCreatedBy(entity.getCreatedBy());
     dto.setUpdatedBy(entity.getUpdatedBy());

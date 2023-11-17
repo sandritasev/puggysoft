@@ -43,11 +43,12 @@ import {
   BsCashCoin,
   BsCoin,
   BsBuildingLock,
-  BsUiChecks
+  BsUiChecks,
+  BsRecordCircleFill
 } from "react-icons/bs";
-import { TbHierarchy3 } from "react-icons/tb";
+import { TbHierarchy3, TbSoccerField } from "react-icons/tb";
 import { RiLoginCircleLine, RiUser2Fill, RiShieldKeyholeFill } from "react-icons/ri";
-import { MdOutlineSettingsSuggest } from "react-icons/md";
+import { MdOutlineSettingsSuggest, MdOutlineSchema } from "react-icons/md";
 import { GoCalendar } from "react-icons/go";
 import { GiGoldBar } from "react-icons/gi";
 import { IoMdTimer, IoIosNotifications } from "react-icons/io";
@@ -260,7 +261,6 @@ function NavBar () {
   };
 
   function navigateGeneric (event) {
-    console.log({ event });
     history.push(enumPaths.IN_PROGRESS_PAGE);
   }
 
@@ -345,6 +345,7 @@ function NavBar () {
   const navigateRegulaLotesForm = () => {
     history.push(enumPaths.REGULA_LOTES_FORM);
   };
+  // eslint-disable-next-line no-unused-vars
   const navigateRegulaLotesExtractoBancarioForm = () => {
     history.push(enumPaths.REGULA_LOTES_EXTRACTO_BANCARIO_FORM);
   };
@@ -392,6 +393,26 @@ function NavBar () {
   const navigateUrbanismoHistorialEstadoStepOne = () => {
     history.push(enumPaths.URBANISMO_HISTORIAL_ESTADO_STEP_ONE);
   };
+  // ******* ******* ******* DATA STORAGE SYSTEM ******* ******* *******
+  const navigateStorageSchemaForm = () => {
+    history.push(enumPaths.DATA_STORAGE_SCHEMA_FORM);
+  };
+  const navigateStorageSchemaTable = () => {
+    history.push(enumPaths.DATA_STORAGE_SCHEMA_TABLE);
+  };
+  const navigateStorageFieldForm = () => {
+    history.push(enumPaths.DATA_STORAGE_FIELD_FORM);
+  };
+  const navigateStorageFiedTable = () => {
+    history.push(enumPaths.DATA_STORAGE_FIELD_TABLE);
+  };
+  const navigateStorageRecordFormStepOne = () => {
+    history.push(enumPaths.DATA_STORAGE_RECORD_FORM_STEP_ONE);
+  };
+  const navigateStorageRecordTableStepOne = () => {
+    history.push(enumPaths.DATA_STORAGE_RECORD_TABLE_STEP_ONE);
+  };
+
   // dark, light, primary(dark) secondary(dark)
   const NavbarBackground = theme || "dark";
   const themeNavBarLetters = theme && theme !== "primary" && theme !== "secondary" ? theme : "dark";
@@ -627,6 +648,7 @@ function NavBar () {
   // REGULARIZACION LOTES
   const regulaLotesAdminLabel = (<><IoNewspaperSharp /> {i18n.navBar.regulaLotesAdmin}</>);
   const regulaLotesFormLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesForm}</>);
+  // eslint-disable-next-line no-unused-vars
   const regulaLotesExtractoBancarioFormLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesExtractoBancarioForm}</>);
   const regulaLotesFormClienteLabel = (<><GrAddCircle /> {i18n.navBar.regulaLotesFormCliente}</>);
   const regulaLotesClienteAdminLabel = (<><FaCashRegister /> {i18n.navBar.regulaLotesAdminClient}</>);
@@ -651,6 +673,20 @@ function NavBar () {
   const urbanismoFlujoBoardLabel = (<><AiOutlineStar /> {i18n.navBar.urbanismoFlujoBoard}</>);
   // eslint-disable-next-line no-unused-vars
   const urbanismoHistorialEstadoStepOneLabel = (<><GrAddCircle /> {i18n.navBar.urbanismoHistorialEstadoStepOne}</>);
+  // ******* ******* ******* DATA STORAGE SYSTEM ******* ******* *******
+  // SCHEMA
+  const storageSchemaAdminLabel = (<><MdOutlineSchema /> {i18n.navBar.storageSchemaAdmin}</>);
+  const storageSchemaFormLabel = (<><GrAddCircle /> {i18n.navBar.storageSchemaForm}</>);
+  const storageSchemaTableLabel = (<><AiOutlineTable /> {i18n.navBar.storageSchemaTable}</>);
+  const storageSchemaFieldLabel = (<><GrAddCircle /> {i18n.navBar.storageSchemaField}</>);
+  // FIELD
+  const storageFieldAdminLabel = (<><TbSoccerField /> {i18n.navBar.storageFieldAdmin}</>);
+  const storageFieldFormLabel = (<><GrAddCircle /> {i18n.navBar.storageFieldForm}</>);
+  const storageFieldTableLabel = (<><AiOutlineTable /> {i18n.navBar.storageFieldTable}</>);
+  // RECORDS
+  const storageRecordAdminLabel = (<><BsRecordCircleFill /> {i18n.navBar.storageRecordAdmin}</>);
+  const storageRecordFormLabel = (<><GrAddCircle /> {i18n.navBar.storageRecordForm}</>);
+  const storageRecordTableLabel = (<><AiOutlineTable /> {i18n.navBar.storageRecordTable}</>);
 
   // ******* ******* ******* ALL SYSTEMS ******* ******* *******
   // CONFIG
@@ -926,6 +962,24 @@ function NavBar () {
           ) &&
             <NavDropdown title={regulaLotesClienteAdminLabel}>
               <NavDropdown.Item onClick={navigateRegulaLotesFormCliente}>{regulaLotesFormClienteLabel}</NavDropdown.Item>
+            </NavDropdown>}
+
+          {/* ******* ******* ******* DATA STORAGE SYSTEM ******* ******* ********/}
+          {userRoles.includes(enumRoles.STORAGE_ENCARGADO) &&
+            <NavDropdown title={storageSchemaAdminLabel}>
+              <NavDropdown.Item onClick={navigateStorageSchemaForm}>{storageSchemaFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateStorageSchemaTable}>{storageSchemaTableLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateGeneric}>{storageSchemaFieldLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {userRoles.includes(enumRoles.STORAGE_ENCARGADO) &&
+            <NavDropdown title={storageFieldAdminLabel}>
+              <NavDropdown.Item onClick={navigateStorageFieldForm}>{storageFieldFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateStorageFiedTable}>{storageFieldTableLabel}</NavDropdown.Item>
+            </NavDropdown>}
+          {userRoles.includes(enumRoles.STORAGE_ENCARGADO) &&
+            <NavDropdown title={storageRecordAdminLabel}>
+              <NavDropdown.Item onClick={navigateStorageRecordFormStepOne}>{storageRecordFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateStorageRecordTableStepOne}>{storageRecordTableLabel}</NavDropdown.Item>
             </NavDropdown>}
         </Nav>
         {/* ******* ******* ******* ALL SYSTEM ******* ******* ********/}

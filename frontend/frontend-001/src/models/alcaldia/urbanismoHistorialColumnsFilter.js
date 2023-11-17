@@ -75,6 +75,9 @@ const urbanismoHistorialColumnsFilter = function (
       operatorOnchange: operatorOnChangeEstadoNuevo
     },
     {
+      type: enumFilterType.NONE
+    },
+    {
       type: enumFilterType.TEXTBOX,
       criteriaValue: criteriaCreatedBy,
       criteriaOnchange: criteriaOnChangeCreatedBy,

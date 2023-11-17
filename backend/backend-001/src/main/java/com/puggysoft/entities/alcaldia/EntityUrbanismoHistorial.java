@@ -24,5 +24,7 @@ public class EntityUrbanismoHistorial extends EntitySuperClass {
   private String estadoNuevo;
   @Column(name = "tenant")
   private String tenant;
+  @Column(name = "comments")
+  private String comments;
 
 }

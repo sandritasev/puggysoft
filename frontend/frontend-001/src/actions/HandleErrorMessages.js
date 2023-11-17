@@ -96,6 +96,12 @@ const getErrorMessage = (response) => {
     ) {
       return i18n.errorMessages.errorStaus409EntityHasRelation;
     }
+    if (response.data &&
+      response.data.includes &&
+      response.data.includes("Duplicate entry")
+    ) {
+      return i18n.errorMessages.errorStaus409EntityDuplicate;
+    }
     return i18n.errorMessages.errorStaus409;
   } else {
     return i18n.errorMessages.unknownError;

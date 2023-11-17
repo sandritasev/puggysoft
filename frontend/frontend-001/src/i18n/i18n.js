@@ -19,6 +19,7 @@ import tenantStatusText from "./spanish/system/TenantStatusText";
 import commonInProgress from "./spanish/commonInProgress";
 import commonDaysOfWeek from "./spanish/commonDaysOfWeek";
 import commonForm from "./spanish/commonForm";
+import commonInputTypes from "./spanish/commonInputTypes";
 // Users System
 import userTable from "./spanish/users/userTable";
 import userForm from "./spanish/users/userForm";
@@ -97,6 +98,8 @@ import urbanismoTramiteEstadosTable from "./spanish/alcaldia/urbanismoTramiteEst
 import urbanismoHistorialTable from "./spanish/alcaldia/urbanismoHistorialTable";
 import urbanismoHistorialEstadoForm from "./spanish/alcaldia/urbanismoHistorialEstadoForm";
 import urbanismoFlujoBoard from "./spanish/alcaldia/urbanismoFlujoBoard";
+// Data Storage System
+import datastorage from "./spanish/datastorage/datastorage";
 
 const i18n = {
   // Common
@@ -121,6 +124,7 @@ const i18n = {
   commonInProgress,
   commonDaysOfWeek,
   commonForm,
+  commonInputTypes,
   // Users System
   userForm,
   userTable,
@@ -197,7 +201,9 @@ const i18n = {
   urbanismoEstadosTable,
   urbanismoHistorialEstadoForm,
   urbanismoFlujoBoard,
-  urbanismoHistorialTable
+  urbanismoHistorialTable,
+  // Data Storage System
+  datastorage
 };
 
 export default i18n;

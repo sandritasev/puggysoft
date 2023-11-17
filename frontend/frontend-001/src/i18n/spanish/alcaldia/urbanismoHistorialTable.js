@@ -6,7 +6,8 @@ const urbanismoHistorialTable = {
   columnIdFlujo: "IdFlujo",
   columnUsername: "Usuario",
   columnEstadoAnterior: "Estado Anterior",
-  columnEstadoNuevo: "Estado Nuevo"
+  columnEstadoNuevo: "Estado Nuevo",
+  columnComments: "Comentarios"
 };
 
 export default urbanismoHistorialTable;

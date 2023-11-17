@@ -6,6 +6,7 @@ const arrayColumns = [
   i18n.urbanismoHistorialTable.columnUsername,
   i18n.urbanismoHistorialTable.columnEstadoAnterior,
   i18n.urbanismoHistorialTable.columnEstadoNuevo,
+  i18n.urbanismoHistorialTable.columnComments,
   i18n.commonTable.columnCreatedBy,
   i18n.commonTable.columnUpdatedBy,
   i18n.commonTable.columnCreationDate,

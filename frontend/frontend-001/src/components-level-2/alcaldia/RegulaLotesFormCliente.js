@@ -87,8 +87,6 @@ function RegulaLotesForm () {
   );
 
   const handleAfterAdd = function (newRegulaLotesId) {
-    console.log(newRegulaLotesId[0]);
-    console.log(newRegulaLotesId);
     if (newRegulaLotesId[0]) {
       history.push({
         pathname: enumPaths.REGULA_LOTES_FORM_CLIENTE_STEP_TWO,

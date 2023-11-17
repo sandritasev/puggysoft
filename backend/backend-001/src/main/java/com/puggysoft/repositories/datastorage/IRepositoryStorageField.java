@@ -15,4 +15,9 @@ public interface IRepositoryStorageField extends JpaRepository<EntityStorageFiel
   @Query(value = "SELECT * FROM storage_field LIMIT ?1, ?2", nativeQuery = true)
   List<EntityStorageField> findStorageFieldByPagination(int off, int size);
 
+  @Query(value = "SELECT storage_field.* FROM storage_field "
+    + "INNER JOIN storage_schema_field ON storage_schema_field.field = storage_field.short_name "
+    + "WHERE storage_schema_field.schema_ = ?1", nativeQuery = true)
+  List<EntityStorageField> findFieldsBySchema(String schemaShortName);
+
 }

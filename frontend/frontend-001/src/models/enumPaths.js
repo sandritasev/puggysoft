@@ -172,6 +172,16 @@ const URBANISMO_HISTORIAL_ESTADO_STEP_THREE = "/urbanismo-historial-estado-step-
 const URBANISMO_FLUJO_BOARD_A = "/urbanismo-flujo-board-a";
 const URBANISMO_FLUJO_BOARD_B = "/urbanismo-flujo-board-b";
 
+// DATA STORAGE SYSTEM
+const DATA_STORAGE_SCHEMA_FORM = "/datastorage-schema-form";
+const DATA_STORAGE_SCHEMA_TABLE = "/datastorage-schema-table";
+const DATA_STORAGE_FIELD_FORM = "/datastorage-field-form";
+const DATA_STORAGE_FIELD_TABLE = "/datastorage-field-table";
+const DATA_STORAGE_RECORD_FORM_STEP_ONE = "/datastorage-record-form-step-one";
+const DATA_STORAGE_RECORD_FORM_STEP_TWO = "/datastorage-record-form-step-two";
+const DATA_STORAGE_RECORD_TABLE_STEP_ONE = "/datastorage-record-table-step-one";
+const DATA_STORAGE_RECORD_TABLE_STEP_TWO = "/datastorage-record-table-step-two";
+
 const enumPaths = {
   DASHBOARD,
   THEME_FORM,
@@ -340,7 +350,16 @@ const enumPaths = {
   URBANISMO_HISTORIAL_ESTADO_STEP_TWO,
   URBANISMO_HISTORIAL_ESTADO_STEP_THREE,
   URBANISMO_FLUJO_BOARD_A,
-  URBANISMO_FLUJO_BOARD_B
+  URBANISMO_FLUJO_BOARD_B,
+  // DATA STORAGE SYSTEM
+  DATA_STORAGE_SCHEMA_FORM,
+  DATA_STORAGE_SCHEMA_TABLE,
+  DATA_STORAGE_FIELD_FORM,
+  DATA_STORAGE_FIELD_TABLE,
+  DATA_STORAGE_RECORD_FORM_STEP_ONE,
+  DATA_STORAGE_RECORD_FORM_STEP_TWO,
+  DATA_STORAGE_RECORD_TABLE_STEP_ONE,
+  DATA_STORAGE_RECORD_TABLE_STEP_TWO
 };
 
 export default enumPaths;

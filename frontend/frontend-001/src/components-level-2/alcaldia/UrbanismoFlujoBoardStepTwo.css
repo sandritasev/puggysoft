@@ -96,7 +96,7 @@
 .scrum-board:first-child {
   flex: 1;
   padding: 20px;
-  margin-top: 10rem;
+  margin-top: 17rem;
   border-left: 1px solid #ddd;
 }
 
@@ -139,4 +139,16 @@
   border: 5px dashed #ededed;
   min-height: 100px;
   margin-bottom: 10px;
+}
+
+.change-status-comments {
+  margin: auto;
+  margin-top: 1rem;
+  width: 30%;
+}
+
+@media (max-width:720px) {
+  .change-status-comments {
+    width: 100%;
+  }
 }
