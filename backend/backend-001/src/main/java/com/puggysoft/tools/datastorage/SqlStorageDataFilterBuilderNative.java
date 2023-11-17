@@ -25,6 +25,9 @@ public final class SqlStorageDataFilterBuilderNative {
     query = query + SqlFilterBuilder.getFilterQuery("storage_data.field_value",
         dtoStorageDataFilter.fieldValueCriteria,
         dtoStorageDataFilter.fieldValueOperator);
+    query = query + SqlFilterBuilder.getFilterQuery("storage_data.schema_",
+        dtoStorageDataFilter.schemaCriteria,
+        dtoStorageDataFilter.schemaOperator);
     query = query + SqlFilterBuilder.getFilterQuery("storage_data.tenant ",
         dtoStorageDataFilter.tenantCriteria,
         dtoStorageDataFilter.tenantOperator);

@@ -261,7 +261,6 @@ function NavBar () {
   };
 
   function navigateGeneric (event) {
-    console.log({ event });
     history.push(enumPaths.IN_PROGRESS_PAGE);
   }
 
@@ -406,6 +405,12 @@ function NavBar () {
   };
   const navigateStorageFiedTable = () => {
     history.push(enumPaths.DATA_STORAGE_FIELD_TABLE);
+  };
+  const navigateStorageRecordFormStepOne = () => {
+    history.push(enumPaths.DATA_STORAGE_RECORD_FORM_STEP_ONE);
+  };
+  const navigateStorageRecordTableStepOne = () => {
+    history.push(enumPaths.DATA_STORAGE_RECORD_TABLE_STEP_ONE);
   };
 
   // dark, light, primary(dark) secondary(dark)
@@ -973,8 +978,8 @@ function NavBar () {
             </NavDropdown>}
           {userRoles.includes(enumRoles.STORAGE_ENCARGADO) &&
             <NavDropdown title={storageRecordAdminLabel}>
-              <NavDropdown.Item onClick={navigateGeneric}>{storageRecordFormLabel}</NavDropdown.Item>
-              <NavDropdown.Item onClick={navigateGeneric}>{storageRecordTableLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateStorageRecordFormStepOne}>{storageRecordFormLabel}</NavDropdown.Item>
+              <NavDropdown.Item onClick={navigateStorageRecordTableStepOne}>{storageRecordTableLabel}</NavDropdown.Item>
             </NavDropdown>}
         </Nav>
         {/* ******* ******* ******* ALL SYSTEM ******* ******* ********/}

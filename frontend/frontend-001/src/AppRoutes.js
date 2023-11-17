@@ -162,6 +162,10 @@ import StorageSchemaFormPage from "./components-level-3/datastorage/StorageSchem
 import StorageSchemaTablePage from "./components-level-3/datastorage/StorageSchemaTablePage";
 import StorageFieldFormPage from "./components-level-3/datastorage/StorageFieldFormPage";
 import StorageFieldTablePage from "./components-level-3/datastorage/StorageFieldTablePage";
+import StorageRecordFormStepOnePage from "./components-level-3/datastorage/StorageRecordFormStepOnePage";
+import StorageRecordFormStepTwoPage from "./components-level-3/datastorage/StorageRecordFormStepTwoPage";
+import StorageRecordTableStepOnePage from "./components-level-3/datastorage/StorageRecordTableStepOnePage";
+import StorageRecordTableStepTwoPage from "./components-level-3/datastorage/StorageRecordTableStepTwoPage";
 
 const AppRoutes = () => (
   <App>
@@ -322,6 +326,10 @@ const AppRoutes = () => (
       <Route exact path={enumPaths.DATA_STORAGE_SCHEMA_TABLE} component={StorageSchemaTablePage} />
       <Route exact path={enumPaths.DATA_STORAGE_FIELD_FORM} component={StorageFieldFormPage} />
       <Route exact path={enumPaths.DATA_STORAGE_FIELD_TABLE} component={StorageFieldTablePage} />
+      <Route exact path={enumPaths.DATA_STORAGE_RECORD_FORM_STEP_ONE} component={StorageRecordFormStepOnePage} />
+      <Route exact path={enumPaths.DATA_STORAGE_RECORD_FORM_STEP_TWO} component={StorageRecordFormStepTwoPage} />
+      <Route exact path={enumPaths.DATA_STORAGE_RECORD_TABLE_STEP_ONE} component={StorageRecordTableStepOnePage} />
+      <Route exact path={enumPaths.DATA_STORAGE_RECORD_TABLE_STEP_TWO} component={StorageRecordTableStepTwoPage} />
       <Route exact path="/" component={LoginPage} />
       <Route component={LoginPage} />
     </Switch>

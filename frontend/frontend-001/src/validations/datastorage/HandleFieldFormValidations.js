@@ -28,8 +28,6 @@ const handleValidation = (data, setClassNameFormText) => {
     classNameFormTextNew.shortName = "";
   }
   // DROPDOWN OPTIONS
-  console.log("aaaa");
-  console.log(isValidStringJson(data.textboxOption));
   if (!(isValidStringJson(data.textboxOption) &&
     Object.prototype.toString.call(JSON.parse(data.textboxOption)) === "[object Array]")
   ) {

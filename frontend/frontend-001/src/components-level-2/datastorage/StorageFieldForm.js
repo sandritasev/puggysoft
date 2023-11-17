@@ -13,6 +13,7 @@ import enumInputType from "./../../models/enumInputType";
 import enumBootstrapVariant from "./../../models/enumBootstrapVariant";
 import { openCommonMessage } from "./../../redux/reducers/reducerCommonMessage";
 import { handleAddRequest, handleEditRequest } from "../../actions/HandleManager";
+import CommonLoading from "../../components-level-1/CommonLoading";
 
 function StorageFieldForm () {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function StorageFieldForm () {
   const editDataParam = history && history.location && history.location.state;
   const [editData, setEditData] = useState(editDataParam);
   const [classNameFormText, setClassNameFormText] = useState(classNameFormTextNew);
+  const [isRequestInProgress, setIsRequestInProgress] = useState(false);
 
   const name = editData && editData.data.name !== null ? editData.data.name : "";
   const shortName = editData && editData.data.shortName !== null ? editData.data.shortName : "";
@@ -49,8 +51,8 @@ function StorageFieldForm () {
   const handleReset = function () {
     setName("");
     setShortName("");
-    setType("");
-    setTextboxOption("");
+    setType(enumInputType.TEXT);
+    setTextboxOption("[]");
     setEditData(null);
   };
 
@@ -62,6 +64,7 @@ function StorageFieldForm () {
 
   const handleAddEdit = function (event) {
     event.preventDefault();
+    setIsRequestInProgress(true);
     const body = getBody();
     const isValid = handleValidation(body, setClassNameFormText);
     if (isValid) {
@@ -78,6 +81,7 @@ function StorageFieldForm () {
 
   const handleAferAddEdit = function () {
     handleReset();
+    setIsRequestInProgress(false);
     showSuccessMessage();
   };
 
@@ -95,6 +99,7 @@ function StorageFieldForm () {
   };
 
   const showErrorMessage = function (response, errorMessage) {
+    setIsRequestInProgress(false);
     dispatch(openCommonMessage({
       isMessageModalVisible: true,
       messageModalTitle: i18n.errorMessages.errorTitle,
@@ -104,6 +109,7 @@ function StorageFieldForm () {
   };
 
   const showValidationMessage = function () {
+    setIsRequestInProgress(false);
     dispatch(openCommonMessage({
       isMessageModalVisible: true,
       messageModalTitle: i18n.errorMessages.validationErrorTitle,
@@ -205,6 +211,10 @@ function StorageFieldForm () {
       }
     ]
   };
+
+  if (isRequestInProgress) {
+    return <CommonLoading />;
+  }
 
   return (
     <CommonForm

@@ -10,7 +10,7 @@ INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, t
 INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Memoria ram", "RAM", "number", null, "SysStorageEncargado", "EMPRESA_1");
 INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Fecha de compra", "FECHA_COMPRA", "date", null, "SysStorageEncargado", "EMPRESA_1");
 INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Detalles", "DETALLES", "textarea", null, "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Procesador Version", "PRO_VERSION", "select", "[{\"key\": \"64bits\", \"label\": \"64bits\", \"value\": \"64\"}, {\"key\": \"64bits\", \"label\": \"32bits\", \"value\": \"32\"}]", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Procesador Version", "PRO_VERSION", "select", "[{\"key\": \"64bits\", \"label\": \"64bits\", \"value\": \"64\"}, {\"key\": \"32bits\", \"label\": \"32bits\", \"value\": \"32\"}]", "SysStorageEncargado", "EMPRESA_1");
 INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Precio de compra", "PRECIO_COMPRA", "number", null, "SysStorageEncargado", "EMPRESA_1");
 INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Precio de venta", "PRECIO_VENTA", "number", null, "SysStorageEncargado", "EMPRESA_1");
 INSERT INTO storage_field (name, short_name, type, textbox_option, created_by, tenant) VALUES ("Stock", "STOCK", "number", null, "SysStorageEncargado", "EMPRESA_1");
@@ -50,44 +50,44 @@ INSERT INTO storage_record(short_name, schema_, created_by, tenant) VALUES ("CLI
 
 -- ******* DATA *******
 -- LAPTOPS
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "MARCA", "Toshiba", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "MODELO", "Qosmio", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "PULGADAS", "17", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "RAM", "16", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "FECHA_COMPRA", "2023-05-26", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "PRO_VERSION", "64bits", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "PRECIO_COMPRA", "3000", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "PRECIO_VENTA", "7000", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "STOCK", "50", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "MARCA", "Toshiba", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "MODELO", "Qosmio", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "PULGADAS", "17", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "RAM", "16", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "FECHA_COMPRA", "2023-05-26", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "PRO_VERSION", "64bits", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "PRECIO_COMPRA", "3000", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "PRECIO_VENTA", "7000", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_1", "STOCK", "50", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
 
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "MARCA", "HP", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "MODELO", "Omen", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "PULGADAS", "17", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "RAM", "32", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "FECHA_COMPRA", "2023-05-26", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "PRO_VERSION", "64bits", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "PRECIO_COMPRA", "3500", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "PRECIO_VENTA", "8000", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "STOCK", "50", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "MARCA", "HP", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "MODELO", "Omen", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "PULGADAS", "17", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "RAM", "32", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "FECHA_COMPRA", "2023-05-26", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "PRO_VERSION", "64bits", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "PRECIO_COMPRA", "3500", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "PRECIO_VENTA", "8000", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_2", "STOCK", "50", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
 
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "MARCA", "Apple", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "MODELO", "Macbook Pro", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "PULGADAS", "16", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "RAM", "16", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "FECHA_COMPRA", "2023-05-26", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "PRO_VERSION", "64bits", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "PRECIO_COMPRA", "8000", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "PRECIO_VENTA", "14000", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "STOCK", "50", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "MARCA", "Apple", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "MODELO", "Macbook Pro", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "PULGADAS", "16", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "RAM", "16", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "FECHA_COMPRA", "2023-05-26", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "PRO_VERSION", "64bits", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "PRECIO_COMPRA", "8000", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "PRECIO_VENTA", "14000", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("LAPTOP_RECORD_3", "STOCK", "50", "LAPTOP", "SysStorageEncargado", "EMPRESA_1");
 -- CLIENTES
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("CLIENTE_RECORD_1", "NOMBRES", "Juan Fernando", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("CLIENTE_RECORD_2", "APELLIDOS", "Perez del Corral", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("CLIENTE_RECORD_3", "NIT_CI", "44114477", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("CLIENTE_RECORD_1", "NOMBRES", "Juan Fernando", "CLIENTE", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("CLIENTE_RECORD_1", "APELLIDOS", "Perez del Corral", "CLIENTE", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("CLIENTE_RECORD_1", "NIT_CI", "44114477", "CLIENTE", "SysStorageEncargado", "EMPRESA_1");
 
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("CLIENTE_RECORD_1", "NOMBRES", "Sara Teresa", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("CLIENTE_RECORD_2", "APELLIDOS", "Sanchez del Pinar", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("CLIENTE_RECORD_3", "NIT_CI", "55447788", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("CLIENTE_RECORD_2", "NOMBRES", "Sara Teresa", "CLIENTE", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("CLIENTE_RECORD_2", "APELLIDOS", "Sanchez del Pinar", "CLIENTE", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("CLIENTE_RECORD_2", "NIT_CI", "55447788", "CLIENTE", "SysStorageEncargado", "EMPRESA_1");
 
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("CLIENTE_RECORD_1", "NOMBRES", "Julieta", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("CLIENTE_RECORD_2", "APELLIDOS", "Ponce de Leon", "SysStorageEncargado", "EMPRESA_1");
-INSERT INTO storage_data(record, field, field_value, created_by, tenant) VALUES ("CLIENTE_RECORD_3", "NIT_CI", "77551144", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("CLIENTE_RECORD_3", "NOMBRES", "Julieta", "CLIENTE", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("CLIENTE_RECORD_3", "APELLIDOS", "Ponce de Leon", "CLIENTE", "SysStorageEncargado", "EMPRESA_1");
+INSERT INTO storage_data(record, field, field_value, schema_, created_by, tenant) VALUES ("CLIENTE_RECORD_3", "NIT_CI", "77551144", "CLIENTE", "SysStorageEncargado", "EMPRESA_1");

@@ -11,7 +11,6 @@ import enumRequisitosEstados from "../../models/alcaldia/enumRequisitosEstados";
 function UrbanismoFlujoRequisitosStepTwo () {
   const history = useHistory();
   const selectedFlujo = history && history.location && history.location.state.data;
-  console.log({ selectedFlujo });
   const tableTitle = i18n.urbanismoFlujoRequisitosTable.title;
   const tableSubTitle = i18n.urbanismoFlujoRequisitosTable.subTitleSelectedTramite + ": " + selectedFlujo.tramiteNombreCorto;
   const pageSize = 20;
@@ -30,9 +29,8 @@ function UrbanismoFlujoRequisitosStepTwo () {
     handleFilterRequest(`urbanismo-flujo-requisitos/filter/size/${pageSize}`, filterBody, setTotalPages);
   }
 
-  const handleAddFile = (data) => {
-
-  };
+  // eslint-disable-next-line no-unused-vars
+  const handleAddFile = (data) => { };
 
   function handleAfterCambiarEstado () {
     setIsRequestInProgress(false);

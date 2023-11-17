@@ -13,6 +13,7 @@ import enumInputType from "./../../models/enumInputType";
 import enumBootstrapVariant from "./../../models/enumBootstrapVariant";
 import { openCommonMessage } from "./../../redux/reducers/reducerCommonMessage";
 import { handleAddRequest, handleEditRequest } from "../../actions/HandleManager";
+import CommonLoading from "../../components-level-1/CommonLoading";
 
 function StorageSchemaForm () {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function StorageSchemaForm () {
   const shortName = editData && editData.data.shortName !== null ? editData.data.shortName : "";
   const { value: valueName, onChange: onChangeName, setValue: setName } = useInput(name);
   const { value: valueShortName, onChange: onChangeShortName, setValue: setShortName } = useInput(shortName);
+  const [isRequestInProgress, setIsRequestInProgress] = useState(false);
 
   const getBody = function () {
     const username = window.sessionStorage.getItem("username");
@@ -53,6 +55,7 @@ function StorageSchemaForm () {
 
   const handleAddEdit = function (event) {
     event.preventDefault();
+    setIsRequestInProgress(true);
     const body = getBody();
     const isValid = handleValidation(body, setClassNameFormText);
     if (isValid) {
@@ -69,6 +72,7 @@ function StorageSchemaForm () {
 
   const handleAferAddEdit = function () {
     handleReset();
+    setIsRequestInProgress(false);
     showSuccessMessage();
   };
 
@@ -86,6 +90,7 @@ function StorageSchemaForm () {
   };
 
   const showErrorMessage = function (response, errorMessage) {
+    setIsRequestInProgress(false);
     dispatch(openCommonMessage({
       isMessageModalVisible: true,
       messageModalTitle: i18n.errorMessages.errorTitle,
@@ -95,6 +100,7 @@ function StorageSchemaForm () {
   };
 
   const showValidationMessage = function () {
+    setIsRequestInProgress(false);
     dispatch(openCommonMessage({
       isMessageModalVisible: true,
       messageModalTitle: i18n.errorMessages.validationErrorTitle,
@@ -133,6 +139,10 @@ function StorageSchemaForm () {
       }
     ]
   };
+
+  if (isRequestInProgress) {
+    return <CommonLoading />;
+  }
 
   return (
     <CommonForm

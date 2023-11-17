@@ -22,6 +22,9 @@ public class DtoStorageDataFilter {
   // fieldValue
   public String fieldValueCriteria;
   public EnumCompareOperator fieldValueOperator;
+  // schema
+  public String schemaCriteria;
+  public EnumCompareOperator schemaOperator;
   // TENANT
   public String tenantCriteria;
   public EnumCompareOperator tenantOperator;

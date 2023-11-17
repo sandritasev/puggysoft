@@ -22,7 +22,6 @@ function CommonForm ({
         <Card.Body>
           <Form>
             {schema.map(function (item) {
-              console.log({ item });
               return (
                 <>
                   {(item.inputType === enumInputType.TEXT ||
@@ -36,7 +35,9 @@ function CommonForm ({
                       </Form.Label>
                       <Form.Control
                         disabled={item.isDisabledEdit}
-                        onChange={item.onChange}
+                        onChange={(event) => {
+                          item.onChange(event, item);
+                        }}
                         value={item.inputValue}
                         type={item.inputType}
                         as={item.inputType === enumInputType.TEXT_AREA
@@ -55,7 +56,9 @@ function CommonForm ({
                       </Form.Label>
                       <Form.Select
                         disabled={item.isDisabledEdit}
-                        onChange={item.onChange}
+                        onChange={(event) => {
+                          item.onChange(event, item);
+                        }}
                         value={item.inputValue} >
                         {item.inputSelectOption && item.inputSelectOption.map(function (itemDropDown) {
                           return <option key={itemDropDown.key} value={itemDropDown.value}>{itemDropDown.label}</option>;

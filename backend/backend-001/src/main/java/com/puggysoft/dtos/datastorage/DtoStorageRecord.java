@@ -41,8 +41,8 @@ public class DtoStorageRecord extends DtoSuperClass {
     DtoStorageRecord dto = new DtoStorageRecord();
     dto.setId(entity.getId());
     dto.setShortName(entity.getShortName());
-    dto.setSchema(entity.getShortName());
-    dto.setAux(entity.getShortName());
+    dto.setSchema(entity.getSchema());
+    dto.setAux(entity.getAux());
     dto.setTenant(entity.getTenant());
     dto.setCreatedBy(entity.getCreatedBy());
     dto.setUpdatedBy(entity.getUpdatedBy());

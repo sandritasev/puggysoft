@@ -7,12 +7,20 @@ const handleDelete = (
   callbakOnSuccess,
   callbakOnCancel,
   callbackOnFail,
-  reloadOnSucess = false) => {
+  reloadOnSucess = false,
+  showConfirmation = true,
+  showOnDeleteMessage = true
+) => {
   const message = i18n.errorMessages.confirmModal;
-  const result = window.confirm(message);
+  let result = true;
+  if (showConfirmation) {
+    result = window.confirm(message);
+  }
   if (result) {
     requestManager.remove(endpoint, (response) => {
-      messageManager.deleteMessages(response);
+      if (showOnDeleteMessage) {
+        messageManager.deleteMessages(response);
+      }
       if (response && response.status === 200) {
         if (callbakOnSuccess && typeof callbakOnSuccess === "function") {
           callbakOnSuccess(response.data);
@@ -22,7 +30,8 @@ const handleDelete = (
         }
       } else {
         if (callbackOnFail && typeof callbackOnFail === "function") {
-          callbackOnFail(response);
+          const errorMessage = messageManager.getErrorMessage(response);
+          callbackOnFail(response, errorMessage);
         }
       }
     });

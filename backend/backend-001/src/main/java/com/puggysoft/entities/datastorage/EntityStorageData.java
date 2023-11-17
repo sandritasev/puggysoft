@@ -20,6 +20,8 @@ public class EntityStorageData extends EntitySuperClass {
   private String field;
   @Column(name = "field_value")
   private String fieldValue;
+  @Column(name = "schema_")
+  private String schema;
   @Column(name = "tenant")
   private String tenant;
 
